@@ -1,0 +1,46 @@
+name: Seed Supabase
+
+# Auto-seed the Supabase `entries` table from the content folders on every
+# push to main. The seed script skips anything already in the table, so
+# re-runs are safe and idempotent.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+# Read-only checkout is all we need.
+permissions:
+  contents: read
+
+# Don't let two seed runs race each other.
+concurrency:
+  group: seed-supabase-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        # Node 22+ ships a stable global WebSocket, which @supabase/supabase-js'
+        # realtime client needs at construction time. On Node 20 the seeder
+        # crashed with "Node.js 20 detected without native WebSocket support."
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Seed Supabase
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          # Service-role key bypasses RLS so the seeder can write published rows.
+          # Used only here in CI — never expose it to the browser.
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: node scripts/seed.js
