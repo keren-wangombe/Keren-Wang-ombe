@@ -141,6 +141,46 @@ export const tiers: Tier[] = [
 export const workClose =
   "These systems started as operational problems. If you have one, let's talk.";
 
+/** Trusted-by band on the home page (organisations Keren has worked with). */
+export const organisations: string[] = [
+  "ALX Africa",
+  "OpenStreetMap Kenya",
+  "HOT",
+  "Tanzania Development Trust",
+  "African Women in GIS",
+];
+
+export type Service = {
+  /** Icon key resolved in the home "What I Do" grid. */
+  icon: "process" | "team" | "systems" | "reporting";
+  title: string;
+  body: string;
+};
+
+/** The home "What I Do" four-column grid. */
+export const services: Service[] = [
+  {
+    icon: "process",
+    title: "Process Design",
+    body: "Mapping messy workflows and rebuilding them as clear, repeatable SOPs that don't depend on anyone's memory.",
+  },
+  {
+    icon: "team",
+    title: "Team Operations",
+    body: "Coordinating facilitators, ambassadors, and delivery across cohorts and borders, in sync and on time.",
+  },
+  {
+    icon: "systems",
+    title: "Systems & Tools",
+    body: "Automating intake, tracking, and reporting with Zapier, Make, Apps Script, Notion, and Asana.",
+  },
+  {
+    icon: "reporting",
+    title: "Reporting & Insights",
+    body: "Turning operational data into dashboards and decisions with SQL, Excel, and Power BI.",
+  },
+];
+
 export type Capability = {
   title: string;
   body: string;

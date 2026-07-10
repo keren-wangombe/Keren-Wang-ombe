@@ -38,10 +38,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-paper/85 backdrop-blur-md print:hidden">
       <div className="container-content flex items-center justify-between gap-6 py-4">
-        {/* Name only */}
-        <Link href="/" className="group flex items-center leading-none" aria-label="Home">
-          <span className="font-serif text-xl font-medium tracking-tight text-ink transition-colors duration-300 ease-calm group-hover:text-amber">
-            {brand.name}
+        {/* KW monogram */}
+        <Link href="/" className="group flex items-center leading-none" aria-label={`${brand.name}, home`}>
+          <span
+            aria-hidden
+            className="font-serif text-2xl font-semibold tracking-tight text-signature transition-colors duration-300 ease-calm group-hover:text-amber"
+          >
+            KW
           </span>
         </Link>
 
@@ -97,6 +100,15 @@ export default function Header() {
                 </li>
               );
             })}
+            <li>
+              <Link
+                href="/contact"
+                aria-current={isActive("/contact") ? "page" : undefined}
+                className="rounded-lg bg-amber-bright px-4 py-2 text-small font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -167,6 +179,16 @@ export default function Header() {
                 </li>
               );
             })}
+            <li>
+              <Link
+                href="/contact"
+                aria-current={isActive("/contact") ? "page" : undefined}
+                tabIndex={open ? undefined : -1}
+                className="mt-1 block rounded-md bg-amber-bright px-3 py-2.5 text-body font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
