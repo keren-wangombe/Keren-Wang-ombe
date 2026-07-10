@@ -12,7 +12,7 @@ import { pageBanners } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Resources",
   description:
-    "Case studies, interview prep, articles, and downloads, plus community questions answered in the open, real decisions and real answers, open for everyone.",
+    "Case studies, playbooks, articles, and downloads, plus community questions answered in the open, real decisions and real answers, open for everyone.",
 };
 
 // Serve cached HTML instantly; re-render in the background at most once a
@@ -32,9 +32,9 @@ export default async function ResourcesPage() {
         title="The content library."
         intro={
           <p>
-            Case studies, interview prep, and articles, browsable by
-            collection, plus community questions answered in the open. New
-            content appears live.
+            Case studies, playbooks, and articles, browsable by collection,
+            plus community questions answered in the open. New content appears
+            live.
           </p>
         }
       >
@@ -82,7 +82,7 @@ export default async function ResourcesPage() {
                 href="/resources/downloads"
                 kind="download"
                 label="Downloads"
-                blurb="Textbooks, slide decks, and short video clips, free to download."
+                blurb="Resume, SOP templates, and reference material, free to download."
                 count={downloads.length}
               />
             </ul>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { fraunces, inter } from "./fonts";
+import { playfair, inter } from "./fonts";
 import { brand } from "@/lib/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         {supabaseOrigin ? (
           <link rel="preconnect" href={supabaseOrigin} crossOrigin="anonymous" />

@@ -5,7 +5,7 @@ import Downloads from "@/components/Downloads";
 
 export const metadata: Metadata = {
   title: "Downloads",
-  description: "Textbooks, slide decks, and short video clips, free to download.",
+  description: "Resume, SOP templates, and reference material, free to download.",
 };
 
 export default function DownloadsPage() {

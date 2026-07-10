@@ -1,11 +1,11 @@
 name: Seed Supabase
 
-# Auto-seed the Supabase `entries` table from the content folders on every
-# push to main. The seed script skips anything already in the table, so
-# re-runs are safe and idempotent.
+# Seeds the Supabase `entries` table from the content folders. Run manually
+# once content folders (e.g. ./contents/case-studies) are added and the
+# SUPABASE_* secrets are configured. The seed script skips anything already
+# in the table, so re-runs are safe and idempotent. Kept as workflow_dispatch
+# only so it never fails a push while there is no content directory to seed.
 on:
-  push:
-    branches: [main]
   workflow_dispatch: {}
 
 # Read-only checkout is all we need.

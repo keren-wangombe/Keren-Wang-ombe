@@ -34,7 +34,7 @@ export default function Downloads() {
       <Reveal>
         <h1 className="font-serif text-h1 font-light text-signature">Downloads</h1>
         <p className="mt-2 max-w-prose text-body text-ink/70">
-          Textbooks, slide decks, and short video clips, free to download.
+          Resume, SOP templates, and reference material, free to download.
         </p>
       </Reveal>
 

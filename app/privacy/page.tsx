@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "How this site collects, uses, and protects your personal information, under the NDPR and, where applicable, the GDPR.",
 };
 
-const SITE_URL = "dareomotosho.com";
+const SITE_URL = "kerenwangombe.com";
 const LAST_UPDATED = "1 July 2026";
 
 const linkCls = "text-link underline underline-offset-2";
@@ -34,8 +34,8 @@ export default function PrivacyPage() {
               personal information when you visit {SITE_URL} (the &ldquo;Site&rdquo;).
             </p>
             <p className="mt-4">
-              I am based in Nigeria. This policy is written to reflect the Nigeria
-              Data Protection Regulation (NDPR) and, where applicable, the EU General
+              I am based in Kenya. This policy is written to reflect the Kenya
+              Data Protection Act, 2019 and, where applicable, the EU General
               Data Protection Regulation (GDPR) for visitors from the European Union
               and United Kingdom.
             </p>
@@ -207,7 +207,7 @@ export default function PrivacyPage() {
             </h2>
             <p className="mt-4">
               The service providers listed above (Vercel, Supabase, GitHub) may store
-              or process data outside Nigeria, including in the United States and the
+              or process data outside Kenya, including in the United States and the
               European Union. These providers commit to safeguards for international
               data transfers under their own policies.
             </p>
@@ -236,7 +236,7 @@ export default function PrivacyPage() {
               </li>
               <li>
                 Complain &mdash; lodge a complaint with a data protection authority (in
-                Nigeria, the Nigeria Data Protection Commission; in the EU/UK, your
+                Kenya, the Office of the Data Protection Commissioner; in the EU/UK, your
                 local authority)
               </li>
             </ul>
@@ -290,7 +290,7 @@ export default function PrivacyPage() {
                 {privacyEmail}
               </a>
               <br />
-              Location: Nigeria
+              Location: Kenya
             </p>
           </div>
         </div>

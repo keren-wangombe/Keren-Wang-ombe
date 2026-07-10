@@ -6,23 +6,23 @@ import InquiryForm from "@/components/InquiryForm";
 import { pageBanners } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Cloud and cybersecurity advisory",
+  title: "Operations & analytics advisory",
   description:
-    "Cloud and cybersecurity advisory that builds business-aligned judgment into your team, outcomes, not hours.",
+    "Operations and analytics advisory for founders and programme teams, building the automation, tracking, and reporting backbone that lets delivery scale.",
 };
 
 const outcomes = [
   {
-    title: "Decisions that hold up",
-    body: "Architecture and spend choices your team can defend at the table, and live with a year later.",
+    title: "Systems that outlast me",
+    body: "Automation and SOPs your team can run without a briefing, and that behave the same on the busiest day as the quietest.",
   },
   {
-    title: "Judgment that compounds",
-    body: "Not a dependency on me, but a team that thinks in business terms after I've gone.",
+    title: "Visibility that compounds",
+    body: "Not a dependency on me, but a reporting layer that keeps showing leadership where delivery is slipping, long after I've gone.",
   },
   {
-    title: "Risk sized to reality",
-    body: "Security and resilience matched to the threat you actually face, not the one that sells fear.",
+    title: "Effort sized to impact",
+    body: "The one handoff, the one report, the one automation that returns the most time, fixed first, measured after.",
   },
 ];
 
@@ -32,14 +32,14 @@ export default function AdvisoryPage() {
       <PageBanner
         image={pageBanners.advisory}
         kicker="Advisory"
-        title="Judgment, built into the team."
+        title="The operational backbone, built into the team."
         intro={
           <p>
-            Real cloud and cybersecurity advisory doesn't just fix the system,
-            it leaves your team able to make the next call themselves. I help
-            teams and leaders build business-aligned judgment, the ability to
-            see the decision inside the system, and to make it well. The goal
-            isn't to be needed twice. It's to leave the judgment behind.
+            Good operations advisory doesn't just fix the workflow, it leaves
+            your team with a system they can run and a report they can steer by.
+            I help founders and programme teams remove the manual load, tighten
+            the tracking, and build the reporting layer, so delivery scales
+            without the coordination overhead scaling with it.
           </p>
         }
       >
@@ -50,7 +50,7 @@ export default function AdvisoryPage() {
       <section className="container-content py-12 sm:py-16">
         <Reveal>
           <h2 className="mx-auto max-w-2xl text-center font-serif text-h2 font-light text-signature">
-            Cloud and cybersecurity advisory for teams that want the judgment,
+            Operations and analytics advisory for teams that want the system,
             not just the fix.
           </h2>
         </Reveal>
@@ -96,7 +96,7 @@ export default function AdvisoryPage() {
           <Reveal>
             <InquiryForm
               submitLabel="Send advisory inquiry"
-              subject="New advisory inquiry, dareomotosho.com"
+              subject="New advisory inquiry, kerenwangombe.com"
             />
           </Reveal>
         </div>

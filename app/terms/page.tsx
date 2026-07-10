@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "The terms that govern your access to and use of this site, its content, submissions, and services.",
 };
 
-const SITE_URL = "dareomotosho.com";
+const SITE_URL = "kerenwangombe.com";
 const LAST_UPDATED = "1 July 2026";
 
 const linkCls = "text-link underline underline-offset-2";
@@ -64,9 +64,9 @@ export default function TermsPage() {
             <p className="mt-4">The Site provides:</p>
             <ul className="mt-2 list-disc space-y-2 pl-6">
               <li>
-                Educational content on cloud engineering, cybersecurity, and related
-                fields, including case studies, questions and answers, and other
-                resources
+                Educational content on operations, automation, and analytics, and
+                related fields, including case studies, playbooks, questions and
+                answers, and other resources
               </li>
               <li>
                 Information about my professional work, speaking engagements, and
@@ -225,8 +225,8 @@ export default function TermsPage() {
               relied upon as such.
             </p>
             <p className="mt-4">
-              Cloud engineering, cybersecurity, and related decisions depend heavily on
-              specific context: your systems, your business, your risk profile, your
+              Operations, automation, and analytics decisions depend heavily on
+              specific context: your team, your business, your processes, your
               compliance obligations. Case studies and Q&amp;A on this Site describe
               scenarios and reasoning for learning purposes; they are not prescriptions
               for any specific real-world decision.
@@ -308,12 +308,12 @@ export default function TermsPage() {
               12. Governing law and disputes
             </h2>
             <p className="mt-4">
-              These Terms are governed by the laws of the Federal Republic of Nigeria,
+              These Terms are governed by the laws of the Republic of Kenya,
               without regard to conflict-of-laws principles.
             </p>
             <p className="mt-4">
               Any dispute arising out of or relating to these Terms or the Site will be
-              resolved in the competent courts of Nigeria, unless applicable consumer
+              resolved in the competent courts of Kenya, unless applicable consumer
               protection laws in your jurisdiction require otherwise.
             </p>
           </div>
@@ -334,7 +334,7 @@ export default function TermsPage() {
                 {contactEmail}
               </a>
               <br />
-              Location: Nigeria
+              Location: Kenya
             </p>
           </div>
         </div>

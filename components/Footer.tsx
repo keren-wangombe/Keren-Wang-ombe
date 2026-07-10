@@ -16,36 +16,16 @@ export default function Footer() {
           <EmailCapture
             tone="dark"
             label="Stay close to the work."
-            hint="The newest resource, the next live class, the latest episode, quietly, when there's something worth your time."
+            hint="The newest case study, a new write-up, the occasional note, quietly, when there's something worth your time."
           />
           <p className="kicker mt-12 text-paper/55">{brand.byline}</p>
         </div>
 
-        {/* Social feed area (YouTube primary) + sitemap */}
+        {/* Social + sitemap */}
         <div className="grid gap-12 sm:grid-cols-2">
           <div>
-            <h2 className="kicker text-paper/55">Follow the build</h2>
+            <h2 className="kicker text-paper/55">Elsewhere</h2>
             <ul className="mt-5 space-y-3 text-body">
-              <li>
-                <a
-                  href={social.youtube}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="link-quiet !text-paper"
-                >
-                  YouTube
-                </a>
-              </li>
-              <li>
-                <a
-                  href={social.x}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="link-quiet !text-paper"
-                >
-                  X / Twitter
-                </a>
-              </li>
               <li>
                 <a
                   href={social.linkedin}
@@ -56,10 +36,29 @@ export default function Footer() {
                   LinkedIn
                 </a>
               </li>
+              <li>
+                <a
+                  href={social.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-quiet !text-paper"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href={social.medium}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="link-quiet !text-paper"
+                >
+                  Medium
+                </a>
+              </li>
             </ul>
-            {/* Seam: latest YouTube video + cached X/LinkedIn embeds mount here. */}
             <p className="mt-5 text-small text-paper/45">
-              Live feed mounts here once wired to the channel.
+              Case studies, write-ups, and the systems behind the work.
             </p>
           </div>
 

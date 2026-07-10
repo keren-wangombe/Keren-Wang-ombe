@@ -1,8 +1,8 @@
 {
-  "name": "personal-brand-portfolio",
+  "name": "keren-wangombe-portfolio",
   "version": "0.1.0",
   "private": true,
-  "description": "Personal brand portfolio — Builder · Mentor · Boardroom Translator",
+  "description": "Keren Wang'ombe — operations & analytics portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

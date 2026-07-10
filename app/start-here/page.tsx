@@ -7,51 +7,51 @@ import { entryTypeMeta } from "@/lib/library";
 import { pageBanners } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Learn cloud engineering and cybersecurity with business thinking",
+  title: "How I work: the operating method",
   description:
-    "Learn cloud engineering and cybersecurity, and the business thinking behind both: an ordered, guided route with the latest resources, not a dump of links.",
+    "The method behind the systems: diagnose the friction, standardise the process, automate what shouldn't be manual, track it honestly, and report the decision, not the noise.",
 };
 
-const learningOrder = [
+const method = [
   {
     step: "01",
-    title: "Get your bearings",
-    body: "What the cloud actually is, in plain language, and the handful of ideas everything else rests on.",
+    title: "Diagnose the friction",
+    body: "Follow the work, not the org chart. Where does a task wait? Where does someone re-key the same data? The bottleneck is usually a seam, not a team.",
   },
   {
     step: "02",
-    title: "Build something small",
-    body: "Stand up one real thing end to end. Confidence comes from shipping, not from reading.",
+    title: "Standardise before you automate",
+    body: "An SOP first. Automating a process you haven't defined just makes the mess faster, so I get the steps clear and repeatable before wiring anything.",
   },
   {
     step: "03",
-    title: "Learn to read the bill",
-    body: "Cost is a design input, not an afterthought. See where the money goes before habits set.",
+    title: "Automate the repeatable",
+    body: "The frequent, rule-based, error-prone work, intake, tracking, notifications, reconciliation, moves to Apps Script, Zapier, or Make. Hours come back within a week.",
   },
   {
     step: "04",
-    title: "Think in risk",
-    body: "Security sized to what you actually face. Start matching controls to real threats early.",
+    title: "Build one source of truth",
+    body: "Scattered spreadsheets drift because every copy invites a different edit. I build a self-updating tracker and hold it to a measured accuracy target.",
   },
   {
     step: "05",
-    title: "Connect it to the business",
-    body: "The step almost no one teaches: every system you build is a decision the business is making.",
+    title: "Report the decision, not the noise",
+    body: "The step that earns its keep: reporting built around what leadership should do next, so the number changes what happens, not just what's on the slide.",
   },
 ];
 
 const whyExplainers = [
   {
-    title: "Why cost",
-    body: "Because the bill is where engineering meets the business most directly, and where good judgment shows up first.",
+    title: "Why automation",
+    body: "Because manual work doesn't just cost hours, it costs accuracy. Removing the handoff removes the error with it.",
   },
   {
-    title: "Why security",
-    body: "Because trust is the product. Right-sized security protects it without grinding delivery to a halt.",
+    title: "Why tracking",
+    body: "Because status you have to chase is status you don't really have. One source of truth turns chasing into reading.",
   },
   {
-    title: "Why business-thinking",
-    body: "Because the engineers who rise are the ones who can say what a system is for, in the language leaders use.",
+    title: "Why analytics",
+    body: "Because the point of a number is to change a decision. Reporting built around a decision is the difference between insight and a dashboard nobody opens.",
   },
 ];
 
@@ -60,30 +60,29 @@ export default function StartHerePage() {
     <>
       <PageBanner
         image={pageBanners.learn}
-        kicker="New to cloud"
-        title="Start at the beginning. In order."
+        kicker="How I work"
+        title="Diagnose. Standardise. Automate. Track. Report."
         intro={
           <p>
-            This is how you learn cloud engineering and cybersecurity with
-            business thinking built in from day one: not a pile of links, a
-            route. We'll go step by step, the latest resources are yours, and
-            you don't need a background to begin. You need a direction.
+            Every system on this site was built the same way, not by working
+            harder, but by treating the workflow as a system waiting to be built.
+            This is the method underneath the case studies: how I turn
+            operational chaos into something that runs itself.
           </p>
         }
       >
-        <Button href="/resources">Browse the library</Button>
+        <Button href="/work">See it applied</Button>
       </PageBanner>
 
-      {/* ── Guided learning order. */}
+      {/* ── The operating method, in order. */}
       <section className="container-content py-12 sm:py-16">
         <Reveal>
           <h2 className="font-serif text-h2 font-light text-ink">
-            Learn cloud engineering and cybersecurity, and how to think like
-            the business
+            The operating method, in order
           </h2>
         </Reveal>
         <ol className="mt-10 space-y-4">
-          {learningOrder.map((item, i) => (
+          {method.map((item, i) => (
             <Reveal as="li" key={item.step} delay={i * 90}>
               <div className="flex gap-6 rounded-2xl border border-ink/10 bg-paper p-7 sm:gap-10 sm:p-9">
                 <span className="font-serif text-h1 font-light leading-none text-amber">
@@ -101,21 +100,15 @@ export default function StartHerePage() {
         </ol>
       </section>
 
-      {/* ── Straight into the library: three starting points. */}
+      {/* ── Straight into the library: three ways in. */}
       <section className="container-content py-16 sm:py-20">
         <Reveal>
-          <h2 className="font-serif text-h2 font-light text-ink">Go straight to the library</h2>
+          <h2 className="font-serif text-h2 font-light text-ink">See the method at work</h2>
           <p className="mt-3 max-w-prose text-body text-ink">
             Three ways in, no email wall. Take what's useful.
           </p>
         </Reveal>
         <ul className="mt-10 grid gap-6 sm:grid-cols-3">
-          <CollectionCard
-            href="/resources/articles"
-            kind="article"
-            label={entryTypeMeta.article.label}
-            blurb={entryTypeMeta.article.blurb}
-          />
           <CollectionCard
             href="/resources/case-studies"
             kind="case_study"
@@ -123,43 +116,18 @@ export default function StartHerePage() {
             blurb={entryTypeMeta.case_study.blurb}
           />
           <CollectionCard
-            href="/resources/downloads"
-            kind="download"
-            label="Downloads"
-            blurb="Textbooks, slide decks, and short video clips, free to download."
+            href="/resources/interview-prep"
+            kind="course_qa"
+            label={entryTypeMeta.course_qa.label}
+            blurb={entryTypeMeta.course_qa.blurb}
+          />
+          <CollectionCard
+            href="/resources/articles"
+            kind="article"
+            label={entryTypeMeta.article.label}
+            blurb={entryTypeMeta.article.blurb}
           />
         </ul>
-      </section>
-
-      {/* ── Salary explorer, a quiet pointer to the standalone reference tool. */}
-      <section className="container-content py-12 sm:py-16">
-        <Reveal>
-          <div className="flex flex-col gap-6 rounded-2xl bg-ink p-8 text-paper sm:flex-row sm:items-center sm:justify-between sm:p-10">
-            <div>
-              <p className="kicker text-amber">Also worth a look</p>
-              <h3 className="mt-3 font-serif text-h2 font-light text-paper">
-                See what these roles tend to pay
-              </h3>
-              <p className="mt-3 max-w-prose text-body text-paper/70">
-                A reference tool covering salary ranges and growth trends across
-                30 cloud, security, and business roles, in USD or Naira.
-              </p>
-            </div>
-            <a
-              href="/tools/career-salary-explorer.html"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex shrink-0 items-center justify-center rounded-lg bg-amber px-7 py-3.5 text-small font-medium tracking-wide text-ink shadow-sm transition-all duration-300 ease-calm hover:brightness-[0.97] active:brightness-95"
-            >
-              Explore salary ranges
-            </a>
-          </div>
-          <p className="mt-4 max-w-prose text-small text-ink/50">
-            Educational reference only, not professional, career, or financial
-            advice or a recommendation. Actual pay varies by company, location,
-            and experience.
-          </p>
-        </Reveal>
       </section>
 
       {/* ── Why explainers. */}
@@ -174,35 +142,35 @@ export default function StartHerePage() {
         </div>
       </section>
 
-      {/* ── AI-era reassurance. */}
+      {/* ── The through-line. */}
       <section className="container-content py-20 sm:py-28">
         <Reveal>
           <div className="rounded-3xl border border-amber/40 bg-paper p-10 sm:p-16">
-            <p className="kicker text-amber">In the age of AI</p>
+            <p className="kicker text-amber">The through-line</p>
             <p className="mt-6 max-w-3xl font-serif text-h1 font-light leading-tight text-ink">
-              AI is very good at the tool. It's far weaker at the judgment.
+              I don't run the process by hand if it can be a system.
             </p>
             <p className="mt-6 max-w-2xl text-body text-ink">
-              Knowing which system to build, and why, given the business you're in,
-              that's the part worth learning, and the part that lasts. Start there and
-              you start ahead.
+              Heroics don't scale; systems do. The goal is never to work harder
+              next month, it's to build the thing that makes next month quieter.
+              Results measured, not claimed.
             </p>
           </div>
         </Reveal>
       </section>
 
-      {/* ── CTA → the library. */}
+      {/* ── CTA → the work. */}
       <section className="container-content py-16 sm:py-24">
         <Reveal className="text-center">
           <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-ink">
-            The best first step is the starter path.
+            See the method turned into systems.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-body text-ink">
-            Come with questions. Leave with a direction.
+            Come for the outcomes. Stay for how they were built.
           </p>
           <div className="mt-10">
-            <Button href="/resources" variant="accent">
-              Browse the library
+            <Button href="/work" variant="accent">
+              Explore the work
             </Button>
           </div>
         </Reveal>

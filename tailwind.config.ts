@@ -1,9 +1,11 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Design system — strict 5-color token set.
+ * Design system — the brand's 7-core color system (navy · ivory · amber).
  * Reference colors semantically (background, foreground, primary, link, accent);
  * the raw token names exist for the rare case a literal hex name reads clearer.
+ * Amber splits by use: `amber` (#B45309) for text/labels/rules (AA on paper),
+ * `amber-bright` (#D97706) for solid fills / icons / CTAs with dark text on top.
  * Do NOT introduce colors outside this set.
  */
 const config: Config = {
@@ -15,29 +17,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Raw tokens (exact hex from brand spec)
-        ink: "#0F1B2D", // near-black, blue undertone — TEXT/contrast only
-        signature: "#1E3A5F", // the brand heart — deep, calm, unsaturated
-        "blue-lift": "#3D6491", // lighter blue — interactive/links only
-        paper: "#F7F5F0", // warm off-white — primary background
-        amber: "#E0A951", // the ONE warm accent — fresh, muted, never neon
+        // Raw tokens (exact hex from the brand color system — 7 core colors)
+        ink: "#111827", // Headline / near-black — TEXT/contrast + dark surfaces
+        signature: "#1B3A6B", // Primary navy — the brand heart, deep + calm
+        "blue-lift": "#3D6491", // lighter navy — interactive/links only
+        paper: "#FAFAF8", // background — soft off-white, never pure white
+        amber: "#B45309", // warm accent for TEXT/labels/rules — AA on paper
+        "amber-bright": "#D97706", // warm accent for FILLS/icons/CTAs (dark text on top)
+        body: "#4B5563", // Body text — muted slate
+        hairline: "#E5E7EB", // Border — quiet hairlines
 
         // Semantic aliases
-        background: "#F7F5F0",
-        foreground: "#0F1B2D",
+        background: "#FAFAF8",
+        foreground: "#111827",
         primary: {
-          DEFAULT: "#1E3A5F",
-          foreground: "#F7F5F0",
+          DEFAULT: "#1B3A6B",
+          foreground: "#FAFAF8",
         },
         link: "#3D6491",
         accent: {
-          DEFAULT: "#E0A951",
-          foreground: "#0F1B2D",
+          DEFAULT: "#B45309",
+          foreground: "#FAFAF8",
         },
       },
       fontFamily: {
         // Headlines/display carry gravitas + warmth; body carries clarity.
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       fontSize: {
