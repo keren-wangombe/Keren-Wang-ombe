@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     "How this site uses cookies: functional cookies only, no tracking or advertising, and how to manage them.",
 };
 
-const SITE_URL = "dareomotosho.com";
+const SITE_URL = "kerenwangombe.com";
 const LAST_UPDATED = "1 July 2026";
 const linkCls = "text-link underline underline-offset-2";
 
@@ -218,7 +218,7 @@ export default function CookiesPage() {
                 {privacyEmail}
               </a>
               <br />
-              Location: Nigeria
+              Location: Kenya
             </p>
           </div>
         </div>

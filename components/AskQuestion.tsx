@@ -34,7 +34,7 @@ export default function AskQuestion() {
         title: title.trim(),
         summary: title.trim(),
         body: "",
-        topic: "cloud",
+        topic: "operations",
         level: "newcomer",
         asker: asker.trim() ? `asked by ${asker.trim()}` : "asked by a visitor",
         published: false,
@@ -79,7 +79,7 @@ export default function AskQuestion() {
           maxLength={120}
           value={asker}
           onChange={(e) => setAsker(e.target.value)}
-          placeholder="a learner, or your name"
+          placeholder="a founder, or your name"
           className="mt-2 w-full rounded-lg border border-ink/15 bg-paper px-4 py-3 text-body text-ink outline-none transition-colors duration-300 ease-calm placeholder:text-ink/35 focus:border-blue-lift"
         />
       </div>

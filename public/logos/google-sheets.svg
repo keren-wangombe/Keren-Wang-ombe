@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img" aria-label="Google Sheets">
+  <!-- PLACEHOLDER wordmark — replace with the official Google Sheets logo asset. -->
+  <rect x="0.5" y="0.5" width="179" height="47" rx="10" fill="none" stroke="#111827" stroke-opacity="0.12"/>
+  <rect x="17" y="15" width="14" height="18" rx="2" fill="none" stroke="#111827" stroke-opacity="0.32" stroke-width="1.5"/><path d="M20 21h8 M20 25h8 M24 18v18" stroke="#111827" stroke-opacity="0.3" stroke-width="1.3"/>
+  <text x="42" y="29" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="15" font-weight="500" letter-spacing="0.2" fill="#111827">Google Sheets</text>
+</svg>

@@ -1,10 +1,10 @@
-# Personal Brand Portfolio
+# Keren Wang'ombe — Portfolio
 
-**Builder · Mentor · Boardroom Translator** — a calm, premium, substantive
+**Operations · Systems · Analytics** — a calm, premium, substantive
 personal-brand site built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-> A translator between the technical floor and the boardroom, who builds the
-> systems that connect them.
+> I turn operational chaos into scalable systems — messy cohort data, manual
+> workflows, and scattered pipelines into automation that runs itself.
 
 ## Getting started
 
@@ -19,24 +19,28 @@ npm run start    # serve the production build
 
 The brand is enforced through the theme, not page-by-page styling.
 
-### Color — strict 5-token set (`tailwind.config.ts`)
+### Color — the 7-core system (`tailwind.config.ts`)
 
 | Token | Hex | Role |
 | --- | --- | --- |
-| Ink | `#0F1B2D` | Text / contrast only (and dark executive surfaces) |
-| Signature Blue | `#1E3A5F` | The brand heart — primary buttons, key headings, deep surfaces |
+| Ink | `#111827` | Headline / text / contrast (and dark surfaces) |
+| Signature (navy) | `#1B3A6B` | The brand heart — primary buttons, key headings, deep surfaces |
 | Blue-lift | `#3D6491` | Links, hover / active / focus only |
-| Paper | `#F7F5F0` | Default background — never pure white |
-| Amber | `#E0A951` | The single warm accent — used sparingly (≤1 per region) |
+| Paper | `#FAFAF8` | Default background — never pure white |
+| Amber | `#B45309` | Warm accent for text / labels / rules — AA on paper |
+| Amber-bright | `#D97706` | Warm accent for fills / icons / CTAs (dark text on top) |
+| Border | `#E5E7EB` | Quiet hairlines |
 
 Reference colors **semantically** (`bg-background`, `text-foreground`,
-`bg-signature`, `text-link`, `text-amber`). Section _temperature_ (cool /
-balanced / warm) is dialed only by the amount of amber and light — the four
-felt colors never change.
+`bg-signature`, `text-link`, `text-amber`). Amber splits by use: `text-amber`
+(`#B45309`) stays AA-legible on paper; `bg-amber-bright` (`#D97706`) carries
+solid fills and icons with dark text on top. Section _temperature_ (cool /
+balanced / warm) is dialed only by the amount of amber and light — the felt
+colors never change.
 
 ### Typography
 
-- **Fraunces** (soft serif) — all headlines/display, loaded via `next/font`.
+- **Playfair Display** (editorial serif) — all headlines/display, loaded via `next/font`.
 - **Inter** — body, UI, labels, buttons.
 - Tight scale (`display / h1 / h2 / body / small`), generous line-height,
   restrained weights. Emphasis comes from size and space, not bold-everything.

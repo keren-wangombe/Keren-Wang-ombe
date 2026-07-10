@@ -24,7 +24,7 @@ const variants: Record<Variant, string> = {
   ghost:
     "border border-signature/25 text-signature hover:border-blue-lift hover:text-blue-lift",
   accent:
-    "bg-amber text-ink hover:brightness-[0.97] active:brightness-95 shadow-sm",
+    "bg-amber-bright text-ink hover:brightness-[0.97] active:brightness-95 shadow-sm",
 };
 
 export default function Button({

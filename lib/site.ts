@@ -4,10 +4,10 @@
  */
 
 export const brand = {
-  name: "Dare Omotosho",
-  byline: "Builder · Mentor · Boardroom Translator",
+  name: "Keren Wang'ombe",
+  byline: "Operations · Systems · Analytics",
   oneLine:
-    "A translator between the technical floor and the boardroom, who builds the systems that connect them.",
+    "I turn operational chaos into scalable systems, messy cohort data, manual workflows, and scattered pipelines into automation that runs itself.",
 } as const;
 
 /**
@@ -29,8 +29,8 @@ export const pageBanners = {
 /** Landing-page banner image. */
 export const bannerSrc = pageBanners.home;
 
-/** About-page portrait (web-optimized JPEG, 4:5). */
-export const aboutPortrait = "/portraits/dare.jpg";
+/** About-page portrait (drop a web-optimized 4:5 JPEG over this path). */
+export const aboutPortrait = "/portraits/keren.svg";
 
 export type NavItem = {
   href: string;
@@ -39,16 +39,16 @@ export type NavItem = {
   children?: NavItem[];
 };
 
-/** NAV order is intentional, a "build-first ascent." Do not reorder casually. */
+/** NAV order is intentional, a "systems-first ascent." Do not reorder casually. */
 export const nav: NavItem[] = [
   { href: "/work", label: "Work" },
-  { href: "/start-here", label: "Learn" },
+  { href: "/start-here", label: "Approach" },
   {
     href: "/resources",
     label: "Resources",
     children: [
       { href: "/resources/case-studies", label: "Case Studies" },
-      { href: "/resources/interview-prep", label: "Interview Prep" },
+      { href: "/resources/interview-prep", label: "Playbooks" },
       { href: "/resources/articles", label: "Articles" },
       { href: "/resources/downloads", label: "Downloads" },
       { href: "/resources#community", label: "Community Questions" },
@@ -60,21 +60,20 @@ export const nav: NavItem[] = [
 ];
 
 /** Primary contact email, shown for general inquiries and booking. */
-export const contactEmail = "dare@dareomotosho.com";
+export const contactEmail = "kerenwangombe@gmail.com";
 
 /** Contact email for privacy-specific requests (Privacy + Cookie policies). */
-export const privacyEmail = "privacy@dareomotosho.com";
+export const privacyEmail = "kerenwangombe@gmail.com";
 
 /**
- * FormSubmit alias for {@link contactEmail}, issued after activating
- * dare@dareomotosho.com there. Using the alias instead of the naked address
- * keeps the email out of the client bundle. Regenerate at formsubmit.co if
- * it ever changes.
+ * Destination the contact/inquiry forms submit to. The form UI validates and
+ * reflects state but does not POST yet (see the TODO(integration) handlers);
+ * wire this to a provider (FormSubmit, Supabase, email, CRM) at launch.
  */
-export const formSubmitAlias = "749a1f153340c16fa905dca455bfce34";
+export const formSubmitAlias = "kerenwangombe@gmail.com";
 
 export const social = {
-  youtube: "https://www.youtube.com/@DareOmotosho",
-  x: "https://x.com/your-handle",
-  linkedin: "https://www.linkedin.com/in/dare-omotosho-lekan-cloud-oxla/",
+  linkedin: "https://www.linkedin.com/in/keren-wangombe/",
+  github: "https://github.com/Kerenyambura",
+  medium: "https://medium.com/@nyamburawangombe",
 } as const;

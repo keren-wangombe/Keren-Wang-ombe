@@ -18,7 +18,7 @@ type EmailCaptureProps = {
 export default function EmailCapture({
   tone = "light",
   label = "Get the occasional, useful note.",
-  hint = "Resources and class dates. No noise, no hype.",
+  hint = "New resources and the occasional write-up. No noise, no hype.",
   className = "",
 }: EmailCaptureProps) {
   const [email, setEmail] = useState("");

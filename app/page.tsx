@@ -4,31 +4,30 @@ import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import PageBanner from "@/components/PageBanner";
 import EmailCapture from "@/components/EmailCapture";
-import LatestVideo from "@/components/LatestVideo";
 import { seedEntries } from "@/lib/library";
 import { pageBanners, brand, social } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Business-aligned cloud engineering",
+  title: "Operations that scale",
   description:
-    "Business-aligned cloud engineering: architecture, security, and delivery built around the business decision inside every system, not just the tooling.",
+    "Programme operations and analytics: automation, tracking, and reporting systems built around the operational decision inside every workflow, not just the tooling.",
 };
 
 const doors = [
   {
-    href: "/start-here",
-    label: "Start Learning",
-    body: "Cloud powers the modern internet, and it's learnable from zero. An ordered path that turns the fundamentals into real, job-ready skill.",
-  },
-  {
     href: "/work",
-    label: "Engineers & Teams",
-    body: "Systems built for the business, and the judgment behind them.",
+    label: "Selected Work",
+    body: "Automation, tracking, and reporting systems that turned operational chaos into scale, every metric measured, not claimed.",
   },
   {
-    href: "/speaking",
-    label: "Speaking engagements",
-    body: "Opinions worth booking, and advisory at the decision table.",
+    href: "/start-here",
+    label: "How I Work",
+    body: "The method behind the systems: diagnose the friction, design for the real constraint, automate what shouldn't be manual.",
+  },
+  {
+    href: "/advisory",
+    label: "Work With Me",
+    body: "Operations and analytics support for founders and programme teams that need to move fast without breaking things.",
   },
 ];
 
@@ -43,8 +42,8 @@ export default function HomePage() {
         image={pageBanners.home}
         title={
           <>
-            The tool <span className="text-amber">is the easy part.</span> The{" "}
-            <span className="text-amber">judgment</span> is the job.
+            I build systems that bring{" "}
+            <span className="text-amber">clarity</span> to complexity.
           </>
         }
         intro={<p>{brand.oneLine}</p>}
@@ -81,12 +80,11 @@ export default function HomePage() {
       <section className="container-content py-24 sm:py-32">
         <Reveal>
           <p className="kicker text-center text-blue-lift">
-            Business-aligned cloud engineering
+            Operations, built to scale
           </p>
           <h2 className="mx-auto mt-5 max-w-3xl text-center font-serif text-h2 font-light leading-snug text-ink">
-            Most engineers optimize the tool. But business-aligned cloud
-            engineering means treating every system as{" "}
-            <span className="text-signature">the business decision it already is.</span>
+            Most teams run the process by hand. I treat every workflow as{" "}
+            <span className="text-signature">a system waiting to be built.</span>
           </h2>
         </Reveal>
       </section>
@@ -112,17 +110,21 @@ export default function HomePage() {
           </Reveal>
 
           <Reveal as="div" delay={120} className="bg-paper p-8">
-            <p className="kicker text-blue-lift">Latest video</p>
-            <div className="mt-5">
-              <LatestVideo />
-            </div>
+            <p className="kicker text-blue-lift">Latest writing</p>
+            <h3 className="mt-5 font-serif text-h2 font-light text-ink">
+              Notes from the operations floor
+            </h3>
+            <p className="mt-4 text-small text-ink">
+              Field write-ups on automation, analytics, and building systems that
+              hold up under real load.
+            </p>
             <a
-              href={social.youtube}
+              href={social.medium}
               target="_blank"
               rel="noreferrer"
               className="link-quiet mt-6 inline-block text-small"
             >
-              Visit the channel
+              Read on Medium
             </a>
           </Reveal>
         </div>

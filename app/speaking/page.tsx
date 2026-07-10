@@ -7,9 +7,9 @@ import { talkTopics, episodes, outcomes } from "@/lib/content";
 import { pageBanners } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Technical speaker on cloud engineering and security governance",
+  title: "Speaker on operations, automation & analytics",
   description:
-    "A technical speaker on cloud engineering and security governance: a solutions architect's talks for career starters and boardrooms alike, rooted in systems I've actually built.",
+    "Talks on turning operational chaos into scalable systems, automation, analytics, and data where it meets geography, rooted in systems actually built and shipped.",
 };
 
 export default function SpeakingPage() {
@@ -23,12 +23,11 @@ export default function SpeakingPage() {
         title="Talks rooted in systems I've actually built."
         intro={
           <p>
-            As a technical speaker on cloud engineering and security
-            governance, here's the opinion I keep bringing to the stage,
-            whether the room is career starters or a boardroom of solutions
-            architects: every system an engineer builds is a business decision
-            in disguise, and the industry trains almost no one to see it.
-            That's the talk under all the talks.
+            Here's the idea I keep bringing to the stage, whether the room is
+            programme teams, founders, or a data community: most operational pain
+            isn't a broken team, it's a few bad seams, and almost no one is
+            trained to see the workflow as a system waiting to be built. That's
+            the talk under all the talks.
           </p>
         }
       >
@@ -39,11 +38,11 @@ export default function SpeakingPage() {
       <section className="container-content py-12 sm:py-16">
         <Reveal>
           <h2 className="font-serif text-h2 font-light text-signature">
-            Book a technical speaker on cloud engineering and security
-            governance for your stage
+            Book a speaker on operations, automation, and analytics for your
+            stage
           </h2>
           <p className="mt-3 max-w-prose text-body text-ink/70">
-            Speaking from the floor, not just the stage.
+            Speaking from the operations floor, not just the stage.
           </p>
         </Reveal>
         <div className="mt-10 space-y-4">
@@ -80,8 +79,8 @@ export default function SpeakingPage() {
               ))}
             </div>
             <p className="mt-12 max-w-2xl text-body text-paper/70">
-              Plus {episodes.length}+ podcast conversations and designed decks, the
-              material is current, lived, and yours to vet before you book.
+              Plus {episodes.length}+ recorded talks and sessions, the material is
+              current, lived, and yours to vet before you book.
             </p>
           </div>
         </Reveal>
@@ -100,7 +99,7 @@ export default function SpeakingPage() {
           <Reveal>
             <InquiryForm
               submitLabel="Send booking inquiry"
-              subject="New speaking booking, dareomotosho.com"
+              subject="New speaking booking, kerenwangombe.com"
               fields={[
                 { name: "name", label: "Your name", required: true, placeholder: "Jane Doe" },
                 { name: "email", label: "Email", type: "email", required: true, placeholder: "you@event.com" },

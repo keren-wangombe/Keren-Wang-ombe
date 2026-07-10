@@ -1,9 +1,10 @@
 /**
- * Sample content scaffolding.
+ * Content scaffolding for Keren Wang'ombe's portfolio.
  *
- * This is deliberately a clear SEAM for later integration: resource downloads,
- * class schedules, and case studies should come from a CMS / Supabase / R2.
- * The UI reads from these typed shapes, swap the source, keep the components.
+ * This is a clear SEAM for later integration: case studies, resources, and
+ * metrics can move to a CMS / Supabase / R2. The UI reads from these typed
+ * shapes, swap the source, keep the components. Every metric here is drawn
+ * from real programme-operations and analytics work.
  */
 
 export type Level = "Newcomer" | "Practitioner" | "Architect";
@@ -19,29 +20,29 @@ export type Outcome = {
 /** Outcome-led, headline-first. Metric is the protagonist. (Feeds /speaking.) */
 export const outcomes: Outcome[] = [
   {
-    metric: "40%",
-    metricLabel: "cloud spend reduced",
-    title: "Cut cloud spend 40%, with zero performance cost.",
-    body: "Re-architected what was billed, not just what was used. The bill came down; the experience didn't move. The savings were a business decision, not a tuning trick.",
+    metric: "50%",
+    metricLabel: "manual work removed",
+    title: "Cut manual tracking work in half with one automation.",
+    body: "A Google Apps Script and Gmail pipeline replaced hours of manual NDA tracking, freeing 15+ hours every week and removing the errors that come with copy-paste. The saving was a systems decision, not extra effort.",
     hero: true,
   },
   {
-    metric: "90%",
-    metricLabel: "faster to ship",
-    title: "Shipped features 90% faster.",
-    body: "Designed a fast continuous integration, delivery, and deployment pipeline, cutting the time to push feature changes to production by 90%. Deployment went from bottleneck to competitive speed.",
+    metric: "98%",
+    metricLabel: "data accuracy, 12 countries",
+    title: "Held 98% data accuracy across 12 countries.",
+    body: "A self-updating learner health tracker pulled scattered cohort data into one weekly source of truth, monitoring progress at 98% accuracy without a person touching a spreadsheet.",
   },
   {
-    metric: "30+",
-    metricLabel: "products delivered",
-    title: "Architected multi-cloud delivery for 30+ products.",
-    body: "Built the multi-cloud solutions that gave 30+ software products seamless delivery, deployment, and integration, architecture in service of business value, not just technical elegance.",
+    metric: "86%",
+    metricLabel: "cohort graduation rate",
+    title: "Reported a cohort from 2,032 registrations to 900 graduates.",
+    body: "Executive reporting for Cybersecurity Cohort 11, tracking the full funnel to an 86% graduation rate and 81% CSAT, so leadership decisions rested on numbers, not anecdotes.",
   },
   {
-    metric: "CLS",
-    metricLabel: "built from scratch",
-    title: "Built a central logging system (CLS) from scratch.",
-    body: "A proprietary system giving developers unified visibility and seamless operations, a concrete artifact built to close a real operational gap.",
+    metric: "3,000+",
+    metricLabel: "learners supported",
+    title: "Coordinated operations behind 3,000+ learners.",
+    body: "Automation, tracking, and reporting infrastructure spanning 8+ African countries, the operational backbone that let programmes scale without the coordination overhead scaling with them.",
   },
 ];
 
@@ -66,77 +67,79 @@ export type Tier = {
   backdrop: string;
 };
 
-/** /work, outcome-led, building-first. Two tiers, every metric defensible. */
+/** /work, outcome-led, systems-first. Two tiers, every metric defensible. */
 export const tiers: Tier[] = [
   {
     kicker: "Tier 1",
-    name: "Systems built for business",
-    tagline: "Commercial engineering. The foundation everything else stands on.",
+    name: "Systems built for operations",
+    tagline: "The operational backbone. Automation, tracking, and coordination that turn chaos into repeatable execution.",
     items: [
       {
         hero: true,
-        metric: "40%",
-        metricLabel: "cloud spend reduced",
-        title: "Cut cloud spend 40%, with zero performance cost.",
-        body: "Re-architected what was billed, not just what was used. The bill came down; the experience didn't move. The savings were a business decision, not a tuning trick.",
+        metric: "50%",
+        metricLabel: "manual work removed",
+        title: "Automated NDA tracking end to end.",
+        body: "A Google Apps Script and Gmail pipeline cut manual tracking work by 50% and saved 15+ hours weekly, replacing a fragile copy-paste process with a system that runs itself.",
       },
       {
-        title: "Shipped features 90% faster.",
-        body: "Designed a fast continuous integration, delivery, and deployment pipeline, cutting the time to push feature changes to production by 90%. Deployment went from bottleneck to competitive speed.",
+        metric: "88%",
+        metricLabel: "onboarding completion",
+        title: "Built a cross-functional onboarding operations system.",
+        body: "A firm scaling from 85 to 200 staff had no standard onboarding. A six-tool system automated intake, created ClickUp tasks, coordinated IT provisioning, and escalated overdue cases, 250+ workflows at 88% completion and 91% SLA compliance.",
       },
       {
-        title: "Architected multi-cloud delivery for 30+ products.",
-        body: "Built the multi-cloud solutions that gave 30+ software products seamless delivery, deployment, and integration, architecture in service of business value, not just technical elegance.",
+        title: "Designed a programme delivery operations system.",
+        body: "A 12-week programme run through email threads became a structured Asana system: 24 tasks across 5 phases, 9 mapped dependencies, and automated escalation of blocked work directly to leadership.",
       },
       {
-        title: "Built a central logging system (CLS) from scratch.",
-        body: "A proprietary system giving developers unified visibility and seamless operations, a concrete artifact built to close a real operational gap.",
+        title: "Built a self-updating learner health tracker.",
+        body: "A weekly tracker monitoring learner progress at 98% data accuracy across 12 countries, one source of truth replacing scattered, manually-reconciled spreadsheets.",
       },
       {
-        title: "Decoupled monoliths; untangled production bottlenecks.",
-        body: "Broke legacy applications into microservices and resolved the deployment and production-infrastructure bottlenecks that only surface under real load.",
+        title: "Replaced a manual intake process with an automation pipeline.",
+        body: "A four-step Zapier pipeline connecting Google Forms, filtering logic, Sheets, and Gmail eliminated 45 minutes of daily manual processing and sent onboarding communication within seconds of registration.",
       },
     ],
     capabilities:
-      "Security systems & strict IAM · advisory to 10+ external customers on cost and migration trade-offs · monitoring & logging strategy · led the Cloud & Support team · emerging AI architectures.",
+      "Workflow automation (Zapier · Make · Apps Script) · Notion & Airtable systems design · SOP design & documentation · ClickUp & Asana delivery operations · CA screening & funnel tracking · cross-border programme coordination.",
     backdrop: "/backgrounds/tier-systems.svg",
   },
   {
     kicker: "Tier 2",
-    name: "People and delivery built at scale",
-    tagline: "Because building taught me, I teach. Technical mentorship and delivery leadership.",
+    name: "Analytics that drives decisions",
+    tagline: "Because the number should change what happens next. Reporting and analysis built around operational decisions, not vanity metrics.",
     items: [
       {
         feature: true,
-        title: "Sustained 90%+ satisfaction across live technical delivery.",
-        body: "90%+ CSAT on AWS live sessions, 91% on cybersecurity webinars, and 85% on asynchronous support with a 15-minute maximum response time, consistent quality at cohort scale.",
+        title: "Turned raw operational data into decisions leaders act on.",
+        body: "Executive reporting for Cybersecurity Cohort 11, 2,032 registrations to 900 graduates at 86% graduation and 81% CSAT, plus live dashboards and scorecards that surface where delivery is slipping while there's still time to act.",
       },
       {
-        title: "Drove certification success across large cohorts.",
-        body: "Supported 2,000+ learners through certification, 240+ certifications in a single cohort, 450+ practice questions distributed weekly, 86% exam satisfaction.",
+        title: "Audited support operations with SQL and Power BI.",
+        body: "15 SQL queries surfaced that 25% of tickets breached the 14-day SLA, with multi-agent handoffs as the primary bottleneck; an executive Power BI dashboard made it visible to leadership.",
       },
       {
-        title: "Cut delivery cost by re-architecting how sessions run.",
-        body: "Adopted simulive delivery to maximize resources and resolve scheduling conflicts across overlapping cohorts, the same cost-as-architecture instinct, applied to teaching.",
+        title: "Built an e-commerce operational analytics system in Excel.",
+        body: "Segmentation and category analysis over 12 months of data found the top 5% of customers driving $1,118+ in lifetime value, and Electronics as a high-margin category at just 6% of sales, a clear growth lever.",
       },
       {
-        title: "Built AI into core delivery before it was standard.",
-        body: "AI-generated technical podcasts, flashcards, and quizzes; automated mock exams (90% CSAT); and the introduction of NotebookLM and Gemini as organizational standards.",
+        title: "Ran a full SQL data-integrity audit.",
+        body: "The Maji Ndogo audit used JOINs, CTEs, and window functions to reconcile field surveys against auditor reports, flagging employees with above-average reporting inconsistencies for investigation.",
       },
       {
-        title: "Architected the standards others deliver by.",
-        body: "Authored the Cybersecurity Technical Mentor Blueprint and co-authored the AWS Operations Playbook, the frameworks future cohorts now run on.",
+        title: "Analysed retail sales for inventory and targeting.",
+        body: "MySQL with CTEs and window functions identified the 18–29 segment as the primary buyers and clear seasonal demand peaks, directly informing procurement and campaign planning.",
       },
     ],
     capabilities:
-      "AWS-certified (Cloud Practitioner + Solutions Architect Associate) · 10% operational-efficiency gain via a single source of truth · 50% retake pass-likelihood lift through targeted unblocking · organizational research contribution (Project Purple, 1,000+ respondents).",
+      "SQL & MySQL (CTEs, window functions) · Power BI & Looker Studio dashboards · Excel modelling & KPI frameworks · customer & SLA analysis · operational auditing & data cleaning · executive reporting & data storytelling.",
     backdrop: "/backgrounds/tier-people.svg",
   },
 ];
 
 /** Closing line for /work. */
 export const workClose =
-  "These systems started as business questions. If you have one, let's talk.";
+  "These systems started as operational problems. If you have one, let's talk.";
 
 export type Capability = {
   title: string;
@@ -146,26 +149,26 @@ export type Capability = {
 /** Grouped capabilities, real, but better together than as separate cases. */
 export const capabilities: Capability[] = [
   {
-    title: "Security & access, by design.",
-    body: "I improve the security of products, cloud services, and infrastructure through well-designed security systems built on industry-standard tools and best practices, including strict identity and access management across all services and infrastructure. The outcome isn't just safety; it's customer trust and higher product value.",
+    title: "Automation, by design.",
+    body: "I connect the tools teams already use, forms, sheets, Gmail, ClickUp, Asana, and remove the manual handoffs between them. The outcome isn't just saved hours; it's fewer errors, faster onboarding, and a process that behaves the same on its busiest day as its quietest.",
   },
   {
-    title: "Advisory at the decision table.",
-    body: "I provide expert guidance in stakeholder meetings on solution implementation and migration, for internal projects and 10+ external customers, focused on the same question every time: how does this maximize profit or reduce cost?",
+    title: "Analytics at the decision table.",
+    body: "I build the reporting layer that shows leadership where delivery is breaking down while there's still time to change it, dashboards, SQL analysis, and KPI frameworks built around a decision, not a slide.",
   },
   {
-    title: "Monitoring, logging, and strategic infrastructure.",
-    body: "I implement infrastructure, monitoring, and logging strategically, not as afterthoughts, but as the things that maximize a product's value to its customers.",
+    title: "Tracking and operational visibility.",
+    body: "I turn scattered cohort data into a single self-updating source of truth, held to 98% accuracy across 12 countries, so status is something you read, not something you chase.",
   },
   {
-    title: "Leadership through mentorship.",
-    body: "I led the Cloud and Support team, mentoring engineers and steering the department toward service delivery aligned with company goals.",
+    title: "Coordination across programmes and borders.",
+    body: "I run the SOPs, funnels, and escalation logic that keep facilitators, operations, and leadership in sync, across cohorts, ambassadors, and multiple African markets at once.",
   },
 ];
 
 /** Closing note for the toolkit section, which is rendered as a moving marquee. */
 export const toolkitNote =
-  "Industry-recognized tools and services in service of value-driven solutions: compute, databases, messaging, caching, networking, monitoring and logging, work collaboration, office suites. The tools are the easy part, the judgment about which to use, and why, is the work.";
+  "The systems, automation, and analytics tools behind the work: workflow automation, project and knowledge bases, spreadsheets and databases, dashboards and design. The tools are the easy part, the judgment about which to use, and why, is the work.";
 
 export type Tool = {
   name: string;
@@ -175,18 +178,18 @@ export type Tool = {
 
 /** The moving toolkit marquee. Logos are placeholders to replace with real ones. */
 export const toolkit: Tool[] = [
-  { name: "Grafana", logo: "/logos/grafana.svg" },
-  { name: "AWS", logo: "/logos/aws.svg" },
-  { name: "DigitalOcean", logo: "/logos/digitalocean.svg" },
-  { name: "Google Cloud", logo: "/logos/google-cloud.svg" },
-  { name: "Terraform", logo: "/logos/terraform.svg" },
-  { name: "Kubernetes", logo: "/logos/kubernetes.svg" },
-  { name: "Docker", logo: "/logos/docker.svg" },
-  { name: "Prometheus", logo: "/logos/prometheus.svg" },
-  { name: "Redis", logo: "/logos/redis.svg" },
-  { name: "PostgreSQL", logo: "/logos/postgresql.svg" },
+  { name: "Notion", logo: "/logos/notion.svg" },
+  { name: "Airtable", logo: "/logos/airtable.svg" },
+  { name: "Asana", logo: "/logos/asana.svg" },
   { name: "ClickUp", logo: "/logos/clickup.svg" },
+  { name: "Google Sheets", logo: "/logos/google-sheets.svg" },
   { name: "Excel", logo: "/logos/excel.svg" },
+  { name: "Zapier", logo: "/logos/zapier.svg" },
+  { name: "Make", logo: "/logos/make.svg" },
+  { name: "Power BI", logo: "/logos/power-bi.svg" },
+  { name: "SQL", logo: "/logos/sql.svg" },
+  { name: "Looker Studio", logo: "/logos/looker.svg" },
+  { name: "Canva", logo: "/logos/canva.svg" },
 ];
 
 export type Diagram = {
@@ -196,76 +199,40 @@ export type Diagram = {
 };
 
 /**
- * Designed architecture diagrams, shown as an in-place gallery on /work.
+ * Operational system maps, shown as an in-place gallery on /work.
  * Placeholders live in /public/diagrams; swap each for a real exported diagram
- * (and add more entries here, the gallery handles any number).
+ * or screenshot (and add more entries here, the gallery handles any number).
  */
 export const diagrams: Diagram[] = [
   {
-    src: "/diagrams/the-cached-edge.png",
-    title: "The Cached Edge",
+    src: "/diagrams/onboarding-ops-system.svg",
+    title: "Cross-Functional Onboarding System",
     caption:
-      "CloudFront at the edge into AWS compute, backed by S3, DynamoDB, a Redis cache, and Terraform-managed infrastructure for low-latency reads.",
+      "Intake form into filtering, ClickUp task creation, IT provisioning, and automated escalation of overdue cases, 250+ workflows across Client Services, Operations, and Analytics.",
   },
   {
-    src: "/diagrams/multi-region-resilience.jpg",
-    title: "Multi-Region Resilience",
+    src: "/diagrams/automation-pipeline.svg",
+    title: "Workflow Automation Pipeline",
     caption:
-      "Dual-region VPCs behind a security layer and DNS, NGINX-fronted containers, per-region backups and snapshots, and a redundant database tier.",
+      "A four-step Zapier pipeline, Google Form to filter to Sheets record to personalised welcome email, replacing 45 minutes of daily manual processing.",
   },
   {
-    src: "/diagrams/firewalled-kubernetes.png",
-    title: "Firewalled Kubernetes Delivery",
+    src: "/diagrams/delivery-operations.svg",
+    title: "Programme Delivery Operations",
     caption:
-      "CDN to load balancer into a Kubernetes pod fleet, public and internal firewall rules around storage, a Postgres primary, replica, and backup.",
+      "An Asana system covering 5 phases and 24 tasks with 9 mapped dependencies; blocked work escalates to leadership while facilitator completions auto-confirm.",
   },
   {
-    src: "/diagrams/auto-scaled-frontend.jpg",
-    title: "Auto-Scaled Frontend Estate",
+    src: "/diagrams/health-tracker.svg",
+    title: "Learner Health Tracker",
     caption:
-      "WAF and CDN into an auto-scaling group of containerised frontends, API server, database, plus monitoring, logging, and CI/CD wired through.",
+      "Scattered cohort inputs reconciled into one self-updating weekly tracker, monitoring progress at 98% accuracy across 12 countries.",
   },
   {
-    src: "/diagrams/staging-to-production.jpg",
-    title: "Staging to Production",
+    src: "/diagrams/analytics-dashboard.svg",
+    title: "Operational Analytics Layer",
     caption:
-      "One VPC carrying staging and production across availability zones, containerised EC2, a shared S3 store, ECS registry, and automated promotion.",
-  },
-  {
-    src: "/diagrams/mobile-commerce-platform.jpg",
-    title: "Mobile Commerce Platform",
-    caption:
-      "A containerised app server fronting Aurora MySQL, chat, maps, notifications, auth, object storage, and payments composed as managed services.",
-  },
-  {
-    src: "/diagrams/observability-pipeline.png",
-    title: "The Observability Pipeline",
-    caption:
-      "Lambda and API Gateway emitting metrics to CloudWatch, with Prometheus on EKS collecting and forwarding to Grafana, one pane over the workload.",
-  },
-  {
-    src: "/diagrams/defense-in-depth.jpg",
-    title: "Defense in Depth",
-    caption:
-      "SSL and endpoint security into a rules layer and middleware, encryption keys, an ORM boundary, and a standing vulnerability scan over the estate.",
-  },
-  {
-    src: "/diagrams/push-to-deploy.png",
-    title: "Push to Deploy",
-    caption:
-      "Webhook-driven delivery, a push to the main branch triggers Docker Hub and rolls a fresh container onto the server, no hands on the box.",
-  },
-  {
-    src: "/diagrams/split-tier-estate.png",
-    title: "Split-Tier API Estate",
-    caption:
-      "Two servers split by responsibility, firewalled APIs behind web servers, talking over HTTPS, each with its own database for clean isolation.",
-  },
-  {
-    src: "/diagrams/single-region-vpc.png",
-    title: "Single-Region VPC Foundation",
-    caption:
-      "A clean starting point, CloudFront into a public-subnet web tier and API Gateway, with S3 serving assets. Room to grow without a rewrite.",
+      "SQL over ticket, sales, and survey data feeding Power BI and Excel dashboards, SLA breaches, segmentation, and seasonal demand surfaced for leadership.",
   },
 ];
 
@@ -279,23 +246,23 @@ export type ClassSession = {
 
 export const schedule: ClassSession[] = [
   {
-    title: "Cloud, From the Ground Up",
-    day: "Tuesdays",
-    time: "18:00 UTC",
+    title: "Operations Diagnostic",
+    day: "Mondays",
+    time: "14:00 EAT",
     cadence: "Weekly",
     level: "Newcomer",
   },
   {
-    title: "Designing for the Bill",
-    day: "Thursdays",
-    time: "16:00 UTC",
+    title: "Automation Build Session",
+    day: "Wednesdays",
+    time: "16:00 EAT",
     cadence: "Weekly",
     level: "Practitioner",
   },
   {
-    title: "Architecture Office Hours",
+    title: "Analytics & Reporting Office Hours",
     day: "Fridays",
-    time: "15:00 UTC",
+    time: "15:00 EAT",
     cadence: "Fortnightly",
     level: "Architect",
   },
@@ -310,24 +277,24 @@ export type Episode = {
 
 export const episodes: Episode[] = [
   {
-    title: "The judgment is the job",
+    title: "Results measured, not claimed",
     guest: "Solo",
     summary:
-      "Why every system an engineer builds is a business decision in disguise, and what changes when you say that part out loud.",
+      "Why an operations portfolio should lead with the number and the decision it changed, and how to build the tracking that makes that honest.",
     published: "2026-06-12",
   },
   {
-    title: "Reading a cloud bill like a P&L",
-    guest: "with a CFO who learned to",
+    title: "Automating the work nobody should do by hand",
+    guest: "on workflow automation",
     summary:
-      "A finance leader and an engineer translate each other's language until the bill finally makes sense to both.",
+      "Reading a manual process for the seams, and the small automations, Apps Script, Zapier, Make, that quietly return whole days to a team.",
     published: "2026-05-29",
   },
   {
-    title: "Security that fits the risk",
-    guest: "with a CISO",
+    title: "Operating across 12 countries without losing the thread",
+    guest: "on programme operations",
     summary:
-      "Right-sizing controls when the threat is real but the budget is finite, and why fear is a bad architect.",
+      "One source of truth, clear SOPs, and escalation logic, what it actually takes to keep distributed programmes in sync.",
     published: "2026-05-15",
   },
 ];
@@ -340,19 +307,19 @@ export type TalkTopic = {
 
 export const talkTopics: TalkTopic[] = [
   {
-    title: "Every system is a business decision in disguise",
-    audience: "Engineering leadership · Platform teams",
-    body: "The talk that reframes the floor: judgment, not tooling, is the scarce skill, and it can be taught.",
+    title: "Turning operational chaos into scalable systems",
+    audience: "Programme & operations teams",
+    body: "A field account of replacing manual workflows with automation that scales, and the judgment about what to automate first.",
   },
   {
-    title: "Cutting cloud spend without cutting performance",
-    audience: "Cloud & FinOps tracks",
-    body: "A field account of a 40% reduction with zero performance cost, and the decisions that made it durable.",
+    title: "Analytics that changes what happens next",
+    audience: "Leadership · Data & reporting tracks",
+    body: "How operational reporting earns its keep, building the dashboard and the KPI framework around a decision instead of a vanity metric.",
   },
   {
-    title: "The translator's job",
-    audience: "Keynotes · Boardrooms",
-    body: "On bridging the technical floor and the boardroom, what gets lost between them, and who's paid to carry it across.",
+    title: "Data where it meets geography",
+    audience: "Open-mapping · Women in GIS",
+    body: "On an open-mapping and GIS background, and what it teaches about data quality, community-built datasets, and mapping the underrepresented.",
   },
 ];
 
@@ -364,24 +331,24 @@ export type FaqItem = {
 /** FAQ is content-managed in production (editable without redeploy). Sample seed below. */
 export const faqs: FaqItem[] = [
   {
-    question: "I'm completely new to cloud. Where do I actually start?",
+    question: "What kind of work are you looking for?",
     answer:
-      "Start Here is built for exactly this. It's an ordered path, not a pile of links, and the first resources are free. You don't need a background to begin; you need a route.",
+      "Programme Operations, BizOps, and Founders Associate roles, plus operations and analytics advisory for founders and programme teams. If it involves turning a messy process into a system, it's the right conversation.",
   },
   {
-    question: "Will AI make these skills obsolete?",
+    question: "Operations or analytics, which is it?",
     answer:
-      "AI is very good at the tool. It's far weaker at the judgment, knowing which system to build, and why, given the business you're in. That judgment is the part worth building, and it's the part that lasts.",
+      "Both, and they share one question: how do we make this run better? I build the automation and tracking that keep delivery on track, and the reporting layer that shows where it isn't. The Work page has examples of each.",
   },
   {
-    question: "Do you work with teams as well as individuals?",
+    question: "Do you work with teams as well as founders?",
     answer:
-      "Yes. Advisory is focused on helping teams and leaders build business-aligned judgment. Start with an inquiry and we'll find the right shape.",
+      "Yes. Advisory is focused on helping founders and programme teams build the operational backbone and the reporting to steer by. Start with an inquiry and we'll find the right shape.",
   },
   {
-    question: "How do the live classes work?",
+    question: "Which tools do you actually build in?",
     answer:
-      "Weekly sessions by level, with replays archived afterward. Sign up on the Live page and you'll get the schedule and joining details.",
+      "Notion, Airtable, Asana, and ClickUp for systems and delivery; Zapier, Make, and Apps Script for automation; SQL, Excel, and Power BI for analytics. The tool follows the problem, not the other way around.",
   },
 ];
 
@@ -393,30 +360,30 @@ export type BioLength = {
 export const bios: BioLength[] = [
   {
     label: "Short (embed)",
-    text: "Builder, mentor, and boardroom translator, I build the systems that connect the technical floor to the boardroom, and grow the people who'll stand in both.",
+    text: "Programme operations and analytics, I build the automation, tracking, and reporting systems that turn operational chaos into scale across African learner programmes.",
   },
   {
     label: "Medium",
-    text: "I work at the seam between engineering and the business, over five years across cloud and cybersecurity, as both an engineer and a technical mentor. I build business-aligned systems, restructure delivery to cut cost, and teach engineers to think like the business from the first system they build.",
+    text: "I'm a programme operations professional turning messy cohort data, manual workflows, and scattered pipelines into automated systems that scale. Over three years at ALX Africa I've built the automation, tracking, and reporting infrastructure behind learner programmes across the continent, with an analytics practice in SQL, Excel, and Power BI, and a GIS and open-mapping background underneath it.",
   },
   {
     label: "Press (long)",
-    text: "I work at the seam between engineering and the business, building business-aligned systems and translating the technical floor to the boardroom and back. For more than five years I've worked across cloud and cybersecurity as both an engineer and a technical mentor, staying AWS-certified in Cloud Practitioner and Solutions Architect Associate because credibility in the room depends on still being able to do the work. As a technical mentor for Udacity's Cloud Developer program, the ALX AWS program, and currently ALX Cybersecurity, I've supported thousands of engineers across large global cohorts, sustaining live-session satisfaction above 90%, and I've helped shape how these programs run, co-authoring operational playbooks and a technical-mentor blueprint and integrating AI into core delivery. As AI makes running the tools easy, the durable edge becomes judgment, knowing which trade-off, which system, serves the business. I build the systems that connect the technical floor to the boardroom, and I grow the people who'll stand in both.",
+    text: "Keren Wang'ombe is a Programme Operations Associate at ALX Africa, where she builds the automation, tracking, and reporting systems behind learner programmes reaching thousands of people across 8+ African countries. Her work turns operational complexity into repeatable execution: a self-updating health tracker holding 98% data accuracy across 12 countries, automation that cut manual tracking work by 50% and saved 15+ hours a week, and executive reporting that carried Cybersecurity Cohort 11 from 2,032 registrations to 900 graduates at an 86% graduation rate. Alongside operations she keeps a hands-on analytics practice, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity, and a GIS and open-mapping background that shows up wherever data meets geography. She works at the seam of operations and analytics, two disciplines that share one question: how do we make this run better?",
   },
 ];
 
 /** Long-form bio for /about, paragraph by paragraph (author's own copy). */
 export const bioStory: string[] = [
-  "For more than five years I've worked across cloud and cybersecurity, as both an engineer and a technical mentor. I stay AWS-certified in Cloud Practitioner and Solutions Architect Associate not for the badge, but because credibility in the room depends on still being able to do the work. I've designed hands-on projects that simulate real business challenges, restructured delivery to cut organizational cost, and resolved the kind of IAM and architecture issues that only surface under real load.",
-  "But the lesson that drives me came from teaching. As a technical mentor, for Udacity's Cloud Developer program, the ALX AWS program, and currently ALX Cybersecurity, I've supported thousands of engineers across large global cohorts, sustaining live-session satisfaction above 90% and helping learners reach certification and career readiness. Mentoring at every level isn't a side project; it's the conviction that engineers should think like the business from the first system they build.",
-  "I've also helped shape how these programs work: co-authoring operational playbooks and a technical-mentor blueprint, and contributing to organization-wide initiatives, including research, female-activation strategy, and the integration of AI into core delivery. That last thread matters to me most. As AI makes running the tools easy, the durable edge becomes judgment, knowing which trade-off, which system, serves the business. So I build AI into how I work and teach, while keeping the human judgment at the center.",
+  "I'm a programme operations professional, and for three years at ALX Africa I've built the automation, tracking, and reporting infrastructure behind learner programmes across the continent. My work turns messy cohort data, manual workflows, and scattered pipelines into systems that scale, the kind of operational backbone that lets a programme grow without its coordination overhead growing with it.",
+  "The through-line is simple: I don't run the process by hand if it can be a system. A Google Apps Script pipeline cut manual NDA tracking by 50% and saved 15+ hours a week. A self-updating tracker held learner data to 98% accuracy across 12 countries. Executive reporting carried a cybersecurity cohort from 2,032 registrations to 900 graduates at 86% graduation and 81% CSAT, because the numbers were measured, not claimed.",
+  "Underneath operations sits an analytics practice I keep hands-on, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity. And underneath that, a GIS and open-mapping background with ALX, OpenStreetMap Kenya, HOT, and African Women in GIS, which is where I first learned that data quality is an operational discipline, not an afterthought. Operations and analytics are two halves of the same question: how do we make this run better?",
 ];
 
 /** A warm, human aside for /about. */
 export const bioPersonal =
-  "Off the cloud, you'll find me behind a drum kit, or deep in a business or psychology book chasing an idea worth building on.";
+  "Off the clock, you'll find me deep in an open-mapping project, filling in the parts of the map that data forgot, or chasing a systems idea worth building on.";
 
 /** The closing for /about, three roles set apart from the statement. */
-export const bioRoles = ["Builder", "Mentor", "Boardroom translator"];
+export const bioRoles = ["Builder", "Operator", "Analyst"];
 export const bioCloseText =
-  "I build the systems that connect the technical floor to the boardroom, and I grow the people who'll stand in both.";
+  "I build the systems that turn operational chaos into scale, and the reporting that keeps them honest.";

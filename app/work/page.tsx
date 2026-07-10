@@ -15,9 +15,9 @@ import { pageBanners } from "@/lib/site";
 const corners = ["tl", "tr", "bl", "br"] as const;
 
 export const metadata: Metadata = {
-  title: "Cloud architecture for business decisions",
+  title: "Operations & analytics that scale",
   description:
-    "Cloud architecture for business decisions: outcome-led engineering that serves the P&L, security matched to real risk, and delivery at the speed the business needs.",
+    "Operations and analytics work: automation that removes manual load, tracking held to measured accuracy, and reporting that shows leadership where delivery is slipping while there's still time to act.",
 };
 
 export default function WorkPage() {
@@ -26,18 +26,18 @@ export default function WorkPage() {
       <PageBanner
         image={pageBanners.work}
         kicker="What I build"
-        title="Systems for the business, not just the stack."
+        title="Systems for the operation, not just the task."
         intro={
           <p>
-            I build systems for businesses: cloud architecture for business
-            decisions, security matched to real risk, and delivery at the speed
-            the business needs. Every system below started as a decision, not
-            just a technical one.
+            I build the operational backbone: automation that removes manual
+            load, tracking held to measured accuracy, and analytics that turns
+            raw data into decisions. Every system below started as an operational
+            problem, and every metric is measured, not claimed.
           </p>
         }
       >
         <div className="flex flex-wrap gap-4">
-          <Button href="#architecture">See the architecture</Button>
+          <Button href="#architecture">See the systems</Button>
           <Button href="/advisory" variant="accent">
             Work with me
           </Button>
@@ -128,13 +128,14 @@ export default function WorkPage() {
       >
         <div className="container-content">
           <Reveal>
-            <p className="kicker text-amber">Selected architecture</p>
+            <p className="kicker text-amber">Selected systems</p>
             <h2 className="mt-5 max-w-2xl font-serif text-h1 font-light text-paper">
-              Cloud architecture behind the business decisions.
+              The systems behind the operational decisions.
             </h2>
             <p className="mt-4 max-w-prose text-body text-paper/70">
-              A rolling look at designed architecture, real systems, drawn end to
-              end. They switch on their own; click any one to view it larger.
+              A rolling look at how the work is wired, real operational systems,
+              mapped end to end. They switch on their own; click any one to view
+              it larger.
             </p>
           </Reveal>
           <Reveal className="mt-12">

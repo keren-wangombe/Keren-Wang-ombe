@@ -7,9 +7,9 @@ import { bioCloseText, bioPersonal, bioRoles, bioStory, bios } from "@/lib/conte
 import { aboutPortrait, brand, pageBanners } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Technical mentor, cloud engineer, cybersecurity engineer, solutions architect, and AI architect",
+  title: "Programme operations & analytics",
   description:
-    "A technical mentor, cloud engineer, cybersecurity engineer, solutions architect, and AI architect working at the seam between engineering and the business, building business-aligned systems and growing the people who'll stand in both rooms.",
+    "A programme operations professional working at the seam of operations and analytics, building the automation, tracking, and reporting systems behind learner programmes across Africa.",
 };
 
 export default function AboutPage() {
@@ -18,14 +18,14 @@ export default function AboutPage() {
       <PageBanner
         image={pageBanners.about}
         kicker="About"
-        title="I work at the seam between engineering and the business."
+        title="I work at the seam of operations and analytics."
         intro={
           <p>
-            Two rooms rarely speak the same language: the technical floor and the
-            boardroom. I've spent my career in the doorway between them, a
-            technical mentor, cloud engineer, cybersecurity engineer, solutions
-            architect, and AI architect building business-aligned systems, and
-            translating each room to the other.
+            Operations and analytics ask the same question: how do we make this
+            run better? I've spent three years at ALX Africa building the
+            automation, tracking, and reporting systems behind learner programmes
+            across the continent, with a hands-on analytics practice and a GIS
+            and open-mapping background underneath it.
           </p>
         }
         figure={
@@ -33,7 +33,7 @@ export default function AboutPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={aboutPortrait}
-              alt="Dare Omotosho"
+              alt="Keren Wang'ombe"
               className="aspect-[4/5] w-full object-cover"
             />
           </div>
@@ -55,8 +55,7 @@ export default function AboutPage() {
         <Reveal>
           <div className="mx-auto max-w-3xl rounded-3xl border border-ink/10 bg-paper p-8 sm:p-12">
             <h2 className="font-serif text-h2 font-light text-signature">
-              Technical mentor, cloud engineer, cybersecurity engineer,
-              solutions architect, and AI architect
+              Programme operations, analytics, and the systems that connect them
             </h2>
             <div className="mt-6 space-y-6">
               {bioStory.map((para, i) => (
@@ -73,7 +72,7 @@ export default function AboutPage() {
       <section className="container-content py-12 sm:py-16">
         <Reveal>
           <div className="rounded-3xl border border-amber/40 bg-paper p-8 sm:p-12">
-            <p className="kicker text-amber">Off the cloud</p>
+            <p className="kicker text-amber">Off the clock</p>
             <p className="mt-5 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
               {bioPersonal}
             </p>

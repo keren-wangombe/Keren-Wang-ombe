@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 48" role="img" aria-label="Make">
+  <!-- PLACEHOLDER wordmark — replace with the official Make logo asset. -->
+  <rect x="0.5" y="0.5" width="179" height="47" rx="10" fill="none" stroke="#111827" stroke-opacity="0.12"/>
+  <path d="M17 32V16l7 10 7-10v16" fill="none" stroke="#111827" stroke-opacity="0.35" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="42" y="29" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif" font-size="15" font-weight="500" letter-spacing="0.2" fill="#111827">Make</text>
+</svg>
