@@ -54,8 +54,6 @@ export const nav: NavItem[] = [
       { href: "/resources#community", label: "Community Questions" },
     ],
   },
-  { href: "/speaking", label: "Speaking" },
-  { href: "/advisory", label: "Advisory" },
   { href: "/about", label: "About" },
 ];
 
