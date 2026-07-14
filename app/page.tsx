@@ -153,7 +153,12 @@ export default function HomePage() {
               whether I&rsquo;m the right person to help fix them.
             </p>
             <div className="mt-9">
-              <Button href="/contact" variant="accent">
+              <Button
+                href="https://calendar.app.google/xstDM46qtLnhNT8K6"
+                variant="accent"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Book a call
               </Button>
             </div>
