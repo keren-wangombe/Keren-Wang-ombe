@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import EmailCapture from "@/components/EmailCapture";
 import { brand } from "@/lib/site";
-import { organisations, services, outcomes, type Service } from "@/lib/content";
+import { services, outcomes, type Service } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Operations that scale",
@@ -76,20 +76,6 @@ export default function HomePage() {
               className="w-full"
             />
           </Reveal>
-        </div>
-      </section>
-
-      {/* ── TRUSTED BY — navy band with organisations. */}
-      <section className="bg-signature">
-        <div className="container-content py-10 sm:py-12">
-          <p className="kicker text-center text-paper/55">Trusted by founders &amp; teams</p>
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 sm:gap-x-14">
-            {organisations.map((org) => (
-              <li key={org} className="font-serif text-lg font-medium text-paper/90">
-                {org}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
