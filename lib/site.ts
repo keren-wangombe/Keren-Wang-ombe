@@ -60,6 +60,9 @@ export const nav: NavItem[] = [
 /** Primary contact email, shown for general inquiries and booking. */
 export const contactEmail = "kerenwangombe@gmail.com";
 
+/** Google Calendar scheduling link for the persistent "Book a call" CTA. */
+export const bookACallHref = "https://calendar.app.google/xstDM46qtLnhNT8K6";
+
 /** Contact email for privacy-specific requests (Privacy + Cookie policies). */
 export const privacyEmail = "kerenwangombe@gmail.com";
 

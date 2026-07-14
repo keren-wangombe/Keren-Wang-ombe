@@ -168,7 +168,7 @@ export default function WorkPage() {
             </h2>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Button href="/advisory">Explore advisory</Button>
-              <Button href="/contact" variant="ghost">
+              <Button href="/#contact" variant="ghost">
                 Get in touch
               </Button>
             </div>

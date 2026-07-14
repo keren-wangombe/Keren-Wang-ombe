@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { brand, nav, type NavItem } from "@/lib/site";
+import { bookACallHref, brand, nav, type NavItem } from "@/lib/site";
 
 /**
  * Header: name on the left, the build-first nav inline on the web (desktop),
@@ -101,13 +101,14 @@ export default function Header() {
               );
             })}
             <li>
-              <Link
-                href="/contact"
-                aria-current={isActive("/contact") ? "page" : undefined}
+              <a
+                href={bookACallHref}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-lg bg-amber-bright px-4 py-2 text-small font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
               >
-                Contact
-              </Link>
+                Book a call
+              </a>
             </li>
           </ul>
         </nav>
@@ -180,14 +181,15 @@ export default function Header() {
               );
             })}
             <li>
-              <Link
-                href="/contact"
-                aria-current={isActive("/contact") ? "page" : undefined}
+              <a
+                href={bookACallHref}
+                target="_blank"
+                rel="noreferrer"
                 tabIndex={open ? undefined : -1}
                 className="mt-1 block rounded-md bg-amber-bright px-3 py-2.5 text-body font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
               >
-                Contact
-              </Link>
+                Book a call
+              </a>
             </li>
           </ul>
         </div>

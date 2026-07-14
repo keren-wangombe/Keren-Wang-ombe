@@ -1,15 +1,42 @@
 import Link from "next/link";
 import { brand, nav, social } from "@/lib/site";
 import EmailCapture from "./EmailCapture";
+import InquiryForm from "./InquiryForm";
 
 /**
  * Footer: the anchor weight of the page. Deep Signature Blue with Paper text.
- * Carries the social-feed area (YouTube primary, wire feeds at integration
- * time), a persistent email capture, and the Tier-1 byline.
+ * Carries the contact form (the former /contact page, now anchored here as
+ * #contact), the social-feed area, a persistent email capture, and the
+ * Tier-1 byline.
  */
 export default function Footer() {
   return (
     <footer className="mt-32 bg-signature text-paper print:hidden">
+      {/* Contact, the former /contact page content, anchored for site-wide CTAs. */}
+      <div id="contact" className="container-content scroll-mt-20 border-b border-paper/10 py-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          <div>
+            <h2 className="font-serif text-h2 font-light text-paper">Let&rsquo;s talk.</h2>
+            <p className="mt-5 max-w-prose text-body text-paper/70">
+              General questions, advisory and consulting inquiries, or just a
+              hello, it all arrives in the same place, and I read it
+              personally.
+            </p>
+          </div>
+          <InquiryForm
+            tone="dark"
+            submitLabel="Send message"
+            subject="New contact message, kerenwangombe.com"
+            fields={[
+              { name: "name", label: "Your name", required: true, placeholder: "Jane Doe" },
+              { name: "email", label: "Email", type: "email", required: true, placeholder: "you@example.com" },
+              { name: "topic", label: "Topic", placeholder: "General · Advisory · Consulting · Speaking" },
+              { name: "message", label: "Your message", type: "textarea", required: true, placeholder: "How can I help?" },
+            ]}
+          />
+        </div>
+      </div>
+
       <div className="container-content grid gap-14 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         {/* Email capture + byline */}
         <div>
