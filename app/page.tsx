@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import EmailCapture from "@/components/EmailCapture";
 import { brand } from "@/lib/site";
-import { organisations, services, outcomes, type Service } from "@/lib/content";
+import { services, outcomes, type Service } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Operations that scale",
@@ -56,7 +56,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-7 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <Button href="/#contact" variant="accent">
+              <Button href="/contact" variant="accent">
                 Let&rsquo;s work together
               </Button>
               <a
@@ -76,20 +76,6 @@ export default function HomePage() {
               className="w-full"
             />
           </Reveal>
-        </div>
-      </section>
-
-      {/* ── TRUSTED BY — navy band with organisations. */}
-      <section className="bg-signature">
-        <div className="container-content py-10 sm:py-12">
-          <p className="kicker text-center text-paper/55">Trusted by founders &amp; teams</p>
-          <ul className="mt-7 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 sm:gap-x-14">
-            {organisations.map((org) => (
-              <li key={org} className="font-serif text-lg font-medium text-paper/90">
-                {org}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -148,7 +134,7 @@ export default function HomePage() {
               Looking for someone who builds the systems, not just runs them?
             </h2>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/#contact" variant="accent">
+              <Button href="/contact" variant="accent">
                 Get in touch
               </Button>
               <Button href="/work" variant="ghost">
