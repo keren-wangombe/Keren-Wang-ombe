@@ -56,7 +56,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-7 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <Button href="/#contact" variant="accent">
+              <Button href="/contact" variant="accent">
                 Let&rsquo;s work together
               </Button>
               <a
@@ -126,6 +126,67 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── BOOK A CALL — navy band, what to expect + CTA. */}
+      <section className="bg-signature">
+        <div className="container-content grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <Reveal>
+            <p className="kicker text-amber">Book a call</p>
+            <h2 className="mt-5 max-w-xl font-serif text-h1 font-light text-paper">
+              Ready to talk about your operations?
+            </h2>
+            <p className="mt-6 max-w-lg text-body text-paper/70">
+              A short call to understand where things are breaking down and
+              whether I&rsquo;m the right person to help fix them.
+            </p>
+            <div className="mt-9">
+              <Button
+                href="https://calendar.app.google/xstDM46qtLnhNT8K6"
+                variant="accent"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Book a call
+              </Button>
+            </div>
+          </Reveal>
+          <Reveal delay={100} className="space-y-8">
+            <div className="flex gap-4">
+              <span className="mt-1 h-2.5 w-2.5 flex-none rounded-full bg-amber" aria-hidden />
+              <div>
+                <h3 className="font-serif text-lg font-medium text-paper">
+                  30-minute discovery call
+                </h3>
+                <p className="mt-2 text-small text-paper/65">
+                  We align on the role, your stage, and what success looks like.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <span className="mt-1 h-2.5 w-2.5 flex-none rounded-full bg-amber" aria-hidden />
+              <div>
+                <h3 className="font-serif text-lg font-medium text-paper">
+                  No preparation needed
+                </h3>
+                <p className="mt-2 text-small text-paper/65">
+                  Just show up and be open, I&rsquo;ll ask the right questions.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <span className="mt-1 h-2.5 w-2.5 flex-none rounded-full bg-amber" aria-hidden />
+              <div>
+                <h3 className="font-serif text-lg font-medium text-paper">
+                  You&rsquo;ll know by the end
+                </h3>
+                <p className="mt-2 text-small text-paper/65">
+                  Whether I&rsquo;m the right fit and what the next step looks like.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── CLOSE — quiet CTA + email capture. */}
       <section className="container-content py-20 sm:py-28">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
@@ -134,7 +195,7 @@ export default function HomePage() {
               Looking for someone who builds the systems, not just runs them?
             </h2>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/#contact" variant="accent">
+              <Button href="/contact" variant="accent">
                 Get in touch
               </Button>
               <Button href="/work" variant="ghost">
