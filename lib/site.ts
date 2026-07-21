@@ -39,12 +39,11 @@ export const aboutPortrait = "/portraits/keren.svg";
 export const heroPortrait = "/portraits/keren.jpg";
 
 /**
- * Intro video (Loom) embedded in the hero. PLACEHOLDER — swap the ID for the
- * final recording's when it's ready (the ID is the last segment of the
- * loom.com/share/... URL).
+ * Intro video (Loom), opened directly from the hero's "Watch my intro"
+ * button. PLACEHOLDER recording — swap this share URL for the final one.
  */
-export const heroLoomEmbed =
-  "https://www.loom.com/embed/3ec6ce881036464ca076c540fb1a0376";
+export const heroLoomShare =
+  "https://www.loom.com/share/3ec6ce881036464ca076c540fb1a0376";
 
 export type NavItem = {
   href: string;
