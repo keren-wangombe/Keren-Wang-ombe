@@ -57,9 +57,6 @@ export default function HomePage() {
             </h1>
             <p className="mt-7 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <Button href="/contact" variant="accent">
-                Let&rsquo;s work together
-              </Button>
               <a
                 href="/work"
                 className="link-amber inline-flex items-center gap-2 text-small font-medium text-signature"
@@ -204,9 +201,6 @@ export default function HomePage() {
               Looking for someone who builds the systems, not just runs them?
             </h2>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/contact" variant="accent">
-                Get in touch
-              </Button>
               <Button href="/work" variant="ghost">
                 See the work
               </Button>
