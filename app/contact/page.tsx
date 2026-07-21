@@ -1,73 +1,57 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/PageHero";
-import Reveal from "@/components/Reveal";
-import InquiryForm from "@/components/InquiryForm";
+import ContactCard from "@/components/ContactCard";
 import { contactEmail, resumeFile, social } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "General questions and advisory or consulting inquiries.",
+  description: "Email, LinkedIn, and resume — the direct lines.",
 };
 
 export default function ContactPage() {
   return (
-    <>
-      <PageHero
-        kicker="Contact"
-        tone="cool"
-        title="Let's talk."
-        intro={
-          <p>
-            General questions, advisory and consulting inquiries, or just a hello, it
-            all arrives in the same place, and I read it personally.
+    <div className="mx-auto w-full max-w-5xl px-4 py-14">
+      <ContactCard />
+
+      {/* ── The details, plainly listed for anyone who prefers text to buttons. */}
+      <div className="mt-10 rounded-3xl border border-slate-100 bg-white p-8 md:p-10">
+        <p className="mb-6 text-[9px] font-extrabold uppercase tracking-[0.3em] text-slate-400">The Details</p>
+        <div className="space-y-4 text-sm">
+          <p className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span className="w-20 shrink-0 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+              Email
+            </span>
+            <a href={`mailto:${contactEmail}`} className="font-bold text-signature transition-colors hover:text-teal">
+              {contactEmail}
+            </a>
           </p>
-        }
-      />
-
-      <section className="container-content py-12 sm:py-16">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-          <Reveal>
-            <h2 className="font-serif text-h2 font-light text-ink">Reach out</h2>
-            <p className="mt-5 max-w-prose text-body text-ink">
-              Tell me a little about what you're after. For advisory and consulting,
-              a sentence on the situation and the outcome is the most helpful start.
-            </p>
-            <div className="mt-8 space-y-3 text-body">
-              <p>
-                <span className="kicker mr-3 text-ink/50">Email</span>
-                <a href={`mailto:${contactEmail}`} className="link-quiet">
-                  {contactEmail}
-                </a>
-              </p>
-              <p>
-                <span className="kicker mr-3 text-ink/50">LinkedIn</span>
-                <a href={social.linkedin} target="_blank" rel="noreferrer" className="link-quiet">
-                  keren-wangombe
-                </a>
-              </p>
-              <p>
-                <span className="kicker mr-3 text-ink/50">Resume</span>
-                <a href={resumeFile} target="_blank" rel="noreferrer" className="link-quiet">
-                  View my resume (PDF)
-                </a>
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <InquiryForm
-              submitLabel="Send message"
-              subject="New contact message, kerenwangombe.com"
-              fields={[
-                { name: "name", label: "Your name", required: true, placeholder: "Jane Doe" },
-                { name: "email", label: "Email", type: "email", required: true, placeholder: "you@example.com" },
-                { name: "topic", label: "Topic", placeholder: "General · Advisory · Consulting · Speaking" },
-                { name: "message", label: "Your message", type: "textarea", required: true, placeholder: "How can I help?" },
-              ]}
-            />
-          </Reveal>
+          <p className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span className="w-20 shrink-0 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+              LinkedIn
+            </span>
+            <a
+              href={social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-signature transition-colors hover:text-teal"
+            >
+              linkedin.com/in/keren-wangombe
+            </a>
+          </p>
+          <p className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+            <span className="w-20 shrink-0 text-[10px] font-extrabold uppercase tracking-[0.18em] text-slate-400">
+              Resume
+            </span>
+            <a
+              href={resumeFile}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold text-signature transition-colors hover:text-teal"
+            >
+              View my resume (PDF)
+            </a>
+          </p>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 }
