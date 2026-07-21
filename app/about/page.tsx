@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
-import BioLengths from "@/components/BioLengths";
-import { bioCloseText, bioPersonal, bioRoles, bioStory, bios } from "@/lib/content";
+import { bioCloseText, bioPersonal, bioRoles, bioStory } from "@/lib/content";
 import { aboutPortrait, brand, pageBanners } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Programme operations & analytics",
+  title: "About",
   description:
-    "A programme operations professional working at the seam of operations and analytics, building the automation, tracking, and reporting systems behind learner programmes across Africa.",
+    "A programme operations professional working at the seam of operations and analytics, building the automation, tracking, and reporting systems that turn operational chaos into scale.",
 };
 
 export default function AboutPage() {
@@ -22,9 +21,9 @@ export default function AboutPage() {
         intro={
           <p>
             Operations and analytics ask the same question: how do we make this
-            run better? I've spent three years at ALX Africa building the
-            automation, tracking, and reporting systems behind learner programmes
-            across the continent, with a hands-on analytics practice and a GIS
+            run better? I've spent three years in the edtech industry building the
+            automation, tracking, and reporting systems behind programmes reaching
+            thousands of participants, with a hands-on analytics practice and a GIS
             and open-mapping background underneath it.
           </p>
         }
@@ -101,31 +100,18 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
-      {/* ── Bio in three lengths. */}
-      <section className="container-content py-12 sm:py-16">
-        <Reveal>
-          <h2 className="font-serif text-h2 font-light text-ink">Grab a bio</h2>
-          <p className="mt-3 text-small text-ink/60">
-            Take whichever length you need, for an intro, a profile, or the press kit.
-          </p>
-          <div className="mt-8">
-            <BioLengths bios={bios} />
-          </div>
-        </Reveal>
-      </section>
-
       {/* ── CTA. */}
       <section className="container-content py-16 sm:py-24">
         <Reveal className="text-center">
           <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-ink">
-            If any of this resonates, let's talk.
+            If any of this resonates, let&rsquo;s connect.
           </h2>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Button href="/advisory" variant="accent">
-              Work with me
+            <Button href="/work" variant="accent">
+              See my work
             </Button>
-            <Button href="/start-here" variant="ghost">
-              Just getting started
+            <Button href="/contact" variant="ghost">
+              Get in touch
             </Button>
           </div>
         </Reveal>

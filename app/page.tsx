@@ -50,9 +50,9 @@ export default function HomePage() {
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
         <div className="container-content grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
           <div className="animate-fade-up">
-            <p className="kicker text-amber">Programme Operations · Nairobi, Kenya</p>
+            <p className="kicker text-amber">Programme Operations &amp; Analytics · Nairobi, Kenya</p>
             <h1 className="mt-6 font-serif text-h1 font-light leading-[1.08] text-ink">
-              I build systems that bring{" "}
+              Operations &amp; analytics systems that bring{" "}
               <span className="text-amber">clarity</span> to complexity.
             </h1>
             <p className="mt-7 max-w-xl text-body text-ink/70">{brand.oneLine}</p>

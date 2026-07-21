@@ -29,8 +29,8 @@ export const pageBanners = {
 /** Landing-page banner image. */
 export const bannerSrc = pageBanners.home;
 
-/** About-page portrait (drop a web-optimized 4:5 JPEG over this path). */
-export const aboutPortrait = "/portraits/keren.svg";
+/** About-page portrait — reuses the hero photo for a consistent face. */
+export const aboutPortrait = "/portraits/keren.jpg";
 
 /**
  * Hero portrait — the photo a visitor sees first. Drop the real photo in as
