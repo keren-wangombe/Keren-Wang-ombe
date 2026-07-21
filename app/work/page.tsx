@@ -2,22 +2,17 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
-import FlipCard from "@/components/FlipCard";
-import FlipTile from "@/components/FlipTile";
-import Converge from "@/components/Converge";
+import CaseStudy from "@/components/CaseStudy";
 import LogoMarquee from "@/components/LogoMarquee";
 import DiagramGallery from "@/components/DiagramGallery";
 import TierBackdrop from "@/components/TierBackdrop";
-import { diagrams, tiers, toolkitNote, workClose } from "@/lib/content";
+import { caseStudyTiers, diagrams, toolkitNote, workClose } from "@/lib/content";
 import { pageBanners } from "@/lib/site";
-
-/** Corner each grid tile converges from, in 2×2 order. */
-const corners = ["tl", "tr", "bl", "br"] as const;
 
 export const metadata: Metadata = {
   title: "Operations & analytics that scale",
   description:
-    "Operations and analytics work: automation that removes manual load, tracking held to measured accuracy, and reporting that shows leadership where delivery is slipping while there's still time to act.",
+    "Operations and analytics case studies in a problem → build → result format: automation that removes manual load, tracking held to measured accuracy, and reporting that changes decisions.",
 };
 
 export default function WorkPage() {
@@ -31,8 +26,8 @@ export default function WorkPage() {
           <p>
             I build the operational backbone: automation that removes manual
             load, tracking held to measured accuracy, and analytics that turns
-            raw data into decisions. Every system below started as an operational
-            problem, and every metric is measured, not claimed.
+            raw data into decisions. Every case study below is told the same
+            way — the problem, what I built, and the measured result.
           </p>
         }
       >
@@ -44,60 +39,26 @@ export default function WorkPage() {
         </div>
       </PageBanner>
 
-      {/* ── Tiers, each heading flips to its detail; the 2×2 grid converges in.
+      {/* ── Tiers of case studies, each told Problem → Built → Result.
           A subtle parallax backdrop fades in per tier to underline its message. */}
-      {tiers.map((tier, ti) => {
-        const hero = tier.items.find((i) => i.hero);
-        const feature = tier.items.find((i) => i.feature);
-        const grid = tier.items.filter((i) => !i.hero && !i.feature);
-
-        return (
-          <section
-            key={tier.kicker}
-            className="relative isolate overflow-hidden py-12 sm:py-20"
-          >
-            <TierBackdrop src={tier.backdrop} align={ti % 2 === 0 ? "right" : "left"} />
-            <div className="container-content">
+      {caseStudyTiers.map((tier, ti) => (
+        <section key={tier.kicker} className="relative isolate overflow-hidden py-12 sm:py-20">
+          <TierBackdrop src={tier.backdrop} align={ti % 2 === 0 ? "right" : "left"} />
+          <div className="container-content">
             <Reveal>
-              <h2 className="font-serif text-h1 font-light text-signature">
-                {tier.name}
-              </h2>
+              <p className="kicker text-blue-lift">{tier.kicker}</p>
+              <h2 className="mt-4 font-serif text-h1 font-light text-signature">{tier.name}</h2>
               <p className="mt-3 max-w-2xl text-body text-ink">{tier.tagline}</p>
             </Reveal>
 
-            {/* Lead item, big-number hero card, or a full-width feature tile. */}
-            {hero && (
-              <Reveal className="mt-10">
-                <FlipCard
-                  metric={hero.metric ?? ""}
-                  metricLabel={hero.metricLabel ?? ""}
-                  title={hero.title}
-                  body={hero.body}
-                  hero
-                />
-              </Reveal>
-            )}
-            {feature && (
-              <Reveal className="mt-10">
-                <FlipTile title={feature.title} body={feature.body} />
-              </Reveal>
-            )}
-
-            {/* The rest, flip tiles converging from their corners, staggered. */}
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
-              {grid.map((item, i) => (
-                <Converge
-                  key={item.title}
-                  from={corners[i % corners.length]}
-                  delay={i * 120}
-                >
-                  <FlipTile title={item.title} body={item.body} />
-                </Converge>
+            <div className="mt-10 space-y-8">
+              {tier.items.map((item, i) => (
+                <CaseStudy key={item.title} item={item} index={i} />
               ))}
             </div>
 
             {/* Capabilities, a chip cloud; each pill fades up in sequence. */}
-            <div className="mt-10">
+            <div className="mt-12">
               <Reveal>
                 <p className="kicker text-blue-lift">Also in the kit</p>
               </Reveal>
@@ -115,17 +76,13 @@ export default function WorkPage() {
                   ))}
               </ul>
             </div>
-            </div>
-          </section>
-        );
-      })}
+          </div>
+        </section>
+      ))}
 
       {/* ── Architecture diagrams, a dark Signature band so the work pops off
           the Paper. An in-place gallery; click any one to view it larger. */}
-      <section
-        id="architecture"
-        className="scroll-mt-20 bg-ink py-16 sm:py-24"
-      >
+      <section id="architecture" className="scroll-mt-20 bg-ink py-16 sm:py-24">
         <div className="container-content">
           <Reveal>
             <p className="kicker text-amber">Selected systems</p>

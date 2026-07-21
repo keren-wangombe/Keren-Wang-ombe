@@ -141,6 +141,282 @@ export const tiers: Tier[] = [
 export const workClose =
   "These systems started as operational problems. If you have one, let's talk.";
 
+/* ── Case studies ──────────────────────────────────────────────────────
+   The skimmable Problem → Built → Result format hiring managers expect:
+   context, the intervention, then measured outcomes, with tools and any
+   walkthrough/write-up links. Grouped in the same two tiers as before. */
+
+export type CaseStudyItem = {
+  badge: string;
+  title: string;
+  /** Headline number, the protagonist of the card. */
+  metric?: string;
+  metricLabel?: string;
+  problem: string;
+  built: string;
+  results: string[];
+  tools: string[];
+  links?: { label: string; href: string }[];
+};
+
+export type CaseStudyTier = {
+  kicker: string;
+  name: string;
+  tagline: string;
+  capabilities: string;
+  backdrop: string;
+  items: CaseStudyItem[];
+};
+
+export const caseStudyTiers: CaseStudyTier[] = [
+  {
+    kicker: "Tier 1",
+    name: "Systems built for operations",
+    tagline:
+      "The operational backbone. Automation, tracking, and coordination that turn chaos into repeatable execution.",
+    capabilities:
+      "Workflow automation (Zapier · Make · Apps Script) · Notion & Airtable systems design · SOP design & documentation · ClickUp & Asana delivery operations · CA screening & funnel tracking · cross-border programme coordination.",
+    backdrop: "/backgrounds/tier-systems.svg",
+    items: [
+      {
+        badge: "Workflow Automation · Apps Script",
+        title: "Automated NDA tracking end to end.",
+        metric: "50%",
+        metricLabel: "manual work removed",
+        problem:
+          "NDA tracking ran on copy-paste between inboxes and spreadsheets — hours of manual work every week, and every handoff another chance for an error nobody would catch until it mattered.",
+        built:
+          "A Google Apps Script and Gmail pipeline that tracks NDAs end to end: intake, status, and follow-ups run themselves, with the spreadsheet updated as a by-product instead of a chore.",
+        results: [
+          "Cut manual tracking work by 50%",
+          "Saved 15+ hours every week, returned to higher-value work",
+          "Removed the copy-paste errors that came with the manual process",
+        ],
+        tools: ["Google Apps Script", "Gmail", "Google Sheets"],
+      },
+      {
+        badge: "Systems Design · Workflow Automation",
+        title: "Built a cross-functional onboarding operations system.",
+        metric: "88%",
+        metricLabel: "onboarding completion",
+        problem:
+          "A consulting firm scaling from 85 to 200 staff had no standard onboarding: fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
+        built:
+          "A six-tool onboarding system that automates intake, creates ClickUp tasks automatically, coordinates IT provisioning, and escalates overdue cases — built without engineering support, and redesigned mid-build onto a Google Sheets + ClickUp architecture after Excel sync failures.",
+        results: [
+          "88% onboarding completion rate · 91% SLA compliance",
+          "24% reduction in delays · 38% less manual HR coordination",
+          "250+ workflows tracked across Client Services, Operations, and Analytics",
+        ],
+        tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion"],
+        links: [
+          {
+            label: "Watch the system walkthrough",
+            href: "https://drive.google.com/file/d/1BdwGkAENe13RBxbTmclQdkVu7CKWe-QY/view?usp=drive_link",
+          },
+          {
+            label: "Read the full case study",
+            href: "https://www.notion.so/Cross-Functional-Onboarding-Operations-System-3641bb37c5e18072a112eccfd94b92cd",
+          },
+        ],
+      },
+      {
+        badge: "Project Operations · Asana",
+        title: "Designed a programme delivery operations system.",
+        problem:
+          "A 12-week programme was coordinated through email threads and shared documents — no dependency tracking, no escalation logic, and no delivery visibility for leadership.",
+        built:
+          "A structured Asana system covering the full programme lifecycle: 24 tasks across 5 phases with 9 mapped dependencies, custom fields for live delivery status, and automated escalation that routes blocked work straight to leadership.",
+        results: [
+          "Execution sequencing enforced by the system, not by memory",
+          "Blocked tasks escalate to leadership automatically; facilitator completions auto-confirm",
+          "Goals, milestones, and delivery tracking connected into one reporting view",
+        ],
+        tools: ["Asana", "Dependency Mapping", "Process Automation"],
+        links: [{ label: "Watch the walkthrough", href: "https://youtu.be/8v5r37T_dDo" }],
+      },
+      {
+        badge: "Tracking · Data Quality",
+        title: "Built a self-updating learner health tracker.",
+        metric: "98%",
+        metricLabel: "data accuracy, 12 countries",
+        problem:
+          "Cohort data lived in scattered spreadsheets that were reconciled by hand — status was something you chased across 12 countries, not something you read.",
+        built:
+          "A self-updating weekly tracker that pulls scattered cohort data into one source of truth, monitoring learner progress without a person touching a spreadsheet.",
+        results: [
+          "98% data accuracy held across 12 countries",
+          "One weekly source of truth replaced manually-reconciled spreadsheets",
+          "Programme status became readable at a glance for operations and leadership",
+        ],
+        tools: ["Google Sheets", "Apps Script", "KPI Frameworks"],
+      },
+      {
+        badge: "Workflow Automation · Zapier",
+        title: "Replaced a manual intake process with an automation pipeline.",
+        metric: "45min",
+        metricLabel: "of daily manual work removed",
+        problem:
+          "Every course registration was processed by hand — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
+        built:
+          "A four-step Zapier pipeline — Google Form → filtering logic → Sheets record → personalised Gmail welcome — replacing the manual process end to end, with a filter so only qualified registrations reach the database.",
+        results: [
+          "45 minutes of daily manual processing eliminated",
+          "Onboarding communication sent within seconds of registration",
+          "Every registration handled identically, regardless of volume or time of day",
+        ],
+        tools: ["Zapier", "Google Forms", "Google Sheets", "Gmail"],
+      },
+    ],
+  },
+  {
+    kicker: "Tier 2",
+    name: "Analytics that drives decisions",
+    tagline:
+      "Because the number should change what happens next. Reporting and analysis built around operational decisions, not vanity metrics.",
+    capabilities:
+      "SQL & MySQL (CTEs, window functions) · Power BI & Looker Studio dashboards · Excel modelling & KPI frameworks · customer & SLA analysis · operational auditing & data cleaning · executive reporting & data storytelling.",
+    backdrop: "/backgrounds/tier-people.svg",
+    items: [
+      {
+        badge: "Executive Reporting",
+        title: "Turned raw operational data into decisions leaders act on.",
+        metric: "86%",
+        metricLabel: "cohort graduation rate",
+        problem:
+          "Leadership decisions about Cybersecurity Cohort 11 rested on anecdotes — there was no reporting layer tracking the funnel from registration to graduation.",
+        built:
+          "Executive reporting for the full funnel, plus live dashboards and scorecards that surface where delivery is slipping while there's still time to act.",
+        results: [
+          "Tracked the cohort from 2,032 registrations to 900 graduates",
+          "86% graduation rate · 81% CSAT, measured, not claimed",
+          "Leadership decisions moved from anecdotes to numbers",
+        ],
+        tools: ["Excel", "Dashboards", "KPI Frameworks", "Data Storytelling"],
+      },
+      {
+        badge: "SQL · Power BI",
+        title: "Audited support operations with SQL and Power BI.",
+        metric: "25%",
+        metricLabel: "of tickets found breaching SLA",
+        problem:
+          "A support team had ticket data but no analytical layer — no visibility into SLA breaches, escalation patterns, agent workload, or where the system was breaking down.",
+        built:
+          "An end-to-end SQL audit — 15 targeted queries across ticket ageing, ownership, escalation frequency, and response times — feeding an executive Power BI dashboard.",
+        results: [
+          "Found 25% of tickets breaching the 14-day SLA, with multi-agent handoffs as the primary bottleneck",
+          "Revealed 2–3x variation in resolution times from uneven workload distribution",
+          "Gave leadership an always-on dashboard instead of ad-hoc reporting requests",
+        ],
+        tools: ["SQL", "Power BI", "SLA Analysis"],
+        links: [{ label: "View the repo on GitHub", href: "https://github.com/Kerenyambura/operationalbottlenecks" }],
+      },
+      {
+        badge: "Excel · Segmentation",
+        title: "Built an e-commerce operational analytics system in Excel.",
+        metric: "$1,118+",
+        metricLabel: "lifetime value, top 5% of customers",
+        problem:
+          "Twelve months of transaction data sat in a flat export with no analysis layer — decisions about inventory, marketing, and retention were being made on gut feel.",
+        built:
+          "An end-to-end Excel analytics system: customer segmentation by frequency and lifetime value, category and margin analysis, regional distribution, and a dashboard layer for non-technical stakeholders.",
+        results: [
+          "Top 5% of customers identified at $1,118+ lifetime value each",
+          "Electronics flagged as high-margin at just 6% of sales — a clear growth lever",
+          "Two regions found driving 60%+ of revenue with minimal marketing spend",
+        ],
+        tools: ["Excel", "Pivot Tables", "Dashboard Design"],
+        links: [
+          {
+            label: "Read the write-up on Medium",
+            href: "https://medium.com/@nyamburawangombe/how-i-built-a-sales-customer-insights-dashboard-for-a-small-e-commerce-business-using-excel-1d95ecfa71b1",
+          },
+        ],
+      },
+      {
+        badge: "SQL · Data Audit",
+        title: "Ran a full SQL data-integrity audit.",
+        problem:
+          "The Maji Ndogo water authority's survey data had quality issues, mismatches between employee and auditor reports, and suspected integrity problems across field operations.",
+        built:
+          "A SQL audit using JOINs, chained CTEs, and window functions to reconcile field surveys against auditor reports and isolate systematic — rather than accidental — reporting errors.",
+        results: [
+          "Surfaced every site where surveyor and auditor scores disagreed",
+          "Flagged employees with above-average reporting inconsistencies for investigation",
+          "Turned raw survey records into analysis-ready datasets for infrastructure planning",
+        ],
+        tools: ["MySQL", "CTEs", "Window Functions", "Data Cleaning"],
+        links: [
+          { label: "View the SQL on GitHub", href: "https://github.com/Kerenyambura/SQL/blob/main/project_part_3.sql" },
+        ],
+      },
+      {
+        badge: "SQL · MySQL",
+        title: "Analysed retail sales for inventory and targeting.",
+        problem:
+          "A retail business had customer, product, and seasonal sales data but no framework to answer three questions: who is buying, what are they buying, and when?",
+        built:
+          "A structured MySQL analysis using CTEs, subqueries, and window functions to segment customers, rank categories by revenue, and extract seasonal demand patterns.",
+        results: [
+          "Identified the 18–29 segment as the primary buyers across top categories",
+          "Found clear Q4 demand peaks, directly informing procurement planning",
+          "Delivered targeting and inventory recommendations leadership could act on",
+        ],
+        tools: ["MySQL", "CTEs", "Window Functions"],
+        links: [
+          { label: "Read the write-up on Medium", href: "https://medium.com/@nyamburawangombe/retail-sales-analysis-54a805993053" },
+        ],
+      },
+    ],
+  },
+];
+
+/** The three case studies surfaced on the home page. */
+export const featuredCaseStudies: { metric: string; metricLabel: string; title: string; blurb: string }[] = [
+  {
+    metric: "88%",
+    metricLabel: "onboarding completion",
+    title: "Cross-functional onboarding system",
+    blurb: "Six tools, 250+ workflows, 91% SLA compliance — built for a firm scaling from 85 to 200 staff.",
+  },
+  {
+    metric: "50%",
+    metricLabel: "manual work removed",
+    title: "NDA tracking automation",
+    blurb: "An Apps Script + Gmail pipeline that saves 15+ hours a week and removed copy-paste errors.",
+  },
+  {
+    metric: "86%",
+    metricLabel: "cohort graduation rate",
+    title: "Executive cohort reporting",
+    blurb: "2,032 registrations tracked to 900 graduates, so leadership steered by numbers, not anecdotes.",
+  },
+];
+
+/** The delivery process, shown on the home page as a four-step strip. */
+export const processSteps: { step: string; title: string; body: string }[] = [
+  {
+    step: "01",
+    title: "Diagnose",
+    body: "Map the workflow as it actually runs — where time goes, where errors enter, and which handoffs break.",
+  },
+  {
+    step: "02",
+    title: "Design",
+    body: "Shape the system around the operational decision: the SOP, the tracker, the escalation path.",
+  },
+  {
+    step: "03",
+    title: "Automate",
+    body: "Remove the manual load with the right tool for the seam — Zapier, Make, Apps Script, or native automations.",
+  },
+  {
+    step: "04",
+    title: "Report",
+    body: "Put a measured number on the outcome and a dashboard in front of the people who steer by it.",
+  },
+];
+
 /** Trusted-by band on the home page (organisations Keren has worked with). */
 export const organisations: string[] = [
   "ALX Africa",

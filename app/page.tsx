@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
 import { brand } from "@/lib/site";
-import { services, outcomes, type Service } from "@/lib/content";
+import { featuredCaseStudies, processSteps, services, outcomes, type Service } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Operations that scale",
@@ -78,6 +78,56 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── TRUST STRIP — quick credibility signals right under the hero. */}
+      <section className="border-b border-ink/5 bg-paper">
+        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-8 sm:grid-cols-4">
+          {[
+            { value: "3+", label: "years in programme operations" },
+            { value: "3,000+", label: "learners supported" },
+            { value: "8+", label: "African countries coordinated" },
+            { value: "15+ hrs", label: "saved weekly through automation" },
+          ].map((stat, i) => (
+            <Reveal as="div" key={stat.label} delay={i * 80}>
+              <p className="font-serif text-h2 font-light leading-none text-signature">{stat.value}</p>
+              <p className="mt-2 text-small text-ink/60">{stat.label}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FEATURED WORK — the three strongest case studies, metric-first,
+          so a visitor scanning for relevant experience finds it immediately. */}
+      <section className="container-content py-16 sm:py-24">
+        <Reveal>
+          <p className="kicker text-blue-lift">Featured work</p>
+          <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
+            Case studies with the number up front.
+          </h2>
+        </Reveal>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {featuredCaseStudies.map((cs, i) => (
+            <Reveal
+              as="div"
+              key={cs.title}
+              delay={i * 100}
+              className="flex h-full flex-col rounded-3xl border border-ink/10 bg-paper p-8 transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
+            >
+              <p className="font-serif text-display font-light leading-none text-amber">{cs.metric}</p>
+              <p className="mt-2 text-small text-ink/60">{cs.metricLabel}</p>
+              <h3 className="mt-6 font-serif text-xl font-medium text-ink">{cs.title}</h3>
+              <p className="mt-3 flex-1 text-small text-ink/70">{cs.blurb}</p>
+              <a
+                href="/work"
+                className="link-amber mt-6 inline-flex items-center gap-2 text-small font-medium text-signature"
+              >
+                Read the case study
+                <span aria-hidden>→</span>
+              </a>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* ── WHAT I DO — four-column grid. */}
       <section className="container-content py-16 sm:py-24">
         <Reveal>
@@ -97,6 +147,26 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      {/* ── HOW I WORK — the four-step process, a credibility signal in its
+          own right: hiring managers look for evidence of a repeatable method. */}
+      <section className="container-content pb-16 sm:pb-24">
+        <Reveal>
+          <p className="kicker text-blue-lift">How I work</p>
+          <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
+            The same method, every system.
+          </h2>
+        </Reveal>
+        <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+          {processSteps.map((p, i) => (
+            <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
+              <p className="font-serif text-h2 font-light leading-none text-amber">{p.step}</p>
+              <h3 className="mt-4 font-serif text-xl font-medium text-ink">{p.title}</h3>
+              <p className="mt-3 text-small text-ink/70">{p.body}</p>
+            </Reveal>
+          ))}
+        </ol>
       </section>
 
       {/* ── IMPACT — navy band with the headline metrics. */}
