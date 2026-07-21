@@ -42,7 +42,14 @@ export default function WorkPage() {
       {/* ── Tiers of case studies, each told Problem → Built → Result.
           A subtle parallax backdrop fades in per tier to underline its message. */}
       {caseStudyTiers.map((tier, ti) => (
-        <section key={tier.kicker} className="relative isolate overflow-hidden py-12 sm:py-20">
+        <section
+          key={tier.kicker}
+          className={`relative isolate overflow-hidden py-12 sm:py-20 ${
+            ti % 2 === 0
+              ? "border-b border-signature/10 bg-signature/[0.05]"
+              : "border-b border-amber/15 bg-amber/[0.07]"
+          }`}
+        >
           <TierBackdrop src={tier.backdrop} align={ti % 2 === 0 ? "right" : "left"} />
           <div className="container-content">
             <Reveal>
@@ -103,8 +110,9 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ── The toolkit, note + a continuously rolling logo marquee. */}
-      <section className="py-12 sm:py-16">
+      {/* ── The toolkit, note + a continuously rolling logo marquee, on a
+          soft navy tint so the band reads as its own section. */}
+      <section className="border-b border-signature/10 bg-signature/[0.04] py-12 sm:py-16">
         <div className="container-content">
           <Reveal>
             <p className="kicker text-amber">The toolkit</p>
@@ -119,7 +127,7 @@ export default function WorkPage() {
       {/* ── Close CTA → Advisory / Contact. */}
       <section className="container-content py-16 sm:py-24">
         <Reveal>
-          <div className="rounded-3xl border border-ink/10 bg-paper p-10 text-center sm:p-16">
+          <div className="rounded-3xl border border-amber/30 bg-amber/10 p-10 text-center sm:p-16">
             <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-signature">
               {workClose}
             </h2>

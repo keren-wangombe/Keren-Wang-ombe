@@ -44,8 +44,9 @@ const serviceIcon: Record<Service["icon"], ReactNode> = {
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO — light split: copy left, systems illustration right. */}
-      <section className="border-b border-ink/5 bg-background">
+      {/* ── HERO — light split: copy left, systems illustration right, on a
+          soft navy-to-amber wash so the page opens with warmth, not white. */}
+      <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
         <div className="container-content grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
           <div className="animate-fade-up">
             <p className="kicker text-amber">Programme Operations · Nairobi, Kenya</p>
@@ -78,8 +79,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TRUST STRIP — quick credibility signals right under the hero. */}
-      <section className="border-b border-ink/5 bg-paper">
+      {/* ── TRUST STRIP — quick credibility signals on a warm amber band. */}
+      <section className="border-y border-amber/20 bg-amber/10">
         <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-8 sm:grid-cols-4">
           {[
             { value: "3+", label: "years in programme operations" },
@@ -89,42 +90,44 @@ export default function HomePage() {
           ].map((stat, i) => (
             <Reveal as="div" key={stat.label} delay={i * 80}>
               <p className="font-serif text-h2 font-light leading-none text-signature">{stat.value}</p>
-              <p className="mt-2 text-small text-ink/60">{stat.label}</p>
+              <p className="mt-2 text-small text-ink/70">{stat.label}</p>
             </Reveal>
           ))}
         </div>
       </section>
 
       {/* ── FEATURED WORK — the three strongest case studies, metric-first,
-          so a visitor scanning for relevant experience finds it immediately. */}
-      <section className="container-content py-16 sm:py-24">
-        <Reveal>
-          <p className="kicker text-blue-lift">Featured work</p>
-          <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
-            Case studies with the number up front.
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {featuredCaseStudies.map((cs, i) => (
-            <Reveal
-              as="div"
-              key={cs.title}
-              delay={i * 100}
-              className="flex h-full flex-col rounded-3xl border border-ink/10 bg-paper p-8 transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
-            >
-              <p className="font-serif text-display font-light leading-none text-amber">{cs.metric}</p>
-              <p className="mt-2 text-small text-ink/60">{cs.metricLabel}</p>
-              <h3 className="mt-6 font-serif text-xl font-medium text-ink">{cs.title}</h3>
-              <p className="mt-3 flex-1 text-small text-ink/70">{cs.blurb}</p>
-              <a
-                href="/work"
-                className="link-amber mt-6 inline-flex items-center gap-2 text-small font-medium text-signature"
+          set on a deep navy band so they carry real visual weight. */}
+      <section className="bg-signature">
+        <div className="container-content py-16 sm:py-24">
+          <Reveal>
+            <p className="kicker text-amber">Featured work</p>
+            <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-paper">
+              Case studies with the number up front.
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {featuredCaseStudies.map((cs, i) => (
+              <Reveal
+                as="div"
+                key={cs.title}
+                delay={i * 100}
+                className="flex h-full flex-col rounded-3xl border border-paper/10 bg-paper p-8 transition-all duration-300 ease-calm hover:-translate-y-1 hover:shadow-2xl hover:shadow-ink/40"
               >
-                Read the case study
-                <span aria-hidden>→</span>
-              </a>
-            </Reveal>
-          ))}
+                <p className="font-serif text-display font-light leading-none text-amber">{cs.metric}</p>
+                <p className="mt-2 text-small text-ink/60">{cs.metricLabel}</p>
+                <h3 className="mt-6 font-serif text-xl font-medium text-ink">{cs.title}</h3>
+                <p className="mt-3 flex-1 text-small text-ink/70">{cs.blurb}</p>
+                <a
+                  href="/work"
+                  className="link-amber mt-6 inline-flex items-center gap-2 text-small font-medium text-signature"
+                >
+                  Read the case study
+                  <span aria-hidden>→</span>
+                </a>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -149,24 +152,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW I WORK — the four-step process, a credibility signal in its
-          own right: hiring managers look for evidence of a repeatable method. */}
-      <section className="container-content pb-16 sm:pb-24">
-        <Reveal>
-          <p className="kicker text-blue-lift">How I work</p>
-          <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
-            The same method, every system.
-          </h2>
-        </Reveal>
-        <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
-          {processSteps.map((p, i) => (
-            <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
-              <p className="font-serif text-h2 font-light leading-none text-amber">{p.step}</p>
-              <h3 className="mt-4 font-serif text-xl font-medium text-ink">{p.title}</h3>
-              <p className="mt-3 text-small text-ink/70">{p.body}</p>
-            </Reveal>
-          ))}
-        </ol>
+      {/* ── HOW I WORK — the four-step process on a cool navy-tinted band,
+          a credibility signal in its own right. */}
+      <section className="border-y border-signature/10 bg-signature/[0.05]">
+        <div className="container-content py-16 sm:py-24">
+          <Reveal>
+            <p className="kicker text-blue-lift">How I work</p>
+            <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
+              The same method, every system.
+            </h2>
+          </Reveal>
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((p, i) => (
+              <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
+                <p className="font-serif text-h2 font-light leading-none text-amber">{p.step}</p>
+                <h3 className="mt-4 font-serif text-xl font-medium text-ink">{p.title}</h3>
+                <p className="mt-3 text-small text-ink/70">{p.body}</p>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
       </section>
 
       {/* ── IMPACT — navy band with the headline metrics. */}
@@ -195,21 +200,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CLOSE — quiet CTA. */}
-      <section className="container-content py-20 sm:py-28">
-        <Reveal>
-          <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
-            Looking for someone who builds the systems, not just runs them?
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href="/contact" variant="accent">
-              Get in touch
-            </Button>
-            <Button href="/work" variant="ghost">
-              See the work
-            </Button>
-          </div>
-        </Reveal>
+      {/* ── CLOSE — quiet CTA on a warm amber wash, so the page ends in color. */}
+      <section className="bg-gradient-to-b from-background to-amber/10">
+        <div className="container-content py-20 sm:py-28">
+          <Reveal>
+            <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
+              Looking for someone who builds the systems, not just runs them?
+            </h2>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Button href="/contact" variant="accent">
+                Get in touch
+              </Button>
+              <Button href="/work" variant="ghost">
+                See the work
+              </Button>
+            </div>
+          </Reveal>
+        </div>
       </section>
     </>
   );

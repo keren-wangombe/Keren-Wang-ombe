@@ -12,7 +12,7 @@ export default function CaseStudy({ item, index }: { item: CaseStudyItem; index:
     <Reveal
       as="article"
       delay={index * 80}
-      className="overflow-hidden rounded-3xl border border-ink/10 bg-paper transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
+      className="overflow-hidden rounded-3xl border border-ink/10 border-l-4 border-l-amber-bright bg-paper transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
     >
       <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-12">
         {/* ── Left rail: badge, metric, title, tools. */}
