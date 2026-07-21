@@ -6,7 +6,7 @@ import { toolkit } from "@/lib/content";
  * translateX(-50%) loop is seamless; it pauses on hover and freezes under
  * prefers-reduced-motion (handled globally in globals.css).
  *
- * Logos are placeholders in /public/logos, swap each for the official asset.
+ * Logos in /public/logos are official brand marks set with the tool name.
  */
 export default function LogoMarquee() {
   const loop = [...toolkit, ...toolkit];

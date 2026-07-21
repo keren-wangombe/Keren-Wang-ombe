@@ -39,26 +39,20 @@ export type NavItem = {
   children?: NavItem[];
 };
 
-/** NAV order is intentional, a "systems-first ascent." Do not reorder casually. */
+/**
+ * NAV is deliberately minimal: three tabs.
+ * KW (the monogram, rendered in the Header) hosts About, Work hosts the
+ * projects and the toolkit, and Contact carries the details.
+ */
 export const nav: NavItem[] = [
   { href: "/work", label: "Work" },
-  { href: "/start-here", label: "Approach" },
-  {
-    href: "/resources",
-    label: "Resources",
-    children: [
-      { href: "/resources/case-studies", label: "Case Studies" },
-      { href: "/resources/interview-prep", label: "Playbooks" },
-      { href: "/resources/articles", label: "Articles" },
-      { href: "/resources/downloads", label: "Downloads" },
-      { href: "/resources#community", label: "Community Questions" },
-    ],
-  },
-  { href: "/about", label: "About" },
 ];
 
 /** Primary contact email, shown for general inquiries and booking. */
 export const contactEmail = "kerenwangombe@gmail.com";
+
+/** Resume, linked from /contact. Drop the real PDF over /public/resume.pdf. */
+export const resumeFile = "/resume.pdf";
 
 /** Contact email for privacy-specific requests (Privacy + Cookie policies). */
 export const privacyEmail = "kerenwangombe@gmail.com";

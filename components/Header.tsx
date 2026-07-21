@@ -6,10 +6,9 @@ import { useEffect, useState } from "react";
 import { brand, nav, type NavItem } from "@/lib/site";
 
 /**
- * Header: name on the left, the build-first nav inline on the web (desktop),
- * collapsing to a quiet three-line disclosure on mobile. Ink on Paper; links
- * shift to amber on hover. Items with children (Resources) open a hover/focus
- * dropdown on desktop and expand inline on mobile.
+ * Header: three tabs. The KW monogram hosts About, Work hosts the projects
+ * and toolkit, and Contact carries the details. Ink on Paper; links shift to
+ * amber on hover. Collapses to a quiet three-line disclosure on mobile.
  */
 export default function Header() {
   const pathname = usePathname();
@@ -38,8 +37,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-paper/85 backdrop-blur-md print:hidden">
       <div className="container-content flex items-center justify-between gap-6 py-4">
-        {/* KW monogram */}
-        <Link href="/" className="group flex items-center leading-none" aria-label={`${brand.name}, home`}>
+        {/* KW monogram → About */}
+        <Link href="/about" className="group flex items-center leading-none" aria-label={`About ${brand.name}`}>
           <span
             aria-hidden
             className="font-serif text-2xl font-semibold tracking-tight text-signature transition-colors duration-300 ease-calm group-hover:text-amber"
