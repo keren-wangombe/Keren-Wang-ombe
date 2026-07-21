@@ -53,11 +53,11 @@ export type NavItem = {
 };
 
 /**
- * NAV is deliberately minimal: three tabs.
- * KW (the monogram, rendered in the Header) hosts About, Work hosts the
- * projects and the toolkit, and Contact carries the details.
+ * NAV is deliberately minimal. The KW monogram goes home; About, Work, and
+ * Contact (rendered as the header CTA) are the tabs.
  */
 export const nav: NavItem[] = [
+  { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
 ];
 
