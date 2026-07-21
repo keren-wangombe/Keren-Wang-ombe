@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import InquiryForm from "@/components/InquiryForm";
-import { social } from "@/lib/site";
+import { contactEmail, resumeFile, social } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -34,18 +34,21 @@ export default function ContactPage() {
             </p>
             <div className="mt-8 space-y-3 text-body">
               <p>
+                <span className="kicker mr-3 text-ink/50">Email</span>
+                <a href={`mailto:${contactEmail}`} className="link-quiet">
+                  {contactEmail}
+                </a>
+              </p>
+              <p>
+                <span className="kicker mr-3 text-ink/50">LinkedIn</span>
                 <a href={social.linkedin} target="_blank" rel="noreferrer" className="link-quiet">
-                  LinkedIn
+                  keren-wangombe
                 </a>
               </p>
               <p>
-                <a href={social.github} target="_blank" rel="noreferrer" className="link-quiet">
-                  GitHub
-                </a>
-              </p>
-              <p>
-                <a href={social.medium} target="_blank" rel="noreferrer" className="link-quiet">
-                  Medium
+                <span className="kicker mr-3 text-ink/50">Resume</span>
+                <a href={resumeFile} target="_blank" rel="noreferrer" className="link-quiet">
+                  View my resume (PDF)
                 </a>
               </p>
             </div>

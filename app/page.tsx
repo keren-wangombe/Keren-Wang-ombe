@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Button from "@/components/Button";
 import Reveal from "@/components/Reveal";
-import EmailCapture from "@/components/EmailCapture";
 import { brand } from "@/lib/site";
 import { services, outcomes, type Service } from "@/lib/content";
 
@@ -126,26 +125,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CLOSE — quiet CTA + email capture. */}
+      {/* ── CLOSE — quiet CTA. */}
       <section className="container-content py-20 sm:py-28">
-        <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
-          <Reveal>
-            <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
-              Looking for someone who builds the systems, not just runs them?
-            </h2>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="/contact" variant="accent">
-                Get in touch
-              </Button>
-              <Button href="/work" variant="ghost">
-                See the work
-              </Button>
-            </div>
-          </Reveal>
-          <Reveal className="lg:pt-2">
-            <EmailCapture />
-          </Reveal>
-        </div>
+        <Reveal>
+          <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
+            Looking for someone who builds the systems, not just runs them?
+          </h2>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <Button href="/contact" variant="accent">
+              Get in touch
+            </Button>
+            <Button href="/work" variant="ghost">
+              See the work
+            </Button>
+          </div>
+        </Reveal>
       </section>
     </>
   );

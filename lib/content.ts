@@ -212,11 +212,11 @@ export const toolkitNote =
 
 export type Tool = {
   name: string;
-  /** Placeholder wordmark in /public/logos, swap for the official logo asset. */
+  /** Official brand lockup (mark + name) in /public/logos. */
   logo: string;
 };
 
-/** The moving toolkit marquee. Logos are placeholders to replace with real ones. */
+/** The moving toolkit marquee, official brand marks set with the tool name. */
 export const toolkit: Tool[] = [
   { name: "Notion", logo: "/logos/notion.svg" },
   { name: "Airtable", logo: "/logos/airtable.svg" },
@@ -227,7 +227,7 @@ export const toolkit: Tool[] = [
   { name: "Zapier", logo: "/logos/zapier.svg" },
   { name: "Make", logo: "/logos/make.svg" },
   { name: "Power BI", logo: "/logos/power-bi.svg" },
-  { name: "SQL", logo: "/logos/sql.svg" },
+  { name: "MySQL", logo: "/logos/sql.svg" },
   { name: "Looker Studio", logo: "/logos/looker.svg" },
   { name: "Canva", logo: "/logos/canva.svg" },
 ];
