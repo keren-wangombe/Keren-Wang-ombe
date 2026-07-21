@@ -5,9 +5,9 @@
 
 export const brand = {
   name: "Keren Wang'ombe",
-  byline: "Operations & Analytics",
+  byline: "Operations · Systems · Analytics",
   oneLine:
-    "I design operational systems that help teams streamline workflows, improve execution visibility, and make better decisions using data.",
+    "I turn operational chaos into scalable systems, messy cohort data, manual workflows, and scattered pipelines into automation that runs itself.",
 } as const;
 
 /**
@@ -41,13 +41,11 @@ export type NavItem = {
 
 /**
  * NAV is deliberately minimal: three tabs.
- * KW hosts About (the landing), Work hosts the projects and the toolkit,
- * and Contact carries the details.
+ * KW (the monogram, rendered in the Header) hosts About, Work hosts the
+ * projects and the toolkit, and Contact carries the details.
  */
 export const nav: NavItem[] = [
-  { href: "/", label: "KW" },
   { href: "/work", label: "Work" },
-  { href: "/contact", label: "Contact" },
 ];
 
 /** Primary contact email, shown for general inquiries and booking. */

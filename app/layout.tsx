@@ -52,13 +52,6 @@ export default function RootLayout({
         </a>
         <Header />
         <main id="main">{children}</main>
-        <div className="border-t border-slate-100 bg-white px-6 py-6 print:hidden">
-          <div className="mx-auto max-w-5xl">
-            <p className="font-serif text-sm italic text-signature">
-              © {new Date().getFullYear()} {brand.name}
-            </p>
-          </div>
-        </div>
         <CookieConsent />
       </body>
     </html>
