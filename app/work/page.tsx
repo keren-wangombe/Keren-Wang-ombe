@@ -1,94 +1,180 @@
 import type { Metadata } from "next";
+import PageBanner from "@/components/PageBanner";
+import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
+import FlipCard from "@/components/FlipCard";
+import FlipTile from "@/components/FlipTile";
+import Converge from "@/components/Converge";
 import LogoMarquee from "@/components/LogoMarquee";
-import ProjectAccordion from "@/components/ProjectAccordion";
-import { domains } from "@/lib/portfolio";
-import { toolkitNote } from "@/lib/content";
+import DiagramGallery from "@/components/DiagramGallery";
+import TierBackdrop from "@/components/TierBackdrop";
+import { diagrams, tiers, toolkitNote, workClose } from "@/lib/content";
+import { pageBanners } from "@/lib/site";
+
+/** Corner each grid tile converges from, in 2×2 order. */
+const corners = ["tl", "tr", "bl", "br"] as const;
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Operations & analytics that scale",
   description:
-    "Operations and analytics projects: onboarding systems, delivery operations, workflow automation, and the SQL, Excel, and Power BI analysis behind operational decisions.",
+    "Operations and analytics work: automation that removes manual load, tracking held to measured accuracy, and reporting that shows leadership where delivery is slipping while there's still time to act.",
 };
 
 export default function WorkPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-14">
-      {domains.map((domain, di) => (
-        <section key={domain.key} className={di > 0 ? "mt-16 border-t border-hairline pt-16" : ""}>
-          {/* ── Domain intro. */}
-          <div className="mb-10">
-            <span
-              className="inline-block rounded-full px-3 py-1 text-[9px] font-extrabold uppercase tracking-[0.18em]"
-              style={{
-                background: `${domain.color}18`,
-                color: domain.color,
-                border: `1px solid ${domain.color}30`,
-              }}
-            >
-              {domain.tagline}
-            </span>
-            <h2 className="mb-4 mt-3 font-serif text-4xl font-normal italic tracking-tight text-signature md:text-6xl">
-              {domain.title}
-            </h2>
-            <p className="about-quote text-sm leading-relaxed text-slate-500">{domain.intro}</p>
-          </div>
+    <>
+      <PageBanner
+        image={pageBanners.work}
+        kicker="What I build"
+        title="Systems for the operation, not just the task."
+        intro={
+          <p>
+            I build the operational backbone: automation that removes manual
+            load, tracking held to measured accuracy, and analytics that turns
+            raw data into decisions. Every system below started as an operational
+            problem, and every metric is measured, not claimed.
+          </p>
+        }
+      >
+        <div className="flex flex-wrap gap-4">
+          <Button href="#architecture">See the systems</Button>
+          <Button href="/advisory" variant="accent">
+            Work with me
+          </Button>
+        </div>
+      </PageBanner>
 
-          {/* ── Headline metrics (Analytics only). */}
-          {domain.metrics && (
-            <div className="mb-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
-              {domain.metrics.map((m) => (
-                <div key={m.label} className="card-hover rounded-2xl border border-slate-100 bg-white p-6 text-center">
-                  <p className="font-serif text-4xl text-signature">{m.val}</p>
-                  <p className="mt-2 text-[10px] font-extrabold uppercase tracking-[0.18em]" style={{ color: domain.color }}>
-                    {m.label}
-                  </p>
-                  <p className="mt-1 text-xs text-slate-400">{m.desc}</p>
-                </div>
+      {/* ── Tiers, each heading flips to its detail; the 2×2 grid converges in.
+          A subtle parallax backdrop fades in per tier to underline its message. */}
+      {tiers.map((tier, ti) => {
+        const hero = tier.items.find((i) => i.hero);
+        const feature = tier.items.find((i) => i.feature);
+        const grid = tier.items.filter((i) => !i.hero && !i.feature);
+
+        return (
+          <section
+            key={tier.kicker}
+            className="relative isolate overflow-hidden py-12 sm:py-20"
+          >
+            <TierBackdrop src={tier.backdrop} align={ti % 2 === 0 ? "right" : "left"} />
+            <div className="container-content">
+            <Reveal>
+              <h2 className="font-serif text-h1 font-light text-signature">
+                {tier.name}
+              </h2>
+              <p className="mt-3 max-w-2xl text-body text-ink">{tier.tagline}</p>
+            </Reveal>
+
+            {/* Lead item, big-number hero card, or a full-width feature tile. */}
+            {hero && (
+              <Reveal className="mt-10">
+                <FlipCard
+                  metric={hero.metric ?? ""}
+                  metricLabel={hero.metricLabel ?? ""}
+                  title={hero.title}
+                  body={hero.body}
+                  hero
+                />
+              </Reveal>
+            )}
+            {feature && (
+              <Reveal className="mt-10">
+                <FlipTile title={feature.title} body={feature.body} />
+              </Reveal>
+            )}
+
+            {/* The rest, flip tiles converging from their corners, staggered. */}
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {grid.map((item, i) => (
+                <Converge
+                  key={item.title}
+                  from={corners[i % corners.length]}
+                  delay={i * 120}
+                >
+                  <FlipTile title={item.title} body={item.body} />
+                </Converge>
               ))}
             </div>
-          )}
 
-          {/* ── Featured projects, expandable cards. */}
-          <p className="divider-label mb-8">Featured Projects</p>
-          <div className="mb-12 grid grid-cols-1 gap-3">
-            {domain.projects.map((proj) => (
-              <ProjectAccordion key={proj.title} project={proj} color={domain.color} />
-            ))}
-          </div>
-
-          {/* ── Core competencies. */}
-          <p className="divider-label mb-8">Core Competencies</p>
-          <div className="rounded-3xl border border-slate-100 bg-white p-8">
-            <div className="space-y-8">
-              {domain.skillGroups.map((group) => (
-                <div key={group.label}>
-                  <p
-                    className="mb-2 text-[9px] font-extrabold uppercase tracking-[0.2em]"
-                    style={{ color: domain.color, opacity: 0.75 }}
-                  >
-                    {group.label}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill) => (
-                      <span key={skill} className="skill-chip">
-                        <span className="skill-chip-dot" style={{ background: `${domain.color}60` }} />
-                        {skill}
+            {/* Capabilities, a chip cloud; each pill fades up in sequence. */}
+            <div className="mt-10">
+              <Reveal>
+                <p className="kicker text-blue-lift">Also in the kit</p>
+              </Reveal>
+              <ul className="mt-5 flex flex-wrap gap-2.5">
+                {tier.capabilities
+                  .split("·")
+                  .map((c) => c.trim().replace(/\.$/, ""))
+                  .filter(Boolean)
+                  .map((cap, i) => (
+                    <Reveal as="li" key={cap} delay={i * 90}>
+                      <span className="inline-block rounded-full bg-signature px-4 py-2 text-small text-paper transition-colors duration-300 ease-calm hover:bg-blue-lift">
+                        {cap}
                       </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                    </Reveal>
+                  ))}
+              </ul>
+            </div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* ── Architecture diagrams, a dark Signature band so the work pops off
+          the Paper. An in-place gallery; click any one to view it larger. */}
+      <section
+        id="architecture"
+        className="scroll-mt-20 bg-ink py-16 sm:py-24"
+      >
+        <div className="container-content">
+          <Reveal>
+            <p className="kicker text-amber">Selected systems</p>
+            <h2 className="mt-5 max-w-2xl font-serif text-h1 font-light text-paper">
+              The systems behind the operational decisions.
+            </h2>
+            <p className="mt-4 max-w-prose text-body text-paper/70">
+              A rolling look at how the work is wired, real operational systems,
+              mapped end to end. They switch on their own; click any one to view
+              it larger.
+            </p>
+          </Reveal>
+          <Reveal className="mt-12">
+            <div className="rounded-3xl border border-amber/30 bg-paper p-4 shadow-2xl shadow-ink/40 sm:p-6">
+              <DiagramGallery diagrams={diagrams} />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── The toolkit, note + a continuously rolling logo marquee. */}
+      <section className="py-12 sm:py-16">
+        <div className="container-content">
+          <Reveal>
+            <p className="kicker text-amber">The toolkit</p>
+            <p className="mt-5 max-w-2xl text-body text-ink">{toolkitNote}</p>
+          </Reveal>
+        </div>
+        <Reveal className="mt-12">
+          <LogoMarquee />
+        </Reveal>
+      </section>
+
+      {/* ── Close CTA → Advisory / Contact. */}
+      <section className="container-content py-16 sm:py-24">
+        <Reveal>
+          <div className="rounded-3xl border border-ink/10 bg-paper p-10 text-center sm:p-16">
+            <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-signature">
+              {workClose}
+            </h2>
+            <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Button href="/advisory">Explore advisory</Button>
+              <Button href="/contact" variant="ghost">
+                Get in touch
+              </Button>
             </div>
           </div>
-        </section>
-      ))}
-
-      {/* ── The toolkit, note + rolling marquee of official tool logos. */}
-      <section className="mt-16 border-t border-hairline pt-16">
-        <p className="divider-label mb-8">The Toolkit</p>
-        <p className="mx-auto mb-10 max-w-2xl text-center text-sm leading-relaxed text-slate-500">{toolkitNote}</p>
-        <LogoMarquee />
+        </Reveal>
       </section>
-    </div>
+    </>
   );
 }
