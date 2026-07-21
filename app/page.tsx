@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Button from "@/components/Button";
+import HeroIntro from "@/components/HeroIntro";
 import Reveal from "@/components/Reveal";
 import { brand } from "@/lib/site";
 import { featuredCaseStudies, processSteps, services, outcomes, type Service } from "@/lib/content";
@@ -68,13 +69,8 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <Reveal className="order-first lg:order-none">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/illustrations/hero-systems.svg"
-              alt="An operations dashboard: kanban board, key metrics, and a delivery trend chart"
-              className="w-full"
-            />
+          <Reveal className="order-first pb-6 lg:order-none">
+            <HeroIntro />
           </Reveal>
         </div>
       </section>

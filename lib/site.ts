@@ -32,6 +32,20 @@ export const bannerSrc = pageBanners.home;
 /** About-page portrait (drop a web-optimized 4:5 JPEG over this path). */
 export const aboutPortrait = "/portraits/keren.svg";
 
+/**
+ * Hero portrait — the photo a visitor sees first. Drop the real photo in as
+ * /public/portraits/keren.jpg (portrait orientation) and this path picks it up.
+ */
+export const heroPortrait = "/portraits/keren.jpg";
+
+/**
+ * Intro video (Loom) embedded in the hero. PLACEHOLDER — swap the ID for the
+ * final recording's when it's ready (the ID is the last segment of the
+ * loom.com/share/... URL).
+ */
+export const heroLoomEmbed =
+  "https://www.loom.com/embed/3ec6ce881036464ca076c540fb1a0376";
+
 export type NavItem = {
   href: string;
   label: string;
