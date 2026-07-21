@@ -179,36 +179,20 @@ export const caseStudyTiers: CaseStudyTier[] = [
     backdrop: "/backgrounds/tier-systems.svg",
     items: [
       {
-        badge: "Workflow Automation · Apps Script",
-        title: "Automated NDA tracking end to end.",
-        metric: "50%",
-        metricLabel: "manual work removed",
-        problem:
-          "NDA tracking ran on copy-paste between inboxes and spreadsheets — hours of manual work every week, and every handoff another chance for an error nobody would catch until it mattered.",
-        built:
-          "A Google Apps Script and Gmail pipeline that tracks NDAs end to end: intake, status, and follow-ups run themselves, with the spreadsheet updated as a by-product instead of a chore.",
-        results: [
-          "Cut manual tracking work by 50%",
-          "Saved 15+ hours every week, returned to higher-value work",
-          "Removed the copy-paste errors that came with the manual process",
-        ],
-        tools: ["Google Apps Script", "Gmail", "Google Sheets"],
-      },
-      {
         badge: "Systems Design · Workflow Automation",
-        title: "Built a cross-functional onboarding operations system.",
+        title: "Cross-Functional Onboarding Operations System",
         metric: "88%",
         metricLabel: "onboarding completion",
         problem:
-          "A consulting firm scaling from 85 to 200 staff had no standard onboarding: fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
+          "A consulting firm scaling from 85 to 200 employees had no standardised onboarding process — fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
         built:
-          "A six-tool onboarding system that automates intake, creates ClickUp tasks automatically, coordinates IT provisioning, and escalates overdue cases — built without engineering support, and redesigned mid-build onto a Google Sheets + ClickUp architecture after Excel sync failures.",
+          "A six-tool onboarding operations system that automated intake, created ClickUp workflow tasks automatically, coordinated IT provisioning, and escalated overdue cases — built without engineering support, and redesigned mid-build onto a Google Sheets + ClickUp architecture after Excel sync failures.",
         results: [
           "88% onboarding completion rate · 91% SLA compliance",
-          "24% reduction in delays · 38% less manual HR coordination",
+          "24% reduction in delays · 38% reduction in manual HR coordination",
           "250+ workflows tracked across Client Services, Operations, and Analytics",
         ],
-        tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion"],
+        tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion", "Excel"],
         links: [
           {
             label: "Watch the system walkthrough",
@@ -221,49 +205,54 @@ export const caseStudyTiers: CaseStudyTier[] = [
         ],
       },
       {
-        badge: "Project Operations · Asana",
-        title: "Designed a programme delivery operations system.",
+        badge: "Systems Design · CRM",
+        title: "Operational Command Center",
+        problem:
+          "A growing coaching organisation with 3 coaches and 25 active clients had no shared operational infrastructure — client records scattered, onboarding inconsistent between coaches, and zero visibility for leadership.",
+        built:
+          "A centralised Notion-based Operations Command Center unifying client management, onboarding workflows, operational documentation, reporting, and content coordination into one connected system any coach could use without being briefed.",
+        results: [
+          "Centralised CRM with filtered visibility by coach, onboarding stage, and upcoming sessions — real-time oversight without manual status updates",
+          "Standardised session documentation with structured templates for consistent tracking across all coaches",
+          "3 operational SOPs covering onboarding, no-show management, and offboarding — process no longer dependent on institutional memory",
+          "Live operations calendar auto-tracking sessions, plus unified content and workflow tracking for scalable delivery",
+        ],
+        tools: ["Notion", "CRM Design", "SOP Documentation", "Workflow Design", "Operational Reporting"],
+        links: [
+          {
+            label: "Open the operations hub",
+            href: "https://paper-belt-9a3.notion.site/The-Shift-Collective-Operations-Hub-3361bb37c5e180f68291d8917dbc2eed?pvs=143",
+          },
+        ],
+      },
+      {
+        badge: "Project Operations",
+        title: "Programme Delivery Operations System",
         problem:
           "A 12-week programme was coordinated through email threads and shared documents — no dependency tracking, no escalation logic, and no delivery visibility for leadership.",
         built:
-          "A structured Asana system covering the full programme lifecycle: 24 tasks across 5 phases with 9 mapped dependencies, custom fields for live delivery status, and automated escalation that routes blocked work straight to leadership.",
+          "A structured Asana delivery system covering the full programme lifecycle: 24 tasks across 5 phases with 9 mapped dependencies, custom fields for live status, and automated escalation that routes blocked work straight to leadership.",
         results: [
-          "Execution sequencing enforced by the system, not by memory",
-          "Blocked tasks escalate to leadership automatically; facilitator completions auto-confirm",
-          "Goals, milestones, and delivery tracking connected into one reporting view",
+          "24 tasks across 5 phases with 9 mapped dependencies — sequencing enforced by the system, not memory",
+          "Automated escalation routes blocked work to leadership while auto-confirming facilitator completions",
+          "Goals, milestones, and delivery tracking connected into one leadership reporting view",
         ],
-        tools: ["Asana", "Dependency Mapping", "Process Automation"],
+        tools: ["Asana", "Dependency Mapping", "Process Automation", "KPI Tracking"],
         links: [{ label: "Watch the walkthrough", href: "https://youtu.be/8v5r37T_dDo" }],
       },
       {
-        badge: "Tracking · Data Quality",
-        title: "Built a self-updating learner health tracker.",
-        metric: "98%",
-        metricLabel: "data accuracy, 12 countries",
-        problem:
-          "Cohort data lived in scattered spreadsheets that were reconciled by hand — status was something you chased across 12 countries, not something you read.",
-        built:
-          "A self-updating weekly tracker that pulls scattered cohort data into one source of truth, monitoring learner progress without a person touching a spreadsheet.",
-        results: [
-          "98% data accuracy held across 12 countries",
-          "One weekly source of truth replaced manually-reconciled spreadsheets",
-          "Programme status became readable at a glance for operations and leadership",
-        ],
-        tools: ["Google Sheets", "Apps Script", "KPI Frameworks"],
-      },
-      {
-        badge: "Workflow Automation · Zapier",
-        title: "Replaced a manual intake process with an automation pipeline.",
+        badge: "Workflow Automation",
+        title: "Operational Workflow Automation Pipeline",
         metric: "45min",
         metricLabel: "of daily manual work removed",
         problem:
-          "Every course registration was processed by hand — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
+          "A course provider was manually processing every registration through spreadsheets and individual emails — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
         built:
           "A four-step Zapier pipeline — Google Form → filtering logic → Sheets record → personalised Gmail welcome — replacing the manual process end to end, with a filter so only qualified registrations reach the database.",
         results: [
           "45 minutes of daily manual processing eliminated",
-          "Onboarding communication sent within seconds of registration",
-          "Every registration handled identically, regardless of volume or time of day",
+          "Personalised onboarding communication sent within seconds of registration",
+          "Every registration handled identically regardless of volume or time of day",
         ],
         tools: ["Zapier", "Google Forms", "Google Sheets", "Gmail"],
       },
@@ -279,53 +268,21 @@ export const caseStudyTiers: CaseStudyTier[] = [
     backdrop: "/backgrounds/tier-people.svg",
     items: [
       {
-        badge: "Executive Reporting",
-        title: "Turned raw operational data into decisions leaders act on.",
-        metric: "86%",
-        metricLabel: "cohort graduation rate",
-        problem:
-          "Leadership decisions about Cybersecurity Cohort 11 rested on anecdotes — there was no reporting layer tracking the funnel from registration to graduation.",
-        built:
-          "Executive reporting for the full funnel, plus live dashboards and scorecards that surface where delivery is slipping while there's still time to act.",
-        results: [
-          "Tracked the cohort from 2,032 registrations to 900 graduates",
-          "86% graduation rate · 81% CSAT, measured, not claimed",
-          "Leadership decisions moved from anecdotes to numbers",
-        ],
-        tools: ["Excel", "Dashboards", "KPI Frameworks", "Data Storytelling"],
-      },
-      {
-        badge: "SQL · Power BI",
-        title: "Audited support operations with SQL and Power BI.",
-        metric: "25%",
-        metricLabel: "of tickets found breaching SLA",
-        problem:
-          "A support team had ticket data but no analytical layer — no visibility into SLA breaches, escalation patterns, agent workload, or where the system was breaking down.",
-        built:
-          "An end-to-end SQL audit — 15 targeted queries across ticket ageing, ownership, escalation frequency, and response times — feeding an executive Power BI dashboard.",
-        results: [
-          "Found 25% of tickets breaching the 14-day SLA, with multi-agent handoffs as the primary bottleneck",
-          "Revealed 2–3x variation in resolution times from uneven workload distribution",
-          "Gave leadership an always-on dashboard instead of ad-hoc reporting requests",
-        ],
-        tools: ["SQL", "Power BI", "SLA Analysis"],
-        links: [{ label: "View the repo on GitHub", href: "https://github.com/Kerenyambura/operationalbottlenecks" }],
-      },
-      {
-        badge: "Excel · Segmentation",
-        title: "Built an e-commerce operational analytics system in Excel.",
+        badge: "Excel · Operational Analytics",
+        title: "E-Commerce Operational Analytics System",
         metric: "$1,118+",
         metricLabel: "lifetime value, top 5% of customers",
         problem:
-          "Twelve months of transaction data sat in a flat export with no analysis layer — decisions about inventory, marketing, and retention were being made on gut feel.",
+          "A growing e-commerce business had 12+ months of transaction data but no operational visibility into customer behaviour, product performance, or regional trends — inventory and marketing decisions were made without an analytics layer.",
         built:
-          "An end-to-end Excel analytics system: customer segmentation by frequency and lifetime value, category and margin analysis, regional distribution, and a dashboard layer for non-technical stakeholders.",
+          "An end-to-end Excel analytics system that turned raw sales data into reporting dashboards, customer segmentation, and performance insights supporting inventory planning, marketing optimisation, and revenue decisions.",
         results: [
           "Top 5% of customers identified at $1,118+ lifetime value each",
-          "Electronics flagged as high-margin at just 6% of sales — a clear growth lever",
+          "Electronics flagged as high-margin but underperforming at only 6% of sales — a clear growth lever",
           "Two regions found driving 60%+ of revenue with minimal marketing spend",
+          "Low-performing SKUs (<2% of revenue) flagged for rationalisation",
         ],
-        tools: ["Excel", "Pivot Tables", "Dashboard Design"],
+        tools: ["Microsoft Excel", "Dashboard Design", "Customer Segmentation", "KPI Reporting"],
         links: [
           {
             label: "Read the write-up on Medium",
@@ -334,37 +291,54 @@ export const caseStudyTiers: CaseStudyTier[] = [
         ],
       },
       {
-        badge: "SQL · Data Audit",
-        title: "Ran a full SQL data-integrity audit.",
+        badge: "SQL · Power BI",
+        title: "Customer Support Operations Analytics",
+        metric: "25%",
+        metricLabel: "of tickets found breaching SLA",
         problem:
-          "The Maji Ndogo water authority's survey data had quality issues, mismatches between employee and auditor reports, and suspected integrity problems across field operations.",
+          "A support operations team lacked visibility into SLA breaches, escalation patterns, agent workload distribution, and operational bottlenecks — making it hard for leadership to improve response efficiency.",
         built:
-          "A SQL audit using JOINs, chained CTEs, and window functions to reconcile field surveys against auditor reports and isolate systematic — rather than accidental — reporting errors.",
+          "An end-to-end SQL operational audit — 15 queries across ticket ageing, ownership, escalation frequency, and response times — feeding an executive Power BI dashboard for operational health and delivery performance.",
         results: [
-          "Surfaced every site where surveyor and auditor scores disagreed",
-          "Flagged employees with above-average reporting inconsistencies for investigation",
-          "Turned raw survey records into analysis-ready datasets for infrastructure planning",
+          "25% of tickets exceeding the 14-day SLA, with multi-agent handoffs the primary bottleneck",
+          "2–3x variation in resolution times from uneven workload distribution",
+          "Interactive Power BI executive dashboard centralising SLA tracking, KPIs, and escalation analysis",
         ],
-        tools: ["MySQL", "CTEs", "Window Functions", "Data Cleaning"],
-        links: [
-          { label: "View the SQL on GitHub", href: "https://github.com/Kerenyambura/SQL/blob/main/project_part_3.sql" },
-        ],
+        tools: ["SQL", "Power BI", "SLA Analysis", "Executive Dashboards"],
+        links: [{ label: "View the repo on GitHub", href: "https://github.com/Kerenyambura/operationalbottlenecks" }],
       },
       {
         badge: "SQL · MySQL",
-        title: "Analysed retail sales for inventory and targeting.",
+        title: "Retail Sales Operational Analytics",
         problem:
-          "A retail business had customer, product, and seasonal sales data but no framework to answer three questions: who is buying, what are they buying, and when?",
+          "A retail business had customer, product, and seasonal sales data but no framework to understand purchasing behaviour, category performance, or operational demand patterns.",
         built:
-          "A structured MySQL analysis using CTEs, subqueries, and window functions to segment customers, rank categories by revenue, and extract seasonal demand patterns.",
+          "A structured SQL analytics system using CTEs, subqueries, and window functions to segment customers, rank categories by revenue, and surface seasonal demand for inventory and targeting.",
         results: [
-          "Identified the 18–29 segment as the primary buyers across top categories",
-          "Found clear Q4 demand peaks, directly informing procurement planning",
-          "Delivered targeting and inventory recommendations leadership could act on",
+          "Electronics identified as the highest revenue-generating category",
+          "18–29 age segment revealed as the primary purchasing demographic",
+          "Seasonal demand spikes surfaced to support inventory forecasting and procurement planning",
         ],
-        tools: ["MySQL", "CTEs", "Window Functions"],
+        tools: ["MySQL", "SQL Analytics", "CTEs", "Window Functions"],
         links: [
           { label: "Read the write-up on Medium", href: "https://medium.com/@nyamburawangombe/retail-sales-analysis-54a805993053" },
+        ],
+      },
+      {
+        badge: "SQL · Data Audit",
+        title: "Maji Ndogo Operational Data Audit",
+        problem:
+          "A national water authority managing thousands of water sources had inconsistent survey data, reporting discrepancies, and suspected integrity issues across field operations.",
+        built:
+          "A full SQL data audit — JOINs, chained CTEs, and window functions — to inspect, clean, validate, and reconcile survey records against auditor reports, isolating systematic rather than accidental reporting errors.",
+        results: [
+          "Discrepancies surfaced between field surveys and independent auditor assessments",
+          "Employees with above-average reporting inconsistencies flagged for investigation",
+          "Raw survey records transformed into analysis-ready datasets for infrastructure planning",
+        ],
+        tools: ["SQL", "Data Cleaning", "CTEs", "Operational Auditing"],
+        links: [
+          { label: "View the SQL on GitHub", href: "https://github.com/Kerenyambura/SQL/blob/main/project_part_3.sql" },
         ],
       },
     ],
@@ -376,20 +350,20 @@ export const featuredCaseStudies: { metric: string; metricLabel: string; title: 
   {
     metric: "88%",
     metricLabel: "onboarding completion",
-    title: "Cross-functional onboarding system",
+    title: "Cross-Functional Onboarding System",
     blurb: "Six tools, 250+ workflows, 91% SLA compliance — built for a firm scaling from 85 to 200 staff.",
   },
   {
-    metric: "50%",
-    metricLabel: "manual work removed",
-    title: "NDA tracking automation",
-    blurb: "An Apps Script + Gmail pipeline that saves 15+ hours a week and removed copy-paste errors.",
+    metric: "$1,118+",
+    metricLabel: "lifetime value, top 5%",
+    title: "E-Commerce Analytics System",
+    blurb: "An Excel analytics system that segmented customers and surfaced a high-margin category hiding at 6% of sales.",
   },
   {
-    metric: "86%",
-    metricLabel: "cohort graduation rate",
-    title: "Executive cohort reporting",
-    blurb: "2,032 registrations tracked to 900 graduates, so leadership steered by numbers, not anecdotes.",
+    metric: "25%",
+    metricLabel: "of tickets breaching SLA",
+    title: "Customer Support Analytics",
+    blurb: "A 15-query SQL audit and Power BI dashboard that pinpointed multi-agent handoffs as the primary bottleneck.",
   },
 ];
 
@@ -537,12 +511,6 @@ export const diagrams: Diagram[] = [
     title: "Programme Delivery Operations",
     caption:
       "An Asana system covering 5 phases and 24 tasks with 9 mapped dependencies; blocked work escalates to leadership while facilitator completions auto-confirm.",
-  },
-  {
-    src: "/diagrams/health-tracker.svg",
-    title: "Learner Health Tracker",
-    caption:
-      "Scattered cohort inputs reconciled into one self-updating weekly tracker, monitoring progress at 98% accuracy across 12 countries.",
   },
   {
     src: "/diagrams/analytics-dashboard.svg",
