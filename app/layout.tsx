@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { playfair, inter } from "./fonts";
 import { brand } from "@/lib/site";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
         </a>
         <Header />
         <main id="main">{children}</main>
+        <Footer />
         <CookieConsent />
       </body>
     </html>
