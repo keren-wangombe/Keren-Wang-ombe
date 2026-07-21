@@ -14,6 +14,17 @@ export default function CaseStudy({ item, index }: { item: CaseStudyItem; index:
       delay={index * 80}
       className="overflow-hidden rounded-3xl border border-ink/10 border-l-4 border-l-amber-bright bg-paper transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
     >
+      {/* Process-map diagram — the visual proof, first thing on the card. */}
+      <div className="border-b border-ink/10 bg-signature/[0.04] p-4 sm:p-6">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={item.image}
+          alt={`${item.title} — process map`}
+          className="mx-auto w-full max-w-3xl rounded-xl"
+          loading="lazy"
+        />
+      </div>
+
       <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-[0.34fr_0.66fr] lg:gap-12">
         {/* ── Left rail: badge, metric, title, tools. */}
         <div>

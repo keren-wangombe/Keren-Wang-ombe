@@ -30,19 +30,19 @@ export const outcomes: Outcome[] = [
     metric: "98%",
     metricLabel: "data accuracy, 12 countries",
     title: "Held 98% data accuracy across 12 countries.",
-    body: "A self-updating learner health tracker pulled scattered cohort data into one weekly source of truth, monitoring progress at 98% accuracy without a person touching a spreadsheet.",
+    body: "A self-updating health tracker pulled scattered programme data into one weekly source of truth, monitoring progress at 98% accuracy without a person touching a spreadsheet.",
   },
   {
     metric: "86%",
-    metricLabel: "cohort graduation rate",
-    title: "Reported a cohort from 2,032 registrations to 900 graduates.",
-    body: "Executive reporting for Cybersecurity Cohort 11, tracking the full funnel to an 86% graduation rate and 81% CSAT, so leadership decisions rested on numbers, not anecdotes.",
+    metricLabel: "programme completion rate",
+    title: "Reported a programme from 2,032 registrations to 900 completions.",
+    body: "Executive reporting for an edtech-industry programme, tracking the full funnel to an 86% completion rate and 81% CSAT, so leadership decisions rested on numbers, not anecdotes.",
   },
   {
     metric: "3,000+",
-    metricLabel: "learners supported",
-    title: "Coordinated operations behind 3,000+ learners.",
-    body: "Automation, tracking, and reporting infrastructure spanning 8+ African countries, the operational backbone that let programmes scale without the coordination overhead scaling with them.",
+    metricLabel: "participants supported",
+    title: "Coordinated operations behind 3,000+ participants.",
+    body: "Automation, tracking, and reporting infrastructure spanning 8+ countries, the operational backbone that let edtech-industry programmes scale without the coordination overhead scaling with them.",
   },
 ];
 
@@ -152,6 +152,8 @@ export type CaseStudyItem = {
   /** Headline number, the protagonist of the card. */
   metric?: string;
   metricLabel?: string;
+  /** Process-map diagram in /public/projects (swap for a real screenshot). */
+  image: string;
   problem: string;
   built: string;
   results: string[];
@@ -183,6 +185,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Cross-Functional Onboarding Operations System",
         metric: "88%",
         metricLabel: "onboarding completion",
+        image: "/projects/onboarding.svg",
         problem:
           "A consulting firm scaling from 85 to 200 employees had no standardised onboarding process — fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
         built:
@@ -207,6 +210,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "Systems Design · CRM",
         title: "Operational Command Center",
+        image: "/projects/command-center.svg",
         problem:
           "A growing coaching organisation with 3 coaches and 25 active clients had no shared operational infrastructure — client records scattered, onboarding inconsistent between coaches, and zero visibility for leadership.",
         built:
@@ -228,6 +232,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "Project Operations",
         title: "Programme Delivery Operations System",
+        image: "/projects/delivery.svg",
         problem:
           "A 12-week programme was coordinated through email threads and shared documents — no dependency tracking, no escalation logic, and no delivery visibility for leadership.",
         built:
@@ -245,6 +250,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Operational Workflow Automation Pipeline",
         metric: "45min",
         metricLabel: "of daily manual work removed",
+        image: "/projects/pipeline.svg",
         problem:
           "A course provider was manually processing every registration through spreadsheets and individual emails — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
         built:
@@ -272,6 +278,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "E-Commerce Operational Analytics System",
         metric: "$1,118+",
         metricLabel: "lifetime value, top 5% of customers",
+        image: "/projects/ecommerce.svg",
         problem:
           "A growing e-commerce business had 12+ months of transaction data but no operational visibility into customer behaviour, product performance, or regional trends — inventory and marketing decisions were made without an analytics layer.",
         built:
@@ -295,6 +302,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Customer Support Operations Analytics",
         metric: "25%",
         metricLabel: "of tickets found breaching SLA",
+        image: "/projects/support.svg",
         problem:
           "A support operations team lacked visibility into SLA breaches, escalation patterns, agent workload distribution, and operational bottlenecks — making it hard for leadership to improve response efficiency.",
         built:
@@ -310,6 +318,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "SQL · MySQL",
         title: "Retail Sales Operational Analytics",
+        image: "/projects/retail.svg",
         problem:
           "A retail business had customer, product, and seasonal sales data but no framework to understand purchasing behaviour, category performance, or operational demand patterns.",
         built:
@@ -327,6 +336,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "SQL · Data Audit",
         title: "Maji Ndogo Operational Data Audit",
+        image: "/projects/maji.svg",
         problem:
           "A national water authority managing thousands of water sources had inconsistent survey data, reporting discrepancies, and suspected integrity issues across field operations.",
         built:
@@ -391,13 +401,11 @@ export const processSteps: { step: string; title: string; body: string }[] = [
   },
 ];
 
-/** Trusted-by band on the home page (organisations Keren has worked with). */
+/** Sectors / communities worked across (kept generic — no employer names). */
 export const organisations: string[] = [
-  "ALX Africa",
-  "OpenStreetMap Kenya",
-  "HOT",
-  "Tanzania Development Trust",
-  "African Women in GIS",
+  "Edtech industry",
+  "Open-mapping communities",
+  "GIS & humanitarian mapping",
 ];
 
 export type Service = {
@@ -452,7 +460,7 @@ export const capabilities: Capability[] = [
   },
   {
     title: "Coordination across programmes and borders.",
-    body: "I run the SOPs, funnels, and escalation logic that keep facilitators, operations, and leadership in sync, across cohorts, ambassadors, and multiple African markets at once.",
+    body: "I run the SOPs, funnels, and escalation logic that keep facilitators, operations, and leadership in sync, across cohorts, ambassadors, and multiple markets at once.",
   },
 ];
 
@@ -644,23 +652,23 @@ export type BioLength = {
 export const bios: BioLength[] = [
   {
     label: "Short (embed)",
-    text: "Programme operations and analytics, I build the automation, tracking, and reporting systems that turn operational chaos into scale across African learner programmes.",
+    text: "Programme operations and analytics, I build the automation, tracking, and reporting systems that turn operational chaos into scale across edtech-industry programmes.",
   },
   {
     label: "Medium",
-    text: "I'm a programme operations professional turning messy cohort data, manual workflows, and scattered pipelines into automated systems that scale. Over three years at ALX Africa I've built the automation, tracking, and reporting infrastructure behind learner programmes across the continent, with an analytics practice in SQL, Excel, and Power BI, and a GIS and open-mapping background underneath it.",
+    text: "I'm a programme operations professional turning messy programme data, manual workflows, and scattered pipelines into automated systems that scale. Over three years in the edtech industry I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants, with an analytics practice in SQL, Excel, and Power BI, and a GIS and open-mapping background underneath it.",
   },
   {
     label: "Press (long)",
-    text: "Keren Wang'ombe is a Programme Operations Associate at ALX Africa, where she builds the automation, tracking, and reporting systems behind learner programmes reaching thousands of people across 8+ African countries. Her work turns operational complexity into repeatable execution: a self-updating health tracker holding 98% data accuracy across 12 countries, automation that cut manual tracking work by 50% and saved 15+ hours a week, and executive reporting that carried Cybersecurity Cohort 11 from 2,032 registrations to 900 graduates at an 86% graduation rate. Alongside operations she keeps a hands-on analytics practice, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity, and a GIS and open-mapping background that shows up wherever data meets geography. She works at the seam of operations and analytics, two disciplines that share one question: how do we make this run better?",
+    text: "Keren Wang'ombe is a programme operations professional in the edtech industry, where she builds the automation, tracking, and reporting systems behind programmes reaching thousands of participants across 8+ countries. Her work turns operational complexity into repeatable execution: a self-updating health tracker holding 98% data accuracy across 12 countries, automation that cut manual tracking work by 50% and saved 15+ hours a week, and executive reporting that carried a programme from 2,032 registrations to 900 completions at an 86% completion rate. Alongside operations she keeps a hands-on analytics practice, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity, and a GIS and open-mapping background that shows up wherever data meets geography. She works at the seam of operations and analytics, two disciplines that share one question: how do we make this run better?",
   },
 ];
 
 /** Long-form bio for /about, paragraph by paragraph (author's own copy). */
 export const bioStory: string[] = [
-  "I'm a programme operations professional, and for three years at ALX Africa I've built the automation, tracking, and reporting infrastructure behind learner programmes across the continent. My work turns messy cohort data, manual workflows, and scattered pipelines into systems that scale, the kind of operational backbone that lets a programme grow without its coordination overhead growing with it.",
-  "The through-line is simple: I don't run the process by hand if it can be a system. A Google Apps Script pipeline cut manual NDA tracking by 50% and saved 15+ hours a week. A self-updating tracker held learner data to 98% accuracy across 12 countries. Executive reporting carried a cybersecurity cohort from 2,032 registrations to 900 graduates at 86% graduation and 81% CSAT, because the numbers were measured, not claimed.",
-  "Underneath operations sits an analytics practice I keep hands-on, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity. And underneath that, a GIS and open-mapping background with ALX, OpenStreetMap Kenya, HOT, and African Women in GIS, which is where I first learned that data quality is an operational discipline, not an afterthought. Operations and analytics are two halves of the same question: how do we make this run better?",
+  "I'm a programme operations professional, and for three years in the edtech industry I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants. My work turns messy programme data, manual workflows, and scattered pipelines into systems that scale, the kind of operational backbone that lets a programme grow without its coordination overhead growing with it.",
+  "The through-line is simple: I don't run the process by hand if it can be a system. A Google Apps Script pipeline cut manual tracking work by 50% and saved 15+ hours a week. A self-updating tracker held programme data to 98% accuracy across 12 countries. Executive reporting carried a programme from 2,032 registrations to 900 completions at 86% completion and 81% CSAT, because the numbers were measured, not claimed.",
+  "Underneath operations sits an analytics practice I keep hands-on, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity. And underneath that, a GIS and open-mapping background, which is where I first learned that data quality is an operational discipline, not an afterthought. Operations and analytics are two halves of the same question: how do we make this run better?",
 ];
 
 /** A warm, human aside for /about. */

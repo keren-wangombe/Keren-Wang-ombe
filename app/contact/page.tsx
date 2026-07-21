@@ -6,7 +6,7 @@ import { contactEmail, resumeFile, social } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "General questions and advisory or consulting inquiries.",
+  description: "Get in touch — open to Programme Operations, BizOps, and Founders Associate roles.",
 };
 
 export default function ContactPage() {
@@ -15,11 +15,11 @@ export default function ContactPage() {
       <PageHero
         kicker="Contact"
         tone="cool"
-        title="Let's talk."
+        title="Let's connect."
         intro={
           <p>
-            General questions, advisory and consulting inquiries, or just a hello, it
-            all arrives in the same place, and I read it personally.
+            Hiring, collaborating, or just curious about the work — it all reaches
+            me here, and I read every message personally.
           </p>
         }
       />
@@ -27,10 +27,17 @@ export default function ContactPage() {
       <section className="container-content py-12 sm:py-16">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
-            <h2 className="font-serif text-h2 font-light text-ink">Reach out</h2>
-            <p className="mt-5 max-w-prose text-body text-ink">
-              Tell me a little about what you're after. For advisory and consulting,
-              a sentence on the situation and the outcome is the most helpful start.
+            {/* Open-to-work signal — the portfolio's whole point. */}
+            <span className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-3 py-1.5 text-small font-medium text-amber">
+              <span className="h-2 w-2 rounded-full bg-amber-bright" aria-hidden />
+              Open to new roles
+            </span>
+            <h2 className="mt-6 font-serif text-h2 font-light text-ink">Currently looking for</h2>
+            <p className="mt-4 max-w-prose text-body text-ink">
+              Programme Operations, Business Operations (BizOps), and Founders
+              Associate roles where I can build the systems and reporting that keep
+              delivery on track. A line about the team and the problem is the most
+              helpful start.
             </p>
             <div className="mt-8 space-y-3 text-body">
               <p>
@@ -57,12 +64,12 @@ export default function ContactPage() {
           <Reveal>
             <InquiryForm
               submitLabel="Send message"
-              subject="New contact message, kerenwangombe.com"
+              subject="New message, kerenwangombe.com"
               fields={[
                 { name: "name", label: "Your name", required: true, placeholder: "Jane Doe" },
                 { name: "email", label: "Email", type: "email", required: true, placeholder: "you@example.com" },
-                { name: "topic", label: "Topic", placeholder: "General · Advisory · Consulting · Speaking" },
-                { name: "message", label: "Your message", type: "textarea", required: true, placeholder: "How can I help?" },
+                { name: "topic", label: "About", placeholder: "A role · A collaboration · A question" },
+                { name: "message", label: "Your message", type: "textarea", required: true, placeholder: "Say hello, or tell me about the role…" },
               ]}
             />
           </Reveal>
