@@ -1,12 +1,11 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Design system — the brand's 7-core color system (navy · ivory · amber).
- * Reference colors semantically (background, foreground, primary, link, accent);
- * the raw token names exist for the rare case a literal hex name reads clearer.
- * Amber splits by use: `amber` (#B45309) for text/labels/rules (AA on paper),
- * `amber-bright` (#D97706) for solid fills / icons / CTAs with dark text on top.
- * Do NOT introduce colors outside this set.
+ * Design system — midnight · cloud · teal · ember (the reference-site palette).
+ * The historical token names are kept so every page keeps compiling, but they
+ * now resolve to the new palette: `signature` is Midnight #1E2D40, `paper` is
+ * Cloud #F7F8FA, `amber` is Teal #1A8B8B (labels/links), `amber-bright` is
+ * Ember #F0684C (fills/CTAs). Do NOT introduce colors outside this set.
  */
 const config: Config = {
   content: [
@@ -17,27 +16,29 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Raw tokens (exact hex from the brand color system — 7 core colors)
-        ink: "#111827", // Headline / near-black — TEXT/contrast + dark surfaces
-        signature: "#1B3A6B", // Primary navy — the brand heart, deep + calm
-        "blue-lift": "#3D6491", // lighter navy — interactive/links only
-        paper: "#FAFAF8", // background — soft off-white, never pure white
-        amber: "#B45309", // warm accent for TEXT/labels/rules — AA on paper
-        "amber-bright": "#D97706", // warm accent for FILLS/icons/CTAs (dark text on top)
-        body: "#4B5563", // Body text — muted slate
-        hairline: "#E5E7EB", // Border — quiet hairlines
+        // Raw tokens (reference-site palette behind the legacy names)
+        ink: "#2C2C2C", // Graphite — primary text
+        signature: "#1E2D40", // Midnight — dark surfaces, headings, active tabs
+        "blue-lift": "#1A8B8B", // Teal — interactive/links
+        paper: "#F7F8FA", // Cloud — page background
+        amber: "#1A8B8B", // Teal accent for TEXT/labels/rules
+        "amber-bright": "#F0684C", // Ember accent for FILLS/icons/CTAs
+        ember: "#F0684C", // Ember by its own name (Operations accent)
+        teal: "#1A8B8B", // Teal by its own name (Analytics accent)
+        body: "#64748B", // Body text — muted slate
+        hairline: "#E2E6EB", // Border — quiet hairlines
 
         // Semantic aliases
-        background: "#FAFAF8",
-        foreground: "#111827",
+        background: "#F7F8FA",
+        foreground: "#2C2C2C",
         primary: {
-          DEFAULT: "#1B3A6B",
-          foreground: "#FAFAF8",
+          DEFAULT: "#1E2D40",
+          foreground: "#F7F8FA",
         },
-        link: "#3D6491",
+        link: "#1A8B8B",
         accent: {
-          DEFAULT: "#B45309",
-          foreground: "#FAFAF8",
+          DEFAULT: "#F0684C",
+          foreground: "#FFFFFF",
         },
       },
       fontFamily: {

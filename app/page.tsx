@@ -1,146 +1,134 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import Button from "@/components/Button";
-import Reveal from "@/components/Reveal";
-import { brand } from "@/lib/site";
-import { services, outcomes, type Service } from "@/lib/content";
+import {
+  aboutSkillGroups,
+  professionalSummary,
+  whatIDo,
+  type SkillGroup,
+} from "@/lib/portfolio";
 
 export const metadata: Metadata = {
-  title: "Operations that scale",
+  title: "About",
   description:
-    "Programme operations and analytics: automation, tracking, and reporting systems built around the operational decision inside every workflow, not just the tooling.",
+    "Operations and analytics professional designing the systems that help teams execute at scale.",
 };
 
-/** Line icons for the What I Do grid, keyed to Service.icon. */
-const serviceIcon: Record<Service["icon"], ReactNode> = {
-  process: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" strokeWidth="1.6" aria-hidden>
-      <rect x="3" y="4" width="6" height="5" rx="1.2" />
-      <rect x="15" y="15" width="6" height="5" rx="1.2" />
-      <path d="M9 6.5h4a2 2 0 0 1 2 2v9" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  team: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" strokeWidth="1.6" aria-hidden>
-      <circle cx="9" cy="8" r="3" />
-      <path d="M3.5 19a5.5 5.5 0 0 1 11 0" strokeLinecap="round" />
-      <path d="M16 6.2a3 3 0 0 1 0 5.6M17 14.4a5.5 5.5 0 0 1 3.5 4.6" strokeLinecap="round" />
-    </svg>
-  ),
-  systems: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" strokeWidth="1.6" aria-hidden>
+/** Line icons for the skill-group cards, keyed to SkillGroup.icon. */
+const groupIcon: Record<SkillGroup["icon"], ReactNode> = {
+  settings: (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       <circle cx="12" cy="12" r="3" />
-      <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" strokeLinecap="round" />
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
     </svg>
   ),
-  reporting: (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 fill-none stroke-current" strokeWidth="1.6" aria-hidden>
-      <path d="M4 3v18h16" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M8 15v-3M12 15V8M16 15v-5" strokeLinecap="round" />
+  users: (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  ),
+  chart: (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 3v18h18" />
+      <path d="M19 9l-5 5-4-4-3 3" />
+    </svg>
+  ),
+  zap: (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>
+  ),
+  globe: (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  ),
+  message: (
+    <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   ),
 };
 
-export default function HomePage() {
-  return (
-    <>
-      {/* ── HERO — light split: copy left, systems illustration right. */}
-      <section className="border-b border-ink/5 bg-background">
-        <div className="container-content grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
-          <div className="animate-fade-up">
-            <p className="kicker text-amber">Programme Operations · Nairobi, Kenya</p>
-            <h1 className="mt-6 font-serif text-h1 font-light leading-[1.08] text-ink">
-              I build systems that bring{" "}
-              <span className="text-amber">clarity</span> to complexity.
-            </h1>
-            <p className="mt-7 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
-            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <Button href="/contact" variant="accent">
-                Let&rsquo;s work together
-              </Button>
-              <a
-                href="/work"
-                className="link-amber inline-flex items-center gap-2 text-small font-medium text-signature"
-              >
-                View my work
-                <span aria-hidden>→</span>
-              </a>
-            </div>
-          </div>
-          <Reveal className="order-first lg:order-none">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/illustrations/hero-systems.svg"
-              alt="An operations dashboard: kanban board, key metrics, and a delivery trend chart"
-              className="w-full"
-            />
-          </Reveal>
-        </div>
-      </section>
+/** Lane icons for the What I Do pair. */
+const laneIcon: Record<string, ReactNode> = {
+  Operations: groupIcon.settings,
+  Analytics: groupIcon.chart,
+};
 
-      {/* ── WHAT I DO — four-column grid. */}
-      <section className="container-content py-16 sm:py-24">
-        <Reveal>
-          <p className="kicker text-blue-lift">What I do</p>
-          <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
-            Turning operational chaos into scalable systems.
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, i) => (
-            <Reveal as="div" key={s.title} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-amber/10 text-amber">
-                {serviceIcon[s.icon]}
-              </span>
-              <h3 className="mt-5 font-serif text-xl font-medium text-ink">{s.title}</h3>
-              <p className="mt-3 text-small text-ink/70">{s.body}</p>
-            </Reveal>
+export default function AboutPage() {
+  return (
+    <div className="mx-auto w-full max-w-5xl px-4 py-14">
+      {/* ── Professional summary. */}
+      <div className="mb-10 rounded-3xl border border-slate-100 bg-white p-8 md:p-10">
+        <p className="mb-5 text-[9px] font-extrabold uppercase tracking-[0.3em] text-slate-400">
+          Professional Summary
+        </p>
+        <p className="text-sm leading-relaxed text-slate-500">{professionalSummary}</p>
+      </div>
+
+      {/* ── What I Do, the two lanes. */}
+      <div className="mb-10">
+        <p className="divider-label mb-8">What I Do</p>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {whatIDo.map((item) => (
+            <div key={item.lane} className="card-hover rounded-2xl border border-slate-100 bg-white p-7">
+              <div
+                className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl"
+                style={{ background: `${item.color}15`, color: item.color }}
+              >
+                {laneIcon[item.lane]}
+              </div>
+              <p className="mb-2 text-[9px] font-extrabold uppercase tracking-[0.2em]" style={{ color: item.color }}>
+                {item.lane}
+              </p>
+              <p className="mb-5 text-sm leading-relaxed text-slate-500">{item.desc}</p>
+              <div className="flex flex-wrap gap-2">
+                {item.tags.map((tag) => (
+                  <span key={tag} className="tool-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
-      </section>
+      </div>
 
-      {/* ── IMPACT — navy band with the headline metrics. */}
-      <section className="bg-signature">
-        <div className="container-content py-16 sm:py-20">
-          <Reveal>
-            <p className="kicker text-amber">Impact</p>
-            <h2 className="mt-5 max-w-xl font-serif text-h1 font-light text-paper">
-              Results measured, not claimed.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {outcomes.map((o, i) => (
-              <Reveal as="div" key={o.metricLabel} delay={i * 100}>
-                <p
-                  className={`font-serif text-display font-light leading-none ${
-                    i === 0 ? "text-amber" : "text-paper"
-                  }`}
-                >
-                  {o.metric}
-                </p>
-                <p className="mt-3 text-small text-paper/65">{o.metricLabel}</p>
-              </Reveal>
-            ))}
+      {/* ── Skills, six categorised chip cards. */}
+      <div className="mb-8">
+        <p className="divider-label mb-8">Skills</p>
+      </div>
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {aboutSkillGroups.map((group) => (
+          <div key={group.cat} className="rounded-2xl border border-slate-100 bg-white p-6">
+            <div className="mb-3 flex items-center gap-3">
+              <div
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl"
+                style={{ background: `${group.color}12`, color: group.color }}
+              >
+                {groupIcon[group.icon]}
+              </div>
+              <p className="text-[9px] font-extrabold uppercase tracking-[0.18em]" style={{ color: group.color }}>
+                {group.cat}
+              </p>
+            </div>
+            <p className="mb-4 text-xs italic leading-relaxed text-slate-400">{group.line}</p>
+            <div className="flex flex-wrap gap-2">
+              {group.skills.map((skill) => (
+                <span key={skill} className="skill-chip" style={{ fontSize: "11px", padding: "5px 11px" }}>
+                  <span className="skill-chip-dot" style={{ background: `${group.color}50` }} />
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── CLOSE — quiet CTA. */}
-      <section className="container-content py-20 sm:py-28">
-        <Reveal>
-          <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
-            Looking for someone who builds the systems, not just runs them?
-          </h2>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Button href="/contact" variant="accent">
-              Get in touch
-            </Button>
-            <Button href="/work" variant="ghost">
-              See the work
-            </Button>
-          </div>
-        </Reveal>
-      </section>
-    </>
+        ))}
+      </div>
+    </div>
   );
 }
