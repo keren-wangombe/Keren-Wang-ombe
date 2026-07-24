@@ -24,16 +24,29 @@ export default function HeroIntro() {
             Back to photo
           </button>
         </div>
-        {/* Loom responsive embed (56.25% = 16:9). */}
+        {/* Loom responsive embed (56.25% = 16:9). Loom's plain recommended
+            markup — no autoplay param (browsers block sound-on autoplay in a
+            cross-origin iframe, which can leave the player stuck); the viewer
+            presses play in Loom's own player. */}
         <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
           <iframe
-            src={`${heroLoomEmbed}?autoplay=1`}
+            src={heroLoomEmbed}
             frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
+            allow="fullscreen; picture-in-picture"
             allowFullScreen
             title={`${brand.name} — video introduction`}
             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
           />
+        </div>
+        <div className="flex justify-end bg-signature px-5 py-2">
+          <a
+            href={heroLoomEmbed.replace("/embed/", "/share/")}
+            target="_blank"
+            rel="noreferrer"
+            className="text-small text-paper/60 transition-colors duration-300 ease-calm hover:text-amber-bright"
+          >
+            Trouble playing? Open on Loom ↗
+          </a>
         </div>
       </div>
     );
