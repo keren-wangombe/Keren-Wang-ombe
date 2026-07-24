@@ -8,6 +8,8 @@ type RevealProps = {
   delay?: number;
   as?: ElementType;
   className?: string;
+  /** Optional anchor id (e.g. for deep-linking to a case study). */
+  id?: string;
 };
 
 /**
@@ -24,6 +26,7 @@ export default function Reveal({
   delay = 0,
   as: Tag = "div",
   className = "",
+  id,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [hidden, setHidden] = useState(false);
@@ -70,6 +73,7 @@ export default function Reveal({
   return (
     <Tag
       ref={ref}
+      id={id}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={`transition-all duration-700 ease-calm ${
         hidden ? "translate-y-10 opacity-0" : "translate-y-0 opacity-100"

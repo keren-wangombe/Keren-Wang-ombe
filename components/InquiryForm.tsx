@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { contactEmail, formSubmitAlias } from "@/lib/site";
+import { contactEmail } from "@/lib/site";
 
 type Field = {
   name: string;
@@ -20,14 +20,6 @@ type InquiryFormProps = {
   subject?: string;
 };
 
-/**
- * Submissions are delivered to {@link contactEmail} via FormSubmit
- * (https://formsubmit.co), a no-backend relay, so no API keys are needed.
- * The endpoint uses the activated alias rather than the naked address so the
- * email stays out of the client bundle.
- */
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${formSubmitAlias}`;
-
 const defaultFields: Field[] = [
   { name: "name", label: "Your name", required: true, placeholder: "Jane Doe" },
   { name: "email", label: "Email", type: "email", required: true, placeholder: "you@company.com" },
@@ -42,54 +34,59 @@ const defaultFields: Field[] = [
 ];
 
 /**
- * Generic inquiry form. UI only, a clear seam for form submission
- * (Supabase / email / CRM) to be wired later. Validates and reflects state.
+ * Inquiry form that composes the message straight into the visitor's own email
+ * client via a `mailto:` link — no backend, no third-party relay, and no
+ * activation step, so a message always sends. The visitor confirms with their
+ * mail app's Send button.
  */
 export default function InquiryForm({
   fields = defaultFields,
   submitLabel = "Send inquiry",
   tone = "light",
-  subject = "New inquiry from the website",
+  subject = "New message from the website",
 }: InquiryFormProps) {
   const [done, setDone] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState(false);
+  const [mailtoHref, setMailtoHref] = useState("");
   const dark = tone === "dark";
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (submitting) return;
-    setError(false);
-    setSubmitting(true);
+    const data = new FormData(e.currentTarget);
 
-    const payload = new FormData(e.currentTarget);
-    payload.append("_subject", subject);
-    payload.append("_template", "table");
-    payload.append("_captcha", "false");
+    // Build a readable email body from the filled fields.
+    const body = fields
+      .map((f) => `${f.label}: ${String(data.get(f.name) ?? "").trim()}`)
+      .filter((line) => !line.endsWith(": "))
+      .join("\n\n");
 
-    try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { Accept: "application/json" },
-        body: payload,
-      });
-      if (!res.ok) throw new Error(`Submission failed (${res.status})`);
-      setDone(true);
-    } catch {
-      setError(true);
-    } finally {
-      setSubmitting(false);
-    }
+    const href = `mailto:${contactEmail}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(body)}`;
+
+    setMailtoHref(href);
+    // Open the visitor's email client with everything prefilled.
+    window.location.href = href;
+    setDone(true);
   }
 
   if (done) {
     return (
-      <p
-        className={`text-body ${dark ? "text-amber" : "text-signature"}`}
-        role="status"
-      >
-        Thank you, your note is in. I read these personally and will reply soon.
-      </p>
+      <div className={`space-y-3 text-body ${dark ? "text-paper/80" : "text-ink"}`} role="status">
+        <p className={dark ? "text-amber" : "text-signature"}>
+          Your email app should have opened with your message ready — just hit send.
+        </p>
+        <p className="text-small">
+          Didn&rsquo;t open?{" "}
+          <a href={mailtoHref} className="underline">
+            Click here to email me
+          </a>
+          , or write to{" "}
+          <a href={`mailto:${contactEmail}`} className="underline">
+            {contactEmail}
+          </a>
+          .
+        </p>
+      </div>
     );
   }
 
@@ -141,29 +138,14 @@ export default function InquiryForm({
 
       <button
         type="submit"
-        disabled={submitting}
-        className={`rounded-lg px-7 py-3.5 text-small font-medium transition-all duration-300 ease-calm disabled:cursor-not-allowed disabled:opacity-60 ${
+        className={`rounded-lg px-7 py-3.5 text-small font-medium transition-all duration-300 ease-calm ${
           dark
             ? "bg-amber text-ink hover:brightness-[0.97]"
             : "bg-signature text-paper hover:bg-blue-lift"
         }`}
       >
-        {submitting ? "Sending…" : submitLabel}
+        {submitLabel}
       </button>
-
-      {error ? (
-        <p
-          className={`text-small ${dark ? "text-amber" : "text-signature"}`}
-          role="alert"
-        >
-          Something went wrong sending that. Please try again, or email me directly
-          at{" "}
-          <a href={`mailto:${contactEmail}`} className="underline">
-            {contactEmail}
-          </a>
-          .
-        </p>
-      ) : null}
     </form>
   );
 }
