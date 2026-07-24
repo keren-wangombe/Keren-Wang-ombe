@@ -5,7 +5,6 @@ import CaseStudy from "@/components/CaseStudy";
 import LogoMarquee from "@/components/LogoMarquee";
 import TierBackdrop from "@/components/TierBackdrop";
 import { caseStudyTiers, toolkitNote } from "@/lib/content";
-import { pageBanners } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Operations & analytics that scale",
@@ -17,7 +16,6 @@ export default function WorkPage() {
   return (
     <>
       <PageBanner
-        image={pageBanners.work}
         kicker="What I build"
         title="Systems for the operation, not just the task."
         intro={

@@ -1,8 +1,8 @@
 import type { ReactNode } from "react";
 
 type PageBannerProps = {
-  /** Background banner image (placeholder until the real artwork is dropped in). */
-  image: string;
+  /** Optional background banner image. Omit for a clean dark band, no artwork. */
+  image?: string;
   imageAlt?: string;
   kicker?: string;
   title: ReactNode;
@@ -31,13 +31,17 @@ export default function PageBanner({
 }: PageBannerProps) {
   return (
     <section className="relative flex min-h-[calc(100svh-4rem)] w-full items-center overflow-hidden bg-ink">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={image}
-        alt={imageAlt}
-        className="absolute inset-0 h-full w-full object-cover opacity-40 animate-fade-in"
-      />
-      <div className="absolute inset-0 bg-gradient-to-br from-ink/95 via-ink/80 to-ink/55" />
+      {image ? (
+        <>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image}
+            alt={imageAlt}
+            className="absolute inset-0 h-full w-full object-cover opacity-40 animate-fade-in"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-ink/95 via-ink/80 to-ink/55" />
+        </>
+      ) : null}
       <span className="absolute inset-x-0 bottom-0 h-px bg-amber/50" aria-hidden />
 
       <div className="container-content relative z-10 py-14 sm:py-20">
