@@ -39,11 +39,19 @@ export const aboutPortrait = "/portraits/keren.jpg";
 export const heroPortrait = "/portraits/keren.jpg";
 
 /**
- * Intro video (Loom), opened directly from the hero's "Watch my intro"
- * button. PLACEHOLDER recording — swap this share URL for the final one.
+ * Intro video (Loom) embedded inline in the hero. PLACEHOLDER recording —
+ * swap the ID (last URL segment) for the final one when it's ready.
  */
-export const heroLoomShare =
-  "https://www.loom.com/share/3ec6ce881036464ca076c540fb1a0376";
+export const heroLoomEmbed =
+  "https://www.loom.com/embed/3ec6ce881036464ca076c540fb1a0376";
+
+/**
+ * Latest LinkedIn post embedded on the home page. To enable: open your post
+ * on LinkedIn → the ⋯ menu → "Embed this post", and paste the iframe's `src`
+ * (looks like https://www.linkedin.com/embed/feed/update/urn:li:share:…) here.
+ * Left empty, the home page shows a "Follow on LinkedIn" card instead.
+ */
+export const linkedinEmbedUrl = "";
 
 export type NavItem = {
   href: string;

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { brand, contactEmail, resumeFile, social } from "@/lib/site";
 
 /**
@@ -10,16 +9,6 @@ import { brand, contactEmail, resumeFile, social } from "@/lib/site";
  * the site's own palette — Signature navy surfaces, Amber accents, Paper text.
  */
 export default function Footer() {
-  const [showEmail, setShowEmail] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(contactEmail).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
-
   return (
     <footer className="print:hidden">
       <div className="container-content pb-12 pt-16 sm:pt-20">
@@ -48,17 +37,16 @@ export default function Footer() {
 
             <div className="flex shrink-0 flex-col gap-3">
               <div className="flex items-center gap-2.5">
-                <button
-                  type="button"
-                  onClick={() => setShowEmail((v) => !v)}
+                <a
+                  href={`mailto:${contactEmail}`}
                   className="inline-flex items-center gap-2 rounded-xl bg-amber-bright px-5 py-2.5 text-small font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
                     <rect x="2" y="4" width="20" height="16" rx="2" />
                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
                   </svg>
-                  {showEmail ? "Close" : "Email me"}
-                </button>
+                  Email me
+                </a>
                 <a
                   href={resumeFile}
                   target="_blank"
@@ -86,37 +74,6 @@ export default function Footer() {
                   </svg>
                 </a>
               </div>
-
-              {showEmail && (
-                <div className="flex items-center gap-3 rounded-xl border border-paper/15 bg-paper/10 p-4 backdrop-blur-md">
-                  <div>
-                    <p className="kicker !text-amber-bright">Direct</p>
-                    <a
-                      href={`mailto:${contactEmail}`}
-                      className="text-small font-medium text-paper underline decoration-dotted underline-offset-4 transition-colors hover:text-amber-bright"
-                    >
-                      {contactEmail}
-                    </a>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={copyEmail}
-                    aria-label="Copy email address"
-                    className="ml-auto grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-paper/10 transition-all hover:bg-paper/20"
-                  >
-                    {copied ? (
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-amber-bright" aria-hidden>
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                    ) : (
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-paper/60" aria-hidden>
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-              )}
             </div>
           </div>
         </div>

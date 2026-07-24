@@ -147,6 +147,8 @@ export const workClose =
    walkthrough/write-up links. Grouped in the same two tiers as before. */
 
 export type CaseStudyItem = {
+  /** Anchor id, so the home Featured Work can deep-link to this exact card. */
+  id: string;
   badge: string;
   title: string;
   /** Headline number, the protagonist of the card. */
@@ -185,6 +187,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Cross-Functional Onboarding Operations System",
         metric: "88%",
         metricLabel: "onboarding completion",
+        id: "onboarding",
         image: "/projects/onboarding.svg",
         problem:
           "A consulting firm scaling from 85 to 200 employees had no standardised onboarding process — fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
@@ -210,6 +213,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "Systems Design · CRM",
         title: "Operational Command Center",
+        id: "command-center",
         image: "/projects/command-center.svg",
         problem:
           "A growing coaching organisation with 3 coaches and 25 active clients had no shared operational infrastructure — client records scattered, onboarding inconsistent between coaches, and zero visibility for leadership.",
@@ -232,6 +236,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "Project Operations",
         title: "Programme Delivery Operations System",
+        id: "delivery",
         image: "/projects/delivery.svg",
         problem:
           "A 12-week programme was coordinated through email threads and shared documents — no dependency tracking, no escalation logic, and no delivery visibility for leadership.",
@@ -250,6 +255,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Operational Workflow Automation Pipeline",
         metric: "45min",
         metricLabel: "of daily manual work removed",
+        id: "pipeline",
         image: "/projects/pipeline.svg",
         problem:
           "A course provider was manually processing every registration through spreadsheets and individual emails — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
@@ -278,6 +284,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "E-Commerce Operational Analytics System",
         metric: "$1,118+",
         metricLabel: "lifetime value, top 5% of customers",
+        id: "ecommerce",
         image: "/projects/ecommerce.svg",
         problem:
           "A growing e-commerce business had 12+ months of transaction data but no operational visibility into customer behaviour, product performance, or regional trends — inventory and marketing decisions were made without an analytics layer.",
@@ -302,6 +309,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Customer Support Operations Analytics",
         metric: "25%",
         metricLabel: "of tickets found breaching SLA",
+        id: "support",
         image: "/projects/support.svg",
         problem:
           "A support operations team lacked visibility into SLA breaches, escalation patterns, agent workload distribution, and operational bottlenecks — making it hard for leadership to improve response efficiency.",
@@ -318,6 +326,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "SQL · MySQL",
         title: "Retail Sales Operational Analytics",
+        id: "retail",
         image: "/projects/retail.svg",
         problem:
           "A retail business had customer, product, and seasonal sales data but no framework to understand purchasing behaviour, category performance, or operational demand patterns.",
@@ -336,6 +345,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       {
         badge: "SQL · Data Audit",
         title: "Maji Ndogo Operational Data Audit",
+        id: "maji",
         image: "/projects/maji.svg",
         problem:
           "A national water authority managing thousands of water sources had inconsistent survey data, reporting discrepancies, and suspected integrity issues across field operations.",
@@ -355,25 +365,35 @@ export const caseStudyTiers: CaseStudyTier[] = [
   },
 ];
 
-/** The three case studies surfaced on the home page. */
-export const featuredCaseStudies: { metric: string; metricLabel: string; title: string; blurb: string }[] = [
+/** The three case studies surfaced on the home page. `href` deep-links to the
+    matching card on the Work page (the id anchors on caseStudyTiers items). */
+export const featuredCaseStudies: {
+  metric: string;
+  metricLabel: string;
+  title: string;
+  blurb: string;
+  href: string;
+}[] = [
   {
     metric: "88%",
     metricLabel: "onboarding completion",
     title: "Cross-Functional Onboarding System",
     blurb: "Six tools, 250+ workflows, 91% SLA compliance — built for a firm scaling from 85 to 200 staff.",
+    href: "/work#onboarding",
   },
   {
     metric: "$1,118+",
     metricLabel: "lifetime value, top 5%",
     title: "E-Commerce Analytics System",
     blurb: "An Excel analytics system that segmented customers and surfaced a high-margin category hiding at 6% of sales.",
+    href: "/work#ecommerce",
   },
   {
     metric: "25%",
     metricLabel: "of tickets breaching SLA",
     title: "Customer Support Analytics",
     blurb: "A 15-query SQL audit and Power BI dashboard that pinpointed multi-agent handoffs as the primary bottleneck.",
+    href: "/work#support",
   },
 ];
 

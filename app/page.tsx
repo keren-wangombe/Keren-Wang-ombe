@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Button from "@/components/Button";
 import HeroIntro from "@/components/HeroIntro";
+import LinkedInFeed from "@/components/LinkedInFeed";
 import Reveal from "@/components/Reveal";
 import { brand } from "@/lib/site";
 import { featuredCaseStudies, processSteps, services, outcomes, type Service } from "@/lib/content";
@@ -112,7 +113,7 @@ export default function HomePage() {
                 <h3 className="mt-6 font-serif text-xl font-medium text-ink">{cs.title}</h3>
                 <p className="mt-3 flex-1 text-small text-ink/70">{cs.blurb}</p>
                 <a
-                  href="/work"
+                  href={cs.href}
                   className="link-amber mt-6 inline-flex items-center gap-2 text-small font-medium text-signature"
                 >
                   Read the case study
@@ -128,7 +129,7 @@ export default function HomePage() {
       <section className="container-content py-16 sm:py-24">
         <Reveal>
           <p className="kicker text-blue-lift">What I do</p>
-          <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
+          <h2 className="mt-4 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
             Turning operational chaos into scalable systems.
           </h2>
         </Reveal>
@@ -192,6 +193,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── LINKEDIN — a live post embed / follow CTA, breaks up the text. */}
+      <LinkedInFeed />
 
       {/* ── CLOSE — quiet CTA on a warm amber wash, so the page ends in color. */}
       <section className="bg-gradient-to-b from-background to-amber/10">

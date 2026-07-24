@@ -11,8 +11,9 @@ export default function CaseStudy({ item, index }: { item: CaseStudyItem; index:
   return (
     <Reveal
       as="article"
+      id={item.id}
       delay={index * 80}
-      className="overflow-hidden rounded-3xl border border-ink/10 border-l-4 border-l-amber-bright bg-paper transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
+      className="scroll-mt-28 overflow-hidden rounded-3xl border border-ink/10 border-l-4 border-l-amber-bright bg-paper transition-shadow duration-300 ease-calm hover:shadow-xl hover:shadow-ink/10"
     >
       {/* Process-map diagram — the visual proof, first thing on the card. */}
       <div className="border-b border-ink/10 bg-signature/[0.04] p-4 sm:p-6">
@@ -20,8 +21,9 @@ export default function CaseStudy({ item, index }: { item: CaseStudyItem; index:
         <img
           src={item.image}
           alt={`${item.title} — process map`}
-          className="mx-auto w-full max-w-3xl rounded-xl"
-          loading="lazy"
+          width={820}
+          height={300}
+          className="mx-auto aspect-[41/15] w-full max-w-3xl rounded-xl"
         />
       </div>
 
