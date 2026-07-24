@@ -10,10 +10,12 @@ const appCsp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://i.ytimg.com",
+  "img-src 'self' data: https://i.ytimg.com https://cdn.loom.com",
   "font-src 'self'",
   // Supabase REST + realtime websocket, and the FormSubmit inquiry relay.
   "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://formsubmit.co",
+  // Embedded video players: the hero Loom intro and YouTube walkthroughs.
+  "frame-src 'self' https://www.loom.com https://www.youtube.com https://www.youtube-nocookie.com",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self' https://formsubmit.co",
