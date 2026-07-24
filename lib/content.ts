@@ -36,13 +36,13 @@ export const outcomes: Outcome[] = [
     metric: "86%",
     metricLabel: "programme completion rate",
     title: "Reported a programme from 2,032 registrations to 900 completions.",
-    body: "Executive reporting for an edtech-industry programme, tracking the full funnel to an 86% completion rate and 81% CSAT, so leadership decisions rested on numbers, not anecdotes.",
+    body: "Executive reporting tracked a programme's full funnel to an 86% completion rate and 81% CSAT, so leadership decisions rested on numbers, not anecdotes.",
   },
   {
     metric: "3,000+",
     metricLabel: "participants supported",
     title: "Coordinated operations behind 3,000+ participants.",
-    body: "Automation, tracking, and reporting infrastructure spanning 8+ countries, the operational backbone that let edtech-industry programmes scale without the coordination overhead scaling with them.",
+    body: "Automation, tracking, and reporting infrastructure spanning 8+ countries, the operational backbone that let programmes scale without the coordination overhead scaling with them.",
   },
 ];
 
@@ -423,7 +423,7 @@ export const processSteps: { step: string; title: string; body: string }[] = [
 
 /** Sectors / communities worked across (kept generic — no employer names). */
 export const organisations: string[] = [
-  "Edtech industry",
+  "Operational programmes",
   "Open-mapping communities",
   "GIS & humanitarian mapping",
 ];
@@ -445,7 +445,7 @@ export const services: Service[] = [
   {
     icon: "team",
     title: "Team Operations",
-    body: "Coordinating facilitators, ambassadors, and delivery across cohorts and borders, in sync and on time.",
+    body: "Coordinating facilitators, ambassadors, and delivery across teams and borders, in sync and on time.",
   },
   {
     icon: "systems",
@@ -476,11 +476,11 @@ export const capabilities: Capability[] = [
   },
   {
     title: "Tracking and operational visibility.",
-    body: "I turn scattered cohort data into a single self-updating source of truth, held to 98% accuracy across 12 countries, so status is something you read, not something you chase.",
+    body: "I turn scattered operational data into a single self-updating source of truth, held to 98% accuracy across 12 countries, so status is something you read, not something you chase.",
   },
   {
     title: "Coordination across programmes and borders.",
-    body: "I run the SOPs, funnels, and escalation logic that keep facilitators, operations, and leadership in sync, across cohorts, ambassadors, and multiple markets at once.",
+    body: "I run the SOPs, funnels, and escalation logic that keep facilitators, operations, and leadership in sync, across teams, ambassadors, and multiple markets at once.",
   },
 ];
 
@@ -672,21 +672,21 @@ export type BioLength = {
 export const bios: BioLength[] = [
   {
     label: "Short (embed)",
-    text: "Programme operations and analytics, I build the automation, tracking, and reporting systems that turn operational chaos into scale across edtech-industry programmes.",
+    text: "Operations and analytics, I build the automation, tracking, and reporting systems that turn operational chaos into scale.",
   },
   {
     label: "Medium",
-    text: "I'm a programme operations professional turning messy programme data, manual workflows, and scattered pipelines into automated systems that scale. Over three years in the edtech industry I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants, with an analytics practice in SQL, Excel, and Power BI, and a GIS and open-mapping background underneath it.",
+    text: "I'm an operations professional turning messy data, manual workflows, and scattered pipelines into automated systems that scale. Over three years I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants, with an analytics practice in SQL, Excel, and Power BI, and a GIS and open-mapping background underneath it.",
   },
   {
     label: "Press (long)",
-    text: "Keren Wang'ombe is a programme operations professional in the edtech industry, where she builds the automation, tracking, and reporting systems behind programmes reaching thousands of participants across 8+ countries. Her work turns operational complexity into repeatable execution: a self-updating health tracker holding 98% data accuracy across 12 countries, automation that cut manual tracking work by 50% and saved 15+ hours a week, and executive reporting that carried a programme from 2,032 registrations to 900 completions at an 86% completion rate. Alongside operations she keeps a hands-on analytics practice, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity, and a GIS and open-mapping background that shows up wherever data meets geography. She works at the seam of operations and analytics, two disciplines that share one question: how do we make this run better?",
+    text: "Keren Wang'ombe is an operations and analytics professional who builds the automation, tracking, and reporting systems behind programmes reaching thousands of participants across 8+ countries. Her work turns operational complexity into repeatable execution: a self-updating health tracker holding 98% data accuracy across 12 countries, automation that cut manual tracking work by 50% and saved 15+ hours a week, and executive reporting that carried a programme from 2,032 registrations to 900 completions at an 86% completion rate. Alongside operations she keeps a hands-on analytics practice, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity, and a GIS and open-mapping background that shows up wherever data meets geography. She works at the seam of operations and analytics, two disciplines that share one question: how do we make this run better?",
   },
 ];
 
 /** Long-form bio for /about, paragraph by paragraph (author's own copy). */
 export const bioStory: string[] = [
-  "I'm a programme operations professional, and for three years in the edtech industry I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants. My work turns messy programme data, manual workflows, and scattered pipelines into systems that scale, the kind of operational backbone that lets a programme grow without its coordination overhead growing with it.",
+  "I'm an operations and analytics professional, and for three years I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants. My work turns messy data, manual workflows, and scattered pipelines into systems that scale, the kind of operational backbone that lets a programme grow without its coordination overhead growing with it.",
   "The through-line is simple: I don't run the process by hand if it can be a system. A Google Apps Script pipeline cut manual tracking work by 50% and saved 15+ hours a week. A self-updating tracker held programme data to 98% accuracy across 12 countries. Executive reporting carried a programme from 2,032 registrations to 900 completions at 86% completion and 81% CSAT, because the numbers were measured, not claimed.",
   "Underneath operations sits an analytics practice I keep hands-on, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity. And underneath that, a GIS and open-mapping background, which is where I first learned that data quality is an operational discipline, not an afterthought. Operations and analytics are two halves of the same question: how do we make this run better?",
 ];

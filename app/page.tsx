@@ -5,7 +5,7 @@ import HeroIntro from "@/components/HeroIntro";
 import LinkedInFeed from "@/components/LinkedInFeed";
 import Reveal from "@/components/Reveal";
 import { brand } from "@/lib/site";
-import { featuredCaseStudies, processSteps, services, outcomes, type Service } from "@/lib/content";
+import { processSteps, services, outcomes, type Service } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Operations that scale",
@@ -51,7 +51,7 @@ export default function HomePage() {
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
         <div className="container-content grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
           <div className="animate-fade-up">
-            <p className="kicker text-amber">Programme Operations &amp; Analytics · Nairobi, Kenya</p>
+            <p className="kicker text-amber">Operations &amp; Analytics</p>
             <h1 className="mt-6 font-serif text-h1 font-light leading-[1.08] text-ink">
               Operations &amp; analytics systems that bring{" "}
               <span className="text-amber">clarity</span> to complexity.
@@ -79,7 +79,7 @@ export default function HomePage() {
           {[
             { value: "3+", label: "years in programme operations" },
             { value: "3,000+", label: "learners supported" },
-            { value: "8+", label: "African countries coordinated" },
+            { value: "8+", label: "countries coordinated" },
             { value: "15+ hrs", label: "saved weekly through automation" },
           ].map((stat, i) => (
             <Reveal as="div" key={stat.label} delay={i * 80}>
@@ -87,41 +87,6 @@ export default function HomePage() {
               <p className="mt-2 text-small text-ink/70">{stat.label}</p>
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* ── FEATURED WORK — the three strongest case studies, metric-first,
-          set on a deep navy band so they carry real visual weight. */}
-      <section className="bg-signature">
-        <div className="container-content py-16 sm:py-24">
-          <Reveal>
-            <p className="kicker text-amber">Featured work</p>
-            <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-paper">
-              Case studies with the number up front.
-            </h2>
-          </Reveal>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {featuredCaseStudies.map((cs, i) => (
-              <Reveal
-                as="div"
-                key={cs.title}
-                delay={i * 100}
-                className="flex h-full flex-col rounded-3xl border border-paper/10 bg-paper p-8 transition-all duration-300 ease-calm hover:-translate-y-1 hover:shadow-2xl hover:shadow-ink/40"
-              >
-                <p className="font-serif text-display font-light leading-none text-amber">{cs.metric}</p>
-                <p className="mt-2 text-small text-ink/60">{cs.metricLabel}</p>
-                <h3 className="mt-6 font-serif text-xl font-medium text-ink">{cs.title}</h3>
-                <p className="mt-3 flex-1 text-small text-ink/70">{cs.blurb}</p>
-                <a
-                  href={cs.href}
-                  className="link-amber mt-6 inline-flex items-center gap-2 text-small font-medium text-signature"
-                >
-                  Read the case study
-                  <span aria-hidden>→</span>
-                </a>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 

@@ -11,19 +11,19 @@ import { brand, contactEmail, resumeFile, social } from "@/lib/site";
 export default function Footer() {
   return (
     <footer className="print:hidden">
-      <div className="container-content pb-12 pt-16 sm:pt-20">
-        {/* ── Glow panel: closing line + direct actions. */}
+      {/* ── Full-bleed glow band: closing line + direct actions, end to end. */}
+      <div
+        className="relative overflow-hidden bg-signature text-paper"
+        style={{
+          backgroundImage:
+            "radial-gradient(ellipse 640px 360px at 15% 40%, rgba(217,119,6,0.16) 0%, transparent 60%), radial-gradient(ellipse 420px 260px at 92% 90%, rgba(250,250,248,0.06) 0%, transparent 55%)",
+        }}
+      >
         <div
-          className="relative overflow-hidden rounded-3xl bg-signature px-8 py-10 text-paper sm:px-12"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 500px 300px at 18% 40%, rgba(217,119,6,0.18) 0%, transparent 60%), radial-gradient(ellipse 340px 220px at 92% 85%, rgba(250,250,248,0.06) 0%, transparent 55%)",
-          }}
-        >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full border border-paper/5"
-          />
+          aria-hidden
+          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full border border-paper/5"
+        />
+        <div className="container-content py-16 sm:py-20">
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
             <div>
               <h2 className="font-serif text-h2 font-light leading-tight text-paper">
