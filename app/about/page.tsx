@@ -21,10 +21,10 @@ export default function AboutPage() {
         intro={
           <p>
             Operations and analytics ask the same question: how do we make this
-            run better? I've spent three years in the edtech industry building the
-            automation, tracking, and reporting systems behind programmes reaching
-            thousands of participants, with a hands-on analytics practice and a GIS
-            and open-mapping background underneath it.
+            run better? I've spent three years building the automation, tracking,
+            and reporting systems behind programmes reaching thousands of
+            participants, with a hands-on analytics practice and a GIS and
+            open-mapping background underneath it.
           </p>
         }
         figure={

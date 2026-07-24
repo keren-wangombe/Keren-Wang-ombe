@@ -7,7 +7,7 @@ export const brand = {
   name: "Keren Wang'ombe",
   byline: "Operations · Systems · Analytics",
   oneLine:
-    "I turn operational chaos into scalable systems, messy cohort data, manual workflows, and scattered pipelines into automation that runs itself.",
+    "I turn operational chaos into scalable systems, messy data, manual workflows, and scattered pipelines into automation that runs itself.",
 } as const;
 
 /**
