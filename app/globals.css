@@ -145,6 +145,28 @@
   }
 }
 
+/* ── Banner glow blobs ─────────────────────────────────────────────────
+   Slow, looping drift for the decorative shapes behind dark page banners.
+   Each blob offsets its start via animation-delay so they move out of sync.
+   Frozen under prefers-reduced-motion (handled globally below). */
+.blob {
+  animation: blob-drift 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes blob-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(36px, -24px) scale(1.08);
+  }
+  66% {
+    transform: translate(-24px, 22px) scale(0.94);
+  }
+}
+
 /* ── Toolkit marquee ───────────────────────────────────────────────────
    A continuous, unhurried roll of tool logos. The track is duplicated, so
    translating one half-width loops seamlessly. Linear (constant speed) is
