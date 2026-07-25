@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Button from "@/components/Button";
+import Doodle from "@/components/Doodle";
 import HeroIntro from "@/components/HeroIntro";
 import LinkedInFeed from "@/components/LinkedInFeed";
 import Reveal from "@/components/Reveal";
@@ -91,7 +92,9 @@ export default function HomePage() {
       </section>
 
       {/* ── WHAT I DO — four-column grid. */}
-      <section className="container-content py-9 sm:py-11">
+      <section className="relative isolate overflow-hidden py-9 sm:py-11">
+        <Doodle name="sparks" className="absolute right-6 top-2 hidden h-36 w-36 text-amber/[0.12] lg:block" />
+        <div className="container-content">
         <Reveal>
           <p className="kicker text-blue-lift">What I do</p>
           <h2 className="mt-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
@@ -108,6 +111,7 @@ export default function HomePage() {
               <p className="mt-2 text-small text-ink/70">{s.body}</p>
             </Reveal>
           ))}
+        </div>
         </div>
       </section>
 
