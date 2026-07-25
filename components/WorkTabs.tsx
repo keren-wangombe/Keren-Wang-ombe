@@ -16,11 +16,6 @@ export default function WorkTabs({ tiers }: { tiers: CaseStudyTier[] }) {
   const tier = tiers[active];
   const isOps = active === 0;
 
-  const capabilities = tier.capabilities
-    .split("·")
-    .map((c) => c.trim().replace(/\.$/, ""))
-    .filter(Boolean);
-
   return (
     <>
       {/* ── Sticky mini-tab bar, right under the header. */}
@@ -73,18 +68,6 @@ export default function WorkTabs({ tiers }: { tiers: CaseStudyTier[] }) {
             {tier.items.map((item, i) => (
               <CaseStudy key={item.title} item={item} index={i} />
             ))}
-
-            <div className="flex flex-wrap items-center gap-2 pt-2">
-              <span className="mr-1 text-small font-medium text-ink/45">Also in the kit ·</span>
-              {capabilities.map((cap) => (
-                <span
-                  key={cap}
-                  className="rounded-full border border-ink/15 bg-paper/70 px-3 py-1 text-[0.72rem] font-medium text-ink/70"
-                >
-                  {cap}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </section>

@@ -12,6 +12,34 @@ export const metadata: Metadata = {
     "An operations and analytics professional who builds the automation, tracking, and reporting systems that turn operational chaos into scale.",
 };
 
+/** Key facts/metrics to bold in the bio so the important bits catch the eye. */
+const HIGHLIGHTS = [
+  "thousands of learners across twelve countries",
+  "Google Apps Script, SQL, Excel, Power BI",
+  "data quality is an operational discipline",
+  "86% completion rate",
+  "81% learner satisfaction",
+  "98% data accuracy",
+  "1,046 learners",
+  "more than 15 hours",
+  "reliable system",
+  "50%",
+];
+
+function highlight(text: string) {
+  const escaped = HIGHLIGHTS.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(`(${escaped.join("|")})`, "g");
+  return text.split(re).map((part, i) =>
+    HIGHLIGHTS.includes(part) ? (
+      <strong key={i} className="font-semibold text-signature">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+}
+
 export default function AboutPage() {
   return (
     <>
@@ -42,30 +70,33 @@ export default function AboutPage() {
 
       {/* ── The story, two columns so it fills the width (heading | narrative). */}
       <section className="relative isolate overflow-hidden py-9 sm:py-12">
-        <Doodle name="nodes" className="absolute -left-8 bottom-8 h-48 w-48 text-signature/[0.07]" />
-        <Doodle name="wave" className="absolute right-4 top-6 hidden h-40 w-40 text-amber/[0.10] lg:block" />
-        <Reveal>
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
-            <div>
-              <span className="block h-px w-14 bg-amber" aria-hidden />
-              <h2 className="mt-5 font-serif text-h2 font-light text-signature">
-                Operations, analytics, and the systems that connect them
-              </h2>
-              <Doodle name="orbit" className="mt-8 hidden h-40 w-40 text-signature/[0.10] lg:block" />
+        <Doodle name="wave" className="absolute -right-6 top-6 hidden h-40 w-40 text-amber/[0.12] lg:block" />
+        <div className="container-content">
+          <Reveal>
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
+              <div>
+                <span className="block h-px w-14 bg-amber" aria-hidden />
+                <h2 className="mt-5 font-serif text-h2 font-light text-signature">
+                  Operations, analytics, and the systems that connect them
+                </h2>
+                <Doodle name="nodes" className="mt-8 hidden h-44 w-44 text-signature/[0.12] lg:block" />
+              </div>
+              <div className="space-y-4 lg:pt-1">
+                {bioStory.map((para, i) => (
+                  <p key={i} className="text-body text-ink">
+                    {highlight(para)}
+                  </p>
+                ))}
+              </div>
             </div>
-            <div className="space-y-4 lg:pt-1">
-              {bioStory.map((para, i) => (
-                <p key={i} className="text-body text-ink/80">
-                  {para}
-                </p>
-              ))}
-            </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </section>
 
       {/* ── The three roles + close line, on a navy tint band. */}
-      <section className="border-y border-signature/10 bg-signature/[0.05]">
+      <section className="relative isolate overflow-hidden border-y border-signature/10 bg-signature/[0.05]">
+        <Doodle name="loop" className="absolute left-6 top-1/2 hidden h-32 w-32 -translate-y-1/2 text-signature/[0.10] lg:block" />
+        <Doodle name="flow" className="absolute right-6 top-1/2 hidden h-32 w-32 -translate-y-1/2 text-signature/[0.10] lg:block" />
         <div className="container-content py-8 sm:py-10 text-center">
           <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-serif text-h1 font-light leading-none text-signature">
@@ -86,7 +117,9 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA, on a warm amber wash. */}
-      <section className="border-t border-amber/20 bg-amber/10">
+      <section className="relative isolate overflow-hidden border-t border-amber/20 bg-amber/10">
+        <Doodle name="sparks" className="absolute left-8 top-8 hidden h-28 w-28 text-amber/[0.18] lg:block" />
+        <Doodle name="orbit" className="absolute right-8 bottom-6 hidden h-28 w-28 text-amber/[0.15] lg:block" />
         <div className="container-content py-9 sm:py-12">
           <Reveal className="text-center">
             <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-ink">
