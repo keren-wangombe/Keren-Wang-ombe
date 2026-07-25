@@ -49,15 +49,15 @@ export default function HomePage() {
       {/* ── HERO — light split: copy left, systems illustration right, on a
           soft navy-to-amber wash so the page opens with warmth, not white. */}
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
-        <div className="container-content grid items-center gap-12 py-12 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-16">
+        <div className="container-content grid items-center gap-10 py-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-12">
           <div className="animate-fade-up">
             <p className="kicker text-amber">Operations &amp; Analytics</p>
-            <h1 className="mt-6 font-serif text-h1 font-light leading-[1.08] text-ink">
+            <h1 className="mt-4 font-serif text-h1 font-light leading-[1.08] text-ink">
               Operations &amp; analytics systems that bring{" "}
               <span className="text-amber">clarity</span> to complexity.
             </h1>
-            <p className="mt-7 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
-            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <p className="mt-5 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
                 href="/work"
                 className="link-amber inline-flex items-center gap-2 text-small font-medium text-signature"
@@ -67,7 +67,7 @@ export default function HomePage() {
               </a>
             </div>
           </div>
-          <Reveal className="order-first pb-6 lg:order-none">
+          <Reveal className="order-first pb-4 lg:order-none">
             <HeroIntro />
           </Reveal>
         </div>
@@ -75,7 +75,7 @@ export default function HomePage() {
 
       {/* ── TRUST STRIP — quick credibility signals on a solid navy band. */}
       <section className="bg-signature">
-        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-10 sm:grid-cols-4">
+        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-7 sm:grid-cols-4">
           {[
             { value: "3+", label: "years in operations" },
             { value: "3,000+", label: "participants supported" },
@@ -91,21 +91,21 @@ export default function HomePage() {
       </section>
 
       {/* ── WHAT I DO — four-column grid. */}
-      <section className="container-content py-12 sm:py-16">
+      <section className="container-content py-9 sm:py-11">
         <Reveal>
           <p className="kicker text-blue-lift">What I do</p>
-          <h2 className="mt-4 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
+          <h2 className="mt-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
             Turning operational chaos into scalable systems.
           </h2>
         </Reveal>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
-            <Reveal as="div" key={s.title} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-amber/10 text-amber">
+            <Reveal as="div" key={s.title} delay={i * 100} className="flex h-full flex-col bg-paper p-6">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-amber/10 text-amber">
                 {serviceIcon[s.icon]}
               </span>
-              <h3 className="mt-5 font-serif text-xl font-medium text-ink">{s.title}</h3>
-              <p className="mt-3 text-small text-ink/70">{s.body}</p>
+              <h3 className="mt-4 font-serif text-xl font-medium text-ink">{s.title}</h3>
+              <p className="mt-2 text-small text-ink/70">{s.body}</p>
             </Reveal>
           ))}
         </div>
@@ -114,19 +114,19 @@ export default function HomePage() {
       {/* ── HOW I WORK — the four-step process on a warm amber-tinted band,
           alternating off the navy numbers bands around it. */}
       <section className="border-y border-amber/15 bg-amber/[0.07]">
-        <div className="container-content py-12 sm:py-16">
+        <div className="container-content py-9 sm:py-11">
           <Reveal>
             <p className="kicker text-amber">How I work</p>
-            <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
+            <h2 className="mt-3 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
               The same method, every system.
             </h2>
           </Reveal>
-          <ol className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((p, i) => (
-              <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
+              <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-6">
                 <p className="font-serif text-h2 font-light leading-none text-amber">{p.step}</p>
-                <h3 className="mt-4 font-serif text-xl font-medium text-ink">{p.title}</h3>
-                <p className="mt-3 text-small text-ink/70">{p.body}</p>
+                <h3 className="mt-3 font-serif text-xl font-medium text-ink">{p.title}</h3>
+                <p className="mt-2 text-small text-ink/70">{p.body}</p>
               </Reveal>
             ))}
           </ol>
@@ -135,14 +135,14 @@ export default function HomePage() {
 
       {/* ── IMPACT — navy band with the headline metrics. */}
       <section className="bg-signature">
-        <div className="container-content py-12 sm:py-16">
+        <div className="container-content py-9 sm:py-11">
           <Reveal>
             <p className="kicker text-amber">Impact</p>
-            <h2 className="mt-5 max-w-xl font-serif text-h1 font-light text-paper">
+            <h2 className="mt-3 max-w-xl font-serif text-h1 font-light text-paper">
               Results measured, not claimed.
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {outcomes.map((o, i) => (
               <Reveal as="div" key={o.metricLabel} delay={i * 100}>
                 <p
@@ -164,12 +164,12 @@ export default function HomePage() {
 
       {/* ── CLOSE — quiet CTA on a warm amber wash, so the page ends in color. */}
       <section className="bg-gradient-to-b from-background to-amber/10">
-        <div className="container-content py-14 sm:py-20">
+        <div className="container-content py-10 sm:py-14">
           <Reveal>
             <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
               Looking for someone who builds the systems, not just runs them?
             </h2>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-6 flex flex-wrap gap-4">
               <Button href="/work" variant="ghost">
                 See the work
               </Button>

@@ -10,7 +10,7 @@ import { linkedinEmbedUrl, social } from "@/lib/site";
 export default function LinkedInFeed() {
   return (
     <section className="bg-paper">
-      <div className="container-content py-12 sm:py-16">
+      <div className="container-content py-9 sm:py-11">
         <Reveal>
           <p className="kicker text-blue-lift">Latest on LinkedIn</p>
           <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
