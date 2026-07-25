@@ -49,7 +49,7 @@ export default function HomePage() {
       {/* ── HERO — light split: copy left, systems illustration right, on a
           soft navy-to-amber wash so the page opens with warmth, not white. */}
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
-        <div className="container-content grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
+        <div className="container-content grid items-center gap-12 py-12 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-16">
           <div className="animate-fade-up">
             <p className="kicker text-amber">Operations &amp; Analytics</p>
             <h1 className="mt-6 font-serif text-h1 font-light leading-[1.08] text-ink">
@@ -73,32 +73,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TRUST STRIP — quick credibility signals on a warm amber band. */}
-      <section className="border-y border-amber/20 bg-amber/10">
-        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-8 sm:grid-cols-4">
+      {/* ── TRUST STRIP — quick credibility signals on a solid navy band. */}
+      <section className="bg-signature">
+        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-10 sm:grid-cols-4">
           {[
-            { value: "3+", label: "years in programme operations" },
-            { value: "3,000+", label: "learners supported" },
+            { value: "3+", label: "years in operations" },
+            { value: "3,000+", label: "participants supported" },
             { value: "8+", label: "countries coordinated" },
             { value: "15+ hrs", label: "saved weekly through automation" },
           ].map((stat, i) => (
             <Reveal as="div" key={stat.label} delay={i * 80}>
-              <p className="font-serif text-h2 font-light leading-none text-signature">{stat.value}</p>
-              <p className="mt-2 text-small text-ink/70">{stat.label}</p>
+              <p className="font-serif text-h2 font-light leading-none text-amber">{stat.value}</p>
+              <p className="mt-2 text-small text-paper/70">{stat.label}</p>
             </Reveal>
           ))}
         </div>
       </section>
 
       {/* ── WHAT I DO — four-column grid. */}
-      <section className="container-content py-16 sm:py-24">
+      <section className="container-content py-12 sm:py-16">
         <Reveal>
           <p className="kicker text-blue-lift">What I do</p>
           <h2 className="mt-4 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
             Turning operational chaos into scalable systems.
           </h2>
         </Reveal>
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s, i) => (
             <Reveal as="div" key={s.title} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-amber/10 text-amber">
@@ -111,17 +111,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW I WORK — the four-step process on a cool navy-tinted band,
-          a credibility signal in its own right. */}
-      <section className="border-y border-signature/10 bg-signature/[0.05]">
-        <div className="container-content py-16 sm:py-24">
+      {/* ── HOW I WORK — the four-step process on a warm amber-tinted band,
+          alternating off the navy numbers bands around it. */}
+      <section className="border-y border-amber/15 bg-amber/[0.07]">
+        <div className="container-content py-12 sm:py-16">
           <Reveal>
-            <p className="kicker text-blue-lift">How I work</p>
+            <p className="kicker text-amber">How I work</p>
             <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
               The same method, every system.
             </h2>
           </Reveal>
-          <ol className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((p, i) => (
               <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-8">
                 <p className="font-serif text-h2 font-light leading-none text-amber">{p.step}</p>
@@ -135,14 +135,14 @@ export default function HomePage() {
 
       {/* ── IMPACT — navy band with the headline metrics. */}
       <section className="bg-signature">
-        <div className="container-content py-16 sm:py-20">
+        <div className="container-content py-12 sm:py-16">
           <Reveal>
             <p className="kicker text-amber">Impact</p>
             <h2 className="mt-5 max-w-xl font-serif text-h1 font-light text-paper">
               Results measured, not claimed.
             </h2>
           </Reveal>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {outcomes.map((o, i) => (
               <Reveal as="div" key={o.metricLabel} delay={i * 100}>
                 <p
@@ -164,7 +164,7 @@ export default function HomePage() {
 
       {/* ── CLOSE — quiet CTA on a warm amber wash, so the page ends in color. */}
       <section className="bg-gradient-to-b from-background to-amber/10">
-        <div className="container-content py-20 sm:py-28">
+        <div className="container-content py-14 sm:py-20">
           <Reveal>
             <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
               Looking for someone who builds the systems, not just runs them?

@@ -1,14 +1,20 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { brand, contactEmail, resumeFile, social } from "@/lib/site";
 
 /**
- * Footer, laid out like the reference site: a deep glow panel carrying the
- * closing line and the direct actions (Email Me → reveal + copy, Resume,
- * LinkedIn), then a slim byline strip with a back-to-top control. Rendered in
- * the site's own palette — Signature navy surfaces, Amber accents, Paper text.
+ * Footer: a deep glow band carrying the closing line and the direct actions
+ * (Email me, Resume, LinkedIn), then a slim byline strip with a back-to-top
+ * control. Rendered in the site's palette — Signature navy, Amber, Paper.
+ *
+ * Hidden on /contact, where the same email/LinkedIn/resume actions already
+ * live in the page body (so the footer would just duplicate them).
  */
 export default function Footer() {
+  const pathname = usePathname();
+  if (pathname === "/contact") return null;
+
   return (
     <footer className="print:hidden">
       {/* ── Full-bleed glow band: closing line + direct actions, end to end. */}
