@@ -43,35 +43,31 @@ export default function WorkPage() {
           <TierBackdrop src={tier.backdrop} align={ti % 2 === 0 ? "right" : "left"} />
           <div className="container-content">
             <Reveal>
-              <p className="kicker text-blue-lift">{tier.kicker}</p>
-              <h2 className="mt-4 font-serif text-h1 font-light text-signature">{tier.name}</h2>
+              <h2 className="font-serif text-h1 font-light text-signature">{tier.name}</h2>
               <p className="mt-3 max-w-2xl text-body text-ink">{tier.tagline}</p>
-            </Reveal>
 
-            <div className="mt-10 space-y-8">
-              {tier.items.map((item, i) => (
-                <CaseStudy key={item.title} item={item} index={i} />
-              ))}
-            </div>
-
-            {/* Capabilities, a chip cloud; each pill fades up in sequence. */}
-            <div className="mt-12">
-              <Reveal>
-                <p className="kicker text-blue-lift">Also in the kit</p>
-              </Reveal>
-              <ul className="mt-5 flex flex-wrap gap-2.5">
+              {/* Capabilities folded into the section header (not a standalone block). */}
+              <div className="mt-6 flex flex-wrap items-center gap-2">
+                <span className="kicker mr-1 text-blue-lift">Also in the kit</span>
                 {tier.capabilities
                   .split("·")
                   .map((c) => c.trim().replace(/\.$/, ""))
                   .filter(Boolean)
-                  .map((cap, i) => (
-                    <Reveal as="li" key={cap} delay={i * 90}>
-                      <span className="inline-block rounded-full bg-signature px-4 py-2 text-small text-paper transition-colors duration-300 ease-calm hover:bg-blue-lift">
-                        {cap}
-                      </span>
-                    </Reveal>
+                  .map((cap) => (
+                    <span
+                      key={cap}
+                      className="inline-block rounded-full bg-signature px-3.5 py-1.5 text-small text-paper transition-colors duration-300 ease-calm hover:bg-blue-lift"
+                    >
+                      {cap}
+                    </span>
                   ))}
-              </ul>
+              </div>
+            </Reveal>
+
+            <div className="mt-8 space-y-6">
+              {tier.items.map((item, i) => (
+                <CaseStudy key={item.title} item={item} index={i} />
+              ))}
             </div>
           </div>
         </section>
