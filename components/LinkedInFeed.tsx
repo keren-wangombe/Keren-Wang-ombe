@@ -9,8 +9,8 @@ import { linkedinEmbedUrl, social } from "@/lib/site";
  */
 export default function LinkedInFeed() {
   return (
-    <section className="border-y border-signature/10 bg-signature/[0.05]">
-      <div className="container-content py-16 sm:py-24">
+    <section className="bg-paper">
+      <div className="container-content py-12 sm:py-16">
         <Reveal>
           <p className="kicker text-blue-lift">Latest on LinkedIn</p>
           <h2 className="mt-4 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
@@ -18,7 +18,7 @@ export default function LinkedInFeed() {
           </h2>
         </Reveal>
 
-        <Reveal className="mt-10">
+        <Reveal className="mt-8">
           {linkedinEmbedUrl ? (
             <div className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-ink/10 bg-paper shadow-lg shadow-ink/5">
               <iframe
