@@ -24,7 +24,11 @@ export default function CaseStudy({ item }: { item: CaseStudyItem; index?: numbe
         aria-expanded={open}
         className="block w-full text-left"
       >
-        <div className="grid items-center gap-6 p-6 sm:p-7 lg:grid-cols-[0.82fr_1.18fr] lg:gap-8">
+        <div
+          className={`gap-6 p-6 sm:p-7 ${
+            open ? "" : "grid items-center lg:grid-cols-[0.82fr_1.18fr] lg:gap-8"
+          }`}
+        >
           {/* Left: badge, metric, title, tools, toggle. */}
           <div>
             <p className="kicker text-amber">{item.badge}</p>
@@ -60,8 +64,9 @@ export default function CaseStudy({ item }: { item: CaseStudyItem; index?: numbe
             </span>
           </div>
 
-          {/* Right: the animated process map. */}
-          <div className="rounded-xl border border-ink/10 bg-signature/[0.04] p-3 sm:p-4">
+          {/* The animated process map — sits beside the summary when collapsed,
+              and expands to full width (larger) once the card is opened. */}
+          <div className={`rounded-xl border border-ink/10 bg-signature/[0.04] p-3 sm:p-4 ${open ? "mt-6" : ""}`}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.image}
