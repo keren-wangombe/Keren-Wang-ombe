@@ -39,15 +39,17 @@ export default function AboutPage() {
         }
       />
 
-      {/* ── The story, a single readable column (light). */}
-      <section className="container-content py-10 sm:py-14">
+      {/* ── The story, two columns so it fills the width (heading | narrative). */}
+      <section className="container-content py-9 sm:py-12">
         <Reveal>
-          <div className="mx-auto max-w-2xl">
-            <span className="block h-px w-14 bg-amber" aria-hidden />
-            <h2 className="mt-6 font-serif text-h2 font-light text-signature">
-              Operations, analytics, and the systems that connect them
-            </h2>
-            <div className="mt-5 space-y-5">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
+            <div>
+              <span className="block h-px w-14 bg-amber" aria-hidden />
+              <h2 className="mt-5 font-serif text-h2 font-light text-signature">
+                Operations, analytics, and the systems that connect them
+              </h2>
+            </div>
+            <div className="space-y-4 lg:pt-1">
               {bioStory.map((para, i) => (
                 <p key={i} className="text-body text-ink/80">
                   {para}
@@ -60,7 +62,7 @@ export default function AboutPage() {
 
       {/* ── The three roles + close line, on a navy tint band. */}
       <section className="border-y border-signature/10 bg-signature/[0.05]">
-        <div className="container-content py-10 sm:py-14 text-center">
+        <div className="container-content py-8 sm:py-10 text-center">
           <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-serif text-h1 font-light leading-none text-signature">
               {bioRoles.map((role, i) => (
@@ -81,12 +83,12 @@ export default function AboutPage() {
 
       {/* ── CTA, on a warm amber wash. */}
       <section className="border-t border-amber/20 bg-amber/10">
-        <div className="container-content py-12 sm:py-16">
+        <div className="container-content py-9 sm:py-12">
           <Reveal className="text-center">
             <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-ink">
               If any of this resonates, let&rsquo;s connect.
             </h2>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <div className="mt-6 flex flex-wrap justify-center gap-4">
               <Button href="/work" variant="accent">
                 See my work
               </Button>

@@ -33,7 +33,7 @@ export default function PageBanner({
   animated = false,
 }: PageBannerProps) {
   return (
-    <section className="relative flex min-h-[26rem] w-full items-center overflow-hidden bg-ink lg:min-h-[30rem]">
+    <section className="relative flex min-h-[17rem] w-full items-center overflow-hidden bg-ink lg:min-h-[19rem]">
       {image ? (
         <>
           {/* eslint-disable-next-line @next/next/no-img-element */}
