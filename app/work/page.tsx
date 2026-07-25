@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
-import CaseStudy from "@/components/CaseStudy";
 import LogoMarquee from "@/components/LogoMarquee";
-import TierBackdrop from "@/components/TierBackdrop";
+import WorkTabs from "@/components/WorkTabs";
 import { caseStudyTiers, toolkitNote } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -22,60 +21,17 @@ export default function WorkPage() {
           <p>
             I build the operational backbone: automation that removes manual
             load, tracking held to measured accuracy, and analytics that turns
-            raw data into decisions. Each case study below is mapped end to end,
-            then told the same way — the problem, what I built, and the measured
-            result.
+            raw data into decisions. Each case study is mapped end to end, then
+            told the same way — the problem, what I built, and the measured
+            result. Switch between Operations and Analytics below.
           </p>
         }
       />
 
-      {/* ── Tiers of case studies, each told Problem → Built → Result, led by a
-          process-map diagram. A subtle parallax backdrop fades in per tier. */}
-      {caseStudyTiers.map((tier, ti) => (
-        <section
-          key={tier.kicker}
-          className={`relative isolate overflow-hidden py-12 sm:py-20 ${
-            ti % 2 === 0
-              ? "border-b border-signature/10 bg-signature/[0.05]"
-              : "border-b border-amber/15 bg-amber/[0.07]"
-          }`}
-        >
-          <TierBackdrop src={tier.backdrop} align={ti % 2 === 0 ? "right" : "left"} />
-          <div className="container-content">
-            <Reveal>
-              <h2 className="font-serif text-h1 font-light text-signature">{tier.name}</h2>
-              <p className="mt-3 max-w-2xl text-body text-ink">{tier.tagline}</p>
-            </Reveal>
+      {/* Mini tabs: Operations / Analytics, both under Work. */}
+      <WorkTabs tiers={caseStudyTiers} />
 
-            <div className="mt-8 space-y-6">
-              {tier.items.map((item, i) => (
-                <CaseStudy key={item.title} item={item} index={i} />
-              ))}
-
-              {/* Capabilities shown as one more set of project-style chips, right
-                  in with the projects (no standalone "Also in the kit" block). */}
-              <Reveal className="flex flex-wrap items-center gap-2 pt-2">
-                <span className="mr-1 text-small font-medium text-ink/45">Also in the kit ·</span>
-                {tier.capabilities
-                  .split("·")
-                  .map((c) => c.trim().replace(/\.$/, ""))
-                  .filter(Boolean)
-                  .map((cap) => (
-                    <span
-                      key={cap}
-                      className="rounded-full border border-ink/15 px-3 py-1 text-[0.72rem] font-medium text-ink/70"
-                    >
-                      {cap}
-                    </span>
-                  ))}
-              </Reveal>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* ── The toolkit, note + a continuously rolling logo marquee, on a
-          soft navy tint so the band reads as its own section. */}
+      {/* ── The toolkit, note + a continuously rolling logo marquee. */}
       <section className="bg-signature/[0.04] py-12 sm:py-16">
         <div className="container-content">
           <Reveal>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import Doodle from "@/components/Doodle";
 import { bioCloseText, bioRoles, bioStory } from "@/lib/content";
 import { aboutPortrait } from "@/lib/site";
 
@@ -40,7 +41,9 @@ export default function AboutPage() {
       />
 
       {/* ── The story, two columns so it fills the width (heading | narrative). */}
-      <section className="container-content py-9 sm:py-12">
+      <section className="relative isolate overflow-hidden py-9 sm:py-12">
+        <Doodle name="nodes" className="absolute -left-8 bottom-8 h-48 w-48 text-signature/[0.07]" />
+        <Doodle name="wave" className="absolute right-4 top-6 hidden h-40 w-40 text-amber/[0.10] lg:block" />
         <Reveal>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
             <div>
@@ -48,6 +51,7 @@ export default function AboutPage() {
               <h2 className="mt-5 font-serif text-h2 font-light text-signature">
                 Operations, analytics, and the systems that connect them
               </h2>
+              <Doodle name="orbit" className="mt-8 hidden h-40 w-40 text-signature/[0.10] lg:block" />
             </div>
             <div className="space-y-4 lg:pt-1">
               {bioStory.map((para, i) => (

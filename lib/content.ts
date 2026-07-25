@@ -165,6 +165,8 @@ export type CaseStudyItem = {
 
 export type CaseStudyTier = {
   kicker: string;
+  /** Short label for the Work-page mini tabs. */
+  tab: string;
   name: string;
   tagline: string;
   capabilities: string;
@@ -175,6 +177,7 @@ export type CaseStudyTier = {
 export const caseStudyTiers: CaseStudyTier[] = [
   {
     kicker: "Tier 1",
+    tab: "Operations",
     name: "Systems built for operations",
     tagline:
       "The operational backbone. Automation, tracking, and coordination that turn chaos into repeatable execution.",
@@ -272,6 +275,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
   },
   {
     kicker: "Tier 2",
+    tab: "Analytics",
     name: "Analytics that drives decisions",
     tagline:
       "Because the number should change what happens next. Reporting and analysis built around operational decisions, not vanity metrics.",
