@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import InquiryForm from "@/components/InquiryForm";
+import Doodle from "@/components/Doodle";
 import { contactEmail, resumeFile, social } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -24,8 +25,10 @@ export default function ContactPage() {
         }
       />
 
-      <section className="container-content py-12 sm:py-16">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+      <section className="relative isolate overflow-hidden py-12 sm:py-16">
+        <Doodle name="nodes" className="absolute -left-6 bottom-10 hidden h-44 w-44 text-signature/[0.08] lg:block" />
+        <Doodle name="wave" className="absolute right-2 top-8 hidden h-36 w-36 text-amber/[0.12] lg:block" />
+        <div className="container-content grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
             <h2 className="font-serif text-h2 font-light text-ink">The direct lines</h2>
             <p className="mt-4 max-w-prose text-body text-ink/70">

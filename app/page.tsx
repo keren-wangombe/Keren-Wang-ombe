@@ -168,7 +168,9 @@ export default function HomePage() {
 
       {/* ── CLOSE — a standalone statement band, centered and set apart from
           the LinkedIn section above so the line lands on its own. */}
-      <section className="border-y border-amber/25 bg-amber/10">
+      <section className="relative isolate overflow-hidden border-y border-amber/25 bg-amber/10">
+        <Doodle name="flow" className="absolute left-6 top-8 hidden h-32 w-32 text-amber/[0.16] lg:block" />
+        <Doodle name="orbit" className="absolute right-6 bottom-6 hidden h-32 w-32 text-amber/[0.14] lg:block" />
         <div className="container-content py-14 sm:py-20 text-center">
           <Reveal>
             <p className="kicker text-amber">The short version</p>

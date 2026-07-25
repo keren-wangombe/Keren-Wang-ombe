@@ -1,3 +1,4 @@
+import Doodle from "@/components/Doodle";
 import Reveal from "@/components/Reveal";
 import { linkedinEmbedUrl, social } from "@/lib/site";
 
@@ -9,7 +10,9 @@ import { linkedinEmbedUrl, social } from "@/lib/site";
  */
 export default function LinkedInFeed() {
   return (
-    <section className="bg-paper">
+    <section className="relative isolate overflow-hidden bg-paper">
+      <Doodle name="loop" className="absolute left-6 bottom-8 hidden h-32 w-32 text-signature/[0.09] lg:block" />
+      <Doodle name="sparks" className="absolute right-10 top-10 hidden h-28 w-28 text-amber/[0.14] lg:block" />
       <div className="container-content py-8 sm:py-9">
         <Reveal>
           <p className="kicker text-blue-lift">Latest on LinkedIn</p>

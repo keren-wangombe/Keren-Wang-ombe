@@ -201,7 +201,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "24% reduction in delays · 38% reduction in manual HR coordination",
           "250+ workflows tracked across Client Services, Operations, and Analytics",
         ],
-        tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion", "Excel"],
+        tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion", "Excel", "Workflow automation", "SOP design & documentation"],
         links: [
           {
             label: "Watch the system walkthrough",
@@ -228,7 +228,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "3 operational SOPs covering onboarding, no-show management, and offboarding — process no longer dependent on institutional memory",
           "Live operations calendar auto-tracking sessions, plus unified content and workflow tracking for scalable delivery",
         ],
-        tools: ["Notion", "CRM Design", "SOP Documentation", "Workflow Design", "Operational Reporting"],
+        tools: ["Notion", "CRM Design", "SOP Documentation", "Workflow Design", "Operational Reporting", "Notion & Airtable systems design"],
         links: [
           {
             label: "Open the operations hub",
@@ -250,7 +250,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "Automated escalation routes blocked work to leadership while auto-confirming facilitator completions",
           "Goals, milestones, and delivery tracking connected into one leadership reporting view",
         ],
-        tools: ["Asana", "Dependency Mapping", "Process Automation", "KPI Tracking"],
+        tools: ["Asana", "Dependency Mapping", "Process Automation", "KPI Tracking", "ClickUp & Asana delivery operations", "Cross-border programme coordination"],
         links: [{ label: "Watch the walkthrough", href: "https://youtu.be/8v5r37T_dDo" }],
       },
       {
@@ -269,7 +269,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "Personalised onboarding communication sent within seconds of registration",
           "Every registration handled identically regardless of volume or time of day",
         ],
-        tools: ["Zapier", "Google Forms", "Google Sheets", "Gmail"],
+        tools: ["Zapier", "Google Forms", "Google Sheets", "Gmail", "Workflow automation", "CA screening & funnel tracking"],
       },
     ],
   },
@@ -300,7 +300,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "Two regions found driving 60%+ of revenue with minimal marketing spend",
           "Low-performing SKUs (<2% of revenue) flagged for rationalisation",
         ],
-        tools: ["Microsoft Excel", "Dashboard Design", "Customer Segmentation", "KPI Reporting"],
+        tools: ["Microsoft Excel", "Dashboard Design", "Customer Segmentation", "KPI Reporting", "Excel modelling & KPI frameworks", "Data storytelling"],
         links: [
           {
             label: "Read the write-up on Medium",
@@ -324,7 +324,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "2–3x variation in resolution times from uneven workload distribution",
           "Interactive Power BI executive dashboard centralising SLA tracking, KPIs, and escalation analysis",
         ],
-        tools: ["SQL", "Power BI", "SLA Analysis", "Executive Dashboards"],
+        tools: ["SQL", "Power BI", "SLA Analysis", "Executive Dashboards", "Power BI & Looker Studio dashboards", "Customer & SLA analysis"],
         links: [{ label: "View the repo on GitHub", href: "https://github.com/Kerenyambura/operationalbottlenecks" }],
       },
       {
@@ -341,7 +341,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "18–29 age segment revealed as the primary purchasing demographic",
           "Seasonal demand spikes surfaced to support inventory forecasting and procurement planning",
         ],
-        tools: ["MySQL", "SQL Analytics", "CTEs", "Window Functions"],
+        tools: ["MySQL", "SQL Analytics", "CTEs", "Window Functions", "SQL & MySQL (CTEs, window functions)", "Executive reporting"],
         links: [
           { label: "Read the write-up on Medium", href: "https://medium.com/@nyamburawangombe/retail-sales-analysis-54a805993053" },
         ],
@@ -360,7 +360,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
           "Employees with above-average reporting inconsistencies flagged for investigation",
           "Raw survey records transformed into analysis-ready datasets for infrastructure planning",
         ],
-        tools: ["SQL", "Data Cleaning", "CTEs", "Operational Auditing"],
+        tools: ["SQL", "Data Cleaning", "CTEs", "Operational Auditing", "Operational auditing & data cleaning", "Data storytelling"],
         links: [
           { label: "View the SQL on GitHub", href: "https://github.com/Kerenyambura/SQL/blob/main/project_part_3.sql" },
         ],

@@ -40,7 +40,7 @@ export default function CaseStudy({ item }: { item: CaseStudyItem; index?: numbe
             ) : null}
             <h3 className="mt-4 font-serif text-h2 font-light leading-snug text-ink">{item.title}</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
-              {item.tools.slice(0, 6).map((tool) => (
+              {item.tools.map((tool) => (
                 <li
                   key={tool}
                   className="rounded-full border border-ink/15 px-3 py-1 text-[0.72rem] font-medium text-ink/70"
