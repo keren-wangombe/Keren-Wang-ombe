@@ -34,54 +34,78 @@ const defaultFields: Field[] = [
 ];
 
 /**
- * Inquiry form that composes the message straight into the visitor's own email
- * client via a `mailto:` link — no backend, no third-party relay, and no
- * activation step, so a message always sends. The visitor confirms with their
- * mail app's Send button.
+ * Inquiry form. Submissions are delivered to {@link contactEmail} via
+ * FormSubmit (https://formsubmit.co) — a no-backend relay — so a visitor can
+ * send a message without needing their own email client. If the network call
+ * fails, it falls back to opening a prefilled `mailto:`.
+ *
+ * ONE-TIME ACTIVATION: the very first submission makes FormSubmit send a
+ * confirmation email to {@link contactEmail}; click the link in it once and
+ * every message after that lands in the inbox automatically.
  */
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${contactEmail}`;
+
 export default function InquiryForm({
   fields = defaultFields,
   submitLabel = "Send inquiry",
   tone = "light",
   subject = "New message from the website",
 }: InquiryFormProps) {
-  const [done, setDone] = useState(false);
-  const [mailtoHref, setMailtoHref] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "fallback">("idle");
+  const [mailtoHref, setMailtoHref] = useState(`mailto:${contactEmail}`);
   const dark = tone === "dark";
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
+    if (status === "sending") return;
 
-    // Build a readable email body from the filled fields.
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.append("_subject", subject);
+    data.append("_template", "table");
+    data.append("_captcha", "false");
+
+    // Prebuild a mailto fallback from the same fields.
     const body = fields
       .map((f) => `${f.label}: ${String(data.get(f.name) ?? "").trim()}`)
       .filter((line) => !line.endsWith(": "))
       .join("\n\n");
-
-    const href = `mailto:${contactEmail}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
-
+    const href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setMailtoHref(href);
-    // Open the visitor's email client with everything prefilled.
-    window.location.href = href;
-    setDone(true);
+
+    setStatus("sending");
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus("sent");
+    } catch {
+      // Network/relay failure → open the visitor's mail client instead.
+      window.location.href = href;
+      setStatus("fallback");
+    }
   }
 
-  if (done) {
+  if (status === "sent") {
+    return (
+      <p className={`text-body ${dark ? "text-amber" : "text-signature"}`} role="status">
+        Thank you — your message is on its way. I read these personally and will reply soon.
+      </p>
+    );
+  }
+
+  if (status === "fallback") {
     return (
       <div className={`space-y-3 text-body ${dark ? "text-paper/80" : "text-ink"}`} role="status">
         <p className={dark ? "text-amber" : "text-signature"}>
-          Your email app should have opened with your message ready — just hit send.
+          Your email app should have opened with the message ready — just hit send.
         </p>
         <p className="text-small">
-          Didn&rsquo;t open?{" "}
+          Didn&rsquo;t open? Write to{" "}
           <a href={mailtoHref} className="underline">
-            Click here to email me
-          </a>
-          , or write to{" "}
-          <a href={`mailto:${contactEmail}`} className="underline">
             {contactEmail}
           </a>
           .
@@ -138,13 +162,14 @@ export default function InquiryForm({
 
       <button
         type="submit"
-        className={`rounded-lg px-7 py-3.5 text-small font-medium transition-all duration-300 ease-calm ${
+        disabled={status === "sending"}
+        className={`rounded-lg px-7 py-3.5 text-small font-medium transition-all duration-300 ease-calm disabled:cursor-not-allowed disabled:opacity-60 ${
           dark
             ? "bg-amber text-ink hover:brightness-[0.97]"
             : "bg-signature text-paper hover:bg-blue-lift"
         }`}
       >
-        {submitLabel}
+        {status === "sending" ? "Sending…" : submitLabel}
       </button>
     </form>
   );

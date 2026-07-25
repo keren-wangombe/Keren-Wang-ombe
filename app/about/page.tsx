@@ -28,7 +28,7 @@ export default function AboutPage() {
           </p>
         }
         figure={
-          <div className="relative mx-auto w-full max-w-xs overflow-hidden rounded-3xl border border-amber/50 shadow-2xl shadow-ink/60 ring-1 ring-paper/10">
+          <div className="relative mx-auto w-full max-w-[15rem] overflow-hidden rounded-3xl border border-amber/50 shadow-2xl shadow-ink/60 ring-1 ring-paper/10">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={aboutPortrait}

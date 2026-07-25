@@ -45,10 +45,17 @@ export default function WorkPage() {
             <Reveal>
               <h2 className="font-serif text-h1 font-light text-signature">{tier.name}</h2>
               <p className="mt-3 max-w-2xl text-body text-ink">{tier.tagline}</p>
+            </Reveal>
 
-              {/* Capabilities folded into the section header (not a standalone block). */}
-              <div className="mt-6 flex flex-wrap items-center gap-2">
-                <span className="kicker mr-1 text-blue-lift">Also in the kit</span>
+            <div className="mt-8 space-y-6">
+              {tier.items.map((item, i) => (
+                <CaseStudy key={item.title} item={item} index={i} />
+              ))}
+
+              {/* Capabilities shown as one more set of project-style chips, right
+                  in with the projects (no standalone "Also in the kit" block). */}
+              <Reveal className="flex flex-wrap items-center gap-2 pt-2">
+                <span className="mr-1 text-small font-medium text-ink/45">Also in the kit ·</span>
                 {tier.capabilities
                   .split("·")
                   .map((c) => c.trim().replace(/\.$/, ""))
@@ -56,18 +63,12 @@ export default function WorkPage() {
                   .map((cap) => (
                     <span
                       key={cap}
-                      className="inline-block rounded-full bg-signature px-3.5 py-1.5 text-small text-paper transition-colors duration-300 ease-calm hover:bg-blue-lift"
+                      className="rounded-full border border-ink/15 px-3 py-1 text-[0.72rem] font-medium text-ink/70"
                     >
                       {cap}
                     </span>
                   ))}
-              </div>
-            </Reveal>
-
-            <div className="mt-8 space-y-6">
-              {tier.items.map((item, i) => (
-                <CaseStudy key={item.title} item={item} index={i} />
-              ))}
+              </Reveal>
             </div>
           </div>
         </section>

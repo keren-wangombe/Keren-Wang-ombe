@@ -33,7 +33,7 @@ export default function PageBanner({
   animated = false,
 }: PageBannerProps) {
   return (
-    <section className="relative flex min-h-[calc(100svh-4rem)] w-full items-center overflow-hidden bg-ink">
+    <section className="relative flex min-h-[26rem] w-full items-center overflow-hidden bg-ink lg:min-h-[30rem]">
       {image ? (
         <>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -62,7 +62,7 @@ export default function PageBanner({
       ) : null}
       <span className="absolute inset-x-0 bottom-0 h-px bg-amber/50" aria-hidden />
 
-      <div className="container-content relative z-10 py-14 sm:py-20">
+      <div className="container-content relative z-10 py-10 sm:py-14">
         {figure ? (
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
             <div>
@@ -98,11 +98,11 @@ function Copy({
       {kicker ? (
         <p className="kicker text-amber animate-fade-up">{kicker}</p>
       ) : null}
-      <h1 className="mt-6 max-w-4xl font-serif text-display font-light text-paper animate-hero-rise">
+      <h1 className="mt-4 max-w-3xl font-serif text-h1 font-light text-paper animate-hero-rise">
         {title}
       </h1>
       <span
-        className="mt-10 block h-px w-16 bg-amber animate-fade-up"
+        className="mt-6 block h-px w-16 bg-amber animate-fade-up"
         style={{ animationDelay: "160ms" }}
         aria-hidden
       />
