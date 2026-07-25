@@ -135,24 +135,24 @@ export default function HomePage() {
 
       {/* ── IMPACT — navy band with the headline metrics. */}
       <section className="bg-signature">
-        <div className="container-content py-9 sm:py-11">
+        <div className="container-content py-8 sm:py-9">
           <Reveal>
             <p className="kicker text-amber">Impact</p>
-            <h2 className="mt-3 max-w-xl font-serif text-h1 font-light text-paper">
+            <h2 className="mt-2 max-w-xl font-serif text-h2 font-light text-paper">
               Results measured, not claimed.
             </h2>
           </Reveal>
-          <div className="mt-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {outcomes.map((o, i) => (
               <Reveal as="div" key={o.metricLabel} delay={i * 100}>
                 <p
-                  className={`font-serif text-display font-light leading-none ${
+                  className={`font-serif text-h1 font-light leading-none ${
                     i === 0 ? "text-amber" : "text-paper"
                   }`}
                 >
                   {o.metric}
                 </p>
-                <p className="mt-3 text-small text-paper/65">{o.metricLabel}</p>
+                <p className="mt-2 text-small text-paper/65">{o.metricLabel}</p>
               </Reveal>
             ))}
           </div>
