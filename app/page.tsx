@@ -162,16 +162,19 @@ export default function HomePage() {
       {/* ── LINKEDIN — a live post embed / follow CTA, breaks up the text. */}
       <LinkedInFeed />
 
-      {/* ── CLOSE — quiet CTA on a warm amber wash, so the page ends in color. */}
-      <section className="bg-gradient-to-b from-background to-amber/10">
-        <div className="container-content py-10 sm:py-14">
+      {/* ── CLOSE — a standalone statement band, centered and set apart from
+          the LinkedIn section above so the line lands on its own. */}
+      <section className="border-y border-amber/25 bg-amber/10">
+        <div className="container-content py-14 sm:py-20 text-center">
           <Reveal>
-            <h2 className="max-w-xl font-serif text-h1 font-light text-ink">
+            <p className="kicker text-amber">The short version</p>
+            <h2 className="mx-auto mt-4 max-w-3xl font-serif text-h1 font-light leading-[1.12] text-signature">
               Looking for someone who builds the systems, not just runs them?
             </h2>
-            <div className="mt-6 flex flex-wrap gap-4">
-              <Button href="/work" variant="ghost">
-                See the work
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Button href="/work">See the work</Button>
+              <Button href="/contact" variant="ghost">
+                Get in touch
               </Button>
             </div>
           </Reveal>
