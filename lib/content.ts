@@ -28,7 +28,7 @@ export const outcomes: Outcome[] = [
   },
   {
     metric: "98%",
-    metricLabel: "data accuracy, 12 countries",
+    metricLabel: "data accuracy",
     title: "Held 98% data accuracy across 12 countries.",
     body: "A self-updating health tracker pulled scattered programme data into one weekly source of truth, monitoring progress at 98% accuracy without a person touching a spreadsheet.",
   },
