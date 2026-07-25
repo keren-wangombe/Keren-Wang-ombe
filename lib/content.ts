@@ -686,9 +686,12 @@ export const bios: BioLength[] = [
 
 /** Long-form bio for /about, paragraph by paragraph (author's own copy). */
 export const bioStory: string[] = [
-  "I'm an operations and analytics professional, and for three years I've built the automation, tracking, and reporting infrastructure behind programmes reaching thousands of participants. My work turns messy data, manual workflows, and scattered pipelines into systems that scale, the kind of operational backbone that lets a programme grow without its coordination overhead growing with it.",
-  "The through-line is simple: I don't run the process by hand if it can be a system. A Google Apps Script pipeline cut manual tracking work by 50% and saved 15+ hours a week. A self-updating tracker held programme data to 98% accuracy across 12 countries. Executive reporting carried a programme from 2,032 registrations to 900 completions at 86% completion and 81% CSAT, because the numbers were measured, not claimed.",
-  "Underneath operations sits an analytics practice I keep hands-on, SQL, Excel, and Power BI, used to surface SLA breaches, segment customers, and audit data integrity. And underneath that, a GIS and open-mapping background, which is where I first learned that data quality is an operational discipline, not an afterthought. Operations and analytics are two halves of the same question: how do we make this run better?",
+  "When a recurring process depends on someone manually holding it together, I look for a way to turn it into a reliable system. That instinct shapes most of my work.",
+  "For the past three years, I've built the automation, tracking, and reporting infrastructure behind programmes serving thousands of learners across twelve countries—the operational backbone that allows programmes to grow without adding the same level of coordination overhead.",
+  "A Google Apps Script pipeline reduced manual tracking by 50% and saved more than 15 hours each week. A self-updating tracker maintained 98% data accuracy across programme operations. Accurate reporting also gave teams a clear view of performance throughout delivery; one cohort of 1,046 learners finished with an 86% completion rate and 81% learner satisfaction.",
+  "Operations and analytics are closely connected in my work. Reliable decisions require reliable data, and reliable data begins with processes designed to capture it accurately. I work across both sides: building the workflows that keep information organised and creating reporting that turns it into useful decisions.",
+  "My toolkit includes Google Apps Script, SQL, Excel, Power BI, and workflow automation platforms, but the tools are never the point. The value lies in building systems that teams trust, adopt, and continue using as they grow.",
+  "My approach is also shaped by a background in GIS and open mapping, where I first learned that data quality is an operational discipline, not an afterthought.",
 ];
 
 /** A warm, human aside for /about. */

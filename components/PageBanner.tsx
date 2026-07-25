@@ -11,6 +11,8 @@ type PageBannerProps = {
   children?: ReactNode;
   /** Optional foreground figure (e.g. the About portrait) shown beside the copy. */
   figure?: ReactNode;
+  /** Slow-drifting glow shapes behind the copy (dark banners only). */
+  animated?: boolean;
 };
 
 /**
@@ -28,6 +30,7 @@ export default function PageBanner({
   intro,
   children,
   figure,
+  animated = false,
 }: PageBannerProps) {
   return (
     <section className="relative flex min-h-[calc(100svh-4rem)] w-full items-center overflow-hidden bg-ink">
@@ -41,6 +44,21 @@ export default function PageBanner({
           />
           <div className="absolute inset-0 bg-gradient-to-br from-ink/95 via-ink/80 to-ink/55" />
         </>
+      ) : null}
+
+      {/* Slow-drifting glow shapes — a quiet living background on dark banners. */}
+      {animated ? (
+        <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="blob absolute -left-24 top-4 h-72 w-72 rounded-full bg-amber/25 blur-3xl" />
+          <div
+            className="blob absolute right-[-6rem] top-1/3 h-80 w-80 rounded-full bg-blue-lift/25 blur-3xl"
+            style={{ animationDelay: "-6s" }}
+          />
+          <div
+            className="blob absolute bottom-[-4rem] left-1/3 h-64 w-64 rounded-full bg-signature/50 blur-3xl"
+            style={{ animationDelay: "-12s" }}
+          />
+        </div>
       ) : null}
       <span className="absolute inset-x-0 bottom-0 h-px bg-amber/50" aria-hidden />
 
