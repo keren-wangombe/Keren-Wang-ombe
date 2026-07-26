@@ -122,7 +122,7 @@ export default function HomePage() {
           <Reveal>
             <p className="kicker text-amber">How I work</p>
             <h2 className="mt-3 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
-              A clear, repeatable process behind every system I build.
+              A clear process that pays for itself.
             </h2>
           </Reveal>
           <ol className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
