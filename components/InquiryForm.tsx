@@ -34,10 +34,11 @@ const defaultFields: Field[] = [
 ];
 
 /**
- * Inquiry form. Submissions are delivered to {@link contactEmail} via
- * FormSubmit (https://formsubmit.co) — a no-backend relay — so a visitor can
- * send a message without needing their own email client. If the network call
- * fails, it falls back to opening a prefilled `mailto:`.
+ * Inquiry form. Submissions are delivered straight to {@link contactEmail} via
+ * FormSubmit (https://formsubmit.co) — a no-backend relay — so the message is
+ * sent directly, in the background, without ever opening the visitor's email
+ * client. If the send fails, we show a plain error with the address to write
+ * to; we never launch a `mailto:` popup.
  *
  * ONE-TIME ACTIVATION: the very first submission makes FormSubmit send a
  * confirmation email to {@link contactEmail}; click the link in it once and
@@ -51,8 +52,7 @@ export default function InquiryForm({
   tone = "light",
   subject = "New message from the website",
 }: InquiryFormProps) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "fallback">("idle");
-  const [mailtoHref, setMailtoHref] = useState(`mailto:${contactEmail}`);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const dark = tone === "dark";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -65,14 +65,6 @@ export default function InquiryForm({
     data.append("_template", "table");
     data.append("_captcha", "false");
 
-    // Prebuild a mailto fallback from the same fields.
-    const body = fields
-      .map((f) => `${f.label}: ${String(data.get(f.name) ?? "").trim()}`)
-      .filter((line) => !line.endsWith(": "))
-      .join("\n\n");
-    const href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setMailtoHref(href);
-
     setStatus("sending");
     try {
       const res = await fetch(FORM_ENDPOINT, {
@@ -83,9 +75,8 @@ export default function InquiryForm({
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus("sent");
     } catch {
-      // Network/relay failure → open the visitor's mail client instead.
-      window.location.href = href;
-      setStatus("fallback");
+      // Send failed — show a plain message, never open an email popup.
+      setStatus("error");
     }
   }
 
@@ -97,18 +88,18 @@ export default function InquiryForm({
     );
   }
 
-  if (status === "fallback") {
+  if (status === "error") {
     return (
       <div className={`space-y-3 text-body ${dark ? "text-paper/80" : "text-ink"}`} role="status">
         <p className={dark ? "text-amber" : "text-signature"}>
-          Your email app should have opened with the message ready — just hit send.
+          Something went wrong sending your message.
         </p>
         <p className="text-small">
-          Didn&rsquo;t open? Write to{" "}
-          <a href={mailtoHref} className="underline">
+          Please email me directly at{" "}
+          <a href={`mailto:${contactEmail}`} className="underline">
             {contactEmail}
-          </a>
-          .
+          </a>{" "}
+          and I&rsquo;ll get right back to you.
         </p>
       </div>
     );
