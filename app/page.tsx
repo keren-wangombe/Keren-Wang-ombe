@@ -5,7 +5,7 @@ import Doodle from "@/components/Doodle";
 import HeroIntro from "@/components/HeroIntro";
 import LinkedInFeed from "@/components/LinkedInFeed";
 import Reveal from "@/components/Reveal";
-import { brand } from "@/lib/site";
+import { contactMailto, social } from "@/lib/site";
 import { processSteps, services, outcomes, type Service } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -52,18 +52,22 @@ export default function HomePage() {
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
         <div className="container-content grid items-center gap-10 py-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-12">
           <div className="animate-fade-up">
-            <p className="kicker text-amber">Operations &amp; Analytics</p>
+            <p className="kicker text-amber">Programme, Client &amp; Team Operations</p>
             <h1 className="mt-4 font-serif text-h1 font-light leading-[1.08] text-ink">
-              Operations &amp; analytics systems that bring{" "}
-              <span className="text-amber">clarity</span> to complexity.
+              I keep important work moving&mdash;and make sure the details do{" "}
+              <span className="text-amber">not get lost</span>.
             </h1>
-            <p className="mt-5 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
+            <p className="mt-5 max-w-xl text-body text-ink/70">
+              I take ownership of onboarding, follow-ups, coordination, tracking and
+              reporting. I also improve the processes behind the work so fewer things
+              are missed and less depends on someone remembering every step.
+            </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
-                href="/work"
+                href="#what-i-can-own"
                 className="link-amber inline-flex items-center gap-2 text-small font-medium text-signature"
               >
-                View my work
+                See what I can own
                 <span aria-hidden>→</span>
               </a>
             </div>
@@ -91,14 +95,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── PROBLEM RECOGNITION — three short "sound familiar?" cards, so a
+          first-time visitor sees their own situation before the services. */}
+      <section className="py-9 sm:py-11">
+        <div className="container-content">
+          <Reveal>
+            <p className="kicker text-blue-lift">Does this sound familiar?</p>
+          </Reveal>
+          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-3">
+            {[
+              "You're re-reading a spreadsheet to work out who has not replied.",
+              "Onboarding works, but only because someone remembers every step.",
+              "Reporting takes hours because the information lives in several different places.",
+            ].map((item, i) => (
+              <Reveal as="div" key={item} delay={i * 100} className="flex h-full bg-paper p-6">
+                <p className="text-body text-ink/80">{item}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── WHAT I DO — four-column grid. */}
-      <section className="relative isolate overflow-hidden py-9 sm:py-11">
+      <section id="what-i-can-own" className="relative isolate scroll-mt-24 overflow-hidden py-9 sm:py-11">
         <Doodle name="sparks" className="absolute right-6 top-2 hidden h-36 w-36 text-amber/[0.12] lg:block" />
         <div className="container-content">
         <Reveal>
-          <p className="kicker text-blue-lift">What I do</p>
-          <h2 className="mt-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
-            Turning operational chaos into scalable systems.
+          <p className="kicker text-blue-lift">What I can own</p>
+          <h2 className="mt-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink">
+            The work I can take off your plate.
           </h2>
         </Reveal>
         <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
@@ -112,6 +137,38 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+        </div>
+      </section>
+
+      {/* ── POSITIONING — the central statement: I do the detailed work AND
+          improve the system behind it. Answers the "systems-only" concern. */}
+      <section className="border-y border-ink/5 bg-signature/[0.04]">
+        <div className="container-content py-10 sm:py-14">
+          <div className="max-w-3xl">
+            <Reveal>
+              <p className="kicker text-blue-lift">How I see the work</p>
+              <h2 className="mt-3 font-serif text-h2 font-light leading-snug text-ink">
+                I run the work and improve the system behind it.
+              </h2>
+            </Reveal>
+            <Reveal className="mt-6 space-y-4 text-body text-ink/75">
+              <p>
+                I&rsquo;m comfortable in the detail: updating records, checking progress,
+                following up, coordinating next steps and closing the actions that would
+                otherwise remain unresolved.
+              </p>
+              <p>
+                I also look for practical ways to reduce repetition, prevent errors and make
+                the work easier to manage. That can mean creating a clearer tracker,
+                documenting the process, improving a handoff or automating a repetitive
+                reminder.
+              </p>
+              <p>
+                I see systems as what makes administrative work reliable&mdash;not as a way
+                out of doing it.
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -175,14 +232,21 @@ export default function HomePage() {
           <Reveal>
             <p className="kicker text-amber">The short version</p>
             <h2 className="mx-auto mt-4 max-w-3xl font-serif text-h1 font-light leading-[1.12] text-signature">
-              Looking for someone who builds the systems, not just runs them?
+              Need someone who can run the work and improve how it gets done?
             </h2>
+            <p className="mx-auto mt-5 max-w-xl text-body text-ink/70">
+              Tell me what is taking too long, slipping through the cracks or depending on
+              you to remember.
+            </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button href="/work">See the work</Button>
-              <Button href="/contact" variant="ghost">
-                Get in touch
+              <Button href={contactMailto}>Email me</Button>
+              <Button href={social.linkedin} target="_blank" rel="noreferrer" variant="ghost">
+                Connect on LinkedIn
               </Button>
             </div>
+            <p className="mt-6 text-small text-ink/55">
+              Available for fractional operations support and full-time operations roles.
+            </p>
           </Reveal>
         </div>
       </section>

@@ -187,7 +187,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
     items: [
       {
         badge: "Systems Design · Workflow Automation",
-        title: "Cross-Functional Onboarding Operations System",
+        title: "Tracking staff onboarding across teams as a firm scaled",
         metric: "88%",
         metricLabel: "onboarding completion",
         id: "onboarding",
@@ -215,7 +215,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       },
       {
         badge: "Systems Design · CRM",
-        title: "Operational Command Center",
+        title: "Bringing a coaching team's client records into one shared system",
         id: "command-center",
         image: "/projects/command-center.svg",
         problem:
@@ -238,7 +238,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       },
       {
         badge: "Project Operations",
-        title: "Programme Delivery Operations System",
+        title: "Coordinating a 12-week programme across phases and handoffs",
         id: "delivery",
         image: "/projects/delivery.svg",
         problem:
@@ -255,7 +255,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       },
       {
         badge: "Workflow Automation",
-        title: "Operational Workflow Automation Pipeline",
+        title: "Automating repetitive registration follow-ups and record updates",
         metric: "45min",
         metricLabel: "of daily manual work removed",
         id: "pipeline",
@@ -285,7 +285,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
     items: [
       {
         badge: "Excel · Operational Analytics",
-        title: "E-Commerce Operational Analytics System",
+        title: "Turning a year of sales data into customer and product reporting",
         metric: "$1,118+",
         metricLabel: "lifetime value, top 5% of customers",
         id: "ecommerce",
@@ -310,7 +310,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       },
       {
         badge: "SQL · Power BI",
-        title: "Customer Support Operations Analytics",
+        title: "Reporting on support SLAs to show where tickets were slipping",
         metric: "25%",
         metricLabel: "of tickets found breaching SLA",
         id: "support",
@@ -329,7 +329,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       },
       {
         badge: "SQL · MySQL",
-        title: "Retail Sales Operational Analytics",
+        title: "Reporting on retail sales to guide inventory and targeting",
         id: "retail",
         image: "/projects/retail.svg",
         problem:
@@ -348,7 +348,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
       },
       {
         badge: "SQL · Data Audit",
-        title: "Maji Ndogo Operational Data Audit",
+        title: "Auditing survey records to reconcile reporting discrepancies",
         id: "maji",
         image: "/projects/maji.svg",
         problem:
@@ -366,6 +366,83 @@ export const caseStudyTiers: CaseStudyTier[] = [
         ],
       },
     ],
+  },
+];
+
+/* ── Featured work (Work page) ────────────────────────────────────────────
+   The three lead case studies, each told in the same four beats so ownership
+   of the recurring work is explicit before the system behind it: the
+   situation, what I handled, what I improved, and what changed. Prose, not
+   résumé bullets; every figure is verified. */
+
+export type FeaturedCase = {
+  id: string;
+  /** Short work-type label (not an employer or tool). */
+  label: string;
+  title: string;
+  /** One-line deck answering: what was managed, what I owned, what improved. */
+  lead: string;
+  situation: string;
+  handled: string;
+  improved: string;
+  changed: string;
+  /** Verified stage counts, shown as a plain strip (never as percentages). */
+  figures?: { value: string; label: string }[];
+  /** Tools, kept last and secondary. */
+  tools?: string[];
+};
+
+export const featuredWork: FeaturedCase[] = [
+  {
+    id: "onboarding-pipeline",
+    label: "Programme onboarding",
+    title: "Managing a 317-person onboarding pipeline across six stages",
+    lead: "Tracked 317 applicants through six onboarding stages, followed up on incomplete actions and improved the reminder and NDA process.",
+    situation:
+      "Hundreds of applicants had to move through several onboarding requirements before they could take part. Each stage needed a different action, record and handoff, and without one reliable central view it was hard to see who had finished a step, who had stalled, what still needed a follow-up, and where a handoff had gone unclear.",
+    handled:
+      "I maintained the central pipeline tracker and monitored where each person had reached. I checked which stages were still incomplete, followed up on the outstanding requirements — from signing the NDA to joining the classroom — and coordinated the handoffs between stages. I kept the records current as people moved, so the tracker always reflected who had progressed from first interest through onboarding to becoming active in eHub, the community's online hub.",
+    improved:
+      "I brought the stages into one shared view so each person's status was easy to read instead of piecing together. To take the repetitive load off, I used Google Apps Script and Gmail to send NDAs and reminder follow-ups automatically, so fewer of them depended on someone remembering. The process still needed manual follow-up — the automation handled the routine reminders, not the judgement about who to chase and how.",
+    changed:
+      "Tracking every stage kept each of these numbers visible and current — who had moved forward, who had stalled and what still needed chasing. That made follow-up more reliable and stalled applicants easy to spot, with a shared view of progress and outstanding actions across the whole pipeline.",
+    figures: [
+      { value: "317", label: "expressed interest" },
+      { value: "176", label: "selected and sent an NDA" },
+      { value: "141", label: "signed the NDA" },
+      { value: "88", label: "joined Google Classroom" },
+      { value: "47", label: "became active in eHub" },
+    ],
+    tools: ["Google Sheets", "Google Apps Script", "Gmail", "Google Classroom"],
+  },
+  {
+    id: "staff-onboarding-notion",
+    label: "Staff onboarding",
+    title: "Creating a clearer staff onboarding experience in Notion",
+    lead: "Organised staff onboarding steps, responsibilities and resources into one clearer workspace.",
+    situation:
+      "The onboarding information a new team member needed was spread across different documents and locations, so the steps to get started were harder to follow than they needed to be. New joiners needed a clearer sequence, and the people guiding them needed a more consistent way to do it.",
+    handled:
+      "I gathered the onboarding information that was scattered across places, worked out the steps a new person actually needed and put them in order. I clarified who was responsible for what, structured the supporting resources so they were easy to find, and coordinated input from the people involved. Before it went into use, I checked the workspace was complete and made sense to follow.",
+    improved:
+      "The Notion workspace gave the onboarding one organised home: a clearer sequence of actions, resources that were easy to reach, and better visibility of responsibilities and the next step. The point wasn't the tool — it was that the process stopped depending on knowing where everything lived.",
+    changed:
+      "The result was one structured onboarding workspace bringing the process, responsibilities and resources into a single location.",
+    tools: ["Notion"],
+  },
+  {
+    id: "pan-african-coordination",
+    label: "Network coordination",
+    title: "Coordinating outreach and events across a pan-African network",
+    lead: "Maintained records across 93 organisations and coordinated multilingual outreach and recurring events.",
+    situation:
+      "Keeping outreach, records and recurring events coordinated across a pan-African network meant working with many organisations, in different countries and more than one language. The events recurred, and the contact records and schedules behind them had to stay accurate for any of it to run.",
+    handled:
+      "I researched and maintained the organisation records, keeping a database of 93 organisations across the network up to date. I coordinated the calendar for recurring webinars, prepared the outreach materials, tracked communications and followed up, and kept the event information current so upcoming activity and next actions stayed clear.",
+    improved:
+      "I gave the records a consistent structure so they were easier to use, organised the webinar calendar and the multilingual outreach materials, and made upcoming activities and outstanding actions easier to see at a glance.",
+    changed:
+      "The work produced a structured database covering 93 organisations, a trilingual webinar calendar and organised outreach materials — and a repeatable way to keep the recurring coordination running.",
   },
 ];
 
@@ -439,27 +516,28 @@ export type Service = {
   body: string;
 };
 
-/** The home "What I Do" four-column grid. */
+/** The home "What I Do" four-column grid. Ordered hands-on ownership first,
+    process improvement and automation last. */
 export const services: Service[] = [
   {
-    icon: "process",
-    title: "Process Design",
-    body: "Mapping messy workflows and rebuilding them as clear, repeatable SOPs that don't depend on anyone's memory.",
-  },
-  {
     icon: "team",
-    title: "Team Operations",
-    body: "Coordinating facilitators, ambassadors, and delivery across teams and borders, in sync and on time.",
+    title: "Onboarding and follow-up",
+    body: "I track each person through every stage, monitor incomplete steps, follow up with the people who go quiet and keep the records current.",
   },
   {
-    icon: "systems",
-    title: "Systems & Tools",
-    body: "Automating intake, tracking, and reporting with Zapier, Make, Apps Script, Notion, and Asana.",
+    icon: "process",
+    title: "Day-to-day coordination",
+    body: "I manage attendance, schedules, action items, documents and recurring work so important details do not quietly slip.",
   },
   {
     icon: "reporting",
-    title: "Reporting & Insights",
-    body: "Turning operational data into dashboards and decisions with SQL, Excel, and Power BI.",
+    title: "Tracking and reporting",
+    body: "I maintain current trackers, monitor progress and prepare clear updates without spending a full day pulling information from different places.",
+  },
+  {
+    icon: "systems",
+    title: "Systems and automation",
+    body: "Once I understand how the work operates, I document and improve it using practical SOPs, trackers and automation so fewer steps depend on memory.",
   },
 ];
 
