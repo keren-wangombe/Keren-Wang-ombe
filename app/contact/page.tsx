@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import InquiryForm from "@/components/InquiryForm";
 import Doodle from "@/components/Doodle";
-import { contactEmail, resumeFile, social } from "@/lib/site";
+import { contactEmail, contactMailto, resumeFile, social } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -36,7 +36,7 @@ export default function ContactPage() {
             </p>
             <div className="mt-8 space-y-3">
               <a
-                href={`mailto:${contactEmail}`}
+                href={contactMailto}
                 className="group flex items-center gap-4 rounded-2xl border border-ink/10 bg-paper p-4 transition-all duration-300 ease-calm hover:-translate-y-0.5 hover:border-amber/40 hover:shadow-lg hover:shadow-ink/5"
               >
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-amber/10 text-amber">

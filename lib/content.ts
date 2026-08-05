@@ -439,27 +439,28 @@ export type Service = {
   body: string;
 };
 
-/** The home "What I Do" four-column grid. */
+/** The home "What I Do" four-column grid. Ordered hands-on ownership first,
+    process improvement and automation last. */
 export const services: Service[] = [
   {
-    icon: "process",
-    title: "Process Design",
-    body: "Mapping messy workflows and rebuilding them as clear, repeatable SOPs that don't depend on anyone's memory.",
-  },
-  {
     icon: "team",
-    title: "Team Operations",
-    body: "Coordinating facilitators, ambassadors, and delivery across teams and borders, in sync and on time.",
+    title: "Onboarding and follow-up",
+    body: "I track each person through every stage, monitor incomplete steps, follow up with the people who go quiet and keep the records current.",
   },
   {
-    icon: "systems",
-    title: "Systems & Tools",
-    body: "Automating intake, tracking, and reporting with Zapier, Make, Apps Script, Notion, and Asana.",
+    icon: "process",
+    title: "Day-to-day coordination",
+    body: "I manage attendance, schedules, action items, documents and recurring work so important details do not quietly slip.",
   },
   {
     icon: "reporting",
-    title: "Reporting & Insights",
-    body: "Turning operational data into dashboards and decisions with SQL, Excel, and Power BI.",
+    title: "Tracking and reporting",
+    body: "I maintain current trackers, monitor progress and prepare clear updates without spending a full day pulling information from different places.",
+  },
+  {
+    icon: "systems",
+    title: "Systems and automation",
+    body: "Once I understand how the work operates, I document and improve it using practical SOPs, trackers and automation so fewer steps depend on memory.",
   },
 ];
 
