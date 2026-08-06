@@ -20,6 +20,12 @@ export default function FeaturedCaseStudy({ item }: { item: FeaturedStudy }) {
       <div className="grid items-center gap-6 p-6 sm:p-7 lg:grid-cols-[0.82fr_1.18fr] lg:gap-8">
         <div>
           <p className="kicker text-amber">{item.badge}</p>
+          {item.metric ? (
+            <div className="mt-4">
+              <p className="font-serif text-h1 font-light leading-none text-signature">{item.metric}</p>
+              <p className="mt-1.5 text-small text-ink/60">{item.metricLabel}</p>
+            </div>
+          ) : null}
           <h3 className="mt-4 font-serif text-h2 font-light leading-snug text-ink">{item.title}</h3>
           <ul className="mt-4 flex flex-wrap gap-2">
             {item.tools.map((tool) => (
