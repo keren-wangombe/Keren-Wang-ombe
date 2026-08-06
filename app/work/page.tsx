@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import LogoMarquee from "@/components/LogoMarquee";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import CaseStudy from "@/components/CaseStudy";
-import { featuredWork, additionalWork, toolkitNote } from "@/lib/content";
+import { featuredWork, edtechOps, additionalWork, toolkitNote } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -43,6 +43,30 @@ export default function WorkPage() {
           </Reveal>
           <div className="mt-8 space-y-6">
             {featuredWork.map((item) => (
+              <FeaturedCaseStudy key={item.id} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── EdTech programme operations: three studies proving distinct
+          strengths — high-volume delivery, automation & reporting, and
+          cross-team operating standards. Same card component as Featured. */}
+      <section className="relative isolate overflow-hidden border-y border-amber/15 bg-amber/[0.05] py-10 sm:py-14">
+        <div className="container-content">
+          <Reveal>
+            <p className="kicker text-amber">EdTech programme operations</p>
+            <h2 className="mt-2 font-serif text-h1 font-light text-signature">
+              Building the systems behind large-scale learner delivery.
+            </h2>
+            <p className="mt-3 max-w-2xl text-body text-ink">
+              I take ownership of complex programme delivery, build the operating
+              systems behind it, coordinate the people involved and measure what
+              improves.
+            </p>
+          </Reveal>
+          <div className="mt-8 space-y-6">
+            {edtechOps.map((item) => (
               <FeaturedCaseStudy key={item.id} item={item} />
             ))}
           </div>

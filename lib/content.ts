@@ -382,12 +382,15 @@ export type FeaturedStudy = {
   title: string;
   /** Process-map diagram in /public/projects (placeholder art, reused). */
   image: string;
+  /** Optional headline metric, shown in large type and always paired with a label. */
+  metric?: string;
+  metricLabel?: string;
   /** The four narrative sections, in order. */
   situation: string;
   handled: string;
   improved: string;
   changed: string;
-  /** Funnel/scale figures shown as inline evidence — never a headline metric. */
+  /** Funnel/scale/result figures shown as inline evidence chips. */
   figures?: string[];
   tools: string[];
   links?: { label: string; href: string }[];
@@ -395,26 +398,26 @@ export type FeaturedStudy = {
 
 export const featuredWork: FeaturedStudy[] = [
   {
-    id: "alx-onboarding",
-    badge: "Programme onboarding · edtech",
+    id: "edtech-onboarding",
+    badge: "Programme onboarding · EdTech",
     title: "Managing a 317-person onboarding pipeline across six stages",
     image: "/projects/onboarding.svg",
     situation:
-      "In edtech, a single intake of interested people had to move through a multi-stage onboarding — interest, selection and NDA, signed NDA, Google Classroom, and activation in eHub. At every stage people stalled, went quiet or missed a step, and without one view of where each person stood it was easy to lose track of who still needed chasing.",
+      "At an EdTech organisation, a single intake of interested people had to move through a multi-stage onboarding — interest, selection, a document-signing workflow, an online classroom, and activation on the digital learning platform. At every stage people stalled, went quiet or missed a step, and without one view of where each person stood it was easy to lose track of who still needed chasing.",
     handled:
-      "I owned the pipeline day to day. I maintained a central, cross-functional tracker covering every person and every stage, monitored progress, and spotted where someone had gone quiet or left a step incomplete. I tracked NDAs, chased the outstanding actions, and followed up with the people who hadn't moved — coordinating each person through the process rather than waiting for them to surface.",
+      "I owned the pipeline day to day. I maintained a central, cross-functional tracker covering every person and every stage, monitored progress, and spotted where someone had gone quiet or left a step incomplete. I tracked the document-signing workflow, chased the outstanding actions, and followed up with the people who hadn't moved — coordinating each person through the process rather than waiting for them to surface.",
     improved:
       "So follow-up no longer depended on me remembering, I built a Google Apps Script and Gmail automation that sent reminder follow-ups on incomplete actions. Documenting the stages and automating the routine chasing meant the recurring reminders stopped relying on someone manually working down a list.",
     changed:
-      "The tracker gave visibility across the full funnel — at any moment it was clear how many people sat at each stage and who still needed a nudge, so nothing stalled silently between steps.",
+      "The tracker gave visibility across the full funnel — at any moment it was clear how many people sat at each stage and who still needed a nudge, so nothing stalled silently between steps. The tracker also exposed post-onboarding engagement drop-off that had not previously been measured, informing changes to how participants were supported and engaged in the online community.",
     figures: [
       "317 interested",
-      "176 selected and sent an NDA",
-      "141 NDAs signed",
-      "88 joined Google Classroom",
-      "47 active in eHub",
+      "176 selected and sent a signing request",
+      "141 documents signed",
+      "88 joined the online classroom",
+      "47 active on the digital learning platform",
     ],
-    tools: ["Google Sheets", "Google Apps Script", "Gmail", "NDA tracking", "Cross-functional pipeline tracker"],
+    tools: ["Google Sheets", "Google Apps Script", "Gmail", "Google Classroom", "Document-signing workflow", "Community operations"],
   },
   {
     id: "pan-african",
@@ -455,6 +458,107 @@ export const featuredWork: FeaturedStudy[] = [
   // sit here as a fourth featured study. It is intentionally omitted for now —
   // there is no verified feedback or impact figure for it yet, and we do not
   // publish an unevidenced impact claim. Add it once real results exist.
+];
+
+/* ── EdTech programme operations ───────────────────────────────────────
+   A distinct section between Featured work and Additional work. Reuses the
+   FeaturedStudy shape + FeaturedCaseStudy component. Three projects, each
+   proving a different strength: owning defined workstreams in high-volume
+   delivery; replacing manual work with a measurable data/automation system;
+   and aligning teams around shared operating standards. All language is
+   sector-level (EdTech / digital learning) — no employer or internal names. */
+export const edtechOps: FeaturedStudy[] = [
+  {
+    id: "edtech-technical-programme",
+    badge: "Programme delivery · EdTech",
+    title: "Owning key operations for a 3,174-learner programme launch",
+    image: "/projects/edtech-technical-programme.svg",
+    metric: "3,174",
+    metricLabel: "learners supported through launch and delivery",
+    situation:
+      "An EdTech organisation was preparing to launch a new technical-skills cohort for 3,174 learners. The launch depended on several connected workstreams: platform readiness, learner communications, support ownership, activity tracking and early-risk reporting. Without one coordinated operating rhythm, issues in any one of these areas could disrupt the learner experience at scale.",
+    handled:
+      "I owned the learner communications, community-platform readiness, tracking and reporting workstreams from launch preparation into day-to-day delivery. I mapped tasks, owners, dependencies and timelines across programme, product and support teams; prepared community spaces and moderator access; built and scheduled the learner communication journey in HubSpot; and maintained the operational tracker used to identify engagement risks and support needs.",
+    improved:
+      "I turned the work into a repeatable operating system: a reusable communication framework, a complementary WhatsApp broadcast channel, documented engagement and retention rhythms, clear escalation paths, and reporting that combined onboarding feedback with learner-activity data.",
+    changed:
+      "The programme launched with stable community spaces, defined support ownership and a shared view of learner activity. Pre-onboarding emails achieved a 54% open rate and onboarding emails achieved 49%. The onboarding experience recorded 90% CSAT. Weekly learner-support sessions recorded 80% CSAT, and 91% of respondents said the sessions improved their understanding of the content and expectations.",
+    figures: [
+      "3,174 learners",
+      "54% pre-onboarding email open rate",
+      "90% onboarding CSAT",
+      "91% reported improved understanding",
+    ],
+    tools: [
+      "HubSpot",
+      "Google Sheets",
+      "Online community platform",
+      "WhatsApp",
+      "Learner communications",
+      "Cross-functional delivery",
+      "Programme reporting",
+    ],
+  },
+  {
+    id: "edtech-programme-analytics",
+    badge: "Analytics & automation · EdTech",
+    title: "Replacing manual learner tracking with one automated reporting system",
+    image: "/projects/edtech-programme-analytics.svg",
+    metric: "50%+",
+    metricLabel: "manual tracking effort removed",
+    situation:
+      "Three digital learning programmes relied on teams manually updating recurring engagement and performance reports. The process consumed delivery time, produced inconsistent snapshots and made it harder to spot changes in learner behaviour early enough to act.",
+    handled:
+      "I led the operational design of the new tracking workflow. I defined the reporting requirements and decision points with technical mentors and programme teams, mapped the recurring manual steps, established the metrics needed for onboarding and weekly delivery reviews, and translated those needs into a shared tracker structure.",
+    improved:
+      "I designed and implemented automated Google Sheets trackers across the three programmes in collaboration with technical mentors. The system standardised recurring updates, reduced manual handling and surfaced engagement patterns in a format teams could use during weekly planning.",
+    changed:
+      "The system reduced manual tracking effort by more than 50%. Reporting became more timely and consistent, allowing teams to identify engagement changes earlier and redirect time from spreadsheet maintenance to targeted outreach, learner support and programme improvement.",
+    figures: [
+      "3 programmes connected",
+      "50%+ less manual tracking",
+      "Earlier visibility into engagement risks",
+      "1 repeatable reporting workflow",
+    ],
+    tools: [
+      "Google Sheets",
+      "Google Apps Script",
+      "Data automation",
+      "KPI tracking",
+      "Learner segmentation",
+      "Operational reporting",
+    ],
+  },
+  {
+    id: "edtech-operations-playbook",
+    badge: "Operating systems · EdTech",
+    title: "Aligning three programme teams around one operating framework",
+    image: "/projects/edtech-operations-playbook.svg",
+    metric: "3",
+    metricLabel: "programme teams aligned",
+    situation:
+      "Three digital learning teams were operating with distributed programme knowledge, different feedback methods and no single reference for recurring delivery practices. This increased clarification work and made it difficult to compare learner feedback or carry operational learning from one programme into another.",
+    handled:
+      "I owned the evaluation and feedback workstream and coordinated inputs from programme and operations teams. I documented recurring roles and workflows, maintained the central Notion resource hub, facilitated structured retrospectives, and designed shared onboarding and end-of-programme surveys.",
+    improved:
+      "I created the programme-evaluation framework, led the standardisation of learner feedback tools and co-created the cross-programme operations playbook. I also coordinated transition training and organised the supporting resources so teams could repeat important processes without relying on institutional memory.",
+    changed:
+      "The three teams gained one shared reference for programme delivery and one consistent approach to onboarding and end-of-programme feedback. Information became easier to find, clarification requests reduced, and teams could compare feedback and carry lessons into future delivery cycles more consistently.",
+    figures: [
+      "3 programme teams aligned",
+      "1 shared operations playbook",
+      "2 learner-feedback points standardised",
+      "1 central knowledge hub",
+    ],
+    tools: [
+      "Notion",
+      "Programme playbooks",
+      "Survey design",
+      "Evaluation frameworks",
+      "SOP documentation",
+      "Workshop facilitation",
+    ],
+  },
 ];
 
 /**
