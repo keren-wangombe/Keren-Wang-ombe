@@ -5,13 +5,20 @@ import Doodle from "@/components/Doodle";
 import HeroIntro from "@/components/HeroIntro";
 import LinkedInFeed from "@/components/LinkedInFeed";
 import Reveal from "@/components/Reveal";
-import { brand } from "@/lib/site";
-import { processSteps, services, outcomes, type Service } from "@/lib/content";
+import { contactMailto, social } from "@/lib/site";
+import {
+  processSteps,
+  services,
+  outcomes,
+  problemPrompts,
+  positioning,
+  type Service,
+} from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Operations that scale",
   description:
-    "Programme operations and analytics: automation, tracking, and reporting systems built around the operational decision inside every workflow, not just the tooling.",
+    "I take ownership of onboarding, follow-ups, coordination, tracking and reporting — and improve the processes behind that work so fewer things are missed.",
 };
 
 /** Line icons for the What I Do grid, keyed to Service.icon. */
@@ -52,18 +59,23 @@ export default function HomePage() {
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
         <div className="container-content grid items-center gap-10 py-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-12">
           <div className="animate-fade-up">
-            <p className="kicker text-amber">Operations &amp; Analytics</p>
+            <p className="kicker text-amber">Programme, Client &amp; Team Operations</p>
             <h1 className="mt-4 font-serif text-h1 font-light leading-[1.08] text-ink">
-              Operations &amp; analytics systems that bring{" "}
-              <span className="text-amber">clarity</span> to complexity.
+              I keep important work moving — and make sure{" "}
+              <span className="text-amber">the details don&rsquo;t get lost.</span>
             </h1>
-            <p className="mt-5 max-w-xl text-body text-ink/70">{brand.oneLine}</p>
+            <p className="mt-5 max-w-xl text-body text-ink/70">
+              I take ownership of onboarding, follow-ups, coordination, tracking
+              and reporting. At ALX I do this across cohorts of 1,000+ learners.
+              I also improve the processes behind the work, so fewer things are
+              missed and less depends on someone remembering every step.
+            </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
                 href="/work"
                 className="link-amber inline-flex items-center gap-2 text-small font-medium text-signature"
               >
-                View my work
+                See what I can own
                 <span aria-hidden>→</span>
               </a>
             </div>
@@ -71,6 +83,31 @@ export default function HomePage() {
           <Reveal className="order-first pb-4 lg:order-none">
             <HeroIntro />
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── PROBLEM RECOGNITION — the reader's own week, directly after the
+          hero. Compact three-up, reusing the card-grid pattern; no icons. */}
+      <section className="py-9 sm:py-11">
+        <div className="container-content">
+          <Reveal>
+            <h2 className="font-serif text-h2 font-light leading-snug text-ink">
+              {problemPrompts.heading}
+            </h2>
+          </Reveal>
+          <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
+            {problemPrompts.items.map((line, i) => (
+              <Reveal
+                as="div"
+                key={line}
+                delay={i * 100}
+                className="flex h-full items-start gap-3 bg-paper p-6"
+              >
+                <span aria-hidden className="mt-2 h-2 w-2 shrink-0 rounded-full bg-amber" />
+                <p className="text-body text-ink/75">{line}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -98,7 +135,7 @@ export default function HomePage() {
         <Reveal>
           <p className="kicker text-blue-lift">What I do</p>
           <h2 className="mt-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
-            Turning operational chaos into scalable systems.
+            The work I take ownership of.
           </h2>
         </Reveal>
         <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
@@ -112,6 +149,27 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
+        </div>
+      </section>
+
+      {/* ── CENTRAL POSITIONING — the answer to "will she do the detailed work
+          herself, or just build systems?" The most important addition; reuses
+          the existing band + doodle language. */}
+      <section className="relative isolate overflow-hidden border-y border-signature/10 bg-signature/[0.04]">
+        <Doodle name="orbit" className="absolute right-6 top-8 hidden h-36 w-36 text-signature/[0.08] lg:block" />
+        <div className="container-content py-12 sm:py-16">
+          <Reveal>
+            <h2 className="max-w-3xl font-serif text-h1 font-light leading-[1.12] text-signature">
+              {positioning.heading}
+            </h2>
+          </Reveal>
+          <div className="mt-6 max-w-2xl space-y-5">
+            {positioning.paragraphs.map((para, i) => (
+              <Reveal as="p" key={para} delay={i * 100} className="text-body text-ink/75">
+                {para}
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -166,8 +224,8 @@ export default function HomePage() {
       {/* ── LINKEDIN — a live post embed / follow CTA, breaks up the text. */}
       <LinkedInFeed />
 
-      {/* ── CLOSE — a standalone statement band, centered and set apart from
-          the LinkedIn section above so the line lands on its own. */}
+      {/* ── FINAL CTA — the objection-answering close. Email + LinkedIn, and an
+          availability note covering both fractional and full-time (one funnel). */}
       <section className="relative isolate overflow-hidden border-y border-amber/25 bg-amber/10">
         <Doodle name="flow" className="absolute left-6 top-8 hidden h-32 w-32 text-amber/[0.16] lg:block" />
         <Doodle name="orbit" className="absolute right-6 bottom-6 hidden h-32 w-32 text-amber/[0.14] lg:block" />
@@ -175,14 +233,23 @@ export default function HomePage() {
           <Reveal>
             <p className="kicker text-amber">The short version</p>
             <h2 className="mx-auto mt-4 max-w-3xl font-serif text-h1 font-light leading-[1.12] text-signature">
-              Looking for someone who builds the systems, not just runs them?
+              Need someone who can run the work and improve how it gets done?
             </h2>
+            <p className="mx-auto mt-5 max-w-xl text-body text-ink/75">
+              Tell me what&rsquo;s taking too long, slipping through the cracks or
+              depending on you to remember.
+            </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button href="/work">See the work</Button>
-              <Button href="/contact" variant="ghost">
-                Get in touch
+              <Button href={contactMailto} variant="accent">
+                Email me
+              </Button>
+              <Button href={social.linkedin} variant="ghost" target="_blank" rel="noreferrer">
+                Connect on LinkedIn
               </Button>
             </div>
+            <p className="mt-6 text-small text-ink/60">
+              Available for fractional operations support and full-time operations roles.
+            </p>
           </Reveal>
         </div>
       </section>

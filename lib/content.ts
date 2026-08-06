@@ -369,6 +369,119 @@ export const caseStudyTiers: CaseStudyTier[] = [
   },
 ];
 
+/* ── Featured work ─────────────────────────────────────────────────────
+   Three featured case studies told in one structure: the situation, the
+   recurring work I personally handled, what I improved, and what changed.
+   "What I handled" is mandatory — it names the tracking, coordination,
+   records and follow-up I own, so the story doesn't jump from problem
+   straight to the system built. */
+
+export type FeaturedStudy = {
+  id: string;
+  badge: string;
+  title: string;
+  /** Process-map diagram in /public/projects (placeholder art, reused). */
+  image: string;
+  /** The four narrative sections, in order. */
+  situation: string;
+  handled: string;
+  improved: string;
+  changed: string;
+  /** Funnel/scale figures shown as inline evidence — never a headline metric. */
+  figures?: string[];
+  tools: string[];
+  links?: { label: string; href: string }[];
+};
+
+export const featuredWork: FeaturedStudy[] = [
+  {
+    id: "alx-onboarding",
+    badge: "Programme onboarding · ALX",
+    title: "Managing a 317-person onboarding pipeline across six stages",
+    image: "/projects/onboarding.svg",
+    situation:
+      "At ALX, a single intake of interested people had to move through a multi-stage onboarding — interest, selection and NDA, signed NDA, Google Classroom, and activation in eHub. At every stage people stalled, went quiet or missed a step, and without one view of where each person stood it was easy to lose track of who still needed chasing.",
+    handled:
+      "I owned the pipeline day to day. I maintained a central, cross-functional tracker covering every person and every stage, monitored progress, and spotted where someone had gone quiet or left a step incomplete. I tracked NDAs, chased the outstanding actions, and followed up with the people who hadn't moved — coordinating each person through the process rather than waiting for them to surface.",
+    improved:
+      "So follow-up no longer depended on me remembering, I built a Google Apps Script and Gmail automation that sent reminder follow-ups on incomplete actions. Documenting the stages and automating the routine chasing meant the recurring reminders stopped relying on someone manually working down a list.",
+    changed:
+      "The tracker gave visibility across the full funnel — at any moment it was clear how many people sat at each stage and who still needed a nudge, so nothing stalled silently between steps.",
+    figures: [
+      "317 interested",
+      "176 selected and sent an NDA",
+      "141 NDAs signed",
+      "88 joined Google Classroom",
+      "47 active in eHub",
+    ],
+    tools: ["Google Sheets", "Google Apps Script", "Gmail", "NDA tracking", "Cross-functional pipeline tracker"],
+  },
+  {
+    id: "pan-african",
+    badge: "Independent client engagement · Outreach & events",
+    title: "Coordinating outreach and events across a pan-African network",
+    image: "/projects/command-center.svg",
+    situation:
+      "An independent client engagement involved a network of organisations spread across Africa, running a recurring, multilingual webinar programme. Outreach, scheduling and records had to stay current across many partners, time zones and languages at once.",
+    handled:
+      "I ran the ongoing coordination. I maintained a database covering 93 organisations across Africa, kept the trilingual webinar calendar current, prepared outreach materials, scheduled sessions and followed up with partners — keeping records, communication and next steps moving week to week.",
+    improved:
+      "I organised the moving parts into a single source that could be kept up to date: one database for the 93 organisations, one calendar for the webinar schedule across three languages, and a repeatable way to prepare and send outreach — so coordination didn't restart from scratch each cycle.",
+    changed:
+      "Outreach, scheduling and follow-up ran off current records instead of scattered threads, and the webinar calendar stayed clear across the network's languages and partners.",
+    figures: ["93 organisations across Africa", "Trilingual webinar calendar"],
+    tools: ["Records database", "Multilingual scheduling", "Outreach coordination", "Follow-up tracking"],
+  },
+  {
+    // Featured case study three: the strongest existing repo project showing
+    // recurring ownership (coordination, tracking, reporting), rewritten into
+    // the four-heading structure using only content already in the repo.
+    id: "delivery",
+    badge: "Programme delivery · Coordination",
+    title: "Coordinating a 12-week programme across five delivery phases",
+    image: "/projects/delivery.svg",
+    situation:
+      "A 12-week programme was coordinated through email threads and shared documents. There was no dependency tracking, no escalation path for blocked work, and no clear delivery view for leadership — so status lived in people's inboxes.",
+    handled:
+      "I coordinated the programme through delivery. I tracked the tasks across each phase, kept sequencing on course, chased blocked work so it didn't stall, confirmed facilitator completions, and kept leadership updated on where delivery actually stood.",
+    improved:
+      "I moved the whole programme into a structured Asana system: 24 tasks across 5 phases with 9 mapped dependencies, custom fields for live status, and automated escalation that routes blocked work straight to leadership.",
+    changed:
+      "Sequencing was enforced by the system rather than by memory, blocked work escalated on its own, and goals, milestones and delivery tracking connected into one leadership reporting view.",
+    tools: ["Asana", "Dependency Mapping", "Process Automation", "KPI Tracking"],
+    links: [{ label: "Watch the walkthrough", href: "https://youtu.be/8v5r37T_dDo" }],
+  },
+  // NOTE(evidence-pending): A Notion staff-onboarding case study will eventually
+  // sit here as a fourth featured study. It is intentionally omitted for now —
+  // there is no verified feedback or impact figure for it yet, and we do not
+  // publish an unevidenced impact claim. Add it once real results exist.
+];
+
+/**
+ * Additional work — every remaining project, content intact, moved out of the
+ * old Operations/Analytics tab split into one lower grid. Derived from
+ * caseStudyTiers (single source of truth for each project's body) with the
+ * abstract titles simplified to the business problem. `delivery` is excluded
+ * because it is promoted into featuredWork above.
+ */
+const additionalTitleOverrides: Record<string, string> = {
+  onboarding: "Standardising onboarding for a firm scaling from 85 to 200 staff",
+  "command-center": "Creating one view of programme progress, deadlines and risks",
+  pipeline: "Automating repetitive follow-ups and record updates",
+  ecommerce: "Turning a year of sales data into inventory and marketing decisions",
+  support: "Finding where support tickets breach SLA",
+  retail: "Reading retail sales for who buys and when",
+  maji: "Auditing national water-survey data for reporting integrity",
+};
+
+export const additionalWork: CaseStudyItem[] = caseStudyTiers
+  .flatMap((tier) => tier.items)
+  .filter((item) => item.id !== "delivery")
+  .map((item) => ({
+    ...item,
+    title: additionalTitleOverrides[item.id] ?? item.title,
+  }));
+
 /** The three case studies surfaced on the home page. `href` deep-links to the
     matching card on the Work page (the id anchors on caseStudyTiers items). */
 export const featuredCaseStudies: {
@@ -439,29 +552,60 @@ export type Service = {
   body: string;
 };
 
-/** The home "What I Do" four-column grid. */
+/**
+ * The home service categories, four-column grid. Ordered hands-on ownership
+ * first, systems and automation last — the work I personally own before the
+ * tools that make it reliable.
+ */
 export const services: Service[] = [
   {
-    icon: "process",
-    title: "Process Design",
-    body: "Mapping messy workflows and rebuilding them as clear, repeatable SOPs that don't depend on anyone's memory.",
-  },
-  {
     icon: "team",
-    title: "Team Operations",
-    body: "Coordinating facilitators, ambassadors, and delivery across teams and borders, in sync and on time.",
+    title: "Onboarding and follow-up",
+    body: "I track each person through every stage, monitor incomplete steps, follow up with the people who go quiet and keep the records current.",
   },
   {
-    icon: "systems",
-    title: "Systems & Tools",
-    body: "Automating intake, tracking, and reporting with Zapier, Make, Apps Script, Notion, and Asana.",
+    icon: "process",
+    title: "Day-to-day coordination",
+    body: "I manage attendance, schedules, action items, documents and recurring work so important details don't quietly slip.",
   },
   {
     icon: "reporting",
-    title: "Reporting & Insights",
-    body: "Turning operational data into dashboards and decisions with SQL, Excel, and Power BI.",
+    title: "Tracking and reporting",
+    body: "I maintain current trackers, monitor progress and prepare clear updates without spending a full day pulling information from different places.",
+  },
+  {
+    icon: "systems",
+    title: "Systems and automation",
+    body: "Once I understand how the work operates, I document and improve it using practical SOPs, trackers and automation so fewer steps depend on memory.",
   },
 ];
+
+/**
+ * Problem-recognition prompts, shown directly after the hero. Compact, no
+ * icons — the reader should see their own week in these lines.
+ */
+export const problemPrompts = {
+  heading: "Does this sound familiar?",
+  items: [
+    "You're re-reading a spreadsheet to work out who hasn't replied.",
+    "Onboarding works, but only because someone remembers every step.",
+    "Reporting takes hours because the information lives in four different places.",
+  ],
+} as const;
+
+/**
+ * Central positioning statement — the answer to "will she do the detailed
+ * work herself, or just build systems?" Rendered in the existing visual
+ * language after the service categories.
+ */
+export const positioning = {
+  heading: "I run the work and improve the system behind it.",
+  paragraphs: [
+    "I'm comfortable in the detail: updating records, checking progress, following up, coordinating next steps and closing the actions that would otherwise sit unresolved.",
+    "I also look for practical ways to reduce repetition and prevent errors — a clearer tracker, a documented process, a cleaner handoff, an automated reminder that no longer depends on me remembering.",
+    "I see systems as what makes administrative work reliable, not as a way out of doing it.",
+  ],
+} as const;
 
 export type Capability = {
   title: string;

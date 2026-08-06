@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { brand, contactEmail, resumeFile, social } from "@/lib/site";
+import { brand, contactMailto, resumeFile, social } from "@/lib/site";
 
 /**
  * Footer: a deep glow band carrying the closing line and the direct actions
@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="flex shrink-0 flex-col gap-3">
               <div className="flex items-center gap-2.5">
                 <a
-                  href={`mailto:${contactEmail}`}
+                  href={contactMailto}
                   className="inline-flex items-center gap-2 rounded-xl bg-amber-bright px-5 py-2.5 text-small font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
