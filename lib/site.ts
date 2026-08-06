@@ -7,7 +7,7 @@ export const brand = {
   name: "Keren Wang'ombe",
   byline: "Operations · Systems · Analytics",
   oneLine:
-    "I turn operational chaos into scalable systems, messy data, manual workflows, and scattered pipelines into automation that runs itself.",
+    "I take ownership of the day-to-day work and improve the processes that keep it moving.",
 } as const;
 
 /**
@@ -71,6 +71,13 @@ export const nav: NavItem[] = [
 
 /** Primary contact email, shown for general inquiries and booking. */
 export const contactEmail = "kerenwangombe@gmail.com";
+
+/**
+ * Prefilled mailto for operations-support enquiries. Every "Email me" action
+ * points here so a reply lands pre-tagged; the displayed address stays
+ * {@link contactEmail}. Keep the subject URL-encoded.
+ */
+export const contactMailto = `mailto:${contactEmail}?subject=Operations%20support%20enquiry`;
 
 /** Resume, linked from /contact. Drop the real PDF over /public/resume.pdf. */
 export const resumeFile = "/resume.pdf";

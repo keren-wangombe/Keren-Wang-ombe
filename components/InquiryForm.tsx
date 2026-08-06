@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { contactEmail } from "@/lib/site";
+import { contactEmail, contactMailto } from "@/lib/site";
 
 type Field = {
   name: string;
@@ -96,7 +96,7 @@ export default function InquiryForm({
         </p>
         <p className="text-small">
           Please email me directly at{" "}
-          <a href={`mailto:${contactEmail}`} className="underline">
+          <a href={contactMailto} className="underline">
             {contactEmail}
           </a>{" "}
           and I&rsquo;ll get right back to you.
