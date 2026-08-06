@@ -66,7 +66,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-5 max-w-xl text-body text-ink/70">
               I take ownership of onboarding, follow-ups, coordination, tracking
-              and reporting. At ALX I do this across cohorts of 1,000+ learners.
+              and reporting. In edtech I do this across cohorts of 1,000+ learners.
               I also improve the processes behind the work, so fewer things are
               missed and less depends on someone remembering every step.
             </p>

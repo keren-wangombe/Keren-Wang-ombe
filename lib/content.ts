@@ -396,11 +396,11 @@ export type FeaturedStudy = {
 export const featuredWork: FeaturedStudy[] = [
   {
     id: "alx-onboarding",
-    badge: "Programme onboarding · ALX",
+    badge: "Programme onboarding · edtech",
     title: "Managing a 317-person onboarding pipeline across six stages",
     image: "/projects/onboarding.svg",
     situation:
-      "At ALX, a single intake of interested people had to move through a multi-stage onboarding — interest, selection and NDA, signed NDA, Google Classroom, and activation in eHub. At every stage people stalled, went quiet or missed a step, and without one view of where each person stood it was easy to lose track of who still needed chasing.",
+      "In edtech, a single intake of interested people had to move through a multi-stage onboarding — interest, selection and NDA, signed NDA, Google Classroom, and activation in eHub. At every stage people stalled, went quiet or missed a step, and without one view of where each person stood it was easy to lose track of who still needed chasing.",
     handled:
       "I owned the pipeline day to day. I maintained a central, cross-functional tracker covering every person and every stage, monitored progress, and spotted where someone had gone quiet or left a step incomplete. I tracked NDAs, chased the outstanding actions, and followed up with the people who hadn't moved — coordinating each person through the process rather than waiting for them to surface.",
     improved:
