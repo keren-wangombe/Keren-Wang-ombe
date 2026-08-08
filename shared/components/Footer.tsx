@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { brand, contactMailto, resumeFile, social } from "@/lib/site";
+import { brand, contactMailto, footerCta, otherPortfolio, resumeFile, social } from "@/lib/site";
 
 /**
  * Footer: a deep glow band carrying the closing line and the direct actions
@@ -33,11 +33,10 @@ export default function Footer() {
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
             <div>
               <h2 className="font-serif text-h2 font-light leading-tight text-paper">
-                Let&rsquo;s build scalable operations.
+                {footerCta.heading}
               </h2>
               <p className="mt-3 max-w-md text-small text-paper/60">
-                Workflow automation, operational systems, KPI reporting, and execution
-                visibility — for teams that need to move fast without breaking things.
+                {footerCta.blurb}
               </p>
             </div>
 
@@ -87,11 +86,22 @@ export default function Footer() {
 
       {/* ── Byline strip + back to top. */}
       <div className="border-t border-ink/10 bg-paper">
-        <div className="container-content flex items-center justify-between gap-6 py-6">
+        <div className="container-content flex flex-wrap items-center justify-between gap-4 py-6">
           <p className="font-serif text-small italic text-signature">
             © {new Date().getFullYear()} {brand.name}
           </p>
-          <BackToTop />
+          <div className="flex items-center gap-6">
+            {otherPortfolio ? (
+              <a
+                href={otherPortfolio.href}
+                className="link-amber inline-flex items-center gap-1.5 text-small font-medium text-signature"
+              >
+                {otherPortfolio.label}
+                <span aria-hidden>→</span>
+              </a>
+            ) : null}
+            <BackToTop />
+          </div>
         </div>
       </div>
     </footer>

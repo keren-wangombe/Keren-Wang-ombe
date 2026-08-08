@@ -29,6 +29,9 @@ export const focusKey = focus.key;
 /** Optional link to the sibling portfolio (the other focus), if configured. */
 export const otherPortfolio = focus.otherPortfolio;
 
+/** Footer closing line + blurb, in this portfolio's voice. */
+export const footerCta = focus.footer;
+
 /**
  * Per-page banner images. Each page opens on a full-bleed banner.
  * These are on-brand PLACEHOLDERS living in /public/banners, drop the real

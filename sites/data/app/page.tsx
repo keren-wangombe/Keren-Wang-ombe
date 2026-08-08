@@ -7,18 +7,18 @@ import LinkedInFeed from "@/components/LinkedInFeed";
 import Reveal from "@/components/Reveal";
 import { contactMailto, social } from "@/lib/site";
 import {
-  processSteps,
-  services,
-  outcomes,
-  problemPrompts,
-  positioning,
+  dataProcessSteps,
+  dataServices,
+  dataOutcomes,
+  dataProblemPrompts,
+  dataPositioning,
   type Service,
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Operations that scale",
+  title: "Analytics that drives decisions",
   description:
-    "I take ownership of onboarding, follow-ups, coordination, tracking and reporting — and improve the processes behind that work so fewer things are missed.",
+    "I turn raw operational data into reporting and analysis that changes what happens next — SQL, Excel, Power BI and Looker dashboards built around the decision, not the vanity metric.",
 };
 
 /** Line icons for the What I Do grid, keyed to Service.icon. */
@@ -54,28 +54,28 @@ const serviceIcon: Record<Service["icon"], ReactNode> = {
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO — light split: copy left, systems illustration right, on a
-          soft navy-to-amber wash so the page opens with warmth, not white. */}
+      {/* ── HERO — light split: copy left, intro right, on a soft navy-to-amber
+          wash so the page opens with warmth, not white. */}
       <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.09]">
         <div className="container-content grid items-center gap-10 py-8 sm:py-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-12">
           <div className="animate-fade-up">
-            <p className="kicker text-amber">Programme, Client &amp; Team Operations</p>
+            <p className="kicker text-amber">Analytics · Reporting · Insight</p>
             <h1 className="mt-4 font-serif text-h1 font-light leading-[1.08] text-ink">
-              I keep important work moving — and make sure{" "}
-              <span className="text-amber">the details don&rsquo;t get lost.</span>
+              I turn raw operational data into{" "}
+              <span className="text-amber">decisions leaders act on.</span>
             </h1>
             <p className="mt-5 max-w-xl text-body text-ink/70">
-              I take ownership of onboarding, follow-ups, coordination, tracking
-              and reporting. In edtech I do this across cohorts of 1,000+ learners.
-              I also improve the processes behind the work, so fewer things are
-              missed and less depends on someone remembering every step.
+              SQL analysis, executive dashboards, KPI frameworks and data
+              storytelling — built around the decision, not the vanity metric.
+              I&rsquo;ve reported programmes serving 1,000+ learners and audited
+              support operations down to the SLA breach.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
                 href="/work"
                 className="link-amber inline-flex items-center gap-2 text-small font-medium text-signature"
               >
-                See what I can own
+                See the analysis
                 <span aria-hidden>→</span>
               </a>
             </div>
@@ -86,17 +86,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PROBLEM RECOGNITION — the reader's own week, directly after the
-          hero. Compact three-up, reusing the card-grid pattern; no icons. */}
+      {/* ── PROBLEM RECOGNITION — the reader's own reporting pain, right after
+          the hero. Compact three-up, reusing the card-grid pattern; no icons. */}
       <section className="py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
             <h2 className="font-serif text-h2 font-light leading-snug text-ink">
-              {problemPrompts.heading}
+              {dataProblemPrompts.heading}
             </h2>
           </Reveal>
           <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-3">
-            {problemPrompts.items.map((line, i) => (
+            {dataProblemPrompts.items.map((line, i) => (
               <Reveal
                 as="div"
                 key={line}
@@ -115,10 +115,10 @@ export default function HomePage() {
       <section className="bg-signature">
         <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-7 sm:grid-cols-4">
           {[
-            { value: "3+", label: "years in operations" },
-            { value: "3,000+", label: "participants supported" },
-            { value: "8+", label: "countries coordinated" },
-            { value: "15+ hrs", label: "saved weekly through automation" },
+            { value: "3+", label: "years in analytics & reporting" },
+            { value: "12", label: "countries reported across" },
+            { value: "15-query", label: "SQL operational audits" },
+            { value: "98%", label: "reporting accuracy held" },
           ].map((stat, i) => (
             <Reveal as="div" key={stat.label} delay={i * 80}>
               <p className="font-serif text-h2 font-light leading-none text-amber">{stat.value}</p>
@@ -135,11 +135,11 @@ export default function HomePage() {
         <Reveal>
           <p className="kicker text-blue-lift">What I do</p>
           <h2 className="mt-3 font-serif text-[clamp(1.5rem,3vw,2.25rem)] font-light leading-tight text-ink lg:whitespace-nowrap">
-            The work I take ownership of.
+            The analysis I take ownership of.
           </h2>
         </Reveal>
         <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s, i) => (
+          {dataServices.map((s, i) => (
             <Reveal as="div" key={s.title} delay={i * 100} className="flex h-full flex-col bg-paper p-6">
               <span className="grid h-10 w-10 place-items-center rounded-xl bg-amber/10 text-amber">
                 {serviceIcon[s.icon]}
@@ -152,19 +152,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── CENTRAL POSITIONING — the answer to "will she do the detailed work
-          herself, or just build systems?" The most important addition; reuses
-          the existing band + doodle language. */}
+      {/* ── CENTRAL POSITIONING — the answer to "will the reporting actually
+          change anything?" Reuses the existing band + doodle language. */}
       <section className="relative isolate overflow-hidden border-y border-signature/10 bg-signature/[0.04]">
         <Doodle name="orbit" className="absolute right-6 top-8 hidden h-36 w-36 text-signature/[0.08] lg:block" />
         <div className="container-content py-12 sm:py-16">
           <Reveal>
             <h2 className="max-w-3xl font-serif text-h1 font-light leading-[1.12] text-signature">
-              {positioning.heading}
+              {dataPositioning.heading}
             </h2>
           </Reveal>
           <div className="mt-6 max-w-2xl space-y-5">
-            {positioning.paragraphs.map((para, i) => (
+            {dataPositioning.paragraphs.map((para, i) => (
               <Reveal as="p" key={para} delay={i * 100} className="text-body text-ink/75">
                 {para}
               </Reveal>
@@ -173,18 +172,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HOW I WORK — the four-step process on a warm amber-tinted band,
-          alternating off the navy numbers bands around it. */}
+      {/* ── HOW I WORK — the four-step process on a warm amber-tinted band. */}
       <section className="border-y border-amber/15 bg-amber/[0.07]">
         <div className="container-content py-9 sm:py-11">
           <Reveal>
             <p className="kicker text-amber">How I work</p>
             <h2 className="mt-3 max-w-2xl font-serif text-h2 font-light leading-snug text-ink">
-              Here&rsquo;s how the work gets done.
+              From the decision to the dashboard.
             </h2>
           </Reveal>
           <ol className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 sm:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((p, i) => (
+            {dataProcessSteps.map((p, i) => (
               <Reveal as="li" key={p.step} delay={i * 100} className="flex h-full flex-col bg-paper p-6">
                 <p className="font-serif text-h2 font-light leading-none text-amber">{p.step}</p>
                 <h3 className="mt-3 font-serif text-xl font-medium text-ink">{p.title}</h3>
@@ -201,11 +199,11 @@ export default function HomePage() {
           <Reveal>
             <p className="kicker text-amber">Impact</p>
             <h2 className="mt-2 max-w-xl font-serif text-h2 font-light text-paper">
-              Results measured, not claimed.
+              Numbers that changed a decision.
             </h2>
           </Reveal>
           <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-            {outcomes.map((o, i) => (
+            {dataOutcomes.map((o, i) => (
               <Reveal as="div" key={o.metricLabel} delay={i * 100}>
                 <p
                   className={`font-serif text-h1 font-light leading-none ${
@@ -224,8 +222,7 @@ export default function HomePage() {
       {/* ── LINKEDIN — a live post embed / follow CTA, breaks up the text. */}
       <LinkedInFeed />
 
-      {/* ── FINAL CTA — the objection-answering close. Email + LinkedIn, and an
-          availability note covering both fractional and full-time (one funnel). */}
+      {/* ── FINAL CTA — the objection-answering close. */}
       <section className="relative isolate overflow-hidden border-y border-amber/25 bg-amber/10">
         <Doodle name="flow" className="absolute left-6 top-8 hidden h-32 w-32 text-amber/[0.16] lg:block" />
         <Doodle name="orbit" className="absolute right-6 bottom-6 hidden h-32 w-32 text-amber/[0.14] lg:block" />
@@ -233,11 +230,11 @@ export default function HomePage() {
           <Reveal>
             <p className="kicker text-amber">The short version</p>
             <h2 className="mx-auto mt-4 max-w-3xl font-serif text-h1 font-light leading-[1.12] text-signature">
-              Need someone who can run the work and improve how it gets done?
+              Need reporting that changes what happens next?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-body text-ink/75">
-              Tell me what&rsquo;s taking too long, slipping through the cracks or
-              depending on you to remember.
+              Tell me the decision you can&rsquo;t see clearly yet — the funnel,
+              the breach, the segment — and I&rsquo;ll build the number for it.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <Button href={contactMailto} variant="accent">
@@ -248,7 +245,7 @@ export default function HomePage() {
               </Button>
             </div>
             <p className="mt-6 text-small text-ink/60">
-              Available for fractional operations support and full-time operations roles.
+              Available for fractional analytics support and full-time data &amp; reporting roles.
             </p>
           </Reveal>
         </div>

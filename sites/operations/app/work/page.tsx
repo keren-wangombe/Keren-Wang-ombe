@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 import LogoMarquee from "@/components/LogoMarquee";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
 import CaseStudy from "@/components/CaseStudy";
-import { featuredWork, edtechOps, additionalWork, toolkitNote } from "@/lib/content";
+import { featuredWork, edtechOps, operationsWork, toolkitNote } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -85,7 +85,7 @@ export default function WorkPage() {
             </h2>
           </Reveal>
           <div className="mt-8 space-y-6">
-            {additionalWork.map((item, i) => (
+            {operationsWork.map((item, i) => (
               <CaseStudy key={item.id} item={item} index={i} />
             ))}
           </div>

@@ -19,6 +19,11 @@ export const focus: FocusConfig = {
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
   ],
+  footer: {
+    heading: "Let’s make the number clear.",
+    blurb:
+      "SQL analysis, executive dashboards, KPI frameworks and data storytelling — reporting built around the decision it should change.",
+  },
   otherPortfolio: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL
     ? {
         label: "Operations portfolio",

@@ -19,6 +19,11 @@ export const focus: FocusConfig = {
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
   ],
+  footer: {
+    heading: "Let’s build scalable operations.",
+    blurb:
+      "Workflow automation, operational systems, coordination and execution visibility — for teams that need to move fast without breaking things.",
+  },
   otherPortfolio: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL
     ? {
         label: "Data & analytics portfolio",

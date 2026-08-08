@@ -27,6 +27,8 @@ export type FocusConfig = {
   mailtoSubject: string;
   /** Primary navigation for this portfolio. */
   nav: NavItem[];
+  /** Footer closing line + supporting blurb, in this focus's voice. */
+  footer: { heading: string; blurb: string };
   /**
    * Link to the sibling portfolio (the other focus). Left as `null` until the
    * other site is deployed; set the href to its URL (or wire the
