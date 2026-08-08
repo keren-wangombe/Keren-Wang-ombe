@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" role="img" aria-label="Keren Wang'ombe monogram portrait placeholder">
+  <rect width="480" height="600" fill="#1B3A6B"/>
+  <g fill="none" stroke="#D97706" stroke-opacity="0.20" stroke-width="2">
+    <circle cx="360" cy="150" r="120"/><circle cx="360" cy="150" r="72"/>
+    <line x1="240" y1="150" x2="480" y2="150"/><line x1="360" y1="30" x2="360" y2="270"/>
+  </g>
+  <rect x="24" y="24" width="432" height="552" fill="none" stroke="#FAFAF8" stroke-opacity="0.14" stroke-width="2" stroke-dasharray="9 13"/>
+  <text x="240" y="330" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="200" font-weight="600" fill="#FAFAF8">KW</text>
+  <text x="240" y="392" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" letter-spacing="6" fill="#D97706" fill-opacity="0.9">KEREN WANG'OMBE</text>
+  <text x="240" y="424" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" letter-spacing="3" fill="#FAFAF8" fill-opacity="0.5">OPERATIONS · ANALYTICS</text>
+</svg>
