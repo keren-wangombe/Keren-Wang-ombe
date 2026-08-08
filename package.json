@@ -2,12 +2,18 @@
   "name": "keren-wangombe-portfolio",
   "version": "0.1.0",
   "private": true,
-  "description": "Keren Wang'ombe — operations & analytics portfolio",
+  "description": "Keren Wang'ombe — Operations and Data portfolios (shared design system, two deployable sites)",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "cd sites/operations && next dev",
+    "dev:ops": "cd sites/operations && next dev",
+    "dev:data": "cd sites/data && next dev",
+    "build": "npm run build:ops && npm run build:data",
+    "build:ops": "cd sites/operations && next build",
+    "build:data": "cd sites/data && next build",
+    "start:ops": "cd sites/operations && next start",
+    "start:data": "cd sites/data && next start",
+    "lint:ops": "cd sites/operations && next lint",
+    "lint:data": "cd sites/data && next lint"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.108.2",

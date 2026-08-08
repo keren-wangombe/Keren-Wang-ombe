@@ -23,24 +23,6 @@ const appCsp = [
   "upgrade-insecure-requests",
 ].join("; ");
 
-/**
- * Looser policy scoped to the static tools under /tools (the salary
- * explorer), which legitimately load Tailwind's CDN, lucide from unpkg, and
- * Google Fonts, and use inline onclick handlers.
- */
-const toolsCsp = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com https://unpkg.com",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "font-src https://fonts.gstatic.com",
-  "img-src 'self' data:",
-  "connect-src 'self'",
-  "object-src 'none'",
-  "base-uri 'self'",
-  "form-action 'self'",
-  "frame-ancestors 'none'",
-].join("; ");
-
 const sharedHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -59,21 +41,16 @@ const sharedHeaders = [
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  // The app lives in sites/<name>/app but imports the design system from the
+  // repo-level shared/ folder, which sits outside this app's directory.
+  experimental: { externalDir: true },
   async headers() {
     return [
       {
-        // Everything except /tools/* gets the strict app CSP.
-        source: "/((?!tools/).*)",
+        source: "/(.*)",
         headers: [
           ...sharedHeaders,
           { key: "Content-Security-Policy", value: appCsp },
-        ],
-      },
-      {
-        source: "/tools/:path*",
-        headers: [
-          ...sharedHeaders,
-          { key: "Content-Security-Policy", value: toolsCsp },
         ],
       },
     ];

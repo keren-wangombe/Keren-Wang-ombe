@@ -1,19 +1,16 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Design system — the brand's 7-core color system (navy · ivory · amber).
- * Reference colors semantically (background, foreground, primary, link, accent);
- * the raw token names exist for the rare case a literal hex name reads clearer.
- * Amber splits by use: `amber` (#B45309) for text/labels/rules (AA on paper),
- * `amber-bright` (#D97706) for solid fills / icons / CTAs with dark text on top.
- * Do NOT introduce colors outside this set.
+ * Shared design system — the brand's 7-core color system (navy · ivory · amber).
+ * Both portfolio sites (Operations and Data) consume this as a Tailwind preset so
+ * the felt brand never drifts between them: edit a token here and it changes in
+ * both. Reference colors semantically (background, foreground, primary, link,
+ * accent); the raw token names exist for the rare case a literal hex name reads
+ * clearer. Amber splits by use: `amber` (#B45309) for text/labels/rules (AA on
+ * paper), `amber-bright` (#D97706) for solid fills / icons / CTAs with dark text
+ * on top. Do NOT introduce colors outside this set.
  */
-const config: Config = {
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./lib/**/*.{ts,tsx}",
-  ],
+const preset: Omit<Config, "content"> = {
   theme: {
     extend: {
       colors: {
@@ -91,4 +88,4 @@ const config: Config = {
   plugins: [],
 };
 
-export default config;
+export default preset;
