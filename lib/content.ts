@@ -1131,8 +1131,16 @@ export type IconKey =
 export type HeroToolGroup = { group: string; items: Tool[] };
 export type StatItem = { value: string; label: string; sub: string; icon: IconKey };
 export type WhatIDoItem = { icon: IconKey; title: string; body: string };
+export type CardDashboard = {
+  title: string;
+  kpis: { value: string; label: string }[];
+  bars: number[];
+  donut: number;
+  accent?: "amber" | "blue";
+};
 export type FeaturedCard = {
-  image: string;
+  /** On-brand dashboard preview shown at the top of the card. */
+  dashboard: CardDashboard;
   title: string;
   body: string;
   tags: string[];
@@ -1193,24 +1201,54 @@ export const whatIDo: WhatIDoItem[] = [
   { icon: "gear", title: "Improving processes & systems", body: "I document and streamline repeatable work — and automate it where it helps — so operations run better with less effort." },
 ];
 
-/** Featured work cards — three, each with a project image and plain summary. */
+/** Featured work cards — three, each with a dashboard preview and plain summary. */
 export const featuredCards: FeaturedCard[] = [
   {
-    image: "/projects/edtech-technical-programme.svg",
+    dashboard: {
+      title: "Launch overview",
+      kpis: [
+        { value: "3,174", label: "learners" },
+        { value: "90%", label: "CSAT" },
+        { value: "54%", label: "open rate" },
+      ],
+      bars: [0.4, 0.55, 0.5, 0.7, 0.8, 0.9],
+      donut: 0.9,
+      accent: "amber",
+    },
     title: "Programme launch — 3,174 learners",
     body: "Led communications, onboarding, platform readiness, tracking and reporting for a large programme launch across several countries.",
     tags: ["Coordination", "Onboarding", "Reporting"],
     href: "/work#edtech-technical-programme",
   },
   {
-    image: "/projects/edtech-programme-analytics.svg",
+    dashboard: {
+      title: "Automation impact",
+      kpis: [
+        { value: "3", label: "programmes" },
+        { value: "50%+", label: "less manual" },
+        { value: "1", label: "workflow" },
+      ],
+      bars: [0.85, 0.7, 0.55, 0.45, 0.35, 0.3],
+      donut: 0.5,
+      accent: "blue",
+    },
     title: "Workflow improvement — 3 programmes",
     body: "Designed an automated reporting workflow that connected three programmes and replaced hours of manual updates each week.",
     tags: ["Automation", "Reporting", "Systems"],
     href: "/work#edtech-programme-analytics",
   },
   {
-    image: "/projects/delivery.svg",
+    dashboard: {
+      title: "Delivery tracker",
+      kpis: [
+        { value: "5", label: "phases" },
+        { value: "24", label: "tasks" },
+        { value: "9", label: "links" },
+      ],
+      bars: [0.5, 0.65, 0.6, 0.75, 0.7, 0.85],
+      donut: 0.75,
+      accent: "amber",
+    },
     title: "Programme coordination — 12 weeks",
     body: "Moved a 12-week programme from scattered emails into one clear system with phases, tasks and visibility for leaders.",
     tags: ["Asana", "Coordination", "Tracking"],
