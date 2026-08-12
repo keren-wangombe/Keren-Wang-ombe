@@ -916,19 +916,19 @@ export const faqs: FaqItem[] = [
       "Programme Operations, BizOps, and Founders Associate roles, plus operations and analytics advisory for founders and programme teams. If it involves turning a messy process into a system, it's the right conversation.",
   },
   {
-    question: "Operations or analytics, which is it?",
+    question: "What does “operations” mean in practice for you?",
     answer:
-      "Both, and they share one question: how do we make this run better? I build the automation and tracking that keep delivery on track, and the reporting layer that shows where it isn't. The Work page has examples of each.",
+      "The recurring work that keeps delivery moving: onboarding and follow-ups, coordination, tracking and reporting — and the SOPs, trackers and automation I build behind it so fewer things depend on someone remembering every step. The Work page has examples.",
   },
   {
     question: "Do you work with teams as well as founders?",
     answer:
-      "Yes. Advisory is focused on helping founders and programme teams build the operational backbone and the reporting to steer by. Start with an inquiry and we'll find the right shape.",
+      "Yes. Advisory is focused on helping founders and programme teams build the operational backbone — the workflows, tracking and escalation that let delivery scale. Start with an inquiry and we'll find the right shape.",
   },
   {
     question: "Which tools do you actually build in?",
     answer:
-      "Notion, Airtable, Asana, and ClickUp for systems and delivery; Zapier, Make, and Apps Script for automation; SQL, Excel, and Power BI for analytics. The tool follows the problem, not the other way around.",
+      "Notion, Airtable, Asana, and ClickUp for systems and delivery; Zapier, Make, and Apps Script for automation; Google Sheets and Apps Script for tracking. The tool follows the problem, not the other way around.",
   },
 ];
 
