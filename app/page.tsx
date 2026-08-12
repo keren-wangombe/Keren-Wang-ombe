@@ -115,26 +115,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TOOLS I USE — a section below (cool tint) */}
-      <section className="border-y border-signature/10 bg-signature/[0.04] py-8 sm:py-10">
+      {/* ── TOOLS I USE — compact band (cool tint) */}
+      <section className="border-y border-signature/10 bg-signature/[0.04] py-6">
         <div className="container-content">
-          <SectionTitle center>{toolsHeading}</SectionTitle>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {heroToolGroups.map((g) => (
-              <Reveal as="div" key={g.group} className="rounded-2xl border border-ink/10 bg-paper p-5 text-center shadow-sm">
-                <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-amber">{g.group}</p>
-                <div className="mt-3 flex flex-wrap justify-center gap-2">
-                  {g.items.map((t) => (
-                    <span key={t.name} className="inline-flex items-center gap-1.5 rounded-lg border border-ink/10 bg-background px-2.5 py-1.5 text-small text-ink/80">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={t.logo} alt="" className="h-4 w-4 object-contain" />
-                      {t.name}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
+          <Reveal className="flex flex-col flex-wrap items-center justify-center gap-x-8 gap-y-3 lg:flex-row">
+            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-amber">{toolsHeading}</span>
+            {heroToolGroups.flatMap((g) => g.items).map((t) => (
+              <span key={t.name} className="inline-flex items-center gap-2 text-small font-medium text-ink/75">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={t.logo} alt="" className="h-5 w-5 object-contain" />
+                {t.name}
+              </span>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
