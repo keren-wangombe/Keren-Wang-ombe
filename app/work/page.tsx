@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import LogoMarquee from "@/components/LogoMarquee";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
@@ -9,39 +8,40 @@ import { featuredWork, edtechOps, operationsWork, toolkitNote } from "@/lib/cont
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "The work I take ownership of — onboarding, coordination, tracking and reporting — told the same way each time: the situation, the work I handled, what I improved, and what changed.",
+    "The work I take ownership of — onboarding, coordination, tracking and reporting — told the same simple way: the situation, what I did, what I improved, and what changed.",
 };
 
 export default function WorkPage() {
   return (
     <>
-      <PageBanner
-        kicker="Selected work"
-        title="The work I own, and the systems that keep it reliable."
-        intro={
-          <p>
-            The work I take ownership of — onboarding, follow-ups, coordination,
-            tracking and reporting — and the systems I build behind it so fewer
-            things get missed. Featured work first, told the same way each time,
-            then the rest of the projects below.
-          </p>
-        }
-      />
-
-      {/* ── Featured work: three studies, each told in four sections. */}
-      <section className="relative isolate overflow-hidden bg-signature/[0.05] py-10 sm:py-14">
-        <div className="container-content">
+      {/* ── Compact page hero (matches home). */}
+      <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
+        <div className="container-content py-9 sm:py-11">
           <Reveal>
-            <p className="kicker text-amber">Featured work</p>
-            <h2 className="mt-2 font-serif text-h1 font-light text-signature">
-              Told end to end.
-            </h2>
-            <p className="mt-3 max-w-2xl text-body text-ink">
-              Each one the same way — the situation, the recurring work I
-              handled, what I improved, and what changed.
+            <p className="kicker text-amber">Selected work</p>
+            <h1 className="mt-3 max-w-3xl font-serif text-h1 font-light leading-[1.08] text-signature">
+              The work I own, and the systems that keep it reliable.
+            </h1>
+            <p className="mt-4 max-w-2xl text-body text-ink/75">
+              Onboarding, coordination, tracking and reporting — and the simple
+              systems I build behind them. Open any card to read the full story.
             </p>
           </Reveal>
-          <div className="mt-8 space-y-6">
+        </div>
+      </section>
+
+      {/* ── Featured work: narrative studies, cool tint. */}
+      <section className="border-b border-signature/10 bg-signature/[0.04] py-9 sm:py-11">
+        <div className="container-content">
+          <Reveal>
+            <h2 className="font-serif text-h2 font-light text-signature">Featured work</h2>
+            <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
+            <p className="mt-4 max-w-2xl text-body text-ink/75">
+              Each one the same way — the situation, the work I handled, what I
+              improved, and what changed.
+            </p>
+          </Reveal>
+          <div className="mt-7 space-y-6">
             {featuredWork.map((item) => (
               <FeaturedCaseStudy key={item.id} item={item} />
             ))}
@@ -49,23 +49,18 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ── EdTech programme operations: three studies proving distinct
-          strengths — high-volume delivery, automation & reporting, and
-          cross-team operating standards. Same card component as Featured. */}
-      <section className="relative isolate overflow-hidden border-y border-amber/15 bg-amber/[0.05] py-10 sm:py-14">
+      {/* ── Programme operations: warm amber tint. */}
+      <section className="border-b border-amber/15 bg-amber/[0.06] py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
-            <p className="kicker text-amber">EdTech programme operations</p>
-            <h2 className="mt-2 font-serif text-h1 font-light text-signature">
-              Building the systems behind large-scale learner delivery.
-            </h2>
-            <p className="mt-3 max-w-2xl text-body text-ink">
-              I take ownership of complex programme delivery, build the operating
-              systems behind it, coordinate the people involved and measure what
-              improves.
+            <h2 className="font-serif text-h2 font-light text-signature">Programme operations</h2>
+            <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
+            <p className="mt-4 max-w-2xl text-body text-ink/75">
+              Owning complex programme delivery, building the systems behind it,
+              and measuring what improves.
             </p>
           </Reveal>
-          <div className="mt-8 space-y-6">
+          <div className="mt-7 space-y-6">
             {edtechOps.map((item) => (
               <FeaturedCaseStudy key={item.id} item={item} />
             ))}
@@ -73,18 +68,14 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ── Additional work: every remaining project, content intact. Kept in
-          the existing case-study cards so nothing is lost — expand any for the
-          full problem → build → result. */}
-      <section className="py-10 sm:py-14">
+      {/* ── More work: the problem → built → result cards, paper. */}
+      <section className="py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
-            <p className="kicker text-blue-lift">Additional work</p>
-            <h2 className="mt-2 font-serif text-h2 font-light text-ink">
-              The rest of the projects.
-            </h2>
+            <h2 className="font-serif text-h2 font-light text-signature">More work</h2>
+            <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
           </Reveal>
-          <div className="mt-8 space-y-6">
+          <div className="mt-7 space-y-5">
             {operationsWork.map((item, i) => (
               <CaseStudy key={item.id} item={item} index={i} />
             ))}
@@ -92,15 +83,16 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ── The toolkit, note + a continuously rolling logo marquee. */}
-      <section className="bg-signature/[0.04] py-12 sm:py-16">
+      {/* ── Toolkit, cool tint, tight. */}
+      <section className="border-t border-signature/10 bg-signature/[0.04] py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
-            <p className="kicker text-amber">The toolkit</p>
-            <p className="mt-5 max-w-2xl text-body text-ink">{toolkitNote}</p>
+            <h2 className="font-serif text-h2 font-light text-signature">The toolkit</h2>
+            <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
+            <p className="mt-4 max-w-2xl text-body text-ink/75">{toolkitNote}</p>
           </Reveal>
         </div>
-        <Reveal className="mt-12">
+        <Reveal className="mt-8">
           <LogoMarquee />
         </Reveal>
       </section>
