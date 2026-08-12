@@ -1134,8 +1134,9 @@ export type WhatIDoItem = { icon: IconKey; title: string; body: string };
 export type CardDashboard = {
   title: string;
   kpis: { value: string; label: string }[];
-  bars: number[];
-  donut: number;
+  variant?: "bars" | "line" | "grid" | "funnel" | "kanban";
+  bars?: number[];
+  donut?: number;
   accent?: "amber" | "blue";
 };
 export type FeaturedCard = {
@@ -1148,6 +1149,9 @@ export type FeaturedCard = {
 };
 export type ApproachStep = { n: string; title: string; body: string };
 
+/** Browser-tab title for the home page (focus-specific). */
+export const homeMetaTitle = "Operations, systems & workflow improvement";
+
 /** Home hero — headline + plain intro + primary call to action. */
 export const homeHero = {
   kicker: "Programme Operations · Systems · Process Improvement",
@@ -1157,7 +1161,10 @@ export const homeHero = {
   primaryCta: { label: "View selected work", href: "/work" },
 };
 
-/** Tools shown in the hero "Tools I use" card, grouped by what they're for. */
+/** Heading for the "Tools I use" section. */
+export const toolsHeading = "Tools I use";
+
+/** Tools shown in the "Tools I use" section, grouped by what they're for. */
 export const heroToolGroups: HeroToolGroup[] = [
   {
     group: "Project & delivery",
@@ -1205,14 +1212,14 @@ export const whatIDo: WhatIDoItem[] = [
 export const featuredCards: FeaturedCard[] = [
   {
     dashboard: {
-      title: "Launch overview",
+      title: "Onboarding funnel",
+      variant: "funnel",
       kpis: [
         { value: "3,174", label: "learners" },
         { value: "90%", label: "CSAT" },
         { value: "54%", label: "open rate" },
       ],
-      bars: [0.4, 0.55, 0.5, 0.7, 0.8, 0.9],
-      donut: 0.9,
+      bars: [1, 0.82, 0.64, 0.46],
       accent: "amber",
     },
     title: "Programme launch — 3,174 learners",
@@ -1223,12 +1230,13 @@ export const featuredCards: FeaturedCard[] = [
   {
     dashboard: {
       title: "Automation impact",
+      variant: "bars",
       kpis: [
         { value: "3", label: "programmes" },
         { value: "50%+", label: "less manual" },
         { value: "1", label: "workflow" },
       ],
-      bars: [0.85, 0.7, 0.55, 0.45, 0.35, 0.3],
+      bars: [0.9, 0.75, 0.6, 0.45, 0.35, 0.3],
       donut: 0.5,
       accent: "blue",
     },
@@ -1239,14 +1247,13 @@ export const featuredCards: FeaturedCard[] = [
   },
   {
     dashboard: {
-      title: "Delivery tracker",
+      title: "Delivery board",
+      variant: "kanban",
       kpis: [
         { value: "5", label: "phases" },
         { value: "24", label: "tasks" },
         { value: "9", label: "links" },
       ],
-      bars: [0.5, 0.65, 0.6, 0.75, 0.7, 0.85],
-      donut: 0.75,
       accent: "amber",
     },
     title: "Programme coordination — 12 weeks",
