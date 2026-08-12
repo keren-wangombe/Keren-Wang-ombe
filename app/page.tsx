@@ -2,10 +2,13 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import Doodle from "@/components/Doodle";
 import MiniDashboard from "@/components/MiniDashboard";
 import { contactEmail, contactMailto, heroPortrait, resumeFile, social } from "@/lib/site";
 import {
+  homeMetaTitle,
   homeHero,
+  toolsHeading,
   heroToolGroups,
   homeStats,
   whatIDo,
@@ -18,11 +21,10 @@ import {
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Data analysis, reports & dashboards",
+  title: homeMetaTitle,
   description: homeHero.intro,
 };
 
-/** Simple line icons keyed to content IconKey. */
 const icon: Record<IconKey, ReactNode> = {
   chart: (<svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.6" aria-hidden><path d="M4 3v18h16" strokeLinecap="round" strokeLinejoin="round" /><path d="M8 15v-3M12 15V8M16 15v-5" strokeLinecap="round" /></svg>),
   people: (<svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.6" aria-hidden><circle cx="9" cy="8" r="3" /><path d="M3.5 19a5.5 5.5 0 0 1 11 0" strokeLinecap="round" /><path d="M16 6.2a3 3 0 0 1 0 5.6M17 14.4a5.5 5.5 0 0 1 3.5 4.6" strokeLinecap="round" /></svg>),
@@ -38,12 +40,11 @@ const icon: Record<IconKey, ReactNode> = {
   gear: (<svg viewBox="0 0 24 24" className="h-5 w-5 fill-none stroke-current" strokeWidth="1.6" aria-hidden><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1" strokeLinecap="round" /></svg>),
 };
 
-/** Small section heading with an amber underline. */
 function SectionTitle({ children, center }: { children: ReactNode; center?: boolean }) {
   return (
     <Reveal className={center ? "text-center" : undefined}>
       <h2 className="font-serif text-h2 font-light text-signature">{children}</h2>
-      <span className={`mt-2.5 block h-px w-11 bg-amber ${center ? "mx-auto" : ""}`} aria-hidden />
+      <span className={`mt-2 block h-px w-11 bg-amber ${center ? "mx-auto" : ""}`} aria-hidden />
     </Reveal>
   );
 }
@@ -51,12 +52,13 @@ function SectionTitle({ children, center }: { children: ReactNode; center?: bool
 export default function HomePage() {
   return (
     <>
-      {/* ── HERO */}
-      <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
-        <div className="container-content grid items-center gap-8 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-10">
+      {/* ── HERO — copy left, portrait right (with accent). */}
+      <section className="relative isolate overflow-hidden border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
+        <Doodle name="bars" className="absolute -left-10 -top-6 hidden h-48 w-48 text-signature/[0.05] lg:block" />
+        <div className="container-content grid items-center gap-8 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-9">
           <div className="animate-fade-up">
             <p className="kicker text-amber">{homeHero.kicker}</p>
-            <h1 className="mt-3 font-serif text-h1 font-light leading-[1.06] text-signature">{homeHero.title}</h1>
+            <h1 className="mt-3 font-serif text-h1 font-light leading-[1.05] text-signature">{homeHero.title}</h1>
             <p className="mt-4 max-w-xl text-body text-ink/75">{homeHero.intro}</p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Button href={homeHero.primaryCta.href} variant="primary">{homeHero.primaryCta.label} →</Button>
@@ -68,41 +70,28 @@ export default function HomePage() {
           </div>
 
           <Reveal className="relative order-first lg:order-none">
+            {/* accent block behind the portrait */}
+            <div aria-hidden className="absolute -right-2 -top-3 hidden h-full w-full rounded-3xl bg-amber/15 lg:block lg:translate-x-4 lg:translate-y-4" />
             <div className="relative mx-auto max-w-sm overflow-hidden rounded-3xl border border-ink/10 shadow-xl shadow-ink/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={heroPortrait} alt="Keren Wang'ombe" className="aspect-[4/5] w-full object-cover" />
             </div>
-            {/* Tools I use — app-icon card. */}
-            <div className="mx-auto mt-4 max-w-sm rounded-2xl border border-ink/10 bg-paper/95 p-4 shadow-lg shadow-ink/10 lg:absolute lg:-bottom-5 lg:-right-3 lg:mt-0 lg:w-52 lg:max-w-none">
-              <p className="kicker text-ink/45">Tools I use</p>
-              <div className="mt-2.5 space-y-2.5">
-                {heroToolGroups.map((g) => (
-                  <div key={g.group}>
-                    <p className="text-[0.65rem] font-medium uppercase tracking-wide text-ink/45">{g.group}</p>
-                    <div className="mt-1.5 flex flex-wrap gap-1.5">
-                      {g.items.map((t) => (
-                        <span key={t.name} title={t.name} className="inline-flex items-center gap-1.5 rounded-md border border-ink/10 bg-paper px-2 py-1 text-[0.72rem] text-ink/80">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={t.logo} alt="" className="h-4 w-4 object-contain" />
-                          {t.name}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* small floating highlight chip */}
+            <div className="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-ink/10 bg-paper/95 px-4 py-2 shadow-lg shadow-ink/10">
+              <span className="h-2 w-2 rounded-full bg-amber-bright" aria-hidden />
+              <span className="text-small font-medium text-signature">3+ yrs · 12 countries</span>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── STAT STRIP — solid navy band */}
+      {/* ── STATS — navy band */}
       <section className="bg-signature">
-        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-6 py-7 lg:grid-cols-4">
+        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-5 py-6 lg:grid-cols-4">
           {homeStats.map((s, i) => (
-            <Reveal as="div" key={s.sub} delay={i * 70} className="flex flex-col gap-1.5">
+            <Reveal as="div" key={s.sub} delay={i * 60} className="flex flex-col gap-1">
               <span className="grid h-8 w-8 place-items-center rounded-lg bg-amber-bright/15 text-amber-bright">{icon[s.icon]}</span>
-              <p className="mt-1 font-serif text-h2 font-light leading-none text-amber-bright">{s.value}</p>
+              <p className="mt-0.5 font-serif text-h2 font-light leading-none text-amber-bright">{s.value}</p>
               <p className="text-small text-paper/80">{s.label}</p>
               <p className="text-[0.72rem] uppercase tracking-wide text-paper/45">{s.sub}</p>
             </Reveal>
@@ -110,29 +99,52 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHAT I DO — paper */}
-      <section className="py-9 sm:py-11">
+      {/* ── WHAT I DO */}
+      <section className="py-8 sm:py-10">
         <div className="container-content">
           <SectionTitle center>What I do</SectionTitle>
-          <div className="mt-7 grid gap-x-7 gap-y-7 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-6 grid gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-5">
             {whatIDo.map((w, i) => (
-              <Reveal as="div" key={w.title} delay={i * 70} className="text-center sm:text-left">
-                <span className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-amber/10 text-amber sm:mx-0">{icon[w.icon]}</span>
-                <h3 className="mt-3 font-serif text-base font-medium text-ink">{w.title}</h3>
-                <p className="mt-1.5 text-small text-ink/70">{w.body}</p>
+              <Reveal as="div" key={w.title} delay={i * 60} className="text-center sm:text-left">
+                <span className="mx-auto grid h-9 w-9 place-items-center rounded-xl bg-amber/10 text-amber sm:mx-0">{icon[w.icon]}</span>
+                <h3 className="mt-2.5 font-serif text-base font-medium text-ink">{w.title}</h3>
+                <p className="mt-1 text-small text-ink/70">{w.body}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── FEATURED WORK — cool signature tint */}
-      <section className="border-y border-signature/10 bg-signature/[0.04] py-9 sm:py-11">
+      {/* ── TOOLS I USE — a section below (cool tint) */}
+      <section className="border-y border-signature/10 bg-signature/[0.04] py-8 sm:py-10">
+        <div className="container-content">
+          <SectionTitle center>{toolsHeading}</SectionTitle>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            {heroToolGroups.map((g) => (
+              <Reveal as="div" key={g.group} className="rounded-2xl border border-ink/10 bg-paper p-5 text-center shadow-sm">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-amber">{g.group}</p>
+                <div className="mt-3 flex flex-wrap justify-center gap-2">
+                  {g.items.map((t) => (
+                    <span key={t.name} className="inline-flex items-center gap-1.5 rounded-lg border border-ink/10 bg-background px-2.5 py-1.5 text-small text-ink/80">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={t.logo} alt="" className="h-4 w-4 object-contain" />
+                      {t.name}
+                    </span>
+                  ))}
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FEATURED WORK */}
+      <section className="py-8 sm:py-10">
         <div className="container-content">
           <SectionTitle center>Featured work</SectionTitle>
-          <div className="mt-7 grid gap-5 md:grid-cols-3">
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
             {featuredCards.map((c, i) => (
-              <Reveal as="div" key={c.title} delay={i * 90} className="flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-paper shadow-sm">
+              <Reveal as="div" key={c.title} delay={i * 80} className="flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-paper shadow-sm transition-shadow duration-300 ease-calm hover:shadow-lg hover:shadow-ink/10">
                 <div className="aspect-[16/9] w-full">
                   <MiniDashboard {...c.dashboard} />
                 </div>
@@ -149,33 +161,33 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-7 text-center">
+          <Reveal className="mt-6 text-center">
             <Button href="/work" variant="primary">{viewAllWorkLabel} →</Button>
           </Reveal>
         </div>
       </section>
 
       {/* ── MY APPROACH — warm amber tint */}
-      <section className="border-b border-amber/15 bg-amber/[0.06] py-9 sm:py-11">
+      <section className="border-y border-amber/15 bg-amber/[0.06] py-8 sm:py-10">
         <div className="container-content">
           <SectionTitle>{approachHeading}</SectionTitle>
-          <ol className="mt-7 grid gap-6 sm:grid-cols-3 lg:grid-cols-5">
+          <ol className="mt-6 grid gap-5 sm:grid-cols-3 lg:grid-cols-5">
             {approachSteps.map((s, i) => (
-              <Reveal as="li" key={s.n} delay={i * 70}>
-                <span className="grid h-9 w-9 place-items-center rounded-full bg-amber font-serif text-base text-paper">{s.n}</span>
-                <h3 className="mt-3 font-serif text-base font-medium text-ink">{s.title}</h3>
-                <p className="mt-1.5 text-small text-ink/70">{s.body}</p>
+              <Reveal as="li" key={s.n} delay={i * 60}>
+                <span className="grid h-8 w-8 place-items-center rounded-full bg-amber font-serif text-sm text-paper">{s.n}</span>
+                <h3 className="mt-2.5 font-serif text-base font-medium text-ink">{s.title}</h3>
+                <p className="mt-1 text-small text-ink/70">{s.body}</p>
               </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* ── HI, I'M KEREN — paper */}
-      <section className="py-10 sm:py-12">
+      {/* ── HI, I'M KEREN */}
+      <section className="py-9 sm:py-11">
         <div className="container-content grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <Reveal className="flex items-center gap-5">
-            <div className="w-28 shrink-0 overflow-hidden rounded-2xl border border-ink/10 shadow-md shadow-ink/10 sm:w-36">
+            <div className="w-28 shrink-0 overflow-hidden rounded-2xl border border-ink/10 shadow-md shadow-ink/10 sm:w-32">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={heroPortrait} alt="Keren Wang'ombe" className="aspect-[4/5] w-full object-cover" />
             </div>

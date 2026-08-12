@@ -1134,8 +1134,9 @@ export type WhatIDoItem = { icon: IconKey; title: string; body: string };
 export type CardDashboard = {
   title: string;
   kpis: { value: string; label: string }[];
-  bars: number[];
-  donut: number;
+  variant?: "bars" | "line" | "grid" | "funnel" | "kanban";
+  bars?: number[];
+  donut?: number;
   accent?: "amber" | "blue";
 };
 export type FeaturedCard = {
@@ -1148,6 +1149,9 @@ export type FeaturedCard = {
 };
 export type ApproachStep = { n: string; title: string; body: string };
 
+/** Browser-tab title for the home page (focus-specific). */
+export const homeMetaTitle = "Data analysis, reports & dashboards";
+
 /** Home hero — headline + plain intro + primary call to action. */
 export const homeHero = {
   kicker: "Data Analytics · Business Intelligence · Reporting",
@@ -1157,7 +1161,10 @@ export const homeHero = {
   primaryCta: { label: "View selected analyses", href: "/work" },
 };
 
-/** Tools shown in the hero "Tools I use" card, grouped by what they're for. */
+/** Heading for the "Tools I use" section. */
+export const toolsHeading = "Tools I use";
+
+/** Tools shown in the "Tools I use" section, grouped by what they're for. */
 export const heroToolGroups: HeroToolGroup[] = [
   {
     group: "Data analysis",
@@ -1206,6 +1213,7 @@ export const featuredCards: FeaturedCard[] = [
   {
     dashboard: {
       title: "Support overview",
+      variant: "bars",
       kpis: [
         { value: "2,150", label: "tickets" },
         { value: "25%", label: "late" },
@@ -1222,14 +1230,14 @@ export const featuredCards: FeaturedCard[] = [
   },
   {
     dashboard: {
-      title: "Sales overview",
+      title: "Sales trend",
+      variant: "line",
       kpis: [
         { value: "$1,118", label: "top LTV" },
         { value: "5%", label: "top tier" },
         { value: "+32%", label: "growth" },
       ],
-      bars: [0.3, 0.45, 0.55, 0.65, 0.8, 0.9],
-      donut: 0.6,
+      bars: [0.25, 0.4, 0.35, 0.55, 0.7, 0.65, 0.85, 0.95],
       accent: "blue",
     },
     title: "Sales & customer analysis",
@@ -1240,13 +1248,13 @@ export const featuredCards: FeaturedCard[] = [
   {
     dashboard: {
       title: "Data quality check",
+      variant: "grid",
       kpis: [
         { value: "100%", label: "clean" },
         { value: "12", label: "regions" },
         { value: "0", label: "errors left" },
       ],
-      bars: [0.6, 0.7, 0.65, 0.8, 0.85, 0.9],
-      donut: 1,
+      donut: 0.82,
       accent: "amber",
     },
     title: "National water survey check",
