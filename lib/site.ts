@@ -32,6 +32,9 @@ export const otherPortfolio = focus.otherPortfolio;
 /** Footer closing line + blurb, in this portfolio's voice. */
 export const footerCta = focus.footer;
 
+/** Slim footer tagline. */
+export const footerTagline = focus.footerTagline;
+
 /**
  * Per-page banner images. Each page opens on a full-bleed banner.
  * These are on-brand PLACEHOLDERS living in /public/banners, drop the real

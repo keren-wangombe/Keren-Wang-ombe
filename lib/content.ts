@@ -1117,3 +1117,124 @@ export const dataBioCloseText =
 /** /data work — analytics capability summary for the toolkit note. */
 export const dataToolkitNote =
   "The analysis and reporting tools behind the work: SQL and MySQL for querying and auditing, Excel for modelling, Power BI and Looker Studio for dashboards, and the automation that keeps the data current. The tools are the easy part — the judgment about which number matters, and why, is the work.";
+
+/* ── Home page (mockup layout) ─────────────────────────────────────────
+   Plain-language content for the redesigned home page, written so someone
+   who has never heard the term "operations" understands what they'd be
+   hiring me to do. Navy/amber brand, same components on both portfolios. */
+
+export type IconKey =
+  | "chart" | "people" | "database" | "clock"
+  | "search" | "explore" | "query" | "dashboard" | "bulb"
+  | "coordinate" | "onboard" | "gear";
+
+export type HeroToolGroup = { group: string; items: Tool[] };
+export type StatItem = { value: string; label: string; sub: string; icon: IconKey };
+export type WhatIDoItem = { icon: IconKey; title: string; body: string };
+export type FeaturedCard = {
+  image: string;
+  title: string;
+  body: string;
+  tags: string[];
+  href: string;
+};
+export type ApproachStep = { n: string; title: string; body: string };
+
+/** Home hero — headline + plain intro + primary call to action. */
+export const homeHero = {
+  kicker: "Programme Operations · Systems · Process Improvement",
+  title: "I turn complex operations into work that is easier to run, track and improve.",
+  intro:
+    "I coordinate programmes, build simple systems and improve everyday workflows so teams have clarity, leaders have visibility, and the people they serve get a better experience.",
+  primaryCta: { label: "View selected work", href: "/work" },
+};
+
+/** Tools shown in the hero "Tools I use" card, grouped by what they're for. */
+export const heroToolGroups: HeroToolGroup[] = [
+  {
+    group: "Project & delivery",
+    items: [
+      { name: "Asana", logo: "/logos/asana.svg" },
+      { name: "ClickUp", logo: "/logos/clickup.svg" },
+      { name: "Notion", logo: "/logos/notion.svg" },
+    ],
+  },
+  {
+    group: "Automation",
+    items: [
+      { name: "Zapier", logo: "/logos/zapier.svg" },
+      { name: "Make", logo: "/logos/make.svg" },
+      { name: "Airtable", logo: "/logos/airtable.svg" },
+    ],
+  },
+  {
+    group: "Tracking & reporting",
+    items: [
+      { name: "Google Sheets", logo: "/logos/google-sheets.svg" },
+      { name: "Excel", logo: "/logos/excel.svg" },
+      { name: "Looker Studio", logo: "/logos/looker.svg" },
+    ],
+  },
+];
+
+/** Home stat strip — four quick, plain proof points. */
+export const homeStats: StatItem[] = [
+  { value: "3,000+", label: "people supported through programmes", sub: "Across 12+ countries", icon: "people" },
+  { value: "50%+", label: "less manual, repetitive work", sub: "Through better processes & automation", icon: "gear" },
+  { value: "15+ hrs", label: "saved every week", sub: "Through workflow automation", icon: "clock" },
+  { value: "98%", label: "accurate progress reporting", sub: "Across multiple programmes", icon: "chart" },
+];
+
+/** "What I do" — four plain descriptions of the work. */
+export const whatIDo: WhatIDoItem[] = [
+  { icon: "coordinate", title: "Coordinating programmes & projects", body: "I plan, coordinate and track the moving parts so work gets delivered on time and to a good standard." },
+  { icon: "onboard", title: "Onboarding & everyday workflows", body: "I design and run onboarding, follow-ups and records so people have a smooth, consistent experience." },
+  { icon: "dashboard", title: "Tracking & reporting", body: "I build simple trackers and reports that show how things are going and highlight what needs attention." },
+  { icon: "gear", title: "Improving processes & systems", body: "I document and streamline repeatable work — and automate it where it helps — so operations run better with less effort." },
+];
+
+/** Featured work cards — three, each with a project image and plain summary. */
+export const featuredCards: FeaturedCard[] = [
+  {
+    image: "/projects/edtech-technical-programme.svg",
+    title: "Programme launch — 3,174 learners",
+    body: "Led communications, onboarding, platform readiness, tracking and reporting for a large programme launch across several countries.",
+    tags: ["Coordination", "Onboarding", "Reporting"],
+    href: "/work#edtech-technical-programme",
+  },
+  {
+    image: "/projects/edtech-programme-analytics.svg",
+    title: "Workflow improvement — 3 programmes",
+    body: "Designed an automated reporting workflow that connected three programmes and replaced hours of manual updates each week.",
+    tags: ["Automation", "Reporting", "Systems"],
+    href: "/work#edtech-programme-analytics",
+  },
+  {
+    image: "/projects/delivery.svg",
+    title: "Programme coordination — 12 weeks",
+    body: "Moved a 12-week programme from scattered emails into one clear system with phases, tasks and visibility for leaders.",
+    tags: ["Asana", "Coordination", "Tracking"],
+    href: "/work#delivery",
+  },
+];
+
+/** Label on the "see everything" button under the featured cards. */
+export const viewAllWorkLabel = "View all operations work";
+
+/** "My approach" — five simple steps. */
+export const approachHeading = "My approach to operations";
+export const approachSteps: ApproachStep[] = [
+  { n: "1", title: "Understand", body: "Learn how the work really flows and where it gets stuck." },
+  { n: "2", title: "Organise", body: "Put the tasks, owners and steps into one clear place." },
+  { n: "3", title: "Improve", body: "Simplify the process and remove the manual, repetitive parts." },
+  { n: "4", title: "Automate", body: "Use the right tools so routine steps happen on their own." },
+  { n: "5", title: "Track", body: "Report progress clearly so nothing slips and leaders can see status." },
+];
+
+/** Home "Hi, I'm Keren" strip. */
+export const aboutStrip = {
+  greeting: "Hi, I'm Keren.",
+  bio: "I enjoy running the day-to-day work well and improving the systems behind it, so teams stay organised and nothing important slips. Let's make your operations easier to run.",
+  ctaHeading: "Looking for someone who can run the work and improve how it gets done?",
+  ctaSub: "Let's connect and explore how I can support your team.",
+};
