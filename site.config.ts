@@ -1,32 +1,32 @@
 import type { FocusConfig } from "@/lib/focus";
 
 /**
- * Data portfolio — focus configuration.
+ * Operations portfolio — focus configuration.
  *
- * This is the ONLY file that makes this build the Data site. The shared design
- * system, components and content library are identical to the Operations
- * portfolio; the `key` below tells shared pages to surface the data slice
- * (analytics, reporting, SQL/BI), and the strings set the brand voice for this
- * focus.
+ * This is the ONLY file that makes this build the Operations site. The shared
+ * design system, components and content library are identical to the Data
+ * portfolio; the `key` below tells shared pages to surface the operations
+ * slice (systems, automation, coordination), and the strings set the brand
+ * voice for this focus.
  */
 export const focus: FocusConfig = {
-  key: "data",
-  byline: "Data · Analytics · Insight",
+  key: "operations",
+  byline: "Operations · Systems · Automation",
   oneLine:
-    "I turn raw operational data into reporting and analysis that changes what happens next.",
-  mailtoSubject: "Data & analytics enquiry",
+    "I take ownership of the day-to-day work and improve the processes that keep it moving.",
+  mailtoSubject: "Operations support enquiry",
   nav: [
     { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
   ],
   footer: {
-    heading: "Let’s make the number clear.",
+    heading: "Let’s build scalable operations.",
     blurb:
-      "SQL analysis, executive dashboards, KPI frameworks and data storytelling — reporting built around the decision it should change.",
+      "Workflow automation, operational systems, coordination and execution visibility — for teams that need to move fast without breaking things.",
   },
   otherPortfolio: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL
     ? {
-        label: "Operations portfolio",
+        label: "Data & analytics portfolio",
         href: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL,
       }
     : null,

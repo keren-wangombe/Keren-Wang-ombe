@@ -1,8 +1,8 @@
 {
-  "name": "keren-wangombe-analytics",
+  "name": "keren-wangombe-operations",
   "version": "0.1.0",
   "private": true,
-  "description": "Keren Wang'ombe — Data & Analytics portfolio (Data · Analytics · Insight)",
+  "description": "Keren Wang'ombe — Operations portfolio (Operations · Systems · Automation)",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

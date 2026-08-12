@@ -1,13 +1,13 @@
-# Keren Wang'ombe — Data & Analytics Portfolio
+# Keren Wang'ombe — Operations Portfolio
 
-**Data · Analytics · Insight** — turning raw operational data into reporting and
-analysis that changes what happens next. A calm, premium, substantive
-personal-brand site built with Next.js (App Router), TypeScript, and Tailwind CSS.
+**Operations · Systems · Automation** — running the day-to-day work and building
+the systems that keep it reliable. A calm, premium, substantive personal-brand
+site built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-> This branch (`main`) is the **Data / Analytics** portfolio. Its sibling, the
-> **Operations** portfolio, lives on the `operations` branch. The two are
-> maintained as separate branches (and deploy as separate sites); they share the
-> same visual design but are independent codebases.
+> This branch is the **Operations** portfolio. Its sibling, the **Data /
+> Analytics** portfolio, lives on the `main` branch. The two are maintained as
+> separate branches (and deploy as separate sites); they share the same visual
+> design but are independent codebases.
 
 ## Getting started
 
@@ -20,18 +20,17 @@ npm run start    # serve the production build
 
 ## Deploying to Vercel
 
-This branch (`main`) deploys as its own Vercel project:
+This branch deploys as its own Vercel project:
 
 1. **New Project → Import** this repository.
-2. Keep the **Production Branch** as `main` (Vercel's default).
+2. In **Settings → Git**, set the **Production Branch** to `operations`.
 3. Framework preset **Next.js** (auto-detected); leave build/output defaults.
-4. **Deploy**, then attach a domain/subdomain (e.g. `data.yourdomain.com`).
+4. **Deploy**, then attach a domain/subdomain (e.g. `operations.yourdomain.com`).
 
-Deploy the `operations` branch as a **second** Vercel project (set that
-project's Production Branch to `operations`) for the Operations portfolio.
+Deploy the `main` branch as a **second** Vercel project for the Data portfolio.
 
-Optional cross-link: set `NEXT_PUBLIC_OTHER_PORTFOLIO_URL` to the Operations
-site's URL and this site's footer will link to it.
+Optional cross-link: set `NEXT_PUBLIC_OTHER_PORTFOLIO_URL` to the Data site's URL
+and this site's footer will link to it.
 
 ## Structure
 
@@ -60,6 +59,6 @@ tailwind.config.ts   The 7-core color system + type scale
 
 - **Form submissions** — `InquiryForm` / `EmailCapture` validate but do not POST;
   wire the `TODO(integration)` handlers to your provider.
-- **FAQ** — `dataFaqs` in `lib/content.ts` is a seed; back it with a CMS/Supabase.
+- **FAQ** — `faqs` in `lib/content.ts` is a seed; back it with a CMS/Supabase.
 
 All content lives in `lib/content.ts` — swap the source, keep the components.
