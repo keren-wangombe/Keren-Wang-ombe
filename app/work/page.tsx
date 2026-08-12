@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import LogoMarquee from "@/components/LogoMarquee";
 import FeaturedCaseStudy from "@/components/FeaturedCaseStudy";
@@ -9,7 +8,7 @@ import { dataWork, edtechOps, dataToolkitNote } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Analytics and reporting work — SQL audits, executive dashboards, customer segmentation and data-integrity audits — each told as the problem, what I built, and the decision the number changed.",
+    "Data analysis and reporting work — SQL audits, dashboards, customer segmentation and data-quality checks — each told as the problem, what I built, and what the number changed.",
 };
 
 /** The analytics-focused programme study, pulled from the EdTech operations set. */
@@ -20,35 +19,31 @@ const featuredAnalytics = edtechOps.filter(
 export default function WorkPage() {
   return (
     <>
-      <PageBanner
-        kicker="Selected work"
-        title="The analysis, and the decision each number changed."
-        intro={
-          <p>
-            SQL audits, executive dashboards, customer segmentation and
-            data-integrity work — each told the same way: the problem, what I
-            built, and what the number changed. A featured reporting system
-            first, then the rest of the analysis below.
-          </p>
-        }
-      />
+      {/* ── Compact page hero (matches home). */}
+      <section className="border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
+        <div className="container-content py-9 sm:py-11">
+          <Reveal>
+            <p className="kicker text-amber">Selected work</p>
+            <h1 className="mt-3 max-w-3xl font-serif text-h1 font-light leading-[1.08] text-signature">
+              Real projects, and what each number changed.
+            </h1>
+            <p className="mt-4 max-w-2xl text-body text-ink/75">
+              Each one told the same simple way: the problem, what I built, and
+              the result. Open any card to read the full story.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* ── Featured analytics: the reporting-automation programme study, told
-          in the four-section narrative format. */}
+      {/* ── Featured: the reporting-automation study, cool tint. */}
       {featuredAnalytics.length > 0 ? (
-        <section className="relative isolate overflow-hidden bg-signature/[0.05] py-10 sm:py-14">
+        <section className="border-b border-signature/10 bg-signature/[0.04] py-9 sm:py-11">
           <div className="container-content">
             <Reveal>
-              <p className="kicker text-amber">Featured work</p>
-              <h2 className="mt-2 font-serif text-h1 font-light text-signature">
-                Reporting built to be trusted.
-              </h2>
-              <p className="mt-3 max-w-2xl text-body text-ink">
-                The situation, the analysis I owned, what I built, and the
-                decisions it changed.
-              </p>
+              <h2 className="font-serif text-h2 font-light text-signature">Featured work</h2>
+              <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
             </Reveal>
-            <div className="mt-8 space-y-6">
+            <div className="mt-7 space-y-6">
               {featuredAnalytics.map((item) => (
                 <FeaturedCaseStudy key={item.id} item={item} />
               ))}
@@ -57,17 +52,14 @@ export default function WorkPage() {
         </section>
       ) : null}
 
-      {/* ── Analytics projects: SQL, Power BI, Excel — the problem → built →
-          result cards. Expand any for the full write-up. */}
-      <section className="py-10 sm:py-14">
+      {/* ── Projects: the problem → built → result cards. */}
+      <section className="py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
-            <p className="kicker text-blue-lift">Analytics &amp; reporting</p>
-            <h2 className="mt-2 font-serif text-h2 font-light text-ink">
-              SQL, dashboards, and the decisions behind them.
-            </h2>
+            <h2 className="font-serif text-h2 font-light text-signature">Analysis &amp; reporting</h2>
+            <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
           </Reveal>
-          <div className="mt-8 space-y-6">
+          <div className="mt-7 space-y-5">
             {dataWork.map((item, i) => (
               <CaseStudy key={item.id} item={item} index={i} />
             ))}
@@ -75,15 +67,16 @@ export default function WorkPage() {
         </div>
       </section>
 
-      {/* ── The toolkit, note + a continuously rolling logo marquee. */}
-      <section className="bg-signature/[0.04] py-12 sm:py-16">
+      {/* ── Toolkit, warm amber tint, tight. */}
+      <section className="border-t border-amber/15 bg-amber/[0.06] py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
-            <p className="kicker text-amber">The toolkit</p>
-            <p className="mt-5 max-w-2xl text-body text-ink">{dataToolkitNote}</p>
+            <h2 className="font-serif text-h2 font-light text-signature">The toolkit</h2>
+            <span className="mt-2.5 block h-px w-11 bg-amber" aria-hidden />
+            <p className="mt-4 max-w-2xl text-body text-ink/75">{dataToolkitNote}</p>
           </Reveal>
         </div>
-        <Reveal className="mt-12">
+        <Reveal className="mt-8">
           <LogoMarquee />
         </Reveal>
       </section>
