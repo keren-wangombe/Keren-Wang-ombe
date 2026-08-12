@@ -1164,30 +1164,32 @@ export const homeHero = {
 /** Heading for the "Tools I use" section. */
 export const toolsHeading = "Tools I use";
 
-/** Tools shown in the "Tools I use" section, grouped by what they're for. */
+/** Tools shown in the "Tools I use" section, grouped by what they're for.
+    Logos here are the icon-only marks (/logos/icons); the wide mark+name
+    lockups (/logos) are used by the LogoMarquee. */
 export const heroToolGroups: HeroToolGroup[] = [
   {
     group: "Project & delivery",
     items: [
-      { name: "Asana", logo: "/logos/asana.svg" },
-      { name: "ClickUp", logo: "/logos/clickup.svg" },
-      { name: "Notion", logo: "/logos/notion.svg" },
+      { name: "Asana", logo: "/logos/icons/asana.svg" },
+      { name: "ClickUp", logo: "/logos/icons/clickup.svg" },
+      { name: "Notion", logo: "/logos/icons/notion.svg" },
     ],
   },
   {
     group: "Automation",
     items: [
-      { name: "Zapier", logo: "/logos/zapier.svg" },
-      { name: "Make", logo: "/logos/make.svg" },
-      { name: "Airtable", logo: "/logos/airtable.svg" },
+      { name: "Zapier", logo: "/logos/icons/zapier.svg" },
+      { name: "Make", logo: "/logos/icons/make.svg" },
+      { name: "Airtable", logo: "/logos/icons/airtable.svg" },
     ],
   },
   {
     group: "Tracking & reporting",
     items: [
-      { name: "Google Sheets", logo: "/logos/google-sheets.svg" },
-      { name: "Excel", logo: "/logos/excel.svg" },
-      { name: "Looker Studio", logo: "/logos/looker.svg" },
+      { name: "Google Sheets", logo: "/logos/icons/google-sheets.svg" },
+      { name: "Excel", logo: "/logos/icons/excel.svg" },
+      { name: "Looker Studio", logo: "/logos/icons/looker.svg" },
     ],
   },
 ];
