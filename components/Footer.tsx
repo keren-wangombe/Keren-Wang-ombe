@@ -1,128 +1,53 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import { brand, contactMailto, footerCta, otherPortfolio, resumeFile, social } from "@/lib/site";
+import Link from "next/link";
+import { brand, footerTagline, otherPortfolio } from "@/lib/site";
 
 /**
- * Footer: a deep glow band carrying the closing line and the direct actions
- * (Email me, Resume, LinkedIn), then a slim byline strip with a back-to-top
- * control. Rendered in the site's palette — Signature navy, Amber, Paper.
- *
- * Hidden on /contact, where the same email/LinkedIn/resume actions already
- * live in the page body (so the footer would just duplicate them).
+ * Footer: a slim navy bar carrying the monogram + name, the copyright line, and
+ * the focus tagline. Contact actions live in the home "Hi, I'm Keren" strip and
+ * on the Contact page, so the footer stays quiet. Navy/amber brand palette.
  */
 export default function Footer() {
-  const pathname = usePathname();
-  if (pathname === "/contact") return null;
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="print:hidden">
-      {/* ── Full-bleed glow band: closing line + direct actions, end to end. */}
-      <div
-        className="relative overflow-hidden bg-signature text-paper"
-        style={{
-          backgroundImage:
-            "radial-gradient(ellipse 640px 360px at 15% 40%, rgba(217,119,6,0.16) 0%, transparent 60%), radial-gradient(ellipse 420px 260px at 92% 90%, rgba(250,250,248,0.06) 0%, transparent 55%)",
-        }}
-      >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full border border-paper/5"
-        />
-        <div className="container-content py-16 sm:py-20">
-          <div className="relative z-10 flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-            <div>
-              <h2 className="font-serif text-h2 font-light leading-tight text-paper">
-                {footerCta.heading}
-              </h2>
-              <p className="mt-3 max-w-md text-small text-paper/60">
-                {footerCta.blurb}
-              </p>
-            </div>
+    <footer className="bg-signature text-paper print:hidden">
+      <div className="container-content flex flex-col items-center gap-4 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
+        {/* Monogram + name */}
+        <Link href="/" className="group inline-flex items-center gap-2.5" aria-label={`${brand.name}, home`}>
+          <span
+            aria-hidden
+            className="grid h-8 w-8 place-items-center rounded-md border border-paper/40 font-serif text-sm font-semibold text-paper transition-colors duration-300 ease-calm group-hover:border-amber-bright"
+          >
+            KW
+          </span>
+          <span className="text-small font-semibold uppercase tracking-[0.08em] text-paper">
+            {brand.name}
+          </span>
+        </Link>
 
-            <div className="flex shrink-0 flex-col gap-3">
-              <div className="flex items-center gap-2.5">
-                <a
-                  href={contactMailto}
-                  className="inline-flex items-center gap-2 rounded-xl bg-amber-bright px-5 py-2.5 text-small font-medium text-ink transition-all duration-300 ease-calm hover:brightness-95"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  Email me
-                </a>
-                <a
-                  href={resumeFile}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-xl border border-paper/25 px-5 py-2.5 text-small font-medium text-paper/80 transition-all duration-300 ease-calm hover:bg-paper/5"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Resume
-                </a>
-                <a
-                  href={social.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                  className="grid h-10 w-10 place-items-center rounded-xl border border-paper/20 text-paper/50 transition-all duration-300 ease-calm hover:border-paper/40 hover:text-paper"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                    <rect x="2" y="9" width="4" height="12" />
-                    <circle cx="4" cy="4" r="2" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+        {/* Copyright */}
+        <p className="text-small text-paper/60">
+          © {year} {brand.name}. All rights reserved.
+        </p>
 
-      {/* ── Byline strip + back to top. */}
-      <div className="border-t border-ink/10 bg-paper">
-        <div className="container-content flex flex-wrap items-center justify-between gap-4 py-6">
-          <p className="font-serif text-small italic text-signature">
-            © {new Date().getFullYear()} {brand.name}
+        {/* Tagline (+ optional sibling-portfolio link) */}
+        <div className="flex flex-col items-center gap-1 sm:items-end">
+          <p className="inline-flex items-center gap-2 font-serif text-small italic text-paper/85">
+            {footerTagline}
+            <span aria-hidden className="text-amber-bright">
+              ♥
+            </span>
           </p>
-          <div className="flex items-center gap-6">
-            {otherPortfolio ? (
-              <a
-                href={otherPortfolio.href}
-                className="link-amber inline-flex items-center gap-1.5 text-small font-medium text-signature"
-              >
-                {otherPortfolio.label}
-                <span aria-hidden>→</span>
-              </a>
-            ) : null}
-            <BackToTop />
-          </div>
+          {otherPortfolio ? (
+            <a
+              href={otherPortfolio.href}
+              className="text-[0.8rem] text-paper/55 underline decoration-paper/30 underline-offset-2 transition-colors hover:text-amber-bright"
+            >
+              {otherPortfolio.label} →
+            </a>
+          ) : null}
         </div>
       </div>
     </footer>
-  );
-}
-
-/** Scroll-to-top control with a ringed arrow, matching the reference site. */
-function BackToTop() {
-  return (
-    <button
-      type="button"
-      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="group inline-flex items-center gap-2 text-small font-medium text-ink/50 transition-colors duration-300 ease-calm hover:text-signature"
-    >
-      Top
-      <span className="grid h-8 w-8 place-items-center rounded-full border border-ink/20 transition-colors duration-300 ease-calm group-hover:border-signature">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
-          <line x1="12" y1="19" x2="12" y2="5" />
-          <polyline points="5 12 12 5 19 12" />
-        </svg>
-      </span>
-    </button>
   );
 }

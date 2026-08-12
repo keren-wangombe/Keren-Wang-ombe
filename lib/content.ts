@@ -1117,3 +1117,123 @@ export const dataBioCloseText =
 /** /data work — analytics capability summary for the toolkit note. */
 export const dataToolkitNote =
   "The analysis and reporting tools behind the work: SQL and MySQL for querying and auditing, Excel for modelling, Power BI and Looker Studio for dashboards, and the automation that keeps the data current. The tools are the easy part — the judgment about which number matters, and why, is the work.";
+
+/* ── Home page (mockup layout) ─────────────────────────────────────────
+   Plain-language content for the redesigned home page, written so someone
+   who has never heard the term "data analysis" understands what they'd be
+   hiring me to do. Navy/amber brand, same components on both portfolios. */
+
+export type IconKey =
+  | "chart" | "people" | "database" | "clock"
+  | "search" | "explore" | "query" | "dashboard" | "bulb"
+  | "coordinate" | "onboard" | "gear";
+
+export type HeroToolGroup = { group: string; items: Tool[] };
+export type StatItem = { value: string; label: string; sub: string; icon: IconKey };
+export type WhatIDoItem = { icon: IconKey; title: string; body: string };
+export type FeaturedCard = {
+  image: string;
+  title: string;
+  body: string;
+  tags: string[];
+  href: string;
+};
+export type ApproachStep = { n: string; title: string; body: string };
+
+/** Home hero — headline + plain intro + primary call to action. */
+export const homeHero = {
+  kicker: "Data Analytics · Business Intelligence · Reporting",
+  title: "I turn data into answers people can act on.",
+  intro:
+    "I analyse data, build clear reports and dashboards, and find the insights that help teams make better decisions, improve performance and solve real problems.",
+  primaryCta: { label: "View selected analyses", href: "/work" },
+};
+
+/** Tools shown in the hero "Tools I use" card, grouped by what they're for. */
+export const heroToolGroups: HeroToolGroup[] = [
+  {
+    group: "Analysis",
+    items: [
+      { name: "Excel", logo: "/logos/excel.svg" },
+      { name: "SQL", logo: "/logos/sql.svg" },
+      { name: "Google Sheets", logo: "/logos/google-sheets.svg" },
+    ],
+  },
+  {
+    group: "Charts & dashboards",
+    items: [
+      { name: "Power BI", logo: "/logos/power-bi.svg" },
+      { name: "Looker Studio", logo: "/logos/looker.svg" },
+    ],
+  },
+  {
+    group: "Everything else",
+    items: [
+      { name: "Notion", logo: "/logos/notion.svg" },
+      { name: "Canva", logo: "/logos/canva.svg" },
+    ],
+  },
+];
+
+/** Home stat strip — four quick, plain proof points. */
+export const homeStats: StatItem[] = [
+  { value: "25%", label: "of support tickets found being answered late", sub: "Support ticket analysis", icon: "chart" },
+  { value: "$1,118+", label: "average value of the top 5% of customers", sub: "Sales analysis", icon: "people" },
+  { value: "100%", label: "clean, accurate data after a full quality check", sub: "National survey data", icon: "database" },
+  { value: "20+ hrs", label: "of decisions supported with clear reports", sub: "Dashboards & reports", icon: "clock" },
+];
+
+/** "What I do" — five plain descriptions of the work. */
+export const whatIDo: WhatIDoItem[] = [
+  { icon: "search", title: "Cleaning & checking data", body: "I make data accurate and reliable by cleaning it and checking it for errors before anyone relies on it." },
+  { icon: "explore", title: "Finding patterns", body: "I explore the numbers to spot trends and explain what is really happening, and why." },
+  { icon: "query", title: "Answering questions with data", body: "I pull and combine data (using SQL) to answer specific business questions." },
+  { icon: "dashboard", title: "Reports & dashboards", body: "I build clear dashboards and reports that track how things are going and support decisions." },
+  { icon: "bulb", title: "Explaining what to do next", body: "I turn the findings into a clear story and practical recommendations people can act on." },
+];
+
+/** Featured work cards — three, each with a project image and plain summary. */
+export const featuredCards: FeaturedCard[] = [
+  {
+    image: "/projects/support.svg",
+    title: "Support ticket analysis",
+    body: "Looked at 2,150 support requests to see where help was arriving late, what was causing the delays, and where to improve.",
+    tags: ["SQL", "Power BI", "Analysis"],
+    href: "/work#support",
+  },
+  {
+    image: "/projects/ecommerce.svg",
+    title: "Sales & customer analysis",
+    body: "Studied a year of sales to understand who buys, group the customers, and find the most valuable ones.",
+    tags: ["Excel", "Analysis", "Dashboards"],
+    href: "/work#ecommerce",
+  },
+  {
+    image: "/projects/maji.svg",
+    title: "National water survey check",
+    body: "Reviewed a national water survey for gaps and errors and produced one clean, trustworthy set of data.",
+    tags: ["SQL", "Data cleaning", "Data quality"],
+    href: "/work#maji",
+  },
+];
+
+/** Label on the "see everything" button under the featured cards. */
+export const viewAllWorkLabel = "View all data analysis work";
+
+/** "My approach" — five simple steps. */
+export const approachHeading = "My approach to data analysis";
+export const approachSteps: ApproachStep[] = [
+  { n: "1", title: "Understand", body: "Get clear on the question and what a good answer looks like." },
+  { n: "2", title: "Prepare", body: "Collect, clean and check the data so it can be trusted." },
+  { n: "3", title: "Analyse", body: "Explore the data to find the insights that matter." },
+  { n: "4", title: "Visualise", body: "Build clear charts and dashboards that tell the story." },
+  { n: "5", title: "Recommend", body: "Share the insights and the actions to take next." },
+];
+
+/** Home "Hi, I'm Keren" strip. */
+export const aboutStrip = {
+  greeting: "Hi, I'm Keren.",
+  bio: "I enjoy using data to solve problems, improve performance and support better decisions. Let's turn your data into insights that make a difference.",
+  ctaHeading: "Looking for someone who can make sense of your data and turn it into clear next steps?",
+  ctaSub: "Let's connect and explore how I can help your team.",
+};

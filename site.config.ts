@@ -3,27 +3,26 @@ import type { FocusConfig } from "@/lib/focus";
 /**
  * Data portfolio — focus configuration.
  *
- * This is the ONLY file that makes this build the Data site. The shared design
- * system, components and content library are identical to the Operations
- * portfolio; the `key` below tells shared pages to surface the data slice
- * (analytics, reporting, SQL/BI), and the strings set the brand voice for this
- * focus.
+ * This is the ONLY file that sets this site's brand voice. `key` tells the
+ * pages to surface the data slice of the content library; the strings below
+ * set the plain-language identity used across the header, footer and meta.
  */
 export const focus: FocusConfig = {
   key: "data",
-  byline: "Data · Analytics · Insight",
+  byline: "Data Analytics · Reporting · Insights",
   oneLine:
-    "I turn raw operational data into reporting and analysis that changes what happens next.",
-  mailtoSubject: "Data & analytics enquiry",
+    "I analyse data, build clear reports and dashboards, and find the insights that help teams make better decisions.",
+  mailtoSubject: "Data analysis enquiry",
   nav: [
-    { href: "/about", label: "About" },
     { href: "/work", label: "Work" },
+    { href: "/contact", label: "Contact" },
   ],
   footer: {
-    heading: "Let’s make the number clear.",
+    heading: "Let’s turn your data into clear next steps.",
     blurb:
-      "SQL analysis, executive dashboards, KPI frameworks and data storytelling — reporting built around the decision it should change.",
+      "I analyse data, build reports and dashboards, and find the insights that help teams make better decisions.",
   },
+  footerTagline: "Data tells the story. Insights drive the action.",
   otherPortfolio: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL
     ? {
         label: "Operations portfolio",
