@@ -1,28 +1,24 @@
 import type { Metadata } from "next";
-import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
-import Doodle from "@/components/Doodle";
 import { bioCloseText, bioRoles, bioStory } from "@/lib/content";
 import { aboutPortrait } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "An operations and analytics professional who builds the automation, tracking, and reporting systems that turn operational chaos into scale.",
+    "An operations professional who coordinates programmes and builds the simple systems that keep the work moving.",
 };
 
-/** Key facts/metrics to bold in the bio so the important bits catch the eye. */
+/** Key facts to bold in the bio so the important bits catch the eye. */
 const HIGHLIGHTS = [
   "thousands of learners across twelve countries",
-  "Google Apps Script, SQL, Excel, Power BI",
-  "data quality is an operational discipline",
+  "data quality is a discipline",
   "86% completion rate",
   "81% learner satisfaction",
   "98% data accuracy",
   "1,046 learners",
   "more than 15 hours",
-  "reliable system",
   "50%",
 ];
 
@@ -31,9 +27,7 @@ function highlight(text: string) {
   const re = new RegExp(`(${escaped.join("|")})`, "g");
   return text.split(re).map((part, i) =>
     HIGHLIGHTS.includes(part) ? (
-      <strong key={i} className="font-semibold text-signature">
-        {part}
-      </strong>
+      <strong key={i} className="font-semibold text-signature">{part}</strong>
     ) : (
       part
     ),
@@ -43,49 +37,44 @@ function highlight(text: string) {
 export default function AboutPage() {
   return (
     <>
-      {/* ── Dark hero with a quiet animated glow behind the copy. */}
-      <PageBanner
-        animated
-        kicker="About"
-        title="I work at the seam of operations and analytics."
-        intro={
-          <p>
-            Operations and analytics ask the same question: how do we make this
-            run better? I build the automation, tracking, and reporting systems
-            behind programmes reaching thousands of participants, with a GIS and
-            open-mapping background underneath it.
-          </p>
-        }
-        figure={
-          <div className="relative mx-auto w-full max-w-[15rem] overflow-hidden rounded-3xl border border-amber/50 shadow-2xl shadow-ink/60 ring-1 ring-paper/10">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={aboutPortrait}
-              alt="Keren Wang'ombe"
-              className="aspect-[4/5] w-full object-cover"
-            />
-          </div>
-        }
-      />
+      {/* ── Compact hero: copy + portrait (matches home). */}
+      <section className="relative isolate overflow-hidden border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
+        <div className="container-content grid items-center gap-8 py-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <Reveal>
+            <p className="kicker text-amber">About</p>
+            <h1 className="mt-3 font-serif text-h1 font-light leading-[1.08] text-signature">
+              I make everyday operations easier to run.
+            </h1>
+            <p className="mt-4 max-w-xl text-body text-ink/75">
+              I coordinate programmes and build the simple systems behind them, so
+              teams stay organised, leaders can see what&rsquo;s happening, and the
+              people they serve get a better experience.
+            </p>
+          </Reveal>
+          <Reveal className="relative order-first lg:order-none">
+            <div aria-hidden className="absolute -right-2 -top-3 hidden h-full w-full rounded-3xl bg-amber/15 lg:block lg:translate-x-3 lg:translate-y-3" />
+            <div className="relative mx-auto max-w-[15rem] overflow-hidden rounded-3xl border border-ink/10 shadow-xl shadow-ink/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={aboutPortrait} alt="Keren Wang'ombe" className="aspect-[4/5] w-full object-cover" />
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* ── The story, two columns so it fills the width (heading | narrative). */}
-      <section className="relative isolate overflow-hidden py-9 sm:py-12">
-        <Doodle name="wave" className="absolute -right-6 top-6 hidden h-40 w-40 text-amber/[0.12] lg:block" />
+      {/* ── The story. */}
+      <section className="py-9 sm:py-11">
         <div className="container-content">
           <Reveal>
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1.28fr)] lg:gap-14">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-14">
               <div>
-                <span className="block h-px w-14 bg-amber" aria-hidden />
-                <h2 className="mt-5 font-serif text-h2 font-light text-signature">
-                  Operations, analytics, and the systems that connect them
+                <span className="block h-px w-11 bg-amber" aria-hidden />
+                <h2 className="mt-4 font-serif text-h2 font-light text-signature">
+                  How I work
                 </h2>
-                <Doodle name="nodes" className="mt-8 hidden h-44 w-44 text-signature/[0.12] lg:block" />
               </div>
-              <div className="space-y-4 lg:pt-1">
+              <div className="space-y-3.5">
                 {bioStory.map((para, i) => (
-                  <p key={i} className="text-body text-ink">
-                    {highlight(para)}
-                  </p>
+                  <p key={i} className="text-body text-ink/80">{highlight(para)}</p>
                 ))}
               </div>
             </div>
@@ -93,45 +82,33 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── The three roles + close line, on a navy tint band. */}
-      <section className="relative isolate overflow-hidden border-y border-signature/10 bg-signature/[0.05]">
-        <Doodle name="loop" className="absolute left-6 top-1/2 hidden h-32 w-32 -translate-y-1/2 text-signature/[0.10] lg:block" />
-        <Doodle name="flow" className="absolute right-6 top-1/2 hidden h-32 w-32 -translate-y-1/2 text-signature/[0.10] lg:block" />
-        <div className="container-content py-8 sm:py-10 text-center">
+      {/* ── Roles + close line, navy tint. */}
+      <section className="border-y border-signature/10 bg-signature/[0.05]">
+        <div className="container-content py-8 text-center">
           <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-serif text-h1 font-light leading-none text-signature">
               {bioRoles.map((role, i) => (
                 <span key={role} className="inline-flex items-center gap-x-5">
-                  {i > 0 ? (
-                    <span className="text-amber" aria-hidden>
-                      ·
-                    </span>
-                  ) : null}
+                  {i > 0 ? <span className="text-amber" aria-hidden>·</span> : null}
                   {role}
                 </span>
               ))}
             </div>
-            <p className="mx-auto mt-6 max-w-2xl text-body text-ink">{bioCloseText}</p>
+            <p className="mx-auto mt-5 max-w-2xl text-body text-ink/80">{bioCloseText}</p>
           </Reveal>
         </div>
       </section>
 
-      {/* ── CTA, on a warm amber wash. */}
-      <section className="relative isolate overflow-hidden border-t border-amber/20 bg-amber/10">
-        <Doodle name="sparks" className="absolute left-8 top-8 hidden h-28 w-28 text-amber/[0.18] lg:block" />
-        <Doodle name="orbit" className="absolute right-8 bottom-6 hidden h-28 w-28 text-amber/[0.15] lg:block" />
-        <div className="container-content py-9 sm:py-12">
+      {/* ── CTA, warm amber wash. */}
+      <section className="border-t border-amber/20 bg-amber/[0.08]">
+        <div className="container-content py-9 sm:py-11">
           <Reveal className="text-center">
-            <h2 className="mx-auto max-w-2xl font-serif text-h1 font-light text-ink">
-              If any of this resonates, let&rsquo;s connect.
+            <h2 className="mx-auto max-w-2xl font-serif text-h2 font-light text-ink">
+              If any of this sounds like what you need, let&rsquo;s connect.
             </h2>
-            <div className="mt-6 flex flex-wrap justify-center gap-4">
-              <Button href="/work" variant="accent">
-                See my work
-              </Button>
-              <Button href="/contact" variant="ghost">
-                Get in touch
-              </Button>
+            <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <Button href="/work" variant="primary">See my work</Button>
+              <Button href="/contact" variant="ghost">Get in touch</Button>
             </div>
           </Reveal>
         </div>
