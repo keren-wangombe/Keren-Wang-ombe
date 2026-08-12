@@ -578,13 +578,29 @@ const additionalTitleOverrides: Record<string, string> = {
   maji: "Auditing national water-survey data for reporting integrity",
 };
 
+const withOverriddenTitle = (item: CaseStudyItem): CaseStudyItem => ({
+  ...item,
+  title: additionalTitleOverrides[item.id] ?? item.title,
+});
+
 export const additionalWork: CaseStudyItem[] = caseStudyTiers
   .flatMap((tier) => tier.items)
   .filter((item) => item.id !== "delivery")
-  .map((item) => ({
-    ...item,
-    title: additionalTitleOverrides[item.id] ?? item.title,
-  }));
+  .map(withOverriddenTitle);
+
+/**
+ * Focus-split of the case studies, so each portfolio shows only its own work.
+ * Operations = Tier 1 (systems, automation, coordination); Data = Tier 2
+ * (analytics, reporting, SQL/BI). `delivery` is excluded from the operations
+ * list because it is promoted into `featuredWork` above.
+ */
+export const operationsWork: CaseStudyItem[] = caseStudyTiers[0].items
+  .filter((item) => item.id !== "delivery")
+  .map(withOverriddenTitle);
+
+export const dataWork: CaseStudyItem[] = caseStudyTiers[1].items.map(
+  withOverriddenTitle,
+);
 
 /** The three case studies surfaced on the home page. `href` deep-links to the
     matching card on the Work page (the id anchors on caseStudyTiers items). */
@@ -916,6 +932,30 @@ export const faqs: FaqItem[] = [
   },
 ];
 
+/** FAQ for the Data portfolio (analytics-voiced). */
+export const dataFaqs: FaqItem[] = [
+  {
+    question: "What kind of work are you looking for?",
+    answer:
+      "Data analyst, reporting/BI, and operations-analytics roles, plus analytics advisory for founders and programme teams. If it involves turning messy data into a number leadership can act on, it's the right conversation.",
+  },
+  {
+    question: "Analytics or operations, which is it?",
+    answer:
+      "My focus here is analytics — SQL, dashboards, and reporting — but it's grounded in real operations, which is what keeps the reporting honest. Reliable decisions need reliable data, and reliable data starts with the process that captures it. The Work page has examples.",
+  },
+  {
+    question: "Which tools do you actually build in?",
+    answer:
+      "SQL and MySQL (CTEs, window functions) for querying and auditing, Excel for modelling, and Power BI and Looker Studio for dashboards. The tool follows the question, not the other way around.",
+  },
+  {
+    question: "Do you work with teams as well as founders?",
+    answer:
+      "Yes. Advisory is focused on helping founders and programme teams build the reporting layer and KPI framework to steer by. Start with an inquiry and we'll find the right shape.",
+  },
+];
+
 export type BioLength = {
   label: string;
   text: string;
@@ -954,3 +994,126 @@ export const bioPersonal =
 export const bioRoles = ["Builder", "Operator", "Analyst"];
 export const bioCloseText =
   "I build the systems that turn operational chaos into scale, and the reporting that keeps them honest.";
+
+/* ── Data portfolio: focused copy ──────────────────────────────────────
+   The same person and the same defensible figures as above, told from the
+   analytics side: reporting, SQL/BI, KPI frameworks, and the decisions the
+   numbers change. Consumed only by the Data site (sites/data); the Operations
+   site keeps the exports above. Kept here, beside their operations
+   counterparts, so both portfolios draw from one content library. */
+
+/** /data home — outcome-led analytics metrics, each drawn from a real project. */
+export const dataOutcomes: Outcome[] = [
+  {
+    metric: "86%",
+    metricLabel: "completion, reported end to end",
+    title: "Reported a programme from 2,032 registrations to 900 graduates.",
+    body: "Executive reporting tracked a cybersecurity cohort's full funnel to an 86% graduation rate and 81% CSAT, with live dashboards that surfaced where delivery was slipping while there was still time to act.",
+    hero: true,
+  },
+  {
+    metric: "25%",
+    metricLabel: "of tickets found breaching SLA",
+    title: "Found a quarter of support tickets breaching SLA.",
+    body: "A 15-query SQL audit of ticket ageing, ownership and escalation exposed that 25% of tickets breached the 14-day SLA — multi-agent handoffs the primary bottleneck — and put it in an executive Power BI dashboard.",
+  },
+  {
+    metric: "$1,118+",
+    metricLabel: "lifetime value, top 5% of customers",
+    title: "Segmented a year of sales into decisions.",
+    body: "An Excel analytics system found the top 5% of customers driving $1,118+ in lifetime value and Electronics as a high-margin category hiding at 6% of sales — a clear growth lever for inventory and marketing.",
+  },
+  {
+    metric: "98%",
+    metricLabel: "data accuracy across 12 countries",
+    title: "Held reporting to 98% accuracy across 12 countries.",
+    body: "A self-updating tracker reconciled scattered programme data into one weekly source of truth at 98% accuracy — so leadership steered by a number they could trust, not four spreadsheets that disagreed.",
+  },
+];
+
+/** /data home — the analytics service categories, four-column grid. */
+export const dataServices: Service[] = [
+  {
+    icon: "reporting",
+    title: "Executive reporting & dashboards",
+    body: "I build the reporting layer that shows leadership where delivery is slipping while there's still time to act — Power BI, Looker Studio, and scorecards built around a decision.",
+  },
+  {
+    icon: "systems",
+    title: "SQL analysis & auditing",
+    body: "I query operational data with CTEs and window functions to surface SLA breaches, customer segments, seasonal demand and data-integrity issues.",
+  },
+  {
+    icon: "process",
+    title: "KPI frameworks & modelling",
+    body: "I turn a decision into the metrics that steer it — Excel models, funnels and KPI frameworks built around what should happen next, not a vanity slide.",
+  },
+  {
+    icon: "team",
+    title: "Data cleaning & storytelling",
+    body: "I clean and reconcile messy data until it can be trusted, then make the number legible — a chart, a read, a clear recommendation a non-analyst can act on.",
+  },
+];
+
+/** /data home — problem-recognition prompts in an analytics voice. */
+export const dataProblemPrompts = {
+  heading: "Does this sound familiar?",
+  items: [
+    "Leadership is steering on gut feel because the reporting lands too late to act on.",
+    "The data lives in four systems, and nobody trusts the number when it finally arrives.",
+    "You have dashboards, but none of them answers the question you actually have.",
+  ],
+} as const;
+
+/** /data home — central positioning for the analytics practice. */
+export const dataPositioning = {
+  heading: "I build the number, and the decision it should change.",
+  paragraphs: [
+    "I start from the decision, not the dataset: what will change once we can see this clearly? Then I build the reporting that answers it.",
+    "I'm comfortable in the query and the spreadsheet — SQL joins and window functions, Excel models, Power BI and Looker dashboards — cleaning and reconciling data until it can be trusted.",
+    "A dashboard nobody reads is waste. I build the reporting layer around a real operational decision, and make it legible to the people who steer by it.",
+  ],
+} as const;
+
+/** /data home — the analytics delivery process, four-step strip. */
+export const dataProcessSteps: { step: string; title: string; body: string }[] = [
+  {
+    step: "01",
+    title: "Define",
+    body: "Start from the decision — what should change once this is visible — and name the metric that moves it.",
+  },
+  {
+    step: "02",
+    title: "Model",
+    body: "Clean, join and reconcile the data until the number can be trusted end to end.",
+  },
+  {
+    step: "03",
+    title: "Analyse",
+    body: "Query for the pattern — SLA breaches, segments, seasonality, integrity gaps — with SQL, Excel, and window functions.",
+  },
+  {
+    step: "04",
+    title: "Report",
+    body: "Put it in front of the people who steer by it: a dashboard, a scorecard, a clear read they can act on.",
+  },
+];
+
+/** /data about — the same story, told from the analytics side. */
+export const dataBioStory: string[] = [
+  "When leadership has to make a call, I want the number in front of them to be one they can trust. Building the reporting that makes that true is most of my work.",
+  "For the past three years I've built the analytics and reporting layer behind programmes serving thousands of learners across twelve countries — the executive dashboards, funnels and trackers that show where delivery is working and where it isn't.",
+  "Accurate reporting carried one cohort of 1,046 learners to an 86% completion rate at 81% learner satisfaction, and a self-updating tracker held 98% data accuracy across programme operations. A 15-query SQL audit exposed that 25% of support tickets were breaching SLA, and an Excel segmentation surfaced the top 5% of customers driving $1,118+ in lifetime value.",
+  "My toolkit is SQL and MySQL (CTEs, window functions), Excel modelling, and Power BI and Looker Studio — but the tools are never the point. The value is a number a team trusts and a decision it actually changes.",
+  "Analytics and operations are closely connected in my work: reliable decisions require reliable data, and reliable data begins with processes designed to capture it accurately. That operational instinct is what keeps my reporting honest.",
+  "My approach is also shaped by a background in GIS and open mapping, where I first learned that data quality is a discipline, not an afterthought.",
+];
+
+/** /data about — three roles set apart from the closing statement. */
+export const dataBioRoles = ["Analyst", "Builder", "Storyteller"];
+export const dataBioCloseText =
+  "I build the analysis that turns operational data into decisions, and the reporting that keeps them honest.";
+
+/** /data work — analytics capability summary for the toolkit note. */
+export const dataToolkitNote =
+  "The analysis and reporting tools behind the work: SQL and MySQL for querying and auditing, Excel for modelling, Power BI and Looker Studio for dashboards, and the automation that keeps the data current. The tools are the easy part — the judgment about which number matters, and why, is the work.";

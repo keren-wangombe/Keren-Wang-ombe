@@ -3,27 +3,28 @@ import PageBanner from "@/components/PageBanner";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import Doodle from "@/components/Doodle";
-import { bioCloseText, bioRoles, bioStory } from "@/lib/content";
+import { dataBioCloseText, dataBioRoles, dataBioStory } from "@/lib/content";
 import { aboutPortrait } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "An operations and analytics professional who builds the automation, tracking, and reporting systems that turn operational chaos into scale.",
+    "A data and analytics professional who builds the reporting, SQL analysis and dashboards that turn operational data into decisions leaders can trust.",
 };
 
 /** Key facts/metrics to bold in the bio so the important bits catch the eye. */
 const HIGHLIGHTS = [
   "thousands of learners across twelve countries",
-  "Google Apps Script, SQL, Excel, Power BI",
-  "data quality is an operational discipline",
+  "SQL and MySQL",
+  "Power BI and Looker Studio",
+  "data quality is a discipline",
   "86% completion rate",
   "81% learner satisfaction",
   "98% data accuracy",
   "1,046 learners",
-  "more than 15 hours",
-  "reliable system",
-  "50%",
+  "$1,118+",
+  "25% of support tickets",
+  "15-query SQL audit",
 ];
 
 function highlight(text: string) {
@@ -47,13 +48,12 @@ export default function AboutPage() {
       <PageBanner
         animated
         kicker="About"
-        title="I work at the seam of operations and analytics."
+        title="I build the number, and the decision it should change."
         intro={
           <p>
-            Operations and analytics ask the same question: how do we make this
-            run better? I build the automation, tracking, and reporting systems
-            behind programmes reaching thousands of participants, with a GIS and
-            open-mapping background underneath it.
+            I turn raw operational data into reporting leaders can trust — SQL
+            analysis, executive dashboards and KPI frameworks built around a
+            decision, with a GIS and open-mapping background underneath it.
           </p>
         }
         figure={
@@ -77,12 +77,12 @@ export default function AboutPage() {
               <div>
                 <span className="block h-px w-14 bg-amber" aria-hidden />
                 <h2 className="mt-5 font-serif text-h2 font-light text-signature">
-                  Operations, analytics, and the systems that connect them
+                  Analytics, reporting, and the decisions they steer
                 </h2>
                 <Doodle name="nodes" className="mt-8 hidden h-44 w-44 text-signature/[0.12] lg:block" />
               </div>
               <div className="space-y-4 lg:pt-1">
-                {bioStory.map((para, i) => (
+                {dataBioStory.map((para, i) => (
                   <p key={i} className="text-body text-ink">
                     {highlight(para)}
                   </p>
@@ -100,7 +100,7 @@ export default function AboutPage() {
         <div className="container-content py-8 sm:py-10 text-center">
           <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-serif text-h1 font-light leading-none text-signature">
-              {bioRoles.map((role, i) => (
+              {dataBioRoles.map((role, i) => (
                 <span key={role} className="inline-flex items-center gap-x-5">
                   {i > 0 ? (
                     <span className="text-amber" aria-hidden>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </span>
               ))}
             </div>
-            <p className="mx-auto mt-6 max-w-2xl text-body text-ink">{bioCloseText}</p>
+            <p className="mx-auto mt-6 max-w-2xl text-body text-ink">{dataBioCloseText}</p>
           </Reveal>
         </div>
       </section>

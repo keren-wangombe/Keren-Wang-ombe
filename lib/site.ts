@@ -1,14 +1,36 @@
 /**
  * Site-wide configuration: brand strings + navigation.
- * Kept in one place so nav order and byline never drift between header/footer.
+ *
+ * This module is SHARED by both portfolios (Operations and Data). Everything
+ * that is genuinely common — the person's name, contact addresses, socials,
+ * banner/portrait paths — lives here as a single source of truth. The pieces
+ * that differ between the two portfolios (byline, one-liner, nav, the enquiry
+ * subject line, and which focus this build is) come from each site's own
+ * `site.config.ts`, imported below via the `@/site.config` alias that each
+ * site's tsconfig maps to its local file. Edit shared brand here once and it
+ * changes on both sites; edit the focus in a site's `site.config.ts` and it
+ * changes only that portfolio.
  */
+
+import { focus } from "@/site.config";
+import type { NavItem } from "@/lib/focus";
+
+export type { NavItem };
 
 export const brand = {
   name: "Keren Wang'ombe",
-  byline: "Operations · Systems · Analytics",
-  oneLine:
-    "I take ownership of the day-to-day work and improve the processes that keep it moving.",
+  byline: focus.byline,
+  oneLine: focus.oneLine,
 } as const;
+
+/** Which portfolio this build is — used by pages to select focused content. */
+export const focusKey = focus.key;
+
+/** Optional link to the sibling portfolio (the other focus), if configured. */
+export const otherPortfolio = focus.otherPortfolio;
+
+/** Footer closing line + blurb, in this portfolio's voice. */
+export const footerCta = focus.footer;
 
 /**
  * Per-page banner images. Each page opens on a full-bleed banner.
@@ -53,31 +75,24 @@ export const heroLoomEmbed =
  */
 export const linkedinEmbedUrl = "";
 
-export type NavItem = {
-  href: string;
-  label: string;
-  /** Optional dropdown children (one level of nesting supported). */
-  children?: NavItem[];
-};
-
 /**
- * NAV is deliberately minimal. The KW monogram goes home; About, Work, and
- * Contact (rendered as the header CTA) are the tabs.
+ * NAV is deliberately minimal. The KW monogram goes home; About and Work are
+ * the tabs (Contact renders as the header CTA). Focus-specific because each
+ * portfolio provides its own nav in site.config.
  */
-export const nav: NavItem[] = [
-  { href: "/about", label: "About" },
-  { href: "/work", label: "Work" },
-];
+export const nav: NavItem[] = focus.nav;
 
 /** Primary contact email, shown for general inquiries and booking. */
 export const contactEmail = "kerenwangombe@gmail.com";
 
 /**
- * Prefilled mailto for operations-support enquiries. Every "Email me" action
- * points here so a reply lands pre-tagged; the displayed address stays
- * {@link contactEmail}. Keep the subject URL-encoded.
+ * Prefilled mailto for enquiries. Every "Email me" action points here so a
+ * reply lands pre-tagged with the portfolio's focus; the displayed address
+ * stays {@link contactEmail}. The subject is set per-site in site.config.
  */
-export const contactMailto = `mailto:${contactEmail}?subject=Operations%20support%20enquiry`;
+export const contactMailto = `mailto:${contactEmail}?subject=${encodeURIComponent(
+  focus.mailtoSubject,
+)}`;
 
 /** Resume, linked from /contact. Drop the real PDF over /public/resume.pdf. */
 export const resumeFile = "/resume.pdf";

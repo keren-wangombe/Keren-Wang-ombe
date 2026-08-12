@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import FaqList from "@/components/FaqList";
 import InquiryForm from "@/components/InquiryForm";
-import { faqs } from "@/lib/content";
+import { dataFaqs } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -28,7 +28,7 @@ export default function FaqPage() {
       {/* FAQ content is content-managed in production (editable without redeploy). */}
       <section className="container-content py-8 sm:py-12">
         <Reveal>
-          <FaqList items={faqs} />
+          <FaqList items={dataFaqs} />
         </Reveal>
       </section>
 

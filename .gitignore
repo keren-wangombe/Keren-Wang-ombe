@@ -3,9 +3,10 @@
 /.pnp
 .pnp.*
 
-# next.js
-/.next/
+# next.js — per-site build output lives under sites/*/.next
+.next/
 /out/
+sites/*/out/
 
 # production
 /build

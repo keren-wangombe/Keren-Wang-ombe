@@ -1,91 +1,65 @@
-# Keren Wang'ombe — Portfolio
+# Keren Wang'ombe — Data & Analytics Portfolio
 
-**Operations · Systems · Analytics** — a calm, premium, substantive
+**Data · Analytics · Insight** — turning raw operational data into reporting and
+analysis that changes what happens next. A calm, premium, substantive
 personal-brand site built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
-> I turn operational chaos into scalable systems — messy cohort data, manual
-> workflows, and scattered pipelines into automation that runs itself.
+> This branch (`main`) is the **Data / Analytics** portfolio. Its sibling, the
+> **Operations** portfolio, lives on the `operations` branch. The two are
+> maintained as separate branches (and deploy as separate sites); they share the
+> same visual design but are independent codebases.
 
 ## Getting started
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # production build (static where possible)
+npm run build    # production build
 npm run start    # serve the production build
 ```
 
-## Design system
+## Deploying to Vercel
 
-The brand is enforced through the theme, not page-by-page styling.
+This branch (`main`) deploys as its own Vercel project:
 
-### Color — the 7-core system (`tailwind.config.ts`)
+1. **New Project → Import** this repository.
+2. Keep the **Production Branch** as `main` (Vercel's default).
+3. Framework preset **Next.js** (auto-detected); leave build/output defaults.
+4. **Deploy**, then attach a domain/subdomain (e.g. `data.yourdomain.com`).
 
-| Token | Hex | Role |
-| --- | --- | --- |
-| Ink | `#111827` | Headline / text / contrast (and dark surfaces) |
-| Signature (navy) | `#1B3A6B` | The brand heart — primary buttons, key headings, deep surfaces |
-| Blue-lift | `#3D6491` | Links, hover / active / focus only |
-| Paper | `#FAFAF8` | Default background — never pure white |
-| Amber | `#B45309` | Warm accent for text / labels / rules — AA on paper |
-| Amber-bright | `#D97706` | Warm accent for fills / icons / CTAs (dark text on top) |
-| Border | `#E5E7EB` | Quiet hairlines |
+Deploy the `operations` branch as a **second** Vercel project (set that
+project's Production Branch to `operations`) for the Operations portfolio.
 
-Reference colors **semantically** (`bg-background`, `text-foreground`,
-`bg-signature`, `text-link`, `text-amber`). Amber splits by use: `text-amber`
-(`#B45309`) stays AA-legible on paper; `bg-amber-bright` (`#D97706`) carries
-solid fills and icons with dark text on top. Section _temperature_ (cool /
-balanced / warm) is dialed only by the amount of amber and light — the felt
-colors never change.
-
-### Typography
-
-- **Playfair Display** (editorial serif) — all headlines/display, loaded via `next/font`.
-- **Inter** — body, UI, labels, buttons.
-- Tight scale (`display / h1 / h2 / body / small`), generous line-height,
-  restrained weights. Emphasis comes from size and space, not bold-everything.
-
-### Motion (`app/globals.css`, `components/Reveal.tsx`)
-
-- Slow, eased scroll reveals (fire once) are the default motion.
-- Hero headline does a single slow rise on load.
-- Page transitions dissolve via `app/template.tsx`.
-- `prefers-reduced-motion` is honored everywhere.
+Optional cross-link: set `NEXT_PUBLIC_OTHER_PORTFOLIO_URL` to the Operations
+site's URL and this site's footer will link to it.
 
 ## Structure
 
 ```
-app/
-  layout.tsx          Root layout: fonts, header, footer, skip-link
-  template.tsx        Page-transition dissolve
-  globals.css         Tokens-in-CSS, reveal + reduced-motion rules
-  page.tsx            / (home — balanced)
-  work/               /work (executive)
-  start-here/         /start-here (warm)
-  resources/          /resources + /resources/[slug]
-  live/               /live
-  speaking/           /speaking (executive)
-  advisory/           /advisory (executive)
-  about/              /about (warmest)
-  faq/                /faq
-  contact/            /contact
-components/           Header, Footer, Reveal, Button, forms, etc.
+app/            App Router pages (home, work, about, contact, faq, legal, …)
+  fonts.ts      Playfair Display + Inter via next/font
+  globals.css   Tokens-in-CSS, reveal + reduced-motion rules
+components/      Header, Footer, cards, forms, motion primitives
 lib/
-  site.ts             Nav order, byline, social handles
-  content.ts          Sample content (the integration seam)
+  content.ts    All portfolio content (the integration seam)
+  site.ts       Shared brand constants; reads site.config.ts
+  focus.ts      FocusConfig type
+site.config.ts  This site's focus: byline, nav, footer voice, enquiry subject
+tailwind.config.ts   The 7-core color system + type scale
 ```
+
+## Design system
+
+- **Color** — the 7-core system in `tailwind.config.ts` (Ink, Signature navy,
+  Blue-lift, Paper, Amber, Amber-bright, Border). Reference colors semantically
+  (`bg-signature`, `text-amber`, `bg-background`).
+- **Type** — Playfair Display for headlines, Inter for body/UI.
+- **Motion** — slow eased scroll reveals; `prefers-reduced-motion` honored.
 
 ## Integration seams (intentionally not wired)
 
-The UI is built; the data sources are left as clean seams:
-
-- **Resource downloads** — `Resource.downloadUrl` in `lib/content.ts`
-  (wire to R2 / object-store signed URLs).
-- **Form submissions** — `EmailCapture` and `InquiryForm` validate and reflect
-  state but do not POST; wire the marked `TODO(integration)` handlers to your
-  provider (e.g. Supabase / email / CRM).
-- **Social feeds** — the footer and home "latest" strip reserve space for a
-  live YouTube fetch and cached X / LinkedIn embeds.
-- **FAQ** — `faqs` is a seed; back it with a CMS/Supabase to edit without redeploy.
+- **Form submissions** — `InquiryForm` / `EmailCapture` validate but do not POST;
+  wire the `TODO(integration)` handlers to your provider.
+- **FAQ** — `dataFaqs` in `lib/content.ts` is a seed; back it with a CMS/Supabase.
 
 All content lives in `lib/content.ts` — swap the source, keep the components.
