@@ -1131,8 +1131,16 @@ export type IconKey =
 export type HeroToolGroup = { group: string; items: Tool[] };
 export type StatItem = { value: string; label: string; sub: string; icon: IconKey };
 export type WhatIDoItem = { icon: IconKey; title: string; body: string };
+export type CardDashboard = {
+  title: string;
+  kpis: { value: string; label: string }[];
+  bars: number[];
+  donut: number;
+  accent?: "amber" | "blue";
+};
 export type FeaturedCard = {
-  image: string;
+  /** On-brand dashboard preview shown at the top of the card. */
+  dashboard: CardDashboard;
   title: string;
   body: string;
   tags: string[];
@@ -1152,7 +1160,7 @@ export const homeHero = {
 /** Tools shown in the hero "Tools I use" card, grouped by what they're for. */
 export const heroToolGroups: HeroToolGroup[] = [
   {
-    group: "Analysis",
+    group: "Data analysis",
     items: [
       { name: "Excel", logo: "/logos/excel.svg" },
       { name: "SQL", logo: "/logos/sql.svg" },
@@ -1160,17 +1168,18 @@ export const heroToolGroups: HeroToolGroup[] = [
     ],
   },
   {
-    group: "Charts & dashboards",
+    group: "Visualisation",
     items: [
       { name: "Power BI", logo: "/logos/power-bi.svg" },
       { name: "Looker Studio", logo: "/logos/looker.svg" },
     ],
   },
   {
-    group: "Everything else",
+    group: "Other tools",
     items: [
+      { name: "Python", logo: "/logos/python.svg" },
+      { name: "Jupyter", logo: "/logos/jupyter.svg" },
       { name: "Notion", logo: "/logos/notion.svg" },
-      { name: "Canva", logo: "/logos/canva.svg" },
     ],
   },
 ];
@@ -1192,24 +1201,54 @@ export const whatIDo: WhatIDoItem[] = [
   { icon: "bulb", title: "Explaining what to do next", body: "I turn the findings into a clear story and practical recommendations people can act on." },
 ];
 
-/** Featured work cards — three, each with a project image and plain summary. */
+/** Featured work cards — three, each with a dashboard preview and plain summary. */
 export const featuredCards: FeaturedCard[] = [
   {
-    image: "/projects/support.svg",
+    dashboard: {
+      title: "Support overview",
+      kpis: [
+        { value: "2,150", label: "tickets" },
+        { value: "25%", label: "late" },
+        { value: "5.2d", label: "avg time" },
+      ],
+      bars: [0.45, 0.6, 0.5, 0.8, 0.7, 0.95],
+      donut: 0.25,
+      accent: "amber",
+    },
     title: "Support ticket analysis",
-    body: "Looked at 2,150 support requests to see where help was arriving late, what was causing the delays, and where to improve.",
+    body: "Looked at 2,150 support requests to see where help was arriving late and what was causing the delays.",
     tags: ["SQL", "Power BI", "Analysis"],
     href: "/work#support",
   },
   {
-    image: "/projects/ecommerce.svg",
+    dashboard: {
+      title: "Sales overview",
+      kpis: [
+        { value: "$1,118", label: "top LTV" },
+        { value: "5%", label: "top tier" },
+        { value: "+32%", label: "growth" },
+      ],
+      bars: [0.3, 0.45, 0.55, 0.65, 0.8, 0.9],
+      donut: 0.6,
+      accent: "blue",
+    },
     title: "Sales & customer analysis",
     body: "Studied a year of sales to understand who buys, group the customers, and find the most valuable ones.",
     tags: ["Excel", "Analysis", "Dashboards"],
     href: "/work#ecommerce",
   },
   {
-    image: "/projects/maji.svg",
+    dashboard: {
+      title: "Data quality check",
+      kpis: [
+        { value: "100%", label: "clean" },
+        { value: "12", label: "regions" },
+        { value: "0", label: "errors left" },
+      ],
+      bars: [0.6, 0.7, 0.65, 0.8, 0.85, 0.9],
+      donut: 1,
+      accent: "amber",
+    },
     title: "National water survey check",
     body: "Reviewed a national water survey for gaps and errors and produced one clean, trustworthy set of data.",
     tags: ["SQL", "Data cleaning", "Data quality"],
