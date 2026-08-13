@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case study — Building an outreach ecosystem for a pan-African nonprofit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAFAF8;--navy:#1B3A6B;--navy-deep:#132A4E;--amber:#B45309;
+    --ink:#26303F;--muted:#6A7382;--hairline:rgba(27,58,107,.14);
+    --hairline-strong:rgba(27,58,107,.28);
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:17px}
+  .wrap{max-width:940px;margin:0 auto;padding:0 28px}
+
+  .topbar{border-bottom:1px solid var(--hairline)}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:22px 28px}
+  .mark{font-family:var(--serif);font-size:22px;letter-spacing:.5px;text-decoration:none}
+  .mark .k{color:var(--navy)}.mark .w{color:var(--amber)}
+  .backlink{font-size:14px;color:var(--muted);text-decoration:none}
+  .backlink:hover{color:var(--navy)}
+
+  .hero{padding-top:74px;padding-bottom:20px}
+  .eyebrow{font-size:12.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .eyebrow::after{content:"";height:1px;flex:1;background:var(--hairline-strong);max-width:120px}
+  h1{font-family:var(--serif);font-weight:400;color:var(--navy-deep);font-size:clamp(33px,5.1vw,54px);line-height:1.1;letter-spacing:-.01em;max-width:24ch}
+  h1 em{font-style:italic;color:var(--amber)}
+  .standfirst{margin-top:26px;font-size:clamp(18px,2.2vw,21px);color:var(--ink);max-width:62ch;line-height:1.55}
+
+  .stats{margin-top:54px;border-top:1px solid var(--hairline-strong);border-bottom:1px solid var(--hairline-strong);display:grid;grid-template-columns:repeat(4,1fr)}
+  .stat{padding:28px 4px 26px;position:relative}
+  .stat + .stat::before{content:"";position:absolute;left:0;top:22px;bottom:22px;width:1px;background:var(--hairline)}
+  .stat .num{font-family:var(--serif);font-size:clamp(30px,4.4vw,42px);line-height:1.05;color:var(--navy);letter-spacing:-.01em}
+  .stat .num small{font-size:.5em;color:var(--amber)}
+  .stat .lab{margin-top:11px;font-size:12.5px;color:var(--muted);letter-spacing:.03em;line-height:1.35;max-width:18ch}
+
+  .section{padding-top:58px}
+  .kicker{font-weight:600;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);margin-bottom:15px}
+  h2{font-family:var(--serif);font-weight:400;color:var(--navy-deep);font-size:clamp(24px,3.3vw,32px);line-height:1.18;letter-spacing:-.01em;margin-bottom:18px}
+  .section p{max-width:64ch;color:var(--ink);margin-bottom:16px}
+  .section p:last-child{margin-bottom:0}
+  .lead-in{font-size:19px;color:var(--navy-deep)}
+
+  .pull{margin:30px 0;padding-left:22px;border-left:3px solid var(--amber)}
+  .pull p{font-family:var(--serif);font-size:clamp(20px,2.8vw,25px);line-height:1.35;color:var(--navy-deep);max-width:30ch;margin:0}
+
+  .deliverables{margin-top:32px;border-top:1px solid var(--hairline)}
+  .deliv{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:24px 0;border-bottom:1px solid var(--hairline);align-items:start}
+  .deliv .idx{font-family:var(--serif);font-size:19px;color:var(--amber);min-width:32px}
+  .deliv h3{font-family:var(--sans);font-weight:600;font-size:17.5px;color:var(--navy-deep);margin-bottom:6px}
+  .deliv p{margin:0;color:var(--ink);max-width:60ch;font-size:16px}
+
+  .review{margin-top:58px;background:var(--navy);color:#EAF0F8;border-radius:3px;padding:clamp(32px,5vw,52px)}
+  .review .kicker{color:#F4B678}
+  .stars{font-size:20px;letter-spacing:3px;color:#F6C68C;margin-bottom:18px}
+  .review blockquote{font-family:var(--serif);font-weight:400;font-size:clamp(21px,3.2vw,29px);line-height:1.34;color:#fff;letter-spacing:-.01em;max-width:30ch}
+  .attrib{margin-top:22px;font-size:14.5px;color:#B9C6DB}
+  .attrib strong{color:#EAF0F8;font-weight:600}
+  .breakdown{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);display:flex;gap:36px;flex-wrap:wrap}
+  .bd .n{font-family:var(--serif);font-size:25px;color:#F6C68C;line-height:1}
+  .bd .l{font-size:12.5px;color:#9FB0CB;letter-spacing:.04em;margin-top:6px}
+
+  .caps{margin-top:32px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline)}
+  .cap{background:var(--paper);padding:23px}
+  .cap .t{font-weight:600;color:var(--navy-deep);font-size:15.5px;margin-bottom:5px}
+  .cap .d{font-size:14.5px;color:var(--muted);line-height:1.5}
+
+  footer{margin-top:84px;border-top:1px solid var(--hairline);padding:42px 0 64px}
+  footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+  footer .note{font-size:13.5px;color:var(--muted);max-width:46ch}
+  footer a.cta{font-size:15px;font-weight:600;color:#fff;background:var(--amber);text-decoration:none;padding:13px 22px;border-radius:3px;white-space:nowrap}
+  footer a.cta:hover{background:#973f06}
+
+  a:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:2px}
+  @media(max-width:720px){
+    body{font-size:16px}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .stat:nth-child(1)::before,.stat:nth-child(3)::before{display:none}
+    .stat:nth-child(3),.stat:nth-child(4){border-top:1px solid var(--hairline)}
+    .caps{grid-template-columns:1fr}
+    .deliv{grid-template-columns:1fr;gap:8px}.deliv .idx{min-width:0}
+  }
+  @media(prefers-reduced-motion:no-preference){
+    .hero,.stats{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+    .stats{animation-delay:.08s}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <a class="mark" href="/" aria-label="KW — home"><span class="k">K</span><span class="w">W</span></a>
+      <a class="backlink" href="/work">← All work</a>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Case study · Operations &amp; outreach</div>
+      <h1>She wanted to reach autism organisations across Africa. She didn't know where to start — so I built <em>the map and the relationships</em>.</h1>
+      <p class="standfirst">A US-based founder was building autism awareness across Africa but had no view of which organisations existed, where they were, or how to reach them — and no prior experience operating on the continent. I built the ecosystem database, ran the outreach in three languages, and set up the operating rhythm to keep it all moving.</p>
+
+      <div class="stats">
+        <div class="stat"><div class="num">EN·FR·PT</div><div class="lab">Outreach &amp; events run in three languages</div></div>
+        <div class="stat"><div class="num">Pan-African</div><div class="lab">Autism organisations mapped by country</div></div>
+        <div class="stat"><div class="num">5.0<small>★</small></div><div class="lab">Client rating — recommended without hesitation</div></div>
+        <div class="stat"><div class="num">End&#8209;to&#8209;end</div><div class="lab">Research, outreach &amp; delivery, fully remote</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="kicker">The problem</div>
+        <h2>A founder starting from zero.</h2>
+        <p class="lead-in">The founder had a clear mission — grow autism awareness across Africa by working directly with organisations already doing the work — but no way to act on it.</p>
+        <p>There was no list of who those organisations were, no record of where they operated, and no contacts to reach them through. On top of that sat a language barrier and the founder's own lack of experience working on the continent. A cold email from an unknown US nonprofit was unlikely to land. The mission wasn't the problem; the groundwork underneath it simply didn't exist yet.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="kicker">What I decided to do</div>
+        <h2>Build the map, then be the bridge.</h2>
+        <p>I broke it into three moves. First, create the missing map — a structured database of autism organisations across Africa, with where each was based and how to reach them. Second, and this was the real judgement call: rather than hand the founder a cold contact list, I did the outreach myself, introducing the mission organisation by organisation and building the relationship before asking for anything.</p>
+        <div class="pull"><p>A US founder cold-contacting African organisations wasn't going to work. So I became the person who reached out — in their own language.</p></div>
+        <p>Third, make it multilingual by design. Because the organisations spanned English-, French- and Portuguese-speaking Africa, I planned the engagement across all three languages rather than defaulting to English and quietly losing half the continent. And to keep it all coordinated, I ran the work through Asana so nothing — and no relationship — slipped.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="kicker">What I delivered</div>
+        <h2>The system the founder walked away with.</h2>
+        <div class="deliverables">
+          <div class="deliv"><div class="idx">01</div><div>
+            <h3>An organisation database</h3>
+            <p>A structured, searchable record of autism organisations across Africa — country, location and contact details — turning an unknown landscape into one dependable reference.</p>
+          </div></div>
+          <div class="deliv"><div class="idx">02</div><div>
+            <h3>Personal outreach &amp; a qualified relationship list</h3>
+            <p>I reached out to each organisation, introduced the founder's mission, and logged who was interested in partnering and who wasn't — so the founder inherited warm, qualified relationships, not just names on a spreadsheet.</p>
+          </div></div>
+          <div class="deliv"><div class="idx">03</div><div>
+            <h3>A trilingual Zoom event calendar</h3>
+            <p>A week-by-week plan of Zoom sessions in English, French and Portuguese — what ran when, in which language, and who was hosting — ready for the founder to run.</p>
+          </div></div>
+          <div class="deliv"><div class="idx">04</div><div>
+            <h3>An Asana coordination workspace</h3>
+            <p>Every lead and follow-up tracked by owner, so it was always clear what needed chasing and which community leads still had open tasks.</p>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="review">
+          <div class="kicker">Verified client review</div>
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote>&ldquo;It was a pleasure working with Keren. She is detail-oriented and asks follow-up questions. Would recommend her without hesitation.&rdquo;</blockquote>
+          <div class="attrib"><strong>Verified client</strong> · US-based nonprofit founder · via Fiverr</div>
+          <div class="breakdown">
+            <div class="bd"><div class="n">5.0</div><div class="l">Seller communication</div></div>
+            <div class="bd"><div class="n">5.0</div><div class="l">Quality of delivery</div></div>
+            <div class="bd"><div class="n">5.0</div><div class="l">Value of delivery</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="kicker">What it demonstrates</div>
+        <h2>The operating skills behind the work.</h2>
+        <div class="caps">
+          <div class="cap"><div class="t">Turning the unknown into structure</div><div class="d">Building a usable database from a landscape no one had mapped, so a founder could finally act.</div></div>
+          <div class="cap"><div class="t">Outreach &amp; relationship-building</div><div class="d">Representing a mission credibly to strangers and converting cold contacts into warm, qualified relationships.</div></div>
+          <div class="cap"><div class="t">Multilingual coordination</div><div class="d">Designing outreach and events across English, French and Portuguese rather than defaulting to one.</div></div>
+          <div class="cap"><div class="t">Keeping delivery on track</div><div class="d">Running the whole engagement through Asana so leads, follow-ups and owners stayed visible.</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="note">Client anonymised at their request. Review is a verified client rating from my Fiverr profile.</div>
+      <a class="cta" href="https://www.fiverr.com/keren_wangombe" target="_blank" rel="noopener">See the verified review on Fiverr →</a>
+    </div>
+  </footer>
+
+</body>
+</html>
