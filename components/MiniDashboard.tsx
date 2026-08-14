@@ -2,9 +2,9 @@
  * MiniDashboard — a small, realistic "dashboard" graphic used as the preview at
  * the top of each Featured work card. Each project picks the `variant` that best
  * fits what it actually was — a support dashboard, a sales trend, a data-quality
- * heatmap, an onboarding funnel, or a delivery board. Charts use a small
- * categorical palette (not a wall of one colour), gridlines and axes so they
- * read like real charts. Purely decorative.
+ * heatmap, an onboarding funnel, or a delivery board. Rendered on a light panel
+ * (no navy fill) with a small categorical palette, gridlines and axes so it
+ * reads like a real chart. Purely decorative.
  */
 export type DashboardVariant = "bars" | "line" | "grid" | "funnel" | "kanban";
 
@@ -19,36 +19,37 @@ export type DashboardConfig = {
   accent?: "amber" | "blue";
 };
 
+const PANEL = "#F1F4F9";
+const PANEL_BAR = "#E4EAF2";
+const INK = "#26303F";
+const MUTED = "#6A7382";
 const NAVY = "#1B3A6B";
-const NAVY_2 = "#16305a";
-const PAPER = "#FAFAF8";
-const AMBER = "#F59E0B";
-const AMBER_2 = "#D97706";
-const BLUE = "#5B8DD6";
-const BLUE_LT = "#93C5FD";
+const AMBER = "#D97706";
+const BLUE = "#3D6491";
+const BLUE_LT = "#7FA6D6";
 const TEAL = "#2FB0A0";
-const GRID = "rgba(250,250,248,0.13)";
+const GRID = "rgba(27,58,107,0.10)";
 
 /** Categorical palette for multi-series charts. */
-const CAT = [BLUE, AMBER, TEAL, BLUE_LT, "#C4B5FD"];
+const CAT = [BLUE, AMBER, TEAL, BLUE_LT, "#A78BFA"];
 
 export default function MiniDashboard({ title, kpis, variant = "bars", bars = [0.5, 0.7, 0.6, 0.85], donut = 0.6, accent = "amber" }: DashboardConfig) {
-  const hi = accent === "amber" ? AMBER : BLUE_LT;
+  const hi = accent === "amber" ? AMBER : BLUE;
 
   return (
     <svg viewBox="0 0 320 180" role="img" aria-label={`${title} preview`} className="h-full w-full">
-      <rect width="320" height="180" fill={NAVY} />
-      <rect x="0" y="0" width="320" height="30" fill={NAVY_2} />
-      <text x="14" y="19" fill={PAPER} fontFamily="Inter, system-ui, sans-serif" fontSize="11" fontWeight="600">{title}</text>
-      <circle cx="290" cy="15" r="2.5" fill={PAPER} opacity="0.35" />
-      <circle cx="299" cy="15" r="2.5" fill={PAPER} opacity="0.35" />
-      <circle cx="308" cy="15" r="2.5" fill={PAPER} opacity="0.35" />
+      <rect width="320" height="180" fill={PANEL} />
+      <rect x="0" y="0" width="320" height="30" fill={PANEL_BAR} />
+      <text x="14" y="19" fill={INK} fontFamily="Inter, system-ui, sans-serif" fontSize="11" fontWeight="600">{title}</text>
+      <circle cx="290" cy="15" r="2.5" fill={MUTED} opacity="0.5" />
+      <circle cx="299" cy="15" r="2.5" fill={MUTED} opacity="0.5" />
+      <circle cx="308" cy="15" r="2.5" fill={MUTED} opacity="0.5" />
 
       {/* KPI row */}
       {kpis.slice(0, 3).map((k, i) => (
         <g key={i} transform={`translate(${14 + i * 66}, 44)`}>
-          <text x="0" y="12" fill={i === 1 ? AMBER : PAPER} fontFamily="Inter, system-ui, sans-serif" fontSize="15" fontWeight="700">{k.value}</text>
-          <text x="0" y="26" fill={PAPER} opacity="0.6" fontFamily="Inter, system-ui, sans-serif" fontSize="7.5">{k.label}</text>
+          <text x="0" y="12" fill={i === 1 ? AMBER : NAVY} fontFamily="Inter, system-ui, sans-serif" fontSize="15" fontWeight="700">{k.value}</text>
+          <text x="0" y="26" fill={MUTED} fontFamily="Inter, system-ui, sans-serif" fontSize="7.5">{k.label}</text>
         </g>
       ))}
 
@@ -61,7 +62,6 @@ export default function MiniDashboard({ title, kpis, variant = "bars", bars = [0
   );
 }
 
-/** Horizontal gridlines + baseline for a chart area. */
 function Grids({ x, w, top, base }: { x: number; w: number; top: number; base: number }) {
   const lines = [0, 0.25, 0.5, 0.75, 1];
   return (
@@ -88,7 +88,7 @@ function Donut({ cx, cy, r, first }: { cx: number; cy: number; r: number; first:
   let offset = 0;
   return (
     <g transform={`translate(${cx},${cy}) rotate(-90)`}>
-      <circle r={r} fill="none" stroke="rgba(250,250,248,0.10)" strokeWidth="9" />
+      <circle r={r} fill="none" stroke="rgba(27,58,107,0.10)" strokeWidth="9" />
       {segs.map((s, i) => {
         const len = s.frac * c;
         const el = (
@@ -131,10 +131,10 @@ function LineChart({ bars, hi }: { bars: number[]; hi: string }) {
   return (
     <>
       <Grids x={x0} w={w} top={top} base={baseY} />
-      <polygon points={area} fill={hi} opacity="0.16" />
-      <polyline points={cline} fill="none" stroke={AMBER} strokeWidth="2" strokeDasharray="4 3" opacity="0.85" />
+      <polygon points={area} fill={BLUE} opacity="0.12" />
+      <polyline points={cline} fill="none" stroke={AMBER} strokeWidth="2" strokeDasharray="4 3" opacity="0.9" />
       <polyline points={line} fill="none" stroke={BLUE} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      {main.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r="2.6" fill={BLUE} stroke={NAVY} strokeWidth="1" />)}
+      {main.map((p, i) => <circle key={i} cx={p[0]} cy={p[1]} r="2.6" fill={BLUE} stroke={PANEL} strokeWidth="1" />)}
     </>
   );
 }
@@ -142,24 +142,23 @@ function LineChart({ bars, hi }: { bars: number[]; hi: string }) {
 /** Data-quality heatmap — a sequential colour scale, not uniform blocks. */
 function Grid() {
   const cols = 10, rows = 4, x0 = 16, y0 = 74, cw = 27.4, ch = 20, gap = 2;
-  const scale = [BLUE_LT, BLUE, NAVY_2, TEAL, AMBER];
+  const scale = [BLUE_LT, BLUE, NAVY, TEAL, AMBER];
   const cells = [];
   let seed = 7;
   for (let i = 0; i < cols * rows; i++) {
-    // deterministic pseudo-random pick for a heatmap look
     seed = (seed * 9301 + 49297) % 233280;
     const r = seed / 233280;
     const idx = r < 0.08 ? 4 : r < 0.24 ? 3 : r < 0.5 ? 2 : r < 0.78 ? 1 : 0;
     const cx = x0 + (i % cols) * (cw + gap);
     const cy = y0 + Math.floor(i / cols) * (ch + gap);
-    cells.push(<rect key={i} x={cx} y={cy} width={cw} height={ch} rx="2" fill={scale[idx]} opacity={idx === 0 ? 0.5 : 0.92} />);
+    cells.push(<rect key={i} x={cx} y={cy} width={cw} height={ch} rx="2" fill={scale[idx]} opacity={idx === 0 ? 0.45 : 0.9} />);
   }
   return <>{cells}</>;
 }
 
 function Funnel({ bars }: { bars: number[] }) {
   const top = 76, rowH = 19, gap = 5, cx = 160, maxW = 250;
-  const cols = [NAVY_2, BLUE, TEAL, AMBER];
+  const cols = [NAVY, BLUE, TEAL, AMBER];
   return (
     <>
       {bars.slice(0, 4).map((h, i) => {
@@ -184,7 +183,7 @@ function Kanban() {
         <g key={ci}>
           <rect x={col.x} y={y0} width={cw} height="5" rx="2.5" fill={col.head} />
           {Array.from({ length: col.cards }).map((_, k) => (
-            <rect key={k} x={col.x} y={y0 + 13 + k * 24} width={cw} height="18" rx="3" fill={PAPER} opacity="0.16" />
+            <rect key={k} x={col.x} y={y0 + 13 + k * 24} width={cw} height="18" rx="3" fill="#D8E0EC" />
           ))}
         </g>
       ))}
