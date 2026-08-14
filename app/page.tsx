@@ -76,11 +76,6 @@ export default function HomePage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={heroPortrait} alt="Keren Wang'ombe" className="aspect-[4/5] w-full object-cover" />
             </div>
-            {/* small floating highlight chip */}
-            <div className="absolute -bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full border border-ink/10 bg-paper/95 px-4 py-2 shadow-lg shadow-ink/10">
-              <span className="h-2 w-2 rounded-full bg-amber-bright" aria-hidden />
-              <span className="text-small font-medium text-signature">3+ yrs · 12 countries</span>
-            </div>
           </Reveal>
         </div>
       </section>
