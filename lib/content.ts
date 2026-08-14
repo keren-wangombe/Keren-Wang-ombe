@@ -572,10 +572,10 @@ const additionalTitleOverrides: Record<string, string> = {
   onboarding: "Standardising onboarding for a firm scaling from 85 to 200 staff",
   "command-center": "Creating one view of programme progress, deadlines and risks",
   pipeline: "Automating repetitive follow-ups and record updates",
-  ecommerce: "Turning a year of sales data into inventory and marketing decisions",
-  support: "Finding where support tickets breach SLA",
-  retail: "Reading retail sales for who buys and when",
-  maji: "Auditing national water-survey data for reporting integrity",
+  ecommerce: "Turning a year of sales into what to stock and who to target",
+  support: "Finding where customer support was falling behind",
+  retail: "Reading shop sales to see who buys and when",
+  maji: "Checking a national water survey for errors",
 };
 
 const withOverriddenTitle = (item: CaseStudyItem): CaseStudyItem => ({
@@ -1154,11 +1154,11 @@ export const homeMetaTitle = "Data analysis, reports & dashboards";
 
 /** Home hero — headline + plain intro + primary call to action. */
 export const homeHero = {
-  kicker: "Data Analytics · Business Intelligence · Reporting",
+  kicker: "Data · Reporting · Clear answers",
   title: "I turn data into answers people can act on.",
   intro:
-    "I analyse data, build clear reports and dashboards, and find the insights that help teams make better decisions, improve performance and solve real problems.",
-  primaryCta: { label: "View selected analyses", href: "/work" },
+    "I take messy information and turn it into clear answers — simple reports and charts that show what's going on and help people decide what to do next.",
+  primaryCta: { label: "See my work", href: "/work" },
 };
 
 /** Heading for the "Tools I use" section. */
@@ -1195,19 +1195,19 @@ export const heroToolGroups: HeroToolGroup[] = [
 
 /** Home stat strip — four quick, plain proof points. */
 export const homeStats: StatItem[] = [
-  { value: "25%", label: "of support tickets found being answered late", sub: "Support ticket analysis", icon: "chart" },
-  { value: "$1,118+", label: "average value of the top 5% of customers", sub: "Sales analysis", icon: "people" },
-  { value: "100%", label: "clean, accurate data after a full quality check", sub: "National survey data", icon: "database" },
-  { value: "20+ hrs", label: "of decisions supported with clear reports", sub: "Dashboards & reports", icon: "clock" },
+  { value: "25%", label: "of customer requests were being answered late", sub: "Customer support", icon: "chart" },
+  { value: "$1,118+", label: "the best customers were each worth this much", sub: "Sales", icon: "people" },
+  { value: "100%", label: "clean, trustworthy data after a full check", sub: "Survey data", icon: "database" },
+  { value: "20+ hrs", label: "of decisions backed by clear reports", sub: "Reports & charts", icon: "clock" },
 ];
 
 /** "What I do" — five plain descriptions of the work. */
 export const whatIDo: WhatIDoItem[] = [
-  { icon: "search", title: "Cleaning & checking data", body: "I make data accurate and reliable by cleaning it and checking it for errors before anyone relies on it." },
-  { icon: "explore", title: "Finding patterns", body: "I explore the numbers to spot trends and explain what is really happening, and why." },
-  { icon: "query", title: "Answering questions with data", body: "I pull and combine data (using SQL) to answer specific business questions." },
-  { icon: "dashboard", title: "Reports & dashboards", body: "I build clear dashboards and reports that track how things are going and support decisions." },
-  { icon: "bulb", title: "Explaining what to do next", body: "I turn the findings into a clear story and practical recommendations people can act on." },
+  { icon: "search", title: "Tidying up the numbers", body: "I fix errors and clean up messy information so the numbers can be trusted." },
+  { icon: "explore", title: "Spotting what's going on", body: "I look for patterns and explain what's really happening, and why." },
+  { icon: "query", title: "Answering the real questions", body: "I dig into the information to answer the questions that actually matter." },
+  { icon: "dashboard", title: "Clear reports & charts", body: "I turn it into easy-to-read reports and charts that show how things are going." },
+  { icon: "bulb", title: "Saying what to do next", body: "I turn the findings into a simple story and clear next steps anyone can act on." },
 ];
 
 /** Featured work cards — three, each with a dashboard preview and plain summary. */
@@ -1282,7 +1282,7 @@ export const approachSteps: ApproachStep[] = [
 /** Home "Hi, I'm Keren" strip. */
 export const aboutStrip = {
   greeting: "Hi, I'm Keren.",
-  bio: "I enjoy using data to solve problems, improve performance and support better decisions. Let's turn your data into insights that make a difference.",
+  bio: "I love using data to solve problems and help people make better decisions. Let's turn your data into something clear and useful.",
   ctaHeading: "Looking for someone who can make sense of your data and turn it into clear next steps?",
   ctaSub: "Let's connect and explore how I can help your team.",
 };
