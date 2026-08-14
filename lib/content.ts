@@ -434,7 +434,7 @@ export const featuredWork: FeaturedStudy[] = [
       "Outreach, scheduling and follow-up ran off current records instead of scattered threads, and the webinar calendar stayed clear across the network's languages and partners.",
     figures: ["93 organisations across Africa", "Trilingual webinar calendar"],
     tools: ["Records database", "Multilingual scheduling", "Outreach coordination", "Follow-up tracking"],
-    links: [{ label: "Read the full case study", href: "/case-studies/pan-african-outreach.html" }],
+    links: [{ label: "Read the full case study", href: "/work/pan-african-outreach" }],
   },
   {
     // Featured case study three: the strongest existing repo project showing

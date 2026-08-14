@@ -23,10 +23,10 @@ export const focus: FocusConfig = {
       "I coordinate programmes, build simple systems and improve workflows so teams have clarity and leaders have visibility.",
   },
   footerTagline: "Built with purpose. Driven by impact.",
-  otherPortfolio: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL
-    ? {
-        label: "Data & analytics portfolio",
-        href: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL,
-      }
-    : null,
+  otherPortfolio: {
+    label: "Data & analytics portfolio",
+    href:
+      process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL ??
+      "https://kerenwangombe-data.vercel.app",
+  },
 };

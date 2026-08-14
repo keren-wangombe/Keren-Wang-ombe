@@ -20,24 +20,6 @@ const appCsp = [
   "upgrade-insecure-requests",
 ].join("; ");
 
-/**
- * Looser CSP scoped to the standalone case-study pages under /case-studies,
- * which are self-contained HTML that pulls DM Serif Display + DM Sans from
- * Google Fonts. Everything else stays under the strict appCsp above.
- */
-const caseStudyCsp = [
-  "default-src 'self'",
-  "script-src 'self'",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "font-src 'self' https://fonts.gstatic.com",
-  "img-src 'self' data:",
-  "connect-src 'self'",
-  "object-src 'none'",
-  "base-uri 'self'",
-  "form-action 'self'",
-  "frame-ancestors 'none'",
-].join("; ");
-
 const sharedHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },
   { key: "X-Frame-Options", value: "DENY" },
@@ -53,13 +35,8 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Everything except the standalone case-study pages gets the strict CSP.
-        source: "/((?!case-studies/).*)",
+        source: "/(.*)",
         headers: [...sharedHeaders, { key: "Content-Security-Policy", value: appCsp }],
-      },
-      {
-        source: "/case-studies/:path*",
-        headers: [...sharedHeaders, { key: "Content-Security-Policy", value: caseStudyCsp }],
       },
     ];
   },
