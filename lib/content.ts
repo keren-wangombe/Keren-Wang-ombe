@@ -570,9 +570,9 @@ export const edtechOps: FeaturedStudy[] = [
  * because it is promoted into featuredWork above.
  */
 const additionalTitleOverrides: Record<string, string> = {
-  onboarding: "Standardising onboarding for a firm scaling from 85 to 200 staff",
-  "command-center": "Creating one view of programme progress, deadlines and risks",
-  pipeline: "Automating repetitive follow-ups and record updates",
+  onboarding: "Setting up a smooth joining process for a growing company",
+  "command-center": "Giving one clear view of progress, deadlines and risks",
+  pipeline: "Automating repetitive follow-ups and updates",
   ecommerce: "Turning a year of sales data into inventory and marketing decisions",
   support: "Finding where support tickets breach SLA",
   retail: "Reading retail sales for who buys and when",
@@ -1155,11 +1155,11 @@ export const homeMetaTitle = "Operations, systems & workflow improvement";
 
 /** Home hero — headline + plain intro + primary call to action. */
 export const homeHero = {
-  kicker: "Programme Operations · Systems · Process Improvement",
-  title: "I turn complex operations into work that is easier to run, track and improve.",
+  kicker: "Coordination · Systems · Smoother work",
+  title: "I keep the everyday work organised, on track and easy to run.",
   intro:
-    "I coordinate programmes, build simple systems and improve everyday workflows so teams have clarity, leaders have visibility, and the people they serve get a better experience.",
-  primaryCta: { label: "View selected work", href: "/work" },
+    "I help teams stay organised — I plan and coordinate the work, set up simple systems, and smooth out the day-to-day so nothing important slips through the cracks.",
+  primaryCta: { label: "See my work", href: "/work" },
 };
 
 /** Heading for the "Tools I use" section. */
@@ -1198,17 +1198,17 @@ export const heroToolGroups: HeroToolGroup[] = [
 /** Home stat strip — four quick, plain proof points. */
 export const homeStats: StatItem[] = [
   { value: "3,000+", label: "people supported through programmes", sub: "Across 12+ countries", icon: "people" },
-  { value: "50%+", label: "less manual, repetitive work", sub: "Through better processes & automation", icon: "gear" },
-  { value: "15+ hrs", label: "saved every week", sub: "Through workflow automation", icon: "clock" },
-  { value: "98%", label: "accurate progress reporting", sub: "Across multiple programmes", icon: "chart" },
+  { value: "50%+", label: "less repetitive, manual work", sub: "By improving the process", icon: "gear" },
+  { value: "15+ hrs", label: "saved every week", sub: "By setting things to run on their own", icon: "clock" },
+  { value: "98%", label: "of progress reported accurately", sub: "Across many programmes", icon: "chart" },
 ];
 
 /** "What I do" — four plain descriptions of the work. */
 export const whatIDo: WhatIDoItem[] = [
-  { icon: "coordinate", title: "Coordinating programmes & projects", body: "I plan, coordinate and track the moving parts so work gets delivered on time and to a good standard." },
-  { icon: "onboard", title: "Onboarding & everyday workflows", body: "I design and run onboarding, follow-ups and records so people have a smooth, consistent experience." },
-  { icon: "dashboard", title: "Tracking & reporting", body: "I build simple trackers and reports that show how things are going and highlight what needs attention." },
-  { icon: "gear", title: "Improving processes & systems", body: "I document and streamline repeatable work — and automate it where it helps — so operations run better with less effort." },
+  { icon: "coordinate", title: "Keeping projects on track", body: "I plan and coordinate the moving parts so work gets done on time and done well." },
+  { icon: "onboard", title: "Welcoming & following up with people", body: "I set up joining steps, reminders and records so everyone has a smooth, consistent experience." },
+  { icon: "dashboard", title: "Tracking progress", body: "I build simple trackers and updates that show how things are going and flag what needs attention." },
+  { icon: "gear", title: "Making the work simpler", body: "I tidy up and simplify repeating tasks — and set them to run on their own where it helps — so things take less effort." },
 ];
 
 /** Featured work cards — three, each with a dashboard preview and plain summary. */
@@ -1282,7 +1282,7 @@ export const approachSteps: ApproachStep[] = [
 /** Home "Hi, I'm Keren" strip. */
 export const aboutStrip = {
   greeting: "Hi, I'm Keren.",
-  bio: "I enjoy running the day-to-day work well and improving the systems behind it, so teams stay organised and nothing important slips. Let's make your operations easier to run.",
+  bio: "I love keeping the day-to-day work organised and making it run more smoothly, so nothing important slips. Let's make your work easier to run.",
   ctaHeading: "Looking for someone who can run the work and improve how it gets done?",
   ctaSub: "Let's connect and explore how I can support your team.",
 };

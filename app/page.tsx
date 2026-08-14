@@ -80,17 +80,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS — navy band */}
-      <section className="bg-signature">
-        <div className="container-content grid grid-cols-2 gap-x-6 gap-y-5 py-6 lg:grid-cols-4">
-          {homeStats.map((s, i) => (
-            <Reveal as="div" key={s.sub} delay={i * 60} className="flex flex-col gap-1">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-amber-bright/15 text-amber-bright">{icon[s.icon]}</span>
-              <p className="mt-0.5 font-serif text-h2 font-light leading-none text-amber-bright">{s.value}</p>
-              <p className="text-small text-paper/80">{s.label}</p>
-              <p className="text-[0.72rem] uppercase tracking-wide text-paper/45">{s.sub}</p>
-            </Reveal>
-          ))}
+      {/* ── STATS — light bordered strip (navy numbers, amber icons) */}
+      <section className="py-8 sm:py-10">
+        <div className="container-content">
+          <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 lg:grid-cols-4">
+            {homeStats.map((s, i) => (
+              <Reveal as="div" key={s.sub} delay={i * 60} className="flex h-full flex-col gap-1.5 bg-paper p-5">
+                <span className="grid h-9 w-9 place-items-center rounded-lg bg-amber/10 text-amber">{icon[s.icon]}</span>
+                <p className="mt-1 font-serif text-h2 font-light leading-none text-signature">{s.value}</p>
+                <p className="text-small text-ink/75">{s.label}</p>
+                <p className="mt-auto pt-1 text-[0.72rem] uppercase tracking-wide text-amber/80">{s.sub}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
