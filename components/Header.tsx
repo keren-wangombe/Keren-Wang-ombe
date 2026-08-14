@@ -38,15 +38,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink/5 bg-paper/85 backdrop-blur-md print:hidden">
       <div className="container-content flex items-center justify-between gap-6 py-3.5">
-        {/* KW monogram + name → home */}
-        <Link href="/" className="group flex items-center gap-2.5 leading-none" aria-label={`${brand.name}, home`}>
-          <span
-            aria-hidden
-            className="font-serif text-2xl font-semibold tracking-tight text-signature transition-colors duration-300 ease-calm group-hover:text-amber"
-          >
-            KW
-          </span>
-          <span className="text-small font-semibold uppercase tracking-[0.08em] text-signature sm:text-[0.95rem]">
+        {/* Full name → home */}
+        <Link href="/" className="group leading-none" aria-label={`${brand.name}, home`}>
+          <span className="font-serif text-lg font-semibold uppercase tracking-[0.1em] text-signature transition-colors duration-300 ease-calm group-hover:text-amber sm:text-xl">
             {brand.name}
           </span>
         </Link>

@@ -103,12 +103,12 @@ export default function HomePage() {
       <section className="py-8 sm:py-10">
         <div className="container-content">
           <SectionTitle center>What I do</SectionTitle>
-          <div className="mt-6 grid gap-x-6 gap-y-6 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-5">
             {whatIDo.map((w, i) => (
               <Reveal as="div" key={w.title} delay={i * 60} className="text-center sm:text-left">
-                <span className="mx-auto grid h-9 w-9 place-items-center rounded-xl bg-amber/10 text-amber sm:mx-0">{icon[w.icon]}</span>
-                <h3 className="mt-2.5 font-serif text-base font-medium text-ink">{w.title}</h3>
-                <p className="mt-1 text-small text-ink/70">{w.body}</p>
+                <span className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-amber/10 text-amber sm:mx-0">{icon[w.icon]}</span>
+                <h3 className="mt-3 font-serif text-base font-medium text-ink">{w.title}</h3>
+                <p className="mt-1.5 text-small leading-relaxed text-ink/70">{w.body}</p>
               </Reveal>
             ))}
           </div>

@@ -23,10 +23,10 @@ export const focus: FocusConfig = {
       "I analyse data, build reports and dashboards, and find the insights that help teams make better decisions.",
   },
   footerTagline: "Data tells the story. Insights drive the action.",
-  otherPortfolio: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL
-    ? {
-        label: "Operations portfolio",
-        href: process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL,
-      }
-    : null,
+  otherPortfolio: {
+    label: "Operations portfolio",
+    href:
+      process.env.NEXT_PUBLIC_OTHER_PORTFOLIO_URL ??
+      "https://kerenwangombe-ops.vercel.app",
+  },
 };
