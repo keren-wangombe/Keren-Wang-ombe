@@ -56,7 +56,7 @@ export default function HomePage() {
       {/* ── HERO — copy left, portrait right (with accent). */}
       <section className="relative isolate overflow-hidden border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
         <Doodle name="bars" className="absolute -left-10 -top-6 hidden h-48 w-48 text-signature/[0.05] lg:block" />
-        <div className="container-content grid items-center gap-8 py-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-9">
+        <div className="container-content grid items-center gap-8 py-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:py-7">
           <div className="animate-fade-up">
             <p className="kicker text-amber">{homeHero.kicker}</p>
             <h1 className="mt-3 font-serif text-h1 font-light leading-[1.05] text-signature">{homeHero.title}</h1>
@@ -82,7 +82,7 @@ export default function HomePage() {
       </section>
 
       {/* ── STATS — light bordered strip (navy numbers, amber icons) */}
-      <section className="py-8 sm:py-10">
+      <section className="py-6 sm:py-7">
         <div className="container-content">
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 lg:grid-cols-4">
             {homeStats.map((s, i) => (
@@ -98,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* ── WHAT I DO */}
-      <section className="py-8 sm:py-10">
+      <section className="py-6 sm:py-7">
         <div className="container-content">
           <SectionTitle center>What I do</SectionTitle>
           <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-5">
@@ -114,7 +114,7 @@ export default function HomePage() {
       </section>
 
       {/* ── TOOLS I USE — compact band (cool tint) */}
-      <section className="border-y border-signature/10 bg-signature/[0.04] py-6">
+      <section className="border-y border-signature/10 bg-signature/[0.04] py-4">
         <div className="container-content">
           <Reveal className="flex flex-col flex-wrap items-center justify-center gap-x-8 gap-y-3 lg:flex-row">
             <span className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-amber">{toolsHeading}</span>
@@ -130,7 +130,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED WORK */}
-      <section className="py-7 sm:py-9">
+      <section className="py-5 sm:py-7">
         <div className="container-content">
           <SectionTitle center>Featured work</SectionTitle>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
@@ -154,7 +154,7 @@ export default function HomePage() {
       </section>
 
       {/* ── MY APPROACH — warm amber tint */}
-      <section className="border-y border-amber/15 bg-amber/[0.06] py-8 sm:py-10">
+      <section className="border-y border-amber/15 bg-amber/[0.06] py-6 sm:py-7">
         <div className="container-content">
           <SectionTitle>{approachHeading}</SectionTitle>
           <ol className="mt-6 grid gap-5 sm:grid-cols-3 lg:grid-cols-5">
@@ -170,7 +170,7 @@ export default function HomePage() {
       </section>
 
       {/* ── HI, I'M KEREN */}
-      <section className="py-9 sm:py-11">
+      <section className="py-7 sm:py-8">
         <div className="container-content grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <Reveal className="flex items-center gap-5">
             <div className="w-28 shrink-0 overflow-hidden rounded-2xl border border-ink/10 shadow-md shadow-ink/10 sm:w-32">
