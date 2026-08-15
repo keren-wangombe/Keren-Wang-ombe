@@ -1326,6 +1326,23 @@ export const featuredCards: FeaturedCard[] = [
     tags: ["SQL", "Data cleaning", "Data quality"],
     href: "/work#maji",
   },
+  {
+    dashboard: {
+      title: "Sales by season",
+      variant: "line",
+      kpis: [
+        { value: "18–29", label: "top buyers" },
+        { value: "Q4", label: "busiest" },
+        { value: "3x", label: "seasonal swing" },
+      ],
+      bars: [0.3, 0.4, 0.5, 0.45, 0.7, 0.85, 0.9],
+      accent: "blue",
+    },
+    title: "Shop sales analysis",
+    body: "Read a shop's sales to see who buys, what sells best, and when demand rises and falls through the year.",
+    tags: ["MySQL", "Analysis"],
+    href: "/work#retail",
+  },
 ];
 
 /** Label on the "see everything" button under the featured cards. */

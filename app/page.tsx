@@ -136,7 +136,7 @@ export default function HomePage() {
         <Doodle name="orbit" className="absolute -right-10 -top-8 hidden h-52 w-52 text-signature/[0.06] lg:block" />
         <div className="container-content relative">
           <SectionTitle center>Featured work</SectionTitle>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {featuredCards.map((c, i) => (
               <Reveal as="div" key={c.title} delay={i * 80} className="flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-paper shadow-sm transition-shadow duration-300 ease-calm hover:shadow-lg hover:shadow-ink/10">
                 <MiniDashboard {...c.dashboard} />
