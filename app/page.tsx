@@ -130,29 +130,24 @@ export default function HomePage() {
       </section>
 
       {/* ── FEATURED WORK */}
-      <section className="py-8 sm:py-10">
+      <section className="py-7 sm:py-9">
         <div className="container-content">
           <SectionTitle center>Featured work</SectionTitle>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
             {featuredCards.map((c, i) => (
               <Reveal as="div" key={c.title} delay={i * 80} className="flex h-full flex-col overflow-hidden rounded-2xl border border-ink/10 bg-paper shadow-sm transition-shadow duration-300 ease-calm hover:shadow-lg hover:shadow-ink/10">
-                <div className="aspect-[16/9] w-full">
-                  <MiniDashboard {...c.dashboard} />
-                </div>
-                <div className="flex flex-1 flex-col p-5">
-                  <h3 className="font-serif text-lg font-medium text-ink">{c.title}</h3>
-                  <p className="mt-1.5 text-small text-ink/70">{c.body}</p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {c.tags.map((t) => (
-                      <span key={t} className="rounded-md bg-signature/[0.07] px-2 py-0.5 text-[0.72rem] font-medium text-signature">{t}</span>
-                    ))}
+                <MiniDashboard {...c.dashboard} />
+                <div className="flex flex-1 flex-col p-4">
+                  <h3 className="font-serif text-base font-medium text-ink">{c.title}</h3>
+                  <p className="mt-1 line-clamp-2 text-small text-ink/70">{c.body}</p>
+                  <div className="mt-auto pt-3 flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <a href={c.href} className="link-amber inline-flex items-center gap-1.5 text-small font-medium text-signature">View case study →</a>
                   </div>
-                  <a href={c.href} className="link-amber mt-4 inline-flex items-center gap-1.5 text-small font-medium text-signature">View case study →</a>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal className="mt-6 text-center">
+          <Reveal className="mt-5 text-center">
             <Button href="/work" variant="primary">{viewAllWorkLabel} →</Button>
           </Reveal>
         </div>
