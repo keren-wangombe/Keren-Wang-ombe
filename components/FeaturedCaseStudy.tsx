@@ -42,18 +42,10 @@ export default function FeaturedCaseStudy({ item }: { item: FeaturedStudy }) {
       {open ? (
         <div className="border-t border-ink/10 p-5 sm:p-6">
           <p className="kicker text-amber">{item.badge}</p>
-          {item.metric ? (
-            <div className="mt-3">
-              <p className="font-serif text-h2 font-light leading-none text-signature">{item.metric}</p>
-              <p className="mt-1.5 text-small text-ink/60">{item.metricLabel}</p>
-            </div>
-          ) : null}
 
           {item.chart ? (
-            <div className="mt-5 max-w-md overflow-hidden rounded-xl border border-ink/10 shadow-sm">
-              <div className="aspect-[16/9] w-full">
-                <MiniDashboard {...item.chart} />
-              </div>
+            <div className="mt-4 max-w-lg overflow-hidden rounded-xl border border-ink/10 shadow-sm">
+              <MiniDashboard {...item.chart} />
             </div>
           ) : null}
 
