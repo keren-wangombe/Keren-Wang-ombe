@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="container-content flex flex-col items-center gap-4 py-8 text-center sm:flex-row sm:justify-between sm:text-left">
         {/* Full name */}
         <Link href="/" className="group" aria-label={`${brand.name}, home`}>
-          <span className="font-serif text-small font-semibold uppercase tracking-[0.1em] text-paper transition-colors duration-300 ease-calm group-hover:text-amber-bright">
+          <span className="font-serif text-small font-semibold tracking-[0.1em] text-paper transition-colors duration-300 ease-calm group-hover:text-amber-bright">
             {brand.name}
           </span>
         </Link>

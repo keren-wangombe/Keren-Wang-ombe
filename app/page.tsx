@@ -89,7 +89,7 @@ export default function HomePage() {
                 <span className="grid h-9 w-9 place-items-center rounded-lg bg-amber/10 text-amber">{icon[s.icon]}</span>
                 <p className="mt-1 font-serif text-h2 font-light leading-none text-signature">{s.value}</p>
                 <p className="text-small text-ink/75">{s.label}</p>
-                <p className="mt-auto pt-1 text-[0.72rem] uppercase tracking-wide text-amber/80">{s.sub}</p>
+                <p className="mt-auto pt-1 text-[0.72rem] tracking-wide text-amber/80">{s.sub}</p>
               </Reveal>
             ))}
           </div>
@@ -116,7 +116,7 @@ export default function HomePage() {
       <section className="border-y border-signature/10 bg-signature/[0.04] py-6">
         <div className="container-content">
           <Reveal className="flex flex-col flex-wrap items-center justify-center gap-x-8 gap-y-3 lg:flex-row">
-            <span className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-amber">{toolsHeading}</span>
+            <span className="text-[0.7rem] font-semibold tracking-[0.15em] text-amber">{toolsHeading}</span>
             {heroToolGroups.flatMap((g) => g.items).map((t) => (
               <span key={t.name} className="inline-flex items-center gap-2 text-small font-medium text-ink/75">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
