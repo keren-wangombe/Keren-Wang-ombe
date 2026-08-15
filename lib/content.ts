@@ -154,8 +154,10 @@ export type CaseStudyItem = {
   /** Headline number, the protagonist of the card. */
   metric?: string;
   metricLabel?: string;
-  /** Process-map diagram in /public/projects (swap for a real screenshot). */
+  /** Process-map diagram in /public/projects (legacy; charts are used instead). */
   image: string;
+  /** On-brand chart shown in the expanded card. */
+  chart?: CardDashboard;
   problem: string;
   built: string;
   results: string[];
@@ -290,6 +292,18 @@ export const caseStudyTiers: CaseStudyTier[] = [
         metricLabel: "lifetime value, top 5% of customers",
         id: "ecommerce",
         image: "/projects/ecommerce.svg",
+        chart: {
+          title: "Sales & customers",
+          variant: "bars",
+          kpis: [
+            { value: "$1,118+", label: "top customer value" },
+            { value: "5%", label: "top tier" },
+            { value: "6%", label: "electronics share" },
+          ],
+          bars: [0.35, 0.55, 0.45, 0.7, 0.85, 0.6],
+          donut: 0.55,
+          accent: "amber",
+        },
         problem:
           "A growing e-commerce business had 12+ months of transaction data but no operational visibility into customer behaviour, product performance, or regional trends — inventory and marketing decisions were made without an analytics layer.",
         built:
@@ -315,6 +329,18 @@ export const caseStudyTiers: CaseStudyTier[] = [
         metricLabel: "of tickets found breaching SLA",
         id: "support",
         image: "/projects/support.svg",
+        chart: {
+          title: "Support tickets",
+          variant: "bars",
+          kpis: [
+            { value: "2,150", label: "tickets" },
+            { value: "25%", label: "answered late" },
+            { value: "5.2d", label: "avg time" },
+          ],
+          bars: [0.4, 0.6, 0.5, 0.8, 0.7, 0.9],
+          donut: 0.25,
+          accent: "amber",
+        },
         problem:
           "A support operations team lacked visibility into SLA breaches, escalation patterns, agent workload distribution, and operational bottlenecks — making it hard for leadership to improve response efficiency.",
         built:
@@ -332,6 +358,17 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Retail Sales Operational Analytics",
         id: "retail",
         image: "/projects/retail.svg",
+        chart: {
+          title: "Retail sales",
+          variant: "line",
+          kpis: [
+            { value: "18–29", label: "top buyers" },
+            { value: "Q4", label: "peak season" },
+            { value: "3x", label: "seasonal swing" },
+          ],
+          bars: [0.3, 0.4, 0.5, 0.45, 0.7, 0.85, 0.9],
+          accent: "blue",
+        },
         problem:
           "A retail business had customer, product, and seasonal sales data but no framework to understand purchasing behaviour, category performance, or operational demand patterns.",
         built:
@@ -351,6 +388,17 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Maji Ndogo Operational Data Audit",
         id: "maji",
         image: "/projects/maji.svg",
+        chart: {
+          title: "Data quality check",
+          variant: "grid",
+          kpis: [
+            { value: "100%", label: "clean" },
+            { value: "1,000s", label: "records" },
+            { value: "0", label: "errors left" },
+          ],
+          donut: 0.85,
+          accent: "amber",
+        },
         problem:
           "A national water authority managing thousands of water sources had inconsistent survey data, reporting discrepancies, and suspected integrity issues across field operations.",
         built:
@@ -380,8 +428,10 @@ export type FeaturedStudy = {
   id: string;
   badge: string;
   title: string;
-  /** Process-map diagram in /public/projects (placeholder art, reused). */
+  /** Process-map diagram in /public/projects (legacy; charts are used instead). */
   image: string;
+  /** On-brand chart shown in the expanded card. */
+  chart?: CardDashboard;
   /** Optional headline metric, shown in large type and always paired with a label. */
   metric?: string;
   metricLabel?: string;
@@ -504,6 +554,18 @@ export const edtechOps: FeaturedStudy[] = [
     badge: "Analytics & automation · EdTech",
     title: "Replacing manual learner tracking with one automated reporting system",
     image: "/projects/edtech-programme-analytics.svg",
+    chart: {
+      title: "Reporting automation",
+      variant: "bars",
+      kpis: [
+        { value: "3", label: "programmes" },
+        { value: "50%+", label: "less manual work" },
+        { value: "1", label: "shared workflow" },
+      ],
+      bars: [0.9, 0.72, 0.58, 0.44, 0.34, 0.28],
+      donut: 0.5,
+      accent: "blue",
+    },
     metric: "50%+",
     metricLabel: "manual tracking effort removed",
     situation:
@@ -1124,7 +1186,7 @@ export const dataToolkitNote =
    hiring me to do. Navy/amber brand, same components on both portfolios. */
 
 export type IconKey =
-  | "chart" | "people" | "database" | "clock"
+  | "chart" | "people" | "database" | "clock" | "dollar"
   | "search" | "explore" | "query" | "dashboard" | "bulb"
   | "coordinate" | "onboard" | "gear";
 
@@ -1196,7 +1258,7 @@ export const heroToolGroups: HeroToolGroup[] = [
 /** Home stat strip — four quick, plain proof points. */
 export const homeStats: StatItem[] = [
   { value: "25%", label: "of customer requests were being answered late", sub: "Customer support", icon: "chart" },
-  { value: "$1,118+", label: "the best customers were each worth this much", sub: "Sales", icon: "people" },
+  { value: "$1,118+", label: "the best customers were each worth this much", sub: "Sales", icon: "dollar" },
   { value: "100%", label: "clean, trustworthy data after a full check", sub: "Survey data", icon: "database" },
   { value: "20+ hrs", label: "of decisions backed by clear reports", sub: "Reports & charts", icon: "clock" },
 ];
