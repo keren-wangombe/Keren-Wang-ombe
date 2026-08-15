@@ -19,21 +19,21 @@ export type DashboardConfig = {
 export default function MiniDashboard({ title, kpis }: DashboardConfig) {
   const tiles = kpis.slice(0, 3);
   return (
-    <div className="flex h-full w-full flex-col bg-signature/[0.03]">
-      <div className="flex items-center gap-2 border-b border-ink/10 px-4 py-2.5">
-        <span className="h-3 w-1 rounded-full bg-amber" aria-hidden />
-        <p className="text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-signature">{title}</p>
+    <div className="w-full bg-signature/[0.03]">
+      <div className="flex items-center gap-2 border-b border-ink/10 px-3 py-1.5">
+        <span className="h-2.5 w-1 rounded-full bg-amber" aria-hidden />
+        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.12em] text-signature">{title}</p>
       </div>
       <div
-        className="grid flex-1 divide-x divide-ink/10"
+        className="grid divide-x divide-ink/10"
         style={{ gridTemplateColumns: `repeat(${tiles.length}, minmax(0, 1fr))` }}
       >
         {tiles.map((k, i) => (
-          <div key={i} className="flex flex-col items-center justify-center px-3 py-4 text-center">
-            <p className={`font-serif text-[clamp(1.15rem,2.6vw,1.7rem)] font-light leading-none ${i === 0 ? "text-amber" : "text-signature"}`}>
+          <div key={i} className="flex flex-col items-center justify-center px-2 py-3 text-center">
+            <p className={`font-serif text-[clamp(1.05rem,2.4vw,1.5rem)] font-light leading-none ${i === 0 ? "text-amber" : "text-signature"}`}>
               {k.value}
             </p>
-            <p className="mt-2 text-[0.7rem] leading-snug text-ink/60">{k.label}</p>
+            <p className="mt-1.5 text-[0.68rem] leading-snug text-ink/60">{k.label}</p>
           </div>
         ))}
       </div>
