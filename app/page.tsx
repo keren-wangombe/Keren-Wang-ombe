@@ -80,9 +80,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── STATS — light bordered strip (navy numbers, amber icons) */}
-      <section className="py-6 sm:py-7">
-        <div className="container-content">
+      {/* ── STATS — cool tinted band, navy numbers, amber icons */}
+      <section className="relative isolate overflow-hidden border-b border-signature/10 bg-signature/[0.04] py-6 sm:py-7">
+        <Doodle name="nodes" className="absolute -right-8 top-1/2 hidden h-40 w-40 -translate-y-1/2 text-signature/[0.06] lg:block" />
+        <div className="container-content relative">
           <div className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-ink/10 bg-ink/10 lg:grid-cols-4">
             {homeStats.map((s, i) => (
               <Reveal as="div" key={s.sub} delay={i * 60} className="flex h-full flex-col gap-1.5 bg-paper p-5">
@@ -96,9 +97,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── WHAT I DO */}
-      <section className="py-6 sm:py-7">
-        <div className="container-content">
+      {/* ── WHAT I DO — white, with a quiet doodle filling the corner */}
+      <section className="relative isolate overflow-hidden py-6 sm:py-7">
+        <Doodle name="wave" className="absolute -left-6 bottom-2 hidden h-36 w-36 text-amber/[0.07] lg:block" />
+        <div className="container-content relative">
           <SectionTitle center>What I do</SectionTitle>
           <div className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
             {whatIDo.map((w, i) => (
@@ -112,8 +114,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── TOOLS I USE — compact band (cool tint) */}
-      <section className="border-y border-signature/10 bg-signature/[0.04] py-4">
+      {/* ── TOOLS I USE — slim warm band */}
+      <section className="border-y border-amber/15 bg-amber/[0.05] py-4">
         <div className="container-content">
           <Reveal className="flex flex-col flex-wrap items-center justify-center gap-x-8 gap-y-3 lg:flex-row">
             <span className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-amber">{toolsHeading}</span>
@@ -128,9 +130,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FEATURED WORK */}
-      <section className="py-5 sm:py-7">
-        <div className="container-content">
+      {/* ── FEATURED WORK — cool tinted band with orbit doodle */}
+      <section className="relative isolate overflow-hidden border-b border-signature/10 bg-signature/[0.05] py-5 sm:py-7">
+        <Doodle name="orbit" className="absolute -right-10 -top-8 hidden h-52 w-52 text-signature/[0.06] lg:block" />
+        <div className="container-content relative">
           <SectionTitle center>Featured work</SectionTitle>
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {featuredCards.map((c, i) => (
@@ -152,9 +155,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── MY APPROACH — warm amber tint */}
-      <section className="border-y border-amber/15 bg-amber/[0.06] py-6 sm:py-7">
-        <div className="container-content">
+      {/* ── MY APPROACH — warm amber tint with sparks doodle */}
+      <section className="relative isolate overflow-hidden border-b border-amber/15 bg-amber/[0.06] py-6 sm:py-7">
+        <Doodle name="sparks" className="absolute -right-6 bottom-0 hidden h-40 w-40 text-amber/[0.09] lg:block" />
+        <div className="container-content relative">
           <SectionTitle>{approachHeading}</SectionTitle>
           <ol className="mt-6 grid gap-5 sm:grid-cols-3 lg:grid-cols-5">
             {approachSteps.map((s, i) => (
@@ -168,9 +172,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── HI, I'M KEREN */}
-      <section className="py-7 sm:py-8">
-        <div className="container-content grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+      {/* ── HI, I'M KEREN — cool tinted close with flow doodle */}
+      <section className="relative isolate overflow-hidden bg-signature/[0.04] py-7 sm:py-8">
+        <Doodle name="flow" className="absolute -left-8 top-4 hidden h-40 w-40 text-signature/[0.06] lg:block" />
+        <div className="container-content relative grid items-center gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
           <Reveal className="flex items-center gap-5">
             <div className="w-28 shrink-0 overflow-hidden rounded-2xl border border-ink/10 shadow-md shadow-ink/10 sm:w-32">
               {/* eslint-disable-next-line @next/next/no-img-element */}
