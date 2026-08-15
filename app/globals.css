@@ -42,7 +42,7 @@
 @layer components {
   /* Small-caps kicker / label, Inter, slightly open tracking. */
   .kicker {
-    @apply font-sans text-small uppercase tracking-kicker text-signature/70;
+    @apply font-sans text-small tracking-kicker text-signature/70;
     font-weight: 500;
   }
 
