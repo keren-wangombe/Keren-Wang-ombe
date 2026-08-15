@@ -1336,9 +1336,9 @@ export const approachHeading = "My approach to data analysis";
 export const approachSteps: ApproachStep[] = [
   { n: "1", title: "Understand", body: "Get clear on the question and what a good answer looks like." },
   { n: "2", title: "Prepare", body: "Collect, clean and check the data so it can be trusted." },
-  { n: "3", title: "Analyse", body: "Explore the data to find the insights that matter." },
-  { n: "4", title: "Visualise", body: "Build clear charts and dashboards that tell the story." },
-  { n: "5", title: "Recommend", body: "Share the insights and the actions to take next." },
+  { n: "3", title: "Analyse", body: "Explore the data to find what really matters." },
+  { n: "4", title: "Show it", body: "Build clear charts and dashboards that tell the story." },
+  { n: "5", title: "Recommend", body: "Share what I found and the clear next steps to take." },
 ];
 
 /** Home "Hi, I'm Keren" strip. */
