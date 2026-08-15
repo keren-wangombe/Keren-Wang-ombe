@@ -156,6 +156,7 @@ export type CaseStudyItem = {
   metricLabel?: string;
   /** Process-map diagram in /public/projects (swap for a real screenshot). */
   image: string;
+  chart?: CardDashboard;
   problem: string;
   built: string;
   results: string[];
@@ -192,6 +193,18 @@ export const caseStudyTiers: CaseStudyTier[] = [
         metricLabel: "onboarding completion",
         id: "onboarding",
         image: "/projects/onboarding.svg",
+        chart: {
+          title: "Onboarding system",
+          variant: "bars",
+          kpis: [
+            { value: "88%", label: "completed" },
+            { value: "91%", label: "on time" },
+            { value: "250+", label: "workflows" },
+          ],
+          bars: [0.5, 0.65, 0.6, 0.8, 0.75, 0.9],
+          donut: 0.88,
+          accent: "amber",
+        },
         problem:
           "A consulting firm scaling from 85 to 200 employees had no standardised onboarding process — fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
         built:
@@ -218,6 +231,16 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Operational Command Center",
         id: "command-center",
         image: "/projects/command-center.svg",
+        chart: {
+          title: "Ops command centre",
+          variant: "kanban",
+          kpis: [
+            { value: "3", label: "coaches" },
+            { value: "25", label: "clients" },
+            { value: "1", label: "hub" },
+          ],
+          accent: "blue",
+        },
         problem:
           "A growing coaching organisation with 3 coaches and 25 active clients had no shared operational infrastructure — client records scattered, onboarding inconsistent between coaches, and zero visibility for leadership.",
         built:
@@ -241,6 +264,16 @@ export const caseStudyTiers: CaseStudyTier[] = [
         title: "Programme Delivery Operations System",
         id: "delivery",
         image: "/projects/delivery.svg",
+        chart: {
+          title: "Delivery board",
+          variant: "kanban",
+          kpis: [
+            { value: "5", label: "phases" },
+            { value: "24", label: "tasks" },
+            { value: "9", label: "links" },
+          ],
+          accent: "amber",
+        },
         problem:
           "A 12-week programme was coordinated through email threads and shared documents — no dependency tracking, no escalation logic, and no delivery visibility for leadership.",
         built:
@@ -260,6 +293,18 @@ export const caseStudyTiers: CaseStudyTier[] = [
         metricLabel: "of daily manual work removed",
         id: "pipeline",
         image: "/projects/pipeline.svg",
+        chart: {
+          title: "Automation pipeline",
+          variant: "bars",
+          kpis: [
+            { value: "45min", label: "saved daily" },
+            { value: "4", label: "steps" },
+            { value: "0", label: "manual" },
+          ],
+          bars: [0.9, 0.7, 0.5, 0.35, 0.3, 0.25],
+          donut: 0.5,
+          accent: "blue",
+        },
         problem:
           "A course provider was manually processing every registration through spreadsheets and individual emails — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
         built:
@@ -382,6 +427,7 @@ export type FeaturedStudy = {
   title: string;
   /** Process-map diagram in /public/projects (placeholder art, reused). */
   image: string;
+  chart?: CardDashboard;
   /** Optional headline metric, shown in large type and always paired with a label. */
   metric?: string;
   metricLabel?: string;
@@ -402,6 +448,17 @@ export const featuredWork: FeaturedStudy[] = [
     badge: "Programme onboarding · EdTech",
     title: "Managing a 317-person onboarding pipeline across six stages",
     image: "/projects/onboarding.svg",
+    chart: {
+      title: "Onboarding funnel",
+      variant: "funnel",
+      kpis: [
+        { value: "317", label: "interested" },
+        { value: "141", label: "documents signed" },
+        { value: "47", label: "active" },
+      ],
+      bars: [1, 0.72, 0.44, 0.28],
+      accent: "amber",
+    },
     situation:
       "At an EdTech organisation, a single intake of interested people had to move through a multi-stage onboarding — interest, selection, a document-signing workflow, an online classroom, and activation on the digital learning platform. At every stage people stalled, went quiet or missed a step, and without one view of where each person stood it was easy to lose track of who still needed chasing.",
     handled:
@@ -424,6 +481,18 @@ export const featuredWork: FeaturedStudy[] = [
     badge: "Independent client engagement · Outreach & events",
     title: "Coordinating outreach and events across a pan-African network",
     image: "/projects/command-center.svg",
+    chart: {
+      title: "Outreach & events",
+      variant: "bars",
+      kpis: [
+        { value: "93", label: "organisations" },
+        { value: "3", label: "languages" },
+        { value: "5.0★", label: "client rating" },
+      ],
+      bars: [0.4, 0.6, 0.55, 0.75, 0.7, 0.9],
+      donut: 0.7,
+      accent: "amber",
+    },
     situation:
       "An independent client engagement involved a network of organisations spread across Africa, running a recurring, multilingual webinar programme. Outreach, scheduling and records had to stay current across many partners, time zones and languages at once.",
     handled:
@@ -474,6 +543,17 @@ export const edtechOps: FeaturedStudy[] = [
     badge: "Programme delivery · EdTech",
     title: "Owning key operations for a 3,174-learner programme launch",
     image: "/projects/edtech-technical-programme.svg",
+    chart: {
+      title: "Launch funnel",
+      variant: "funnel",
+      kpis: [
+        { value: "3,174", label: "learners" },
+        { value: "90%", label: "CSAT" },
+        { value: "54%", label: "open rate" },
+      ],
+      bars: [1, 0.82, 0.64, 0.46],
+      accent: "amber",
+    },
     metric: "3,174",
     metricLabel: "learners supported through launch and delivery",
     situation:
@@ -505,6 +585,18 @@ export const edtechOps: FeaturedStudy[] = [
     badge: "Analytics & automation · EdTech",
     title: "Replacing manual learner tracking with one automated reporting system",
     image: "/projects/edtech-programme-analytics.svg",
+    chart: {
+      title: "Reporting automation",
+      variant: "bars",
+      kpis: [
+        { value: "3", label: "programmes" },
+        { value: "50%+", label: "less manual work" },
+        { value: "1", label: "shared workflow" },
+      ],
+      bars: [0.9, 0.72, 0.58, 0.44, 0.34, 0.28],
+      donut: 0.5,
+      accent: "blue",
+    },
     metric: "50%+",
     metricLabel: "manual tracking effort removed",
     situation:
@@ -535,6 +627,16 @@ export const edtechOps: FeaturedStudy[] = [
     badge: "Operating systems · EdTech",
     title: "Aligning three programme teams around one operating framework",
     image: "/projects/edtech-operations-playbook.svg",
+    chart: {
+      title: "Teams aligned",
+      variant: "kanban",
+      kpis: [
+        { value: "3", label: "teams" },
+        { value: "1", label: "playbook" },
+        { value: "2", label: "feedback points" },
+      ],
+      accent: "amber",
+    },
     metric: "3",
     metricLabel: "programme teams aligned",
     situation:

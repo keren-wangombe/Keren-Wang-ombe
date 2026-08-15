@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import MiniDashboard from "@/components/MiniDashboard";
 import type { FeaturedStudy } from "@/lib/content";
 
 /**
@@ -48,10 +49,13 @@ export default function FeaturedCaseStudy({ item }: { item: FeaturedStudy }) {
             </div>
           ) : null}
 
-          <div className="mt-5 rounded-xl border border-ink/10 bg-signature/[0.04] p-3 sm:p-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.image} alt={`${item.title} — process map`} className="w-full rounded-lg" />
-          </div>
+          {item.chart ? (
+            <div className="mt-5 max-w-md overflow-hidden rounded-xl border border-ink/10 shadow-sm">
+              <div className="aspect-[16/9] w-full">
+                <MiniDashboard {...item.chart} />
+              </div>
+            </div>
+          ) : null}
 
           <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-5">
