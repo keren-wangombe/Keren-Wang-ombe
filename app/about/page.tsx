@@ -39,7 +39,7 @@ export default function AboutPage() {
     <>
       {/* ── Compact hero: copy + portrait (matches home). */}
       <section className="relative isolate overflow-hidden border-b border-ink/5 bg-gradient-to-br from-signature/[0.07] via-background to-amber/[0.08]">
-        <div className="container-content grid items-center gap-8 py-9 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+        <div className="container-content grid items-center gap-8 py-7 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
           <Reveal>
             <p className="kicker text-amber">About</p>
             <h1 className="mt-3 font-serif text-h1 font-light leading-[1.08] text-signature">
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── The story. */}
-      <section className="py-9 sm:py-11">
+      <section className="py-6 sm:py-8">
         <div className="container-content">
           <Reveal>
             <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-14">
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
       {/* ── Roles + close line, navy tint. */}
       <section className="border-y border-signature/10 bg-signature/[0.05]">
-        <div className="container-content py-8 text-center">
+        <div className="container-content py-6 text-center">
           <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 font-serif text-h1 font-light leading-none text-signature">
               {bioRoles.map((role, i) => (
@@ -101,7 +101,7 @@ export default function AboutPage() {
 
       {/* ── CTA, warm amber wash. */}
       <section className="border-t border-amber/20 bg-amber/[0.08]">
-        <div className="container-content py-9 sm:py-11">
+        <div className="container-content py-6 sm:py-8">
           <Reveal className="text-center">
             <h2 className="mx-auto max-w-2xl font-serif text-h2 font-light text-ink">
               If any of this sounds like what you need, let&rsquo;s connect.

@@ -26,14 +26,14 @@ export default function FaqPage() {
       />
 
       {/* FAQ content is content-managed in production (editable without redeploy). */}
-      <section className="container-content py-8 sm:py-12">
+      <section className="container-content py-6 sm:py-8">
         <Reveal>
           <FaqList items={faqs} />
         </Reveal>
       </section>
 
       {/* ── Optional visitor question submission. */}
-      <section className="container-content py-16 sm:py-24">
+      <section className="container-content py-9 sm:py-12">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
             <h2 className="font-serif text-h2 font-light text-ink">Ask a question</h2>

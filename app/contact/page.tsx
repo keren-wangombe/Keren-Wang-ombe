@@ -25,7 +25,7 @@ export default function ContactPage() {
         }
       />
 
-      <section className="relative isolate overflow-hidden py-12 sm:py-16">
+      <section className="relative isolate overflow-hidden py-8 sm:py-10">
         <Doodle name="nodes" className="absolute -left-6 bottom-10 hidden h-44 w-44 text-signature/[0.08] lg:block" />
         <Doodle name="wave" className="absolute right-2 top-8 hidden h-36 w-36 text-amber/[0.12] lg:block" />
         <div className="container-content grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
