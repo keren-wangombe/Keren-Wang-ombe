@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MiniDashboard from "@/components/MiniDashboard";
 import type { CaseStudyItem } from "@/lib/content";
 
@@ -8,12 +8,33 @@ import type { CaseStudyItem } from "@/lib/content";
  * A title-only case-study dropdown. Collapsed, only the title shows so the
  * projects are quick to scan; expanding reveals the process map and the full
  * Problem → Built → Result story with tools and any links.
+ *
+ * When the page is reached via an anchor (e.g. /work#support from a Featured
+ * card), the matching card opens itself and scrolls into view, so the reader
+ * lands straight on the case study instead of a row of collapsed titles.
  */
 export default function CaseStudy({ item }: { item: CaseStudyItem; index?: number }) {
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const openIfTargeted = () => {
+      if (window.location.hash === `#${item.id}`) {
+        setOpen(true);
+        // Wait for the expanded content to lay out before scrolling to it.
+        requestAnimationFrame(() =>
+          ref.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+        );
+      }
+    };
+    openIfTargeted();
+    window.addEventListener("hashchange", openIfTargeted);
+    return () => window.removeEventListener("hashchange", openIfTargeted);
+  }, [item.id]);
 
   return (
     <article
+      ref={ref}
       id={item.id}
       className="scroll-mt-28 overflow-hidden rounded-2xl border border-ink/10 border-l-4 border-l-amber-bright bg-paper transition-shadow duration-300 ease-calm hover:shadow-md hover:shadow-ink/5"
     >
