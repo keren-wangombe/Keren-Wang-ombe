@@ -46,7 +46,7 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink/45">Email</span>
+                  <span className="block text-[0.7rem] font-bold tracking-[0.15em] text-ink/45">Email</span>
                   <span className="block truncate text-body font-semibold text-signature">{contactEmail}</span>
                 </span>
               </a>
@@ -62,7 +62,7 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink/45">LinkedIn</span>
+                  <span className="block text-[0.7rem] font-bold tracking-[0.15em] text-ink/45">LinkedIn</span>
                   <span className="block truncate text-body font-semibold text-signature">keren-wangombe</span>
                 </span>
               </a>
@@ -80,7 +80,7 @@ export default function ContactPage() {
                   </svg>
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-[0.7rem] font-bold uppercase tracking-[0.15em] text-ink/45">Resume</span>
+                  <span className="block text-[0.7rem] font-bold tracking-[0.15em] text-ink/45">Resume</span>
                   <span className="block truncate text-body font-semibold text-signature">View my resume (PDF)</span>
                 </span>
               </a>
