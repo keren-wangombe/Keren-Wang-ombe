@@ -12,11 +12,25 @@ export const metadata: Metadata = {
     template: `%s · ${brand.name}`,
   },
   description: brand.oneLine,
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://kerenwangombe-ops.vercel.app"),
   openGraph: {
     title: `${brand.name}, ${brand.byline}`,
     description: brand.oneLine,
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Keren Wang'ombe — I make complex work easier to run.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${brand.name}, ${brand.byline}`,
+    description: brand.oneLine,
+    images: ["/og.png"],
   },
 };
 

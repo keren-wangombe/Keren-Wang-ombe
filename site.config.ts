@@ -9,20 +9,20 @@ import type { FocusConfig } from "@/lib/focus";
  */
 export const focus: FocusConfig = {
   key: "operations",
-  byline: "Programme Operations · Systems · Process Improvement",
+  byline: "Operations · Systems · Reporting",
   oneLine:
-    "I coordinate programmes, build simple systems and improve everyday workflows so teams stay organised and nothing important slips.",
+    "I organise the people, tasks, information and follow-up behind complex work, then improve the process so it is easier to run.",
   mailtoSubject: "Operations support enquiry",
   nav: [
     { href: "/work", label: "Work" },
-    { href: "/contact", label: "Contact" },
+    { href: "/#about", label: "About" },
   ],
   footer: {
-    heading: "Let’s make your operations easier to run.",
+    heading: "Let’s make complex work easier to run.",
     blurb:
-      "I coordinate programmes, build simple systems and improve workflows so teams have clarity and leaders have visibility.",
+      "I organise the people, tasks, information and follow-up behind complex work, then improve the process so it is easier to run.",
   },
-  footerTagline: "Built with purpose. Driven by impact.",
+  footerTagline: "Operations · Systems · Reporting",
   otherPortfolio: {
     label: "Data & analytics portfolio",
     href:

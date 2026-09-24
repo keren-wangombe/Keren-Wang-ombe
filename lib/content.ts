@@ -187,32 +187,30 @@ export const caseStudyTiers: CaseStudyTier[] = [
     backdrop: "/backgrounds/tier-systems.svg",
     items: [
       {
-        badge: "Systems Design · Workflow Automation",
+        badge: "Self-directed portfolio project · Systems design & automation",
         title: "Cross-Functional Onboarding Operations System",
-        metric: "88%",
-        metricLabel: "onboarding completion",
         id: "onboarding",
         image: "/projects/onboarding.svg",
         chart: {
           title: "Onboarding system",
           variant: "bars",
           kpis: [
-            { value: "88%", label: "completed" },
-            { value: "91%", label: "on time" },
-            { value: "250+", label: "workflows" },
+            { value: "6", label: "tools connected" },
+            { value: "4", label: "workflow stages" },
+            { value: "1", label: "shared view" },
           ],
           bars: [0.5, 0.65, 0.6, 0.8, 0.75, 0.9],
-          donut: 0.88,
+          donut: 0.75,
           accent: "amber",
         },
         problem:
-          "A consulting firm scaling from 85 to 200 employees had no standardised onboarding process — fragmented workflows, delayed IT provisioning, and no visibility into who was falling behind.",
+          "Project origin: Self-directed portfolio demonstration built to show how I approach a realistic onboarding-operations problem. It was not a paid client engagement. The scenario involved fragmented intake, delayed IT provisioning and no shared view of onboarding progress.",
         built:
           "A six-tool onboarding operations system that automated intake, created ClickUp workflow tasks automatically, coordinated IT provisioning, and escalated overdue cases — built without engineering support, and redesigned mid-build onto a Google Sheets + ClickUp architecture after Excel sync failures.",
         results: [
-          "88% onboarding completion rate · 91% SLA compliance",
-          "24% reduction in delays · 38% reduction in manual HR coordination",
-          "250+ workflows tracked across Client Services, Operations, and Analytics",
+          "Demonstrates how intake, task creation, IT provisioning and overdue-case escalation can work as one system",
+          "Shows how a shared tracker can make ownership and onboarding status visible across teams",
+          "Includes documented workflows and a redesign decision made after an Excel-sync limitation emerged",
         ],
         tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion", "Excel", "Workflow automation", "SOP design & documentation"],
         links: [
@@ -227,7 +225,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         ],
       },
       {
-        badge: "Systems Design · CRM",
+        badge: "Self-directed portfolio project · Notion CRM & operations",
         title: "Operational Command Center",
         id: "command-center",
         image: "/projects/command-center.svg",
@@ -242,14 +240,14 @@ export const caseStudyTiers: CaseStudyTier[] = [
           accent: "blue",
         },
         problem:
-          "A growing coaching organisation with 3 coaches and 25 active clients had no shared operational infrastructure — client records scattered, onboarding inconsistent between coaches, and zero visibility for leadership.",
+          "Project origin: Self-directed portfolio demonstration built to show how I would organise a realistic coaching-operations scenario. It was not a paid client engagement. The scenario uses three coaches and 25 active clients to test a shared operating system.",
         built:
           "A centralised Notion-based Operations Command Center unifying client management, onboarding workflows, operational documentation, reporting, and content coordination into one connected system any coach could use without being briefed.",
         results: [
-          "Centralised CRM with filtered visibility by coach, onboarding stage, and upcoming sessions — real-time oversight without manual status updates",
-          "Standardised session documentation with structured templates for consistent tracking across all coaches",
-          "3 operational SOPs covering onboarding, no-show management, and offboarding — process no longer dependent on institutional memory",
-          "Live operations calendar auto-tracking sessions, plus unified content and workflow tracking for scalable delivery",
+          "Demonstrates filtered CRM views by coach, onboarding stage and upcoming session",
+          "Shows how structured session templates can support consistent documentation",
+          "Includes three sample SOPs covering onboarding, no-show management and offboarding",
+          "Connects an operations calendar, client records and workflow tracking in one demonstration hub",
         ],
         tools: ["Notion", "CRM Design", "SOP Documentation", "Workflow Design", "Operational Reporting", "Notion & Airtable systems design"],
         links: [
@@ -260,7 +258,7 @@ export const caseStudyTiers: CaseStudyTier[] = [
         ],
       },
       {
-        badge: "Project Operations",
+        badge: "Self-directed portfolio project · Asana programme operations",
         title: "Programme Delivery Operations System",
         id: "delivery",
         image: "/projects/delivery.svg",
@@ -275,44 +273,42 @@ export const caseStudyTiers: CaseStudyTier[] = [
           accent: "amber",
         },
         problem:
-          "A 12-week programme was coordinated through email threads and shared documents — no dependency tracking, no escalation logic, and no delivery visibility for leadership.",
+          "Project origin: Self-directed portfolio demonstration built to show how I structure a realistic 12-week programme. It was not a paid client engagement. The scenario starts with work spread across email and shared documents, without dependency tracking or a clear escalation path.",
         built:
           "A structured Asana delivery system covering the full programme lifecycle: 24 tasks across 5 phases with 9 mapped dependencies, custom fields for live status, and automated escalation that routes blocked work straight to leadership.",
         results: [
-          "24 tasks across 5 phases with 9 mapped dependencies — sequencing enforced by the system, not memory",
-          "Automated escalation routes blocked work to leadership while auto-confirming facilitator completions",
-          "Goals, milestones, and delivery tracking connected into one leadership reporting view",
+          "Demonstrates 24 tasks across five phases with nine mapped dependencies",
+          "Shows how blocked work can be routed through an automated escalation path",
+          "Connects goals, milestones and delivery tracking in one sample leadership view",
         ],
         tools: ["Asana", "Dependency Mapping", "Process Automation", "KPI Tracking", "ClickUp & Asana delivery operations", "Cross-border programme coordination"],
         links: [{ label: "Watch the walkthrough", href: "https://youtu.be/8v5r37T_dDo" }],
       },
       {
-        badge: "Workflow Automation",
+        badge: "Self-directed portfolio project · Zapier workflow automation",
         title: "Operational Workflow Automation Pipeline",
-        metric: "45min",
-        metricLabel: "of daily manual work removed",
         id: "pipeline",
         image: "/projects/pipeline.svg",
         chart: {
           title: "Automation pipeline",
           variant: "bars",
           kpis: [
-            { value: "45min", label: "saved daily" },
+            { value: "4", label: "automated steps" },
             { value: "4", label: "steps" },
-            { value: "0", label: "manual" },
+            { value: "1", label: "connected flow" },
           ],
           bars: [0.9, 0.7, 0.5, 0.35, 0.3, 0.25],
           donut: 0.5,
           accent: "blue",
         },
         problem:
-          "A course provider was manually processing every registration through spreadsheets and individual emails — 45 minutes of repetitive daily work, delayed onboarding communication, and inconsistent intake tracking.",
+          "Project origin: Self-directed portfolio demonstration built to show how I automate a realistic course-registration workflow. It was not a paid client engagement. The scenario begins with registrations copied into spreadsheets and welcome emails sent individually.",
         built:
           "A four-step Zapier pipeline — Google Form → filtering logic → Sheets record → personalised Gmail welcome — replacing the manual process end to end, with a filter so only qualified registrations reach the database.",
         results: [
-          "45 minutes of daily manual processing eliminated",
-          "Personalised onboarding communication sent within seconds of registration",
-          "Every registration handled identically regardless of volume or time of day",
+          "Demonstrates a four-step flow from form submission to a filtered record and personalised welcome email",
+          "Shows how consistent onboarding communication can be triggered automatically",
+          "Uses filtering logic so only qualifying registrations enter the sample database",
         ],
         tools: ["Zapier", "Google Forms", "Google Sheets", "Gmail", "Workflow automation", "CA screening & funnel tracking"],
       },
@@ -445,7 +441,7 @@ export type FeaturedStudy = {
 export const featuredWork: FeaturedStudy[] = [
   {
     id: "edtech-onboarding",
-    badge: "Programme onboarding · EdTech",
+    badge: "Professional experience · EdTech programme onboarding",
     title: "Managing a 317-person onboarding pipeline across six stages",
     image: "/projects/onboarding.svg",
     chart: {
@@ -478,49 +474,48 @@ export const featuredWork: FeaturedStudy[] = [
   },
   {
     id: "pan-african",
-    badge: "Independent client engagement · Outreach & events",
-    title: "Coordinating outreach and events across a pan-African network",
+    badge: "Paid Fiverr project · Client anonymised",
+    title: "Coordinating outreach and events for a mission-led organisation",
     image: "/projects/command-center.svg",
     chart: {
-      title: "Outreach & events",
+      title: "Anonymised outreach system",
       variant: "bars",
       kpis: [
-        { value: "93", label: "organisations" },
-        { value: "3", label: "languages" },
-        { value: "5.0★", label: "client rating" },
+        { value: "1", label: "partner database" },
+        { value: "1", label: "event calendar" },
+        { value: "1", label: "follow-up flow" },
       ],
       bars: [0.4, 0.6, 0.55, 0.75, 0.7, 0.9],
       donut: 0.7,
       accent: "amber",
     },
     situation:
-      "An independent client engagement involved a network of organisations spread across Africa, running a recurring, multilingual webinar programme. Outreach, scheduling and records had to stay current across many partners, time zones and languages at once.",
+      "A paid Fiverr client needed a clearer way to coordinate partner research, outreach, recurring events and follow-up. Identifying details and exact scope have been generalised to protect client confidentiality.",
     handled:
-      "I ran the ongoing coordination. I maintained a database covering 93 organisations across Africa, kept the trilingual webinar calendar current, prepared outreach materials, scheduled sessions and followed up with partners — keeping records, communication and next steps moving week to week.",
+      "I researched potential partner organisations, organised the outreach records, maintained the event schedule, prepared communication materials and tracked follow-up actions.",
     improved:
-      "I organised the moving parts into a single source that could be kept up to date: one database for the 93 organisations, one calendar for the webinar schedule across three languages, and a repeatable way to prepare and send outreach — so coordination didn't restart from scratch each cycle.",
+      "I brought the moving parts into a repeatable system: one partner database, one event calendar and a clear follow-up workflow, so each outreach cycle could start from current records.",
     changed:
-      "Outreach, scheduling and follow-up ran off current records instead of scattered threads, and the webinar calendar stayed clear across the network's languages and partners.",
-    figures: ["93 organisations across Africa", "Trilingual webinar calendar"],
+      "The client received an organised system for managing research, scheduling and follow-up. Exact figures, locations and programme details are intentionally withheld.",
     tools: ["Records database", "Multilingual scheduling", "Outreach coordination", "Follow-up tracking"],
-    links: [{ label: "Read the full case study", href: "/work/pan-african-outreach" }],
+    links: [{ label: "Read the anonymised case study", href: "/work/pan-african-outreach" }],
   },
   {
     // Featured case study three: the strongest existing repo project showing
     // recurring ownership (coordination, tracking, reporting), rewritten into
     // the four-heading structure using only content already in the repo.
     id: "delivery",
-    badge: "Programme delivery · Coordination",
+    badge: "Self-directed portfolio project · Asana programme operations",
     title: "Coordinating a 12-week programme across five delivery phases",
     image: "/projects/delivery.svg",
     situation:
-      "A 12-week programme was coordinated through email threads and shared documents. There was no dependency tracking, no escalation path for blocked work, and no clear delivery view for leadership — so status lived in people's inboxes.",
+      "This self-directed portfolio demonstration explores a realistic 12-week programme that starts in email threads and shared documents, without dependency tracking, escalation paths or a clear delivery view. It was not a paid client engagement.",
     handled:
-      "I coordinated the programme through delivery. I tracked the tasks across each phase, kept sequencing on course, chased blocked work so it didn't stall, confirmed facilitator completions, and kept leadership updated on where delivery actually stood.",
+      "I mapped how I would coordinate the programme through delivery: tracking tasks across each phase, managing sequencing, flagging blocked work and creating a clear leadership view.",
     improved:
       "I moved the whole programme into a structured Asana system: 24 tasks across 5 phases with 9 mapped dependencies, custom fields for live status, and automated escalation that routes blocked work straight to leadership.",
     changed:
-      "Sequencing was enforced by the system rather than by memory, blocked work escalated on its own, and goals, milestones and delivery tracking connected into one leadership reporting view.",
+      "The demonstration shows how sequencing can be system-led, how blocked work can trigger an escalation and how goals, milestones and delivery tracking can connect in one reporting view.",
     tools: ["Asana", "Dependency Mapping", "Process Automation", "KPI Tracking"],
     links: [{ label: "Watch the walkthrough", href: "https://youtu.be/8v5r37T_dDo" }],
   },
@@ -540,7 +535,7 @@ export const featuredWork: FeaturedStudy[] = [
 export const edtechOps: FeaturedStudy[] = [
   {
     id: "edtech-technical-programme",
-    badge: "Programme delivery · EdTech",
+    badge: "Professional experience · EdTech programme delivery",
     title: "Owning key operations for a 3,174-learner programme launch",
     image: "/projects/edtech-technical-programme.svg",
     chart: {
@@ -582,7 +577,7 @@ export const edtechOps: FeaturedStudy[] = [
   },
   {
     id: "edtech-programme-analytics",
-    badge: "Analytics & automation · EdTech",
+    badge: "Professional experience · EdTech analytics & automation",
     title: "Replacing manual learner tracking with one automated reporting system",
     image: "/projects/edtech-programme-analytics.svg",
     chart: {
@@ -624,7 +619,7 @@ export const edtechOps: FeaturedStudy[] = [
   },
   {
     id: "edtech-operations-playbook",
-    badge: "Operating systems · EdTech",
+    badge: "Professional experience · EdTech operating systems",
     title: "Aligning three programme teams around one operating framework",
     image: "/projects/edtech-operations-playbook.svg",
     chart: {
@@ -672,9 +667,9 @@ export const edtechOps: FeaturedStudy[] = [
  * because it is promoted into featuredWork above.
  */
 const additionalTitleOverrides: Record<string, string> = {
-  onboarding: "Getting 88% of new hires fully onboarded as a firm grew from 85 to 200",
-  "command-center": "One clear view of every client, deadline and risk",
-  pipeline: "Saving 45 minutes of busywork every single day",
+  onboarding: "Designing a scalable new-hire onboarding operations system",
+  "command-center": "Designing one clear view of clients, deadlines and risks",
+  pipeline: "Designing a four-step registration automation",
   ecommerce: "Turning a year of sales data into inventory and marketing decisions",
   support: "Finding where support tickets breach SLA",
   retail: "Reading retail sales for who buys and when",
@@ -698,7 +693,6 @@ export const additionalWork: CaseStudyItem[] = caseStudyTiers
  * list because it is promoted into `featuredWork` above.
  */
 export const operationsWork: CaseStudyItem[] = caseStudyTiers[0].items
-  .filter((item) => item.id !== "delivery")
   .map(withOverriddenTitle);
 
 export const dataWork: CaseStudyItem[] = caseStudyTiers[1].items.map(
@@ -1082,8 +1076,8 @@ export const bios: BioLength[] = [
 /** Long-form bio for /about, paragraph by paragraph (author's own copy). */
 export const bioStory: string[] = [
   "When a recurring process depends on someone manually holding it together, I look for a way to turn it into a reliable system. That instinct shapes most of my work.",
-  "For the past three years, I've built the automation, tracking, and reporting infrastructure behind programmes serving thousands of learners across twelve countries—the operational backbone that allows programmes to grow without adding the same level of coordination overhead.",
-  "A Google Apps Script pipeline reduced manual tracking by 50% and saved more than 15 hours each week. A self-updating tracker maintained 98% data accuracy across programme operations. Accurate reporting also gave teams a clear view of performance throughout delivery; one cohort of 1,046 learners finished with an 86% completion rate and 81% learner satisfaction.",
+  "For the past three years, I've built and maintained the automation, tracking and reporting systems behind high-volume workforce-development programmes—the operational backbone that helps delivery teams coordinate clearly as programmes grow.",
+  "I led the operational design of automated trackers across three programmes, reducing manual tracking effort by more than 50%. I also maintained cohort dashboards at 99% data accuracy and owned communications, readiness, tracking and reporting workstreams for a 3,174-learner programme launch.",
   "Operations and analytics are closely connected in my work. Reliable decisions require reliable data, and reliable data begins with processes designed to capture it accurately. I work across both sides: building the workflows that keep information organised and creating reporting that turns it into useful decisions.",
   "My toolkit includes Google Apps Script, SQL, Excel, Power BI, and workflow automation platforms, but the tools are never the point. The value lies in building systems that teams trust, adopt, and continue using as they grow.",
   "My approach is also shaped by a background in GIS and open mapping, where I first learned that data quality is an operational discipline, not an afterthought.",
@@ -1253,14 +1247,14 @@ export type FeaturedCard = {
 export type ApproachStep = { n: string; title: string; body: string };
 
 /** Browser-tab title for the home page (focus-specific). */
-export const homeMetaTitle = "Operations, systems & workflow improvement";
+export const homeMetaTitle = "Programme operations, delivery systems & reporting";
 
 /** Home hero — headline + plain intro + primary call to action. */
 export const homeHero = {
-  kicker: "Coordination · Systems · Smoother work",
-  title: "I keep the everyday work organised, on track and easy to run.",
+  kicker: "Programme operations · Delivery systems · Reporting",
+  title: "I run programme operations and build systems that help teams scale.",
   intro:
-    "I help teams stay organised — I plan and coordinate the work, set up simple systems, and smooth out the day-to-day so nothing important slips through the cracks.",
+    "I coordinate programme delivery, improve onboarding and automate reporting for distributed teams. My work has supported 3,000+ learners across 12+ countries, with systems that make progress and delivery risks easier to see.",
   primaryCta: { label: "See my work", href: "/work" },
 };
 
@@ -1299,72 +1293,69 @@ export const heroToolGroups: HeroToolGroup[] = [
 
 /** Home stat strip — four quick, plain proof points. */
 export const homeStats: StatItem[] = [
-  { value: "3,000+", label: "people supported through programmes", sub: "Across 12+ countries", icon: "people" },
-  { value: "50%+", label: "less repetitive, manual work", sub: "By improving the process", icon: "gear" },
-  { value: "15+ hrs", label: "saved every week", sub: "By setting things to run on their own", icon: "clock" },
-  { value: "98%", label: "of progress reported accurately", sub: "Across many programmes", icon: "chart" },
+  { value: "3,174", label: "learners supported through programme launch", sub: "One high-volume programme", icon: "people" },
+  { value: "50%+", label: "less manual tracking effort", sub: "Across three programmes", icon: "gear" },
+  { value: "99%", label: "data accuracy maintained in cohort dashboards", sub: "Professional programme reporting", icon: "chart" },
+  { value: "317", label: "people tracked through a multi-stage pipeline", sub: "Professional programme operations", icon: "people" },
 ];
 
 /** "What I do" — four plain descriptions of the work. */
 export const whatIDo: WhatIDoItem[] = [
-  { icon: "coordinate", title: "Keeping projects on track", body: "I plan and coordinate the moving parts so work gets done on time and done well." },
-  { icon: "onboard", title: "Welcoming & following up with people", body: "I set up joining steps, reminders and records so everyone has a smooth, consistent experience." },
-  { icon: "dashboard", title: "Tracking progress", body: "I build simple trackers and updates that show how things are going and flag what needs attention." },
-  { icon: "gear", title: "Making the work simpler", body: "I tidy up and simplify repeating tasks — and set them to run on their own where it helps — so things take less effort." },
+  { icon: "coordinate", title: "Programme delivery", body: "I coordinate workstreams, owners, dependencies and escalation so launches and live delivery stay on track." },
+  { icon: "onboard", title: "Onboarding & participant operations", body: "I design the stages, communication and follow-up that move people from interest to active participation." },
+  { icon: "dashboard", title: "Reporting & decision support", body: "I build accurate reporting that shows leaders what is changing, what is at risk and what needs a decision." },
+  { icon: "gear", title: "Systems & process improvement", body: "I turn recurring work into practical trackers, SOPs and automations that distributed teams can rely on." },
 ];
 
 /** Featured work cards — three, each with a dashboard preview and plain summary. */
 export const featuredCards: FeaturedCard[] = [
   {
     dashboard: {
-      title: "Onboarding funnel",
+      title: "Synthetic portfolio view",
+      variant: "kanban",
+      kpis: [
+        { value: "4", label: "programmes" },
+        { value: "712", label: "participants" },
+        { value: "11", label: "open risks" },
+      ],
+      accent: "amber",
+    },
+    title: "Cohort Delivery Control Tower",
+    body: "Self-directed interactive demonstration: one decision view for readiness, milestones, participant risk, ownership and weekly delivery priorities.",
+    tags: ["Self-directed", "Programme operations", "Decision support"],
+    href: "/work/cohort-delivery-control-tower",
+  },
+  {
+    dashboard: {
+      title: "Programme launch",
       variant: "funnel",
       kpis: [
         { value: "3,174", label: "learners" },
         { value: "90%", label: "CSAT" },
         { value: "54%", label: "open rate" },
       ],
-      bars: [1, 0.82, 0.64, 0.46],
-      accent: "amber",
+      accent: "blue",
     },
     title: "Owning key operations for a 3,174-learner programme launch",
-    body: "Led communications, onboarding, platform readiness, tracking and reporting for a large programme launch across several countries.",
-    tags: ["Coordination", "Onboarding", "Reporting"],
+    body: "Professional experience: owned communications, onboarding, platform readiness, tracking and reporting workstreams for a high-volume programme launch.",
+    tags: ["Professional experience", "Delivery", "Reporting"],
     href: "/work#edtech-technical-programme",
   },
   {
     dashboard: {
-      title: "Automation impact",
+      title: "Anonymised client system",
       variant: "bars",
       kpis: [
-        { value: "3", label: "programmes" },
-        { value: "50%+", label: "less manual" },
-        { value: "1", label: "workflow" },
-      ],
-      bars: [0.9, 0.75, 0.6, 0.45, 0.35, 0.3],
-      donut: 0.5,
-      accent: "blue",
-    },
-    title: "Replacing manual tracking with one automated reporting system",
-    body: "Designed an automated reporting workflow that connected three programmes and replaced hours of manual updates each week.",
-    tags: ["Automation", "Reporting", "Systems"],
-    href: "/work#edtech-programme-analytics",
-  },
-  {
-    dashboard: {
-      title: "Delivery board",
-      variant: "kanban",
-      kpis: [
-        { value: "5", label: "phases" },
-        { value: "24", label: "tasks" },
-        { value: "9", label: "links" },
+        { value: "1", label: "partner base" },
+        { value: "1", label: "event calendar" },
+        { value: "1", label: "follow-up flow" },
       ],
       accent: "amber",
     },
-    title: "Coordinating a 12-week programme across five delivery phases",
-    body: "Moved a 12-week programme from scattered emails into one clear system with phases, tasks and visibility for leaders.",
-    tags: ["Asana", "Coordination", "Tracking"],
-    href: "/work#delivery",
+    title: "Coordinating outreach and events for a mission-led organisation",
+    body: "Paid Fiverr engagement: organised partner research, outreach records, scheduling and follow-up while protecting client-identifying details.",
+    tags: ["Paid Fiverr project", "Outreach", "Coordination"],
+    href: "/work#pan-african",
   },
 ];
 
@@ -1384,7 +1375,7 @@ export const approachSteps: ApproachStep[] = [
 /** Home "Hi, I'm Keren" strip. */
 export const aboutStrip = {
   greeting: "Hi, I'm Keren.",
-  bio: "I love keeping the day-to-day work organised and making it run more smoothly, so nothing important slips. Let's make your work easier to run.",
-  ctaHeading: "Looking for someone who can run the work and improve how it gets done?",
-  ctaSub: "Let's connect and explore how I can support your team.",
+  bio: "I'm a programme operations specialist who enjoys making complex delivery feel clear: the right owner, the right signal and the next action visible at the right time.",
+  ctaHeading: "Need someone who can own delivery and strengthen the system behind it?",
+  ctaSub: "Let's talk about your programme, operations role or short systems project.",
 };

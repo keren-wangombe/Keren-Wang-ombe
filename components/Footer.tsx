@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { brand, footerTagline, otherPortfolio } from "@/lib/site";
+import { brand, footerTagline } from "@/lib/site";
 
 /**
  * Footer: a slim navy bar carrying the monogram + name, the copyright line, and
@@ -21,26 +21,10 @@ export default function Footer() {
 
         {/* Copyright */}
         <p className="text-small text-paper/60">
-          © {year} {brand.name}. All rights reserved.
+          © {year} {brand.name}
         </p>
 
-        {/* Tagline (+ optional sibling-portfolio link) */}
-        <div className="flex flex-col items-center gap-1 sm:items-end">
-          <p className="inline-flex items-center gap-2 font-serif text-small italic text-paper/85">
-            {footerTagline}
-            <span aria-hidden className="text-amber-bright">
-              ♥
-            </span>
-          </p>
-          {otherPortfolio ? (
-            <a
-              href={otherPortfolio.href}
-              className="text-[0.8rem] text-paper/55 underline decoration-paper/30 underline-offset-2 transition-colors hover:text-amber-bright"
-            >
-              {otherPortfolio.label} →
-            </a>
-          ) : null}
-        </div>
+        <p className="font-serif text-small text-paper/85">{footerTagline}</p>
       </div>
     </footer>
   );

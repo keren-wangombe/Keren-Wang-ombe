@@ -31,6 +31,7 @@ export default function Header() {
   }, [open]);
 
   const isActive = (href: string) => {
+    if (href.includes("#")) return false;
     const base = href.split("#")[0];
     return pathname === base || pathname.startsWith(`${base}/`);
   };
@@ -62,18 +63,8 @@ export default function Header() {
               </Link>
             );
           })}
-          <a
-            href={resumeFile}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-lg bg-signature px-4 py-2.5 text-small font-medium tracking-wide text-paper transition-all duration-300 ease-calm hover:bg-blue-lift"
-          >
-            Download résumé
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden>
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
+          <a href={resumeFile} target="_blank" rel="noreferrer" className="link-amber text-small font-medium tracking-wide text-ink">
+            Resume
           </a>
         </nav>
 
@@ -127,9 +118,9 @@ export default function Header() {
                 target="_blank"
                 rel="noreferrer"
                 tabIndex={open ? undefined : -1}
-                className="mt-1 block rounded-md bg-signature px-3 py-2.5 text-body font-medium tracking-wide text-paper transition-all duration-300 ease-calm hover:bg-blue-lift"
+                className="block rounded-md px-3 py-2.5 text-body tracking-wide text-ink transition-colors duration-300 ease-calm hover:bg-ink/[0.03] hover:text-amber"
               >
-                Download résumé
+                Resume
               </a>
             </li>
           </ul>

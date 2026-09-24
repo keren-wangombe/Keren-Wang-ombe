@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import MiniDashboard from "@/components/MiniDashboard";
 import type { FeaturedStudy } from "@/lib/content";
 
@@ -12,9 +12,23 @@ import type { FeaturedStudy } from "@/lib/content";
  */
 export default function FeaturedCaseStudy({ item }: { item: FeaturedStudy }) {
   const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const openTarget = () => {
+      if (window.location.hash === `#${item.id}`) {
+        setOpen(true);
+        requestAnimationFrame(() => ref.current?.scrollIntoView({ block: "start", behavior: "instant" }));
+      }
+    };
+    openTarget();
+    window.addEventListener("hashchange", openTarget);
+    return () => window.removeEventListener("hashchange", openTarget);
+  }, [item.id]);
+  const isSelfDirected = item.badge.toLowerCase().includes("self-directed");
 
   return (
     <article
+      ref={ref}
       id={item.id}
       className="scroll-mt-28 overflow-hidden rounded-2xl border border-ink/10 border-l-4 border-l-amber-bright bg-paper transition-shadow duration-300 ease-calm hover:shadow-md hover:shadow-ink/5"
     >
@@ -38,6 +52,12 @@ export default function FeaturedCaseStudy({ item }: { item: FeaturedStudy }) {
         </svg>
       </button>
 
+      <div className="px-5 pb-5 sm:px-6">
+        <p className="text-small font-medium text-signature">{item.figures?.slice(0, 2).join(" · ") || item.metricLabel || item.changed}</p>
+        <p className="mt-2 text-small text-ink/70">{item.tools.slice(0, 3).join(" · ")}</p>
+        <p className="mt-2 text-[0.72rem] text-ink/60">{item.badge}</p>
+      </div>
+
       {/* ── Expanded: process map + the four-section story. */}
       {open ? (
         <div className="border-t border-ink/10 p-5 sm:p-6">
@@ -52,11 +72,11 @@ export default function FeaturedCaseStudy({ item }: { item: FeaturedStudy }) {
           <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:gap-10">
             <div className="space-y-5">
               <Section label="The situation" body={item.situation} />
-              <Section label="What I handled" body={item.handled} />
+              <Section label={isSelfDirected ? "How I approached it" : "What I handled"} body={item.handled} />
             </div>
             <div className="space-y-5">
-              <Section label="What I improved" body={item.improved} />
-              <Section label="What changed" body={item.changed} />
+              <Section label={isSelfDirected ? "What I built" : "What I improved"} body={item.improved} />
+              <Section label={isSelfDirected ? "What the demonstration shows" : "What changed"} body={item.changed} />
             </div>
           </div>
 

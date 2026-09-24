@@ -16,6 +16,7 @@ import type { CaseStudyItem } from "@/lib/content";
 export default function CaseStudy({ item }: { item: CaseStudyItem; index?: number }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLElement>(null);
+  const isSelfDirected = item.badge.toLowerCase().includes("self-directed");
 
   useEffect(() => {
     const openIfTargeted = () => {
@@ -61,6 +62,12 @@ export default function CaseStudy({ item }: { item: CaseStudyItem; index?: numbe
         </svg>
       </button>
 
+      <div className="px-5 pb-5 sm:px-6">
+        <p className="text-small font-medium text-signature">{item.results[0]}</p>
+        <p className="mt-2 text-small text-ink/70">{item.tools.slice(0, 3).join(" · ")}</p>
+        <p className="mt-2 text-[0.72rem] text-ink/60">{item.badge}</p>
+      </div>
+
       {/* ── Expanded: process map + Problem → Built → Result. */}
       {open ? (
         <div className="border-t border-ink/10 p-5 sm:p-6">
@@ -86,7 +93,9 @@ export default function CaseStudy({ item }: { item: CaseStudyItem; index?: numbe
 
             <div className="space-y-5">
               <div>
-                <p className="kicker !text-ink/50">The result</p>
+                <p className="kicker !text-ink/50">
+                  {isSelfDirected ? "What the demonstration shows" : "The result"}
+                </p>
                 <ul className="mt-2 space-y-2.5">
                   {item.results.map((r) => (
                     <li key={r} className="flex items-start gap-3 text-body text-ink/80">
