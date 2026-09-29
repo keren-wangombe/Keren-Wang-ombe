@@ -113,5 +113,6 @@ export const formSubmitAlias = "kerenwangombe@gmail.com";
 export const social = {
   linkedin: "https://www.linkedin.com/in/keren-wangombe/",
   github: "https://github.com/Kerenyambura",
+  upwork: "https://www.upwork.com/freelancers/~01124b3965f66c836a",
   medium: "https://medium.com/@nyamburawangombe",
 } as const;
