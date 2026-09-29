@@ -23,8 +23,6 @@ const help = [
 ] as const;
 
 const experience = [
-  ["2023–2026", "Programme delivery", "Learner support, coordination, reporting and keeping large programmes moving."],
-  ["2026–Present", "Programme Operations Associate", "Process improvement, shared systems and workstreams across teams."],
   ["2020–Present", "Open-mapping coordination", "Documentation, onboarding, partner updates and practical workshops."],
   ["Additional work", "Data and community projects", "Humanitarian mapping, education, health and geospatial communities."],
 ] as const;
@@ -37,8 +35,8 @@ export default function HomePage() {
           <div className="animate-fade-up">
             <h1>I help teams turn plans into work that gets done.</h1>
             <p className="portfolio-lede">
-              I’m Keren Wang’ombe. I keep track of what needs to happen, follow up when something is stuck
-              and make sure the team has the information it needs. I also improve the process so the next round is easier to run.
+              I’m Keren Wang’ombe. I keep track of what needs to happen, follow up when work gets stuck
+              and make sure the team has the information it needs. I improve the process so the next round is easier to run.
             </p>
             <Link className="portfolio-hero-link" href="/work">See my work →</Link>
           </div>

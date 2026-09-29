@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { brand, nav, resumeFile } from "@/lib/site";
+import { brand, nav } from "@/lib/site";
 
 /**
  * Header: the KW monogram + name (with the focus byline underneath) on the
@@ -63,9 +63,13 @@ export default function Header() {
               </Link>
             );
           })}
-          <a href={resumeFile} target="_blank" rel="noreferrer" className="link-amber text-small font-medium tracking-wide text-ink">
+          <Link
+            href="/resume"
+            aria-current={isActive("/resume") ? "page" : undefined}
+            className={`link-amber text-small font-medium tracking-wide ${isActive("/resume") ? "text-signature" : "text-ink"}`}
+          >
             Resume
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile toggle */}
@@ -113,15 +117,14 @@ export default function Header() {
               );
             })}
             <li>
-              <a
-                href={resumeFile}
-                target="_blank"
-                rel="noreferrer"
+              <Link
+                href="/resume"
+                aria-current={isActive("/resume") ? "page" : undefined}
                 tabIndex={open ? undefined : -1}
-                className="block rounded-md px-3 py-2.5 text-body tracking-wide text-ink transition-colors duration-300 ease-calm hover:bg-ink/[0.03] hover:text-amber"
+                className={`block rounded-md px-3 py-2.5 text-body tracking-wide transition-colors duration-300 ease-calm hover:bg-ink/[0.03] hover:text-amber ${isActive("/resume") ? "text-signature" : "text-ink"}`}
               >
                 Resume
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

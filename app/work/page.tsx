@@ -19,6 +19,7 @@ type WorkCase = {
   ownership: string;
   system: string;
   outcome: string;
+  tools: string[];
   proof?: string[];
   link?: { label: string; href: string; external?: boolean };
 };
@@ -39,6 +40,7 @@ const workCases: WorkCase[] = [
       "I set up the communication schedule, an extra broadcast channel for urgent updates, clear escalation routes, regular learner-support sessions and one reporting view for activity and feedback.",
     outcome:
       "The programme launched with stable support spaces, clear ownership and a shared view of learner activity. The results below belong to the wider programme; my contribution was the operational structure, communication and reporting that supported delivery.",
+    tools: ["HubSpot", "Circle", "Google Sheets", "WhatsApp"],
     proof: [
       "3,000+ people supported across programmes",
       "90% onboarding satisfaction",
@@ -54,13 +56,14 @@ const workCases: WorkCase[] = [
     summary:
       "I led the design of automated trackers across three programmes. Manual tracking dropped by more than half.",
     problem:
-      "Teams were updating the same information by hand in several places. The work took time, produced uneven snapshots and made it harder to notice changes in learner activity early enough to respond.",
+      "Teams were updating the same information manually in several places. The work took time, produced uneven snapshots and made it harder to notice changes in learner activity early enough to respond.",
     ownership:
       "I worked with programme teams and technical partners to define the decisions the reports needed to support. I mapped the repeated steps, agreed the measures needed for onboarding and weekly reviews, and translated those needs into one shared tracker structure.",
     system:
       "I designed automated Google Sheets trackers, documented how the workflow worked and helped the teams use the new reporting process. Updates followed the same structure across all three programmes.",
     outcome:
       "Manual tracking fell by more than 50%. Teams received more consistent information, saw engagement changes earlier and spent less time maintaining spreadsheets.",
+    tools: ["Google Sheets", "Google Apps Script"],
     proof: [
       "3 programmes connected",
       "50%+ less manual tracking",
@@ -83,6 +86,7 @@ const workCases: WorkCase[] = [
       "I connected the project plan, partner database, event calendar, meeting schedule and communication templates so each cycle started from current information instead of being rebuilt from scratch.",
     outcome:
       "The client had one working view of what was planned, what had been sent, what was scheduled and what still needed attention. The public review confirms the quality of the engagement while the organisation remains private.",
+    tools: ["Asana", "Google Sheets", "Zoom", "Gmail"],
     proof: [
       "93 organisations organised in one database",
       "3-language webinar calendar",
@@ -110,6 +114,7 @@ const workCases: WorkCase[] = [
       "I co-created one delivery playbook, organised the supporting resources and helped teams adopt a shared evaluation process. The playbook showed what to do, who owned it and where to find the material needed to complete the task.",
     outcome:
       "Information became easier to find, repeated clarification reduced and new team members could deliver work more consistently. Teams also gained one way to compare feedback and carry lessons into the next cycle.",
+    tools: ["Notion", "Loom", "Google Forms"],
     proof: [
       "3 programme teams aligned",
       "1 shared delivery playbook",
@@ -132,6 +137,7 @@ const workCases: WorkCase[] = [
       "I documented the full pipeline and added automated Gmail reminders for incomplete actions. I also created guides and walkthroughs so the process could be run consistently by other team members.",
     outcome:
       "The team could see how many people were at every stage and who needed help. The tracker also exposed a post-onboarding engagement drop that had not been measured before, which informed changes to participant support.",
+    tools: ["Google Sheets", "Google Apps Script", "Gmail", "Google Classroom"],
     proof: [
       "317 expressions of interest",
       "176 moved to document signing",
@@ -145,16 +151,17 @@ const workCases: WorkCase[] = [
     leadMetric: "1 view",
     title: "A weekly view of programme progress and risk.",
     summary:
-      "This is a sample project showing the weekly view I would use to manage several programmes in one place.",
+      "This self-directed project shows the weekly view I would use to manage several programmes in one place.",
     problem:
       "Programme information often lives across project boards, spreadsheets, messages and participant records. A leader can see plenty of data and still struggle to answer: what is off track, who owns it and what needs a decision this week?",
     ownership:
-      "I designed the information structure, the readiness checks, the milestone view, the participant-risk view and the action list. The demonstration uses sample data so the complete decision process can be shown without exposing private programme records.",
+      "I designed the information structure, the readiness checks, the milestone view, the participant-risk view and the action list. The demonstration uses fictional data so the complete decision process can be shown without exposing private programme records.",
     system:
       "The view connects four programmes, delivery milestones, participant risk, owners and weekly priorities. It separates a signal from the action it should trigger.",
     outcome:
       "The demonstration shows how a team can move from several disconnected updates to one weekly view of what is ready, what is slipping and what needs intervention.",
-    proof: ["4 sample programmes", "712 sample participants", "11 sample risks", "1 weekly decision view"],
+    tools: ["Next.js", "TypeScript"],
+    proof: ["4 programmes", "712 participants", "11 risks", "1 weekly decision view"],
     link: { label: "Open the interactive project ↗", href: "/work/cohort-delivery-control-tower" },
   },
   {
@@ -163,15 +170,16 @@ const workCases: WorkCase[] = [
     leadMetric: "6 tools",
     title: "A six-tool onboarding workflow.",
     summary:
-      "This sample project connects six everyday tools into one onboarding workflow.",
+      "This self-directed project connects six everyday tools into one onboarding workflow.",
     problem:
-      "The sample scenario starts with intake in one place, IT requests in another and no shared view of who has completed each step. Delays become visible only after someone asks for an update.",
+      "The project starts with intake in one place, IT requests in another and no shared view of who has completed each step. Delays become visible only after someone asks for an update.",
     ownership:
       "I mapped the process, designed the data flow, connected form intake to task creation and built the shared status view. When an Excel connection failed, I redesigned the workflow around Google Sheets and ClickUp.",
     system:
       "The demonstration links intake, automatic task creation, IT provisioning, overdue-case escalation and documentation across six tools and four stages.",
     outcome:
       "It shows how ownership, progress and overdue work can be visible without chasing several people for an update. All figures describe the demonstration, not a client result.",
+    tools: ["Google Forms", "Google Sheets", "Make.com", "ClickUp", "Notion", "Excel"],
     proof: ["6 tools connected", "4 workflow stages", "1 shared status view", "Overdue-case escalation"],
     link: {
       label: "Read the full case study ↗",
@@ -185,16 +193,17 @@ const workCases: WorkCase[] = [
     leadMetric: "1 hub",
     title: "A Notion hub for clients, sessions and follow-up.",
     summary:
-      "This sample Notion project shows how a small coaching team could manage client work in one place.",
+      "This self-directed Notion project shows how a small coaching team could manage client work in one place.",
     problem:
-      "The sample team needs to track clients, onboarding, sessions, notes, deadlines and follow-up without keeping a separate list for every coach.",
+      "The project team needs to track clients, onboarding, sessions, notes, deadlines and follow-up without keeping a separate list for every coach.",
     ownership:
       "I designed the records, linked the databases, created filtered views for each coach and wrote reusable procedures for onboarding, missed sessions and offboarding.",
     system:
-      "The hub connects 25 sample client records, three coach views, session templates, an operations calendar and three core procedures.",
+      "The hub connects 25 fictional client records, three coach views, session templates, an operations calendar and three core procedures.",
     outcome:
-      "It demonstrates how a small service team can see each client’s stage, next session and open action in one place. The people and records are sample data.",
-    proof: ["25 sample clients", "3 coach views", "3 reusable procedures", "1 connected operations hub"],
+      "It demonstrates how a small service team can see each client’s stage, next session and open action in one place. The people and records are fictional.",
+    tools: ["Notion"],
+    proof: ["25 client records", "3 coach views", "3 reusable procedures", "1 connected operations hub"],
     link: {
       label: "Open the Notion project ↗",
       href: "https://paper-belt-9a3.notion.site/The-Shift-Collective-Operations-Hub-3361bb37c5e180f68291d8917dbc2eed?pvs=143",
@@ -207,15 +216,16 @@ const workCases: WorkCase[] = [
     leadMetric: "12 weeks",
     title: "A 12-week programme plan in Asana.",
     summary:
-      "This sample Asana project shows how I would organise work, dependencies and escalation over 12 weeks.",
+      "This self-directed Asana project shows how I would organise work, dependencies and escalation over 12 weeks.",
     problem:
-      "The sample programme begins in email threads and shared documents. Tasks have no clear dependency path, blocked work has no escalation route and leadership cannot see the true delivery status.",
+      "The project begins in email threads and shared documents. Tasks have no clear dependency path, blocked work has no escalation route and leadership cannot see the true delivery status.",
     ownership:
       "I broke the programme into phases, mapped the work and dependencies, created status fields and designed the escalation rules and reporting view.",
     system:
       "The Asana plan contains 24 tasks across five phases, nine mapped dependencies and automated escalation for blocked work.",
     outcome:
       "The demonstration shows how sequencing can be handled by the system, how blocked work can reach the right person and how milestones can feed one leadership update.",
+    tools: ["Asana"],
     proof: ["12-week plan", "24 tasks", "5 phases", "9 mapped dependencies"],
     link: { label: "Watch the walkthrough ↗", href: "https://youtu.be/8v5r37T_dDo", external: true },
   },
@@ -225,15 +235,16 @@ const workCases: WorkCase[] = [
     leadMetric: "4 steps",
     title: "A four-step registration and welcome email flow.",
     summary:
-      "This sample automation removes the need to copy registrations and send welcome emails one by one.",
+      "This self-directed automation removes the need to copy registrations and send welcome emails one by one.",
     problem:
-      "The sample process requires someone to copy each form response into a spreadsheet, decide whether it qualifies and send the right welcome email manually.",
+      "The process requires someone to copy each form response into a spreadsheet, decide whether it qualifies and send the right welcome email manually.",
     ownership:
       "I mapped the decisions, built the form-to-record flow, added the qualifying rule and wrote the personalised email step.",
     system:
       "A four-step Zapier workflow connects a Google Form, filtering logic, a Google Sheets record and a Gmail welcome message.",
     outcome:
       "The demonstration shows how a registration can move from submission to a clean record and a consistent welcome message without repeated copy-and-paste work.",
+    tools: ["Zapier", "Google Forms", "Google Sheets", "Gmail"],
     proof: ["4 connected steps", "1 qualifying rule", "Automatic record creation", "Personalised welcome email"],
   },
   {
@@ -251,6 +262,7 @@ const workCases: WorkCase[] = [
       "The workbook connects clean sales records, customer segments, product views, regional performance and a simple dashboard.",
     outcome:
       "The project identified the highest-value customer, weak categories and regional differences. These are findings from simulated data, not results from a live business.",
+    tools: ["Microsoft Excel"],
     proof: ["$1,118 top customer value", "Customer segments", "Product performance view", "Regional sales view"],
     link: {
       label: "Read the analysis ↗",
@@ -264,15 +276,16 @@ const workCases: WorkCase[] = [
     leadMetric: "25%",
     title: "A SQL and Power BI analysis of support delays.",
     summary:
-      "I used a sample support-ticket dataset to look at ticket age, ownership, delays and escalation.",
+      "I used a support-ticket dataset to look at ticket age, ownership, delays and escalation.",
     problem:
-      "The sample support team could not clearly see which tickets were outside the service limit, where handoffs slowed the work or whether workload was evenly shared.",
+      "The support team in the project could not clearly see which tickets were outside the service limit, where handoffs slowed the work or whether workload was evenly shared.",
     ownership:
       "I wrote 15 SQL queries covering ticket age, ownership, escalation and response time, then built an executive dashboard around the questions a support lead would need to answer.",
     system:
       "The analysis connects the ticket audit to a dashboard showing service-limit breaches, handoffs, workload and escalation patterns.",
     outcome:
-      "The sample analysis found that 25% of tickets exceeded the 14-day limit and that multi-agent handoffs were the main delay. These are findings from the project dataset.",
+      "The analysis found that 25% of tickets exceeded the 14-day limit and that multi-agent handoffs were the main delay. These are findings from the project dataset.",
+    tools: ["SQL", "Power BI"],
     proof: ["15 SQL queries", "25% outside the 14-day limit", "Handoffs identified as the main delay", "1 Power BI view"],
     link: { label: "View the project ↗", href: "https://github.com/Kerenyambura/operationalbottlenecks", external: true },
   },
@@ -290,6 +303,7 @@ const workCases: WorkCase[] = [
       "The analysis creates a repeatable route from raw records to customer segments, category rankings and seasonal demand views.",
     outcome:
       "The project identified electronics as the highest-revenue category and people aged 18–29 as the main purchasing group. These are findings from the project dataset.",
+    tools: ["MySQL"],
     proof: ["Highest-revenue category identified", "Main age group identified", "Seasonal patterns compared", "SQL analysis documented"],
     link: {
       label: "Read the analysis ↗",
@@ -312,6 +326,7 @@ const workCases: WorkCase[] = [
       "I used a consistent quality-checking and reporting process so the same measures could be reviewed across cohorts and changes could be followed over time.",
     outcome:
       "The dashboards maintained 99% accuracy, giving teams a reliable view for learner follow-up, cohort comparison and programme reporting.",
+    tools: ["Google Sheets"],
     proof: ["99% dashboard accuracy", "6 cohorts supported", "Recurring KPI reviews", "Survey and activity data combined"],
   },
 ];
@@ -325,7 +340,7 @@ export default function WorkPage() {
           <h1>Here’s what I’ve worked on.</h1>
           <p>
             I’ve explained what needed to be done, what I was responsible for and what changed.
-            I do not name clients or employers. Projects built with sample data are marked clearly.
+            I do not name clients or employers.
           </p>
         </Reveal>
       </section>
@@ -346,6 +361,10 @@ export default function WorkPage() {
                   <div className="portfolio-point"><b>What I did</b><p>{item.ownership}</p></div>
                   <div className="portfolio-point"><b>What I set up</b><p>{item.system}</p></div>
                   <div className="portfolio-point"><b>What changed</b><p>{item.outcome}</p></div>
+                </div>
+                <div className="portfolio-work-tools" aria-label={`Tools used for ${item.title}`}>
+                  <b>Tools used</b>
+                  <div>{item.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
                 </div>
                 {item.proof?.length ? (
                   <div className="portfolio-result-cells" aria-label={`${item.title} evidence`}>

@@ -392,7 +392,7 @@
 }
 
 .portfolio-section {
-  padding: 38px 0;
+  padding: 28px 0;
   background: var(--portfolio-paper);
   scroll-margin-top: 76px;
 }
@@ -401,8 +401,8 @@
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   align-items: end;
-  gap: 3rem;
-  margin-bottom: 1.65rem;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .portfolio-section-head h2,
@@ -619,7 +619,7 @@
 }
 
 .portfolio-who-surface {
-  padding: 36px;
+  padding: 28px;
   border: 1px solid var(--portfolio-line);
   background: white;
 }
@@ -683,8 +683,9 @@
 .portfolio-about-surface {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 3rem;
-  padding: 32px;
+  align-items: start;
+  gap: 2rem;
+  padding: 26px;
   background: var(--portfolio-blue);
 }
 
@@ -706,11 +707,13 @@
 .portfolio-experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-self: start;
+  align-content: start;
   gap: 10px;
 }
 
 .portfolio-experience {
-  padding: 18px;
+  padding: 14px;
   border-radius: 15px;
   background: white;
 }
@@ -735,7 +738,7 @@
 }
 
 .portfolio-testimonials-surface {
-  padding: 32px;
+  padding: 28px;
   background: var(--portfolio-navy-dark);
   color: white;
 }
@@ -802,7 +805,7 @@
 }
 
 .portfolio-contact {
-  padding: 16px 0 38px;
+  padding: 10px 0 28px;
   background: var(--portfolio-paper);
   scroll-margin-top: 76px;
 }
@@ -811,8 +814,8 @@
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   align-items: center;
-  gap: 2.5rem;
-  padding: 34px 38px;
+  gap: 2rem;
+  padding: 28px 32px;
   background: var(--portfolio-amber);
 }
 
@@ -858,7 +861,7 @@
 }
 
 .portfolio-page-hero {
-  padding: 42px 0 24px;
+  padding: 32px 0 16px;
   background: var(--portfolio-paper);
 }
 
@@ -878,14 +881,14 @@
 }
 
 .portfolio-work-featured {
-  padding: 14px 0 38px;
+  padding: 8px 0 28px;
 }
 
 .portfolio-work-case {
   display: grid;
   grid-template-columns: 0.72fr 1.28fr;
   overflow: hidden;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   border: 1px solid var(--portfolio-line);
   border-radius: 22px;
   background: white;
@@ -904,7 +907,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 26px;
+  padding: 22px;
   background: var(--portfolio-navy-dark);
   color: white;
 }
@@ -930,7 +933,7 @@
 }
 
 .portfolio-work-case-body {
-  padding: 26px;
+  padding: 22px;
 }
 
 .portfolio-three-points,
@@ -960,6 +963,40 @@
   color: var(--portfolio-muted);
   font-size: 0.82rem;
   line-height: 1.55;
+}
+
+.portfolio-work-tools {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--portfolio-line);
+  border-radius: 11px;
+  background: white;
+}
+
+.portfolio-work-tools > b {
+  flex: 0 0 auto;
+  color: #b86412;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.portfolio-work-tools > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.portfolio-work-tools span {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--portfolio-blue);
+  color: var(--portfolio-navy);
+  font-size: 0.68rem;
+  font-weight: 750;
 }
 
 .portfolio-result-cells {
@@ -1069,6 +1106,322 @@
   color: var(--portfolio-muted);
 }
 
+/* Web resume mock-up */
+.portfolio-resume-page { background: var(--portfolio-paper); }
+
+.portfolio-resume-hero { padding: 62px 0 42px; }
+
+.portfolio-resume-hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  align-items: end;
+  gap: 4rem;
+}
+
+.portfolio-resume-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  color: var(--portfolio-navy);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(3.8rem, 7vw, 6.8rem);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.portfolio-resume-role {
+  margin: 1.25rem 0 0;
+  color: #b86412;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.portfolio-resume-intro {
+  max-width: 760px;
+  margin: 1rem 0 0;
+  color: #465363;
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.portfolio-resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.portfolio-resume-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--portfolio-navy);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.portfolio-resume-download { background: var(--portfolio-navy); color: white; }
+
+.portfolio-resume-meta {
+  display: grid;
+  gap: 10px;
+  padding: 24px;
+  border: 1px solid var(--portfolio-line);
+  border-radius: 20px;
+  background: white;
+}
+
+.portfolio-resume-meta span,
+.portfolio-resume-meta a {
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--portfolio-line);
+  color: var(--portfolio-navy);
+  font-size: 0.8rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.portfolio-resume-meta a:hover { color: #b86412; }
+.portfolio-resume-meta > :last-child { padding-bottom: 0; border-bottom: 0; }
+.portfolio-resume-proof { padding-bottom: 34px; }
+
+.portfolio-resume-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: hidden;
+  border-radius: var(--portfolio-radius);
+  background: var(--portfolio-navy);
+}
+
+.portfolio-resume-proof-grid div {
+  min-height: 122px;
+  padding: 22px;
+  border-right: 1px solid rgb(255 255 255 / 14%);
+}
+
+.portfolio-resume-proof-grid div:last-child { border-right: 0; }
+
+.portfolio-resume-proof-grid strong {
+  display: block;
+  color: var(--portfolio-amber);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 2.35rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.portfolio-resume-proof-grid span {
+  display: block;
+  margin-top: 0.55rem;
+  color: #dce6ef;
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.portfolio-resume-content { padding: 26px 0 56px; }
+
+.portfolio-resume-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(290px, 0.55fr);
+  align-items: start;
+  gap: 18px;
+}
+
+.portfolio-resume-main,
+.portfolio-resume-side { display: grid; gap: 18px; }
+
+.portfolio-resume-section,
+.portfolio-resume-side-card {
+  border: 1px solid var(--portfolio-line);
+  border-radius: 22px;
+  background: white;
+}
+
+.portfolio-resume-section { padding: 30px; }
+
+.portfolio-resume-section > h2 {
+  margin: 0 0 1.4rem;
+  color: var(--portfolio-navy);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-resume-employer,
+.portfolio-resume-job {
+  overflow: hidden;
+  border: 1px solid var(--portfolio-line);
+  border-radius: 17px;
+}
+
+.portfolio-resume-job { margin-top: 14px; }
+.portfolio-resume-job-first { margin-top: 0; }
+
+.portfolio-resume-employer-head,
+.portfolio-resume-job-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 19px 21px;
+  background: var(--portfolio-blue);
+}
+
+.portfolio-resume-employer-head h3,
+.portfolio-resume-job-head h3,
+.portfolio-resume-community-grid h3 {
+  margin: 0;
+  color: var(--portfolio-navy);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.portfolio-resume-employer-head p,
+.portfolio-resume-job-head p {
+  margin: 0.25rem 0 0;
+  color: var(--portfolio-muted);
+  font-size: 0.75rem;
+}
+
+.portfolio-resume-employer-head > span,
+.portfolio-resume-job-head > span,
+.portfolio-resume-role-block > div span,
+.portfolio-resume-community-grid span {
+  color: #b86412;
+  font-size: 0.65rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-resume-roles { padding: 5px 21px; }
+
+.portfolio-resume-role-block {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--portfolio-line);
+}
+
+.portfolio-resume-role-block:last-child { border-bottom: 0; }
+
+.portfolio-resume-role-block h4 {
+  margin: 0 0 0.35rem;
+  color: var(--portfolio-navy);
+  font-size: 0.9rem;
+}
+
+.portfolio-resume-role-block ul,
+.portfolio-resume-job > ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc outside;
+  color: var(--portfolio-muted);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.portfolio-resume-role-block li,
+.portfolio-resume-job li {
+  padding-left: 0.2rem;
+}
+
+.portfolio-resume-role-block li::marker,
+.portfolio-resume-job li::marker {
+  color: #b86412;
+  font-size: 0.9em;
+}
+
+.portfolio-resume-role-block li + li,
+.portfolio-resume-job li + li { margin-top: 0.45rem; }
+
+.portfolio-resume-job > ul { padding: 20px 38px 22px; }
+
+.portfolio-resume-progression {
+  margin: 0;
+  padding: 14px 21px;
+  border-bottom: 1px solid var(--portfolio-line);
+  color: var(--portfolio-navy);
+  font-size: 0.75rem;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.portfolio-resume-community-list {
+  display: grid;
+  gap: 14px;
+}
+
+.portfolio-resume-community-list .portfolio-resume-job { margin-top: 0; }
+
+.portfolio-resume-community-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.portfolio-resume-community-grid article {
+  padding: 18px;
+  border-radius: 15px;
+  background: var(--portfolio-blue);
+}
+
+.portfolio-resume-community-grid h3 { margin-top: 0.65rem; font-size: 1.05rem; }
+
+.portfolio-resume-community-grid p {
+  margin: 0.35rem 0 0;
+  color: var(--portfolio-muted);
+  font-size: 0.75rem;
+}
+
+.portfolio-resume-side-card { padding: 23px; }
+
+.portfolio-resume-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.portfolio-resume-tags span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--portfolio-navy);
+  color: white;
+  font-size: 0.67rem;
+  font-weight: 700;
+}
+
+.portfolio-resume-tags-light span { background: var(--portfolio-blue); color: var(--portfolio-navy); }
+.portfolio-resume-education { display: grid; gap: 15px; }
+
+.portfolio-resume-education div {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--portfolio-line);
+}
+
+.portfolio-resume-education div:last-child { padding-bottom: 0; border-bottom: 0; }
+
+.portfolio-resume-education strong,
+.portfolio-resume-education span { display: block; }
+
+.portfolio-resume-education strong {
+  color: var(--portfolio-navy);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.portfolio-resume-education span {
+  margin-top: 0.35rem;
+  color: var(--portfolio-muted);
+  font-size: 0.68rem;
+}
+
 @media (max-width: 920px) {
   .portfolio-hero-grid {
     grid-template-columns: 1fr 0.72fr;
@@ -1104,6 +1457,17 @@
   .portfolio-project-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .portfolio-resume-hero-grid,
+  .portfolio-resume-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .portfolio-resume-side {
+    position: static;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 700px) {
@@ -1132,7 +1496,11 @@
   .portfolio-three-points,
   .portfolio-story-grid,
   .portfolio-result-cells,
-  .portfolio-project-grid {
+  .portfolio-project-grid,
+  .portfolio-resume-proof-grid,
+  .portfolio-resume-community-grid,
+  .portfolio-resume-side,
+  .portfolio-resume-role-block {
     grid-template-columns: 1fr;
   }
 
@@ -1147,7 +1515,7 @@
   }
 
   .portfolio-section {
-    padding: 36px 0;
+    padding: 24px 0;
   }
 
   .portfolio-case-preview {
@@ -1157,7 +1525,7 @@
   .portfolio-who-surface,
   .portfolio-about-surface,
   .portfolio-testimonials-surface {
-    padding: 25px;
+    padding: 22px;
   }
 
   .portfolio-plain-offer,
@@ -1173,6 +1541,43 @@
 
   .portfolio-work-case-lead,
   .portfolio-work-case-body {
-    padding: 24px;
+    padding: 20px;
+  }
+
+  .portfolio-work-tools {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .portfolio-resume-hero {
+    padding: 38px 0 28px;
+  }
+
+  .portfolio-resume-hero h1 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .portfolio-resume-meta,
+  .portfolio-resume-section,
+  .portfolio-resume-side-card {
+    padding: 20px;
+  }
+
+  .portfolio-resume-proof-grid div {
+    min-height: auto;
+    padding: 18px;
+    border-right: 0;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+  }
+
+  .portfolio-resume-proof-grid div:last-child {
+    border-bottom: 0;
+  }
+
+  .portfolio-resume-employer-head,
+  .portfolio-resume-job-head {
+    flex-direction: column;
+    gap: 8px;
   }
 }

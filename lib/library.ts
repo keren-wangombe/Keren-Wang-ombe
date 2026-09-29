@@ -100,7 +100,7 @@ export const seedEntries: Entry[] = [
     title: "Cutting manual tracking work in half with one automation",
     summary:
       "A fragile, copy-paste NDA tracking process, and the Apps Script pipeline that returned 15+ hours a week.",
-    body: "## The situation\nNDA tracking ran on manual work: someone watching an inbox, updating a spreadsheet by hand, chasing what had and hadn't come back. It was slow, error-prone, and it didn't scale.\n\n## The decision\nTreat it as a system, not a chore. A Google Apps Script and Gmail pipeline watched for the right messages, updated the tracking sheet automatically, and flagged what was outstanding, no human in the loop for the repetitive part.\n\n## The outcome\nManual tracking work fell by 50% and the team got back 15+ hours every week, with the copy-paste errors gone too. The saving was a systems decision, not extra effort.",
+    body: "## The situation\nNDA tracking ran on manual work: someone watching an inbox, updating a spreadsheet manually, chasing what had and hadn't come back. It was slow, error-prone, and it didn't scale.\n\n## The decision\nTreat it as a system, not a chore. A Google Apps Script and Gmail pipeline watched for the right messages, updated the tracking sheet automatically, and flagged what was outstanding, no human in the loop for the repetitive part.\n\n## The outcome\nManual tracking work fell by 50% and the team got back 15+ hours every week, with the copy-paste errors gone too. The saving was a systems decision, not extra effort.",
     topic: "automation",
     level: "practitioner",
     asker: null,

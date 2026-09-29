@@ -961,7 +961,7 @@ export const episodes: Episode[] = [
     published: "2026-06-12",
   },
   {
-    title: "Automating the work nobody should do by hand",
+    title: "Automating work that should not be manual",
     guest: "on workflow automation",
     summary:
       "Reading a manual process for the seams, and the small automations, Apps Script, Zapier, Make, that quietly return whole days to a team.",
