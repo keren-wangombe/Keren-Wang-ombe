@@ -41,7 +41,7 @@ export default function HomePage() {
               I’m Keren Wang’ombe. I organise the people, tasks, information and follow-up behind complex work.
               Then I improve the process so progress is easier to see and the work is easier to repeat.
             </p>
-            <a className="portfolio-hero-link" href="#selected-work">See selected work ↓</a>
+            <Link className="portfolio-hero-link" href="/work">See my work →</Link>
           </div>
           <Reveal className="portfolio-portrait-shell">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -62,11 +62,10 @@ export default function HomePage() {
         </Reveal>
       </div>
 
-      <section id="selected-work" className="portfolio-section">
+      <section id="work-preview" className="portfolio-section">
         <div className="portfolio-wrap">
           <Reveal className="portfolio-section-head">
             <div>
-              <p className="portfolio-eyebrow">Selected work</p>
               <h2>Three examples of how I improve the way work runs.</h2>
             </div>
             <p>Each example starts with a real problem: too many moving parts, too much manual work or follow-up spread across different places.</p>
@@ -84,7 +83,7 @@ export default function HomePage() {
               <div className="portfolio-case-copy">
                 <p className="portfolio-eyebrow">Large programme support</p>
                 <h3>Helping people start clearly and keeping progress visible.</h3>
-                <p>I managed communication, support spaces, tracking and reporting across large programmes. This included analysing a 1,046-learner cycle within the wider 3,000+ people supported.</p>
+                <p>I managed communication, support spaces, tracking and reporting across programmes serving thousands of learners.</p>
                 <Link className="portfolio-text-link" href="/work#programme-support">See the full project ↗</Link>
               </div>
             </Reveal>
@@ -93,9 +92,9 @@ export default function HomePage() {
               <div className="portfolio-case-visual">
                 <strong className="portfolio-big-proof">50%+</strong>
                 <span className="portfolio-visual-label">less manual tracking</span>
-                <div className="portfolio-reduction-bars" aria-label="Manual work before and after">
-                  <div className="portfolio-bar-row"><span>Before</span><div className="portfolio-bar portfolio-before" /></div>
-                  <div className="portfolio-bar-row"><span>After</span><div className="portfolio-bar portfolio-after" /></div>
+                <div className="portfolio-before-after" aria-label="How the reporting process changed">
+                  <div><b>Before</b><span>Repeated updates in several places</span></div>
+                  <div><b>After</b><span>One shared reporting workflow</span></div>
                 </div>
               </div>
               <div className="portfolio-case-copy">
@@ -114,9 +113,9 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="portfolio-case-copy">
-                <p className="portfolio-eyebrow">Partner outreach</p>
-                <h3>Keeping research, messages and follow-up in one place.</h3>
-                <p>I researched potential partners, organised the records, maintained an event calendar and created a repeatable system for communication and follow-up.</p>
+                <p className="portfolio-eyebrow">Project coordination</p>
+                <h3>Running the systems behind a busy partnership and events programme.</h3>
+                <p>I organised the work in Asana, maintained partner records, coordinated recurring events and kept communication and follow-up moving.</p>
                 <Link className="portfolio-text-link" href="/work#partner-outreach">See the full project ↗</Link>
               </div>
             </Reveal>
@@ -141,10 +140,6 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <div className="portfolio-plain-offer">
-            <h3>Is a four-hour task taking time away from work that needs your judgement?</h3>
-            <p>Show me how it works today. I can help make the steps clearer and easier to run.</p>
-          </div>
         </Reveal>
       </section>
 
@@ -152,9 +147,10 @@ export default function HomePage() {
         <Reveal className="portfolio-wrap portfolio-about-surface">
           <div className="portfolio-about-copy">
             <p className="portfolio-eyebrow">About</p>
-            <h2>I followed the numbers into the work underneath them.</h2>
-            <p>My background is in environmental planning, mapping and data analysis. It taught me to look for patterns and ask what the numbers are showing.</p>
-            <p>I kept finding the same thing: good results depend on clear plans, useful information, visible risks and consistent follow-up. That is the work I now do.</p>
+            <h2>I turn moving parts into work people can follow.</h2>
+            <p>My background is in environmental planning, mapping and data analysis. It taught me to look closely at how information is collected, what it shows and what someone needs to do next.</p>
+            <p>That habit now shapes how I run operations. I break complex work into clear owners, dates, decisions and follow-up. I build the tracker, playbook or reporting process behind it, then stay close enough to the work to see what is stuck.</p>
+            <p>Over the last three years, I have supported programmes reaching thousands of learners, improved reporting across several teams and created systems that other people can understand and keep using.</p>
             <div className="portfolio-personal">Outside work, my ideal reset is my phone off, a notebook open and somewhere quiet in nature.</div>
           </div>
           <div className="portfolio-experience-grid" aria-label="Experience">
@@ -203,7 +199,7 @@ export default function HomePage() {
           <div className="portfolio-contact-cards" aria-label="Contact Keren">
             <a className="portfolio-contact-card" href={contactMailto}>Email</a>
             <a className="portfolio-contact-card" href={social.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            <a className="portfolio-contact-card" href={social.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a className="portfolio-contact-card" href={social.upwork} target="_blank" rel="noreferrer">Upwork</a>
             <a className="portfolio-contact-card" href="https://www.fiverr.com/keren_wangombe" target="_blank" rel="noreferrer">Fiverr</a>
           </div>
         </Reveal>
