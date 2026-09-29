@@ -707,7 +707,7 @@
 .portfolio-experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-self: start;
+  align-self: center;
   align-content: start;
   gap: 10px;
 }
