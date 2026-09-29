@@ -35,7 +35,6 @@ export default function HomePage() {
       <section className="portfolio-hero">
         <div className="portfolio-wrap portfolio-hero-grid">
           <div className="animate-fade-up">
-            <p className="portfolio-eyebrow">Operations</p>
             <h1>I help teams turn plans into work that gets done.</h1>
             <p className="portfolio-lede">
               I’m Keren Wang’ombe. I keep track of what needs to happen, follow up when something is stuck
