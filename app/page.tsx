@@ -23,6 +23,8 @@ const help = [
 ] as const;
 
 const experience = [
+  ["2023–2026", "Programme delivery", "Learner support, coordination, reporting and keeping large programmes moving."],
+  ["2026–Present", "Programme Operations Associate", "Process improvement, shared systems and workstreams across teams."],
   ["2020–Present", "Open-mapping coordination", "Documentation, onboarding, partner updates and practical workshops."],
   ["Additional work", "Data and community projects", "Humanitarian mapping, education, health and geospatial communities."],
 ] as const;
