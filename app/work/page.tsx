@@ -28,15 +28,15 @@ const workCases: WorkCase[] = [
     id: "programme-support",
     area: "Programme delivery",
     leadMetric: "3,000+",
-    title: "Keeping a large programme clear from launch to follow-up.",
+    title: "Programme support for more than 3,000 learners.",
     summary:
-      "I owned the communication, platform readiness, tracking and reporting work behind a technical programme launch serving more than 3,000 learners.",
+      "I was responsible for communication, platform readiness, tracking and reporting for a technical programme with more than 3,000 learners.",
     problem:
       "A programme at this scale depends on many connected pieces. Learners need the right information and access. Support teams need clear ownership. Delivery teams need to see activity, risks and unresolved issues before they affect the learner experience.",
     ownership:
       "I mapped the launch plan, owners, dependencies and dates across programme, product and support teams. I prepared community spaces and moderator access, built the learner communication journey, monitored launch blockers and maintained the tracker used to follow activity and support needs.",
     system:
-      "I turned the work into a repeatable launch rhythm: planned communication, a second broadcast channel for urgent updates, clear escalation routes, regular learner-support sessions and reporting that brought activity data and feedback into one view.",
+      "I set up the communication schedule, an extra broadcast channel for urgent updates, clear escalation routes, regular learner-support sessions and one reporting view for activity and feedback.",
     outcome:
       "The programme launched with stable support spaces, clear ownership and a shared view of learner activity. The results below belong to the wider programme; my contribution was the operational structure, communication and reporting that supported delivery.",
     proof: [
@@ -50,9 +50,9 @@ const workCases: WorkCase[] = [
     id: "tracking-system",
     area: "Process improvement",
     leadMetric: "50%+",
-    title: "Replacing repeated updates with one clearer reporting system.",
+    title: "One reporting process across three programmes.",
     summary:
-      "I led the operational design of automated trackers across three programmes and reduced manual tracking effort by more than half.",
+      "I led the design of automated trackers across three programmes. Manual tracking dropped by more than half.",
     problem:
       "Teams were updating the same information by hand in several places. The work took time, produced uneven snapshots and made it harder to notice changes in learner activity early enough to respond.",
     ownership:
@@ -72,9 +72,9 @@ const workCases: WorkCase[] = [
     id: "partner-outreach",
     area: "Project coordination",
     leadMetric: "93",
-    title: "Running the systems behind a busy partnership and events programme.",
+    title: "Project coordination for partner outreach and events.",
     summary:
-      "A client hired me to provide PMO support: organise the work in Asana, coordinate recurring events and keep partner outreach moving.",
+      "A client hired me as their PMO support. I organised the work in Asana, coordinated recurring events and kept partner outreach moving.",
     problem:
       "The work involved project tasks, partner research, outreach, event preparation, meetings and follow-up happening at the same time. The client needed one person to keep the structure current and make sure the next action did not disappear across messages and documents.",
     ownership:
@@ -99,9 +99,9 @@ const workCases: WorkCase[] = [
     id: "team-playbook",
     area: "Knowledge and onboarding",
     leadMetric: "3 teams",
-    title: "Helping new team members find answers and repeat the work.",
+    title: "A shared playbook for three programme teams.",
     summary:
-      "I helped turn scattered programme knowledge into a shared playbook, Notion hub and practical task walkthroughs.",
+      "I helped bring programme knowledge into one shared playbook, a Notion hub and short task walkthroughs.",
     problem:
       "Three teams held important delivery knowledge in different documents and in people’s heads. New team members needed repeated explanations, and each programme gathered feedback differently.",
     ownership:
@@ -121,9 +121,9 @@ const workCases: WorkCase[] = [
     id: "onboarding-pipeline",
     area: "Onboarding and follow-up",
     leadMetric: "317",
-    title: "Showing exactly where 317 people were getting stuck.",
+    title: "An onboarding tracker for 317 people.",
     summary:
-      "I managed a multi-stage onboarding pipeline and built the visibility and reminders needed to move each person to the next step.",
+      "I managed the onboarding process and set up the tracker and reminders the team needed to follow each person’s next step.",
     problem:
       "People moved through interest, selection, document signing, an online classroom and platform activation. Without one view, incomplete steps could sit unnoticed and follow-up depended on someone remembering whom to chase.",
     ownership:
@@ -143,9 +143,9 @@ const workCases: WorkCase[] = [
     id: "cohort-control-tower",
     area: "Programme visibility",
     leadMetric: "1 view",
-    title: "One view of programme readiness, progress and risk.",
+    title: "A weekly view of programme progress and risk.",
     summary:
-      "I built an interactive demonstration of the weekly operating view I would use to keep several programmes clear and actionable.",
+      "This is a sample project showing the weekly view I would use to manage several programmes in one place.",
     problem:
       "Programme information often lives across project boards, spreadsheets, messages and participant records. A leader can see plenty of data and still struggle to answer: what is off track, who owns it and what needs a decision this week?",
     ownership:
@@ -161,9 +161,9 @@ const workCases: WorkCase[] = [
     id: "new-team-onboarding",
     area: "Workflow design",
     leadMetric: "6 tools",
-    title: "Connecting intake, tasks and IT setup for new starters.",
+    title: "A six-tool onboarding workflow.",
     summary:
-      "A self-directed demonstration of how six everyday tools can work together as one onboarding process.",
+      "This sample project connects six everyday tools into one onboarding workflow.",
     problem:
       "The sample scenario starts with intake in one place, IT requests in another and no shared view of who has completed each step. Delays become visible only after someone asks for an update.",
     ownership:
@@ -183,9 +183,9 @@ const workCases: WorkCase[] = [
     id: "coaching-hub",
     area: "Client operations",
     leadMetric: "1 hub",
-    title: "One place to manage clients, sessions and follow-up.",
+    title: "A Notion hub for clients, sessions and follow-up.",
     summary:
-      "A self-directed Notion system showing how a small coaching team could run client work from one connected hub.",
+      "This sample Notion project shows how a small coaching team could manage client work in one place.",
     problem:
       "The sample team needs to track clients, onboarding, sessions, notes, deadlines and follow-up without keeping a separate list for every coach.",
     ownership:
@@ -205,9 +205,9 @@ const workCases: WorkCase[] = [
     id: "delivery-plan",
     area: "Project planning",
     leadMetric: "12 weeks",
-    title: "Turning a 12-week programme into a plan people can follow.",
+    title: "A 12-week programme plan in Asana.",
     summary:
-      "A self-directed Asana demonstration showing how work, dependencies and escalation can stay visible from planning to close-out.",
+      "This sample Asana project shows how I would organise work, dependencies and escalation over 12 weeks.",
     problem:
       "The sample programme begins in email threads and shared documents. Tasks have no clear dependency path, blocked work has no escalation route and leadership cannot see the true delivery status.",
     ownership:
@@ -223,9 +223,9 @@ const workCases: WorkCase[] = [
     id: "welcome-flow",
     area: "Simple automation",
     leadMetric: "4 steps",
-    title: "Moving registration and welcome emails into one flow.",
+    title: "A four-step registration and welcome email flow.",
     summary:
-      "A self-directed demonstration that replaces copying registrations and sending welcome emails one by one.",
+      "This sample automation removes the need to copy registrations and send welcome emails one by one.",
     problem:
       "The sample process requires someone to copy each form response into a spreadsheet, decide whether it qualifies and send the right welcome email manually.",
     ownership:
@@ -240,9 +240,9 @@ const workCases: WorkCase[] = [
     id: "customer-value",
     area: "Operational analysis",
     leadMetric: "$1,118",
-    title: "Finding the customers and products that deserved attention.",
+    title: "An Excel analysis of customer and product performance.",
     summary:
-      "A self-directed Excel analysis using a simulated e-commerce dataset to support customer, stock and marketing decisions.",
+      "I used a simulated e-commerce dataset to analyse customers, products and sales in Excel.",
     problem:
       "The dataset contained more than a year of transactions but no clear view of customer value, product performance or regional patterns.",
     ownership:
@@ -262,9 +262,9 @@ const workCases: WorkCase[] = [
     id: "support-bottlenecks",
     area: "Process analysis",
     leadMetric: "25%",
-    title: "Finding why customer-support work was taking too long.",
+    title: "A SQL and Power BI analysis of support delays.",
     summary:
-      "A self-directed SQL and Power BI project that follows support tickets from age and ownership to delay and escalation.",
+      "I used a sample support-ticket dataset to look at ticket age, ownership, delays and escalation.",
     problem:
       "The sample support team could not clearly see which tickets were outside the service limit, where handoffs slowed the work or whether workload was evenly shared.",
     ownership:
@@ -279,9 +279,9 @@ const workCases: WorkCase[] = [
   {
     id: "retail-patterns",
     area: "Demand analysis",
-    title: "Showing what customers were buying and when.",
+    title: "A SQL analysis of retail sales patterns.",
     summary:
-      "A self-directed SQL project that turns retail sales records into useful customer, category and seasonal patterns.",
+      "I used a retail-sales dataset to look at customer groups, categories and seasonal demand.",
     problem:
       "The dataset had customer, product and sales records but no simple way to see which groups bought most, which categories produced revenue or when demand changed.",
     ownership:
@@ -301,9 +301,9 @@ const workCases: WorkCase[] = [
     id: "dashboard-accuracy",
     area: "Reporting quality",
     leadMetric: "99%",
-    title: "Keeping cohort dashboards accurate enough to guide action.",
+    title: "Maintaining 99% accuracy across cohort dashboards.",
     summary:
-      "I maintained programme dashboards at 99% data accuracy and turned recurring checks into a reliable reporting rhythm.",
+      "I maintained programme dashboards at 99% data accuracy across recurring programme reviews.",
     problem:
       "Programme decisions depend on current, trusted records. Missing or inconsistent information makes it harder to identify people who need support and weakens every report built on top of it.",
     ownership:
@@ -322,10 +322,10 @@ export default function WorkPage() {
       <section className="portfolio-page-hero">
         <Reveal className="portfolio-wrap">
           <p className="portfolio-eyebrow">Work</p>
-          <h1>The work behind clearer delivery.</h1>
+          <h1>Here’s what I’ve worked on.</h1>
           <p>
-            Every project answers the same questions: what was difficult, what I owned, what I built and what changed.
-            Client and employer names stay private. Demonstrations and sample data are stated clearly.
+            I’ve explained what needed to be done, what I was responsible for and what changed.
+            I do not name clients or employers. Projects built with sample data are marked clearly.
           </p>
         </Reveal>
       </section>
@@ -342,9 +342,9 @@ export default function WorkPage() {
               </div>
               <div className="portfolio-work-case-body">
                 <div className="portfolio-story-grid">
-                  <div className="portfolio-point"><b>The need</b><p>{item.problem}</p></div>
-                  <div className="portfolio-point"><b>What I owned</b><p>{item.ownership}</p></div>
-                  <div className="portfolio-point"><b>What I built</b><p>{item.system}</p></div>
+                  <div className="portfolio-point"><b>What was happening</b><p>{item.problem}</p></div>
+                  <div className="portfolio-point"><b>What I did</b><p>{item.ownership}</p></div>
+                  <div className="portfolio-point"><b>What I set up</b><p>{item.system}</p></div>
                   <div className="portfolio-point"><b>What changed</b><p>{item.outcome}</p></div>
                 </div>
                 {item.proof?.length ? (
@@ -381,8 +381,8 @@ export default function WorkPage() {
         <Reveal className="portfolio-wrap portfolio-contact-surface">
           <div>
             <p className="portfolio-eyebrow">Contact</p>
-            <h2>Have work that needs a clearer way to run?</h2>
-            <p>Tell me where the work is getting stuck.</p>
+            <h2>Do you have work that keeps getting stuck?</h2>
+            <p>Send me a note and tell me what is happening.</p>
           </div>
           <div className="portfolio-contact-cards" aria-label="Contact Keren">
             <a className="portfolio-contact-card" href={contactMailto}>Email</a>
