@@ -392,7 +392,7 @@
 }
 
 .portfolio-section {
-  padding: 48px 0;
+  padding: 38px 0;
   background: var(--portfolio-paper);
   scroll-margin-top: 76px;
 }
@@ -520,6 +520,34 @@
 
 .portfolio-reduction-bars {
   margin-top: 1.4rem;
+}
+
+.portfolio-before-after {
+  display: grid;
+  gap: 8px;
+  margin-top: 1.2rem;
+}
+
+.portfolio-before-after div {
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 13px;
+  border: 1px solid rgb(255 255 255 / 14%);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 7%);
+}
+
+.portfolio-before-after b {
+  color: var(--portfolio-amber);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.portfolio-before-after span {
+  color: #dce6ef;
+  font-size: 0.72rem;
 }
 
 .portfolio-bar-row {
@@ -656,7 +684,7 @@
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
   gap: 3rem;
-  padding: 38px;
+  padding: 32px;
   background: var(--portfolio-blue);
 }
 
@@ -707,7 +735,7 @@
 }
 
 .portfolio-testimonials-surface {
-  padding: 38px;
+  padding: 32px;
   background: var(--portfolio-navy-dark);
   color: white;
 }
@@ -774,7 +802,7 @@
 }
 
 .portfolio-contact {
-  padding: 22px 0 48px;
+  padding: 16px 0 38px;
   background: var(--portfolio-paper);
   scroll-margin-top: 76px;
 }
@@ -830,7 +858,7 @@
 }
 
 .portfolio-page-hero {
-  padding: 54px 0 30px;
+  padding: 42px 0 24px;
   background: var(--portfolio-paper);
 }
 
@@ -850,7 +878,7 @@
 }
 
 .portfolio-work-featured {
-  padding: 20px 0 48px;
+  padding: 14px 0 38px;
 }
 
 .portfolio-work-case {
@@ -876,7 +904,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 30px;
+  padding: 26px;
   background: var(--portfolio-navy-dark);
   color: white;
 }
@@ -885,7 +913,7 @@
   margin: 0.65rem 0 0.8rem;
   color: white;
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 2.25rem;
+  font-size: 2.05rem;
   font-weight: 500;
   line-height: 1.05;
   letter-spacing: -0.035em;
@@ -895,13 +923,20 @@
   color: #c4d0dc;
 }
 
-.portfolio-work-case-body {
-  padding: 30px;
+.portfolio-work-case-lead .portfolio-big-proof {
+  margin: 0.25rem 0 0.2rem;
+  color: var(--portfolio-amber);
+  font-size: clamp(2.8rem, 5vw, 4.4rem);
 }
 
-.portfolio-three-points {
+.portfolio-work-case-body {
+  padding: 26px;
+}
+
+.portfolio-three-points,
+.portfolio-story-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
 }
 
@@ -923,7 +958,8 @@
 .portfolio-point p {
   margin: 0;
   color: var(--portfolio-muted);
-  font-size: 0.83rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
 }
 
 .portfolio-result-cells {
@@ -955,6 +991,19 @@
   font-size: 0.68rem;
 }
 
+.portfolio-result-cells .portfolio-result-copy {
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-result-cells .portfolio-result-copy span {
+  margin: 0;
+  color: var(--portfolio-navy);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 .portfolio-note {
   margin: 10px 0 0;
   color: var(--portfolio-muted);
@@ -970,7 +1019,7 @@
 }
 
 .portfolio-library {
-  padding: 34px 0 48px;
+  padding: 28px 0 38px;
 }
 
 .portfolio-project-grid {
@@ -1081,6 +1130,7 @@
   .portfolio-testimonial-grid,
   .portfolio-experience-grid,
   .portfolio-three-points,
+  .portfolio-story-grid,
   .portfolio-result-cells,
   .portfolio-project-grid {
     grid-template-columns: 1fr;
