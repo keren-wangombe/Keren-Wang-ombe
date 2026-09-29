@@ -6,7 +6,7 @@ import { contactMailto, heroPortrait, social } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Operations, Systems & Reporting",
   description:
-    "Keren Wang'ombe organises the people, tasks, information and follow-up behind complex work, then improves the process so it is easier to run.",
+    "Keren Wang'ombe helps teams turn plans into work that gets done through practical operations, follow-up and process improvement.",
 };
 
 const proof = [
@@ -35,11 +35,11 @@ export default function HomePage() {
       <section className="portfolio-hero">
         <div className="portfolio-wrap portfolio-hero-grid">
           <div className="animate-fade-up">
-            <p className="portfolio-eyebrow">Operations · Systems · Reporting</p>
-            <h1>I make complex work easier to run.</h1>
+            <p className="portfolio-eyebrow">Operations</p>
+            <h1>I help teams turn plans into work that gets done.</h1>
             <p className="portfolio-lede">
-              I’m Keren Wang’ombe. I organise the people, tasks, information and follow-up behind complex work.
-              Then I improve the process so progress is easier to see and the work is easier to repeat.
+              I’m Keren Wang’ombe. I keep track of what needs to happen, follow up when something is stuck
+              and make sure the team has the information it needs. I also improve the process so the next round is easier to run.
             </p>
             <Link className="portfolio-hero-link" href="/work">See my work →</Link>
           </div>
@@ -66,9 +66,9 @@ export default function HomePage() {
         <div className="portfolio-wrap">
           <Reveal className="portfolio-section-head">
             <div>
-              <h2>Three examples of how I improve the way work runs.</h2>
+              <h2>A few examples of my work.</h2>
             </div>
-            <p>Each example starts with a real problem: too many moving parts, too much manual work or follow-up spread across different places.</p>
+            <p>The projects are different, but the job was similar each time: understand what was getting in the way, set up a clearer process and keep the follow-up moving.</p>
           </Reveal>
 
           <div className="portfolio-selected-grid">
@@ -82,7 +82,7 @@ export default function HomePage() {
               </div>
               <div className="portfolio-case-copy">
                 <p className="portfolio-eyebrow">Large programme support</p>
-                <h3>Helping people start clearly and keeping progress visible.</h3>
+                <h3>Programme support for more than 3,000 learners.</h3>
                 <p>I managed communication, support spaces, tracking and reporting across programmes serving thousands of learners.</p>
                 <Link className="portfolio-text-link" href="/work#programme-support">See the full project ↗</Link>
               </div>
@@ -99,7 +99,7 @@ export default function HomePage() {
               </div>
               <div className="portfolio-case-copy">
                 <p className="portfolio-eyebrow">Process improvement</p>
-                <h3>Replacing repeated updates with one clearer system.</h3>
+                <h3>Cutting manual tracking by more than 50%.</h3>
                 <p>I helped design automated trackers across three programmes, documented the process and supported the teams using it.</p>
                 <Link className="portfolio-text-link" href="/work#tracking-system">See the full project ↗</Link>
               </div>
@@ -114,7 +114,7 @@ export default function HomePage() {
               </div>
               <div className="portfolio-case-copy">
                 <p className="portfolio-eyebrow">Project coordination</p>
-                <h3>Running the systems behind a busy partnership and events programme.</h3>
+                <h3>Coordinating partner outreach and events.</h3>
                 <p>I organised the work in Asana, maintained partner records, coordinated recurring events and kept communication and follow-up moving.</p>
                 <Link className="portfolio-text-link" href="/work#partner-outreach">See the full project ↗</Link>
               </div>
@@ -129,9 +129,9 @@ export default function HomePage() {
           <div className="portfolio-section-head">
             <div>
               <p className="portfolio-eyebrow">Who I help</p>
-              <h2>When the work is growing faster than the way you run it.</h2>
+              <h2>I usually help when:</h2>
             </div>
-            <p>I help teams turn scattered tasks, information and follow-up into a clear way of working that people can understand and use.</p>
+            <p>The work is moving, but the team is spending too much time looking for information, repeating updates or chasing the next step.</p>
           </div>
           <div className="portfolio-help-grid">
             {help.map(([number, title, body]) => (
@@ -147,10 +147,10 @@ export default function HomePage() {
         <Reveal className="portfolio-wrap portfolio-about-surface">
           <div className="portfolio-about-copy">
             <p className="portfolio-eyebrow">About</p>
-            <h2>I turn moving parts into work people can follow.</h2>
-            <p>My background is in environmental planning, mapping and data analysis. It taught me to look closely at how information is collected, what it shows and what someone needs to do next.</p>
-            <p>That habit now shapes how I run operations. I break complex work into clear owners, dates, decisions and follow-up. I build the tracker, playbook or reporting process behind it, then stay close enough to the work to see what is stuck.</p>
-            <p>Over the last three years, I have supported programmes reaching thousands of learners, improved reporting across several teams and created systems that other people can understand and keep using.</p>
+            <h2>I started in data analysis. The work led me to operations.</h2>
+            <p>My background is in environmental planning, mapping and data analysis. I was used to looking at numbers and asking what they were showing.</p>
+            <p>Over time, I became just as interested in the work behind the numbers. Where was information getting lost? Why was someone stuck? What did the team need to do next? That is what led me into operations.</p>
+            <p>For the last three years, I have worked on programme delivery, onboarding, reporting, project coordination and process improvement. I enjoy work that needs both careful follow-up and a better way of doing things.</p>
             <div className="portfolio-personal">Outside work, my ideal reset is my phone off, a notebook open and somewhere quiet in nature.</div>
           </div>
           <div className="portfolio-experience-grid" aria-label="Experience">
@@ -168,7 +168,7 @@ export default function HomePage() {
           <div className="portfolio-section-head">
             <div>
               <p className="portfolio-eyebrow">What people say</p>
-              <h2>Trusted to make the work clearer and stronger.</h2>
+              <h2>A few words from people I have worked with.</h2>
             </div>
             <p>Public recommendations from people who have worked with me. Each one links to the original source.</p>
           </div>
@@ -193,8 +193,8 @@ export default function HomePage() {
         <Reveal className="portfolio-wrap portfolio-contact-surface">
           <div>
             <p className="portfolio-eyebrow">Contact</p>
-            <h2>Need help making complex work easier to run?</h2>
-            <p>Tell me what is getting stuck and what a better process should make possible.</p>
+            <h2>Do you have work that keeps getting stuck?</h2>
+            <p>Send me a note and tell me what is happening.</p>
           </div>
           <div className="portfolio-contact-cards" aria-label="Contact Keren">
             <a className="portfolio-contact-card" href={contactMailto}>Email</a>
